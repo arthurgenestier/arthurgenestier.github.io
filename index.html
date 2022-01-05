@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -44,23 +42,62 @@
             <div class="interrupteur" onclick=" playAudio('assets/audio/clic.ogg');
                                                 lightLamp();
                                                 lightBody();
-                                                lightPoster();">
+                                                lightPoster();
+                                                lightDesk();">
             </div>
         </div>
+        <div class="objects" id="objects">
+            <div class="poster" id="poster" onclick=" posterRotate()">
+                <svg width="45" height="64" viewBox="0 0 45 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <rect x="1.5" y="1.5" width="42" height="61" fill="url(#pattern0)" stroke="black"
+                        stroke-width="3" />
+                    <defs>
+                        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_10_1526" transform="scale(0.025641 0.0172414)" />
+                        </pattern>
+                        <image id="image0_10_1526" width="39" height="58"
+                            xlink:href="data:image/png;base64,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" />
+                    </defs>
+                </svg>
+            </div>
 
-        <div class="poster" id="poster" onclick=" posterRotate()">
-            <svg width="45" height="64" viewBox="0 0 45 64" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <rect x="1.5" y="1.5" width="42" height="61" fill="url(#pattern0)" stroke="black" stroke-width="3"/>
-                <defs>
-                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-                <use xlink:href="#image0_10_1526" transform="scale(0.025641 0.0172414)"/>
-                </pattern>
-                <image id="image0_10_1526" width="39" height="58" xlink:href="data:image/png;base64,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"/>
-                </defs>
-            </svg>
+            <div class="desk" id="desk">
+                <svg width="154" height="82" viewBox="0 0 154 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 2V82" stroke="black" stroke-width="4" />
+                    <path d="M152 2V82" stroke="black" stroke-width="4" />
+                    <rect x="2" y="2" width="150" height="10" fill="#F44D02" stroke="black" stroke-width="4" />
+                    <path d="M2 2V82" stroke="black" stroke-width="4" />
+                    <path d="M132 2V82" stroke="black" stroke-width="4" />
+                </svg>
+            </div>
+
+            <div class="headphone">
+                <audio controls src="assets/audio/ambiance.mp3">
+                </audio>
+                <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="14" width="5" height="7" rx="2.5" fill="#CDC1FF" stroke="black" stroke-width="2" />
+                    <path d="M14 2H13C9.13401 2 6 5.13401 6 9V14" stroke="#666666" stroke-width="3" />
+                    <path d="M7 13V11.5C7 7.91015 9.91015 5 13.5 5" stroke="#666666" />
+                    <rect x="2.5" y="13.5" width="6" height="8" rx="3" fill="#605BFF" stroke="black" stroke-width="3" />
+                    <path d="M14 6.57239C11 6.57239 11 2.57239 11 2.57239V1" stroke="black" stroke-width="2" />
+                    <path d="M14 6.57239V26" stroke="black" stroke-width="2" />
+                    <path d="M9 26H14H19" stroke="black" stroke-width="2" />
+                    <path d="M14 6.57239C17 6.57239 17 2.57239 17 2.57239V1" stroke="black" stroke-width="2" />
+                    <path d="M14 2C17.866 2 21 5.13401 21 9V14" stroke="#666666" stroke-width="3" />
+                    <path d="M20 13V11.5C20 7.91015 17.0899 5 13.5 5" stroke="#666666" />
+                    <rect x="18.5" y="13.5" width="6" height="8" rx="3" fill="#CDC1FF" stroke="black"
+                        stroke-width="3" />
+                    <rect x="21" y="14" width="5" height="7" rx="2.5" fill="#00BBFF" stroke="black" stroke-width="2" />
+                </svg>
+            </div>
         </div>
     </div>
- <script src="script.js"></script>
+
+    
+
+
+    <script src="script.js"></script>
 
 </body>
 

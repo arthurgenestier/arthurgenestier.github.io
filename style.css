@@ -2,8 +2,13 @@ body {
   background-color: rgb(32, 32, 32);
 }
 
-.interrupteur:hover,
-.poster:hover {
+.container {
+  position: relative;
+}
+
+.interrupteur,
+.poster,
+.headphone {
   cursor: crosshair;
 }
 
@@ -39,13 +44,21 @@ body {
 
 .poster {
   top: 10rem;
-  position: absolute;
   left: 20rem;
-  filter: grayscale(100%);
   transform: rotate(0.05turn);
 }
 
-.poster-light {
+.poster,
+.desk,
+.headphone {
+  position: absolute;
+}
+
+.objects {
+  filter: grayscale(100%);
+}
+
+.light {
   filter: grayscale(0%);
   animation-duration: 1s;
   animation-name: grayscale;
@@ -57,6 +70,15 @@ body {
   transition: all 1s ease;
 }
 
+.desk {
+  top: 20rem;
+  left: 25rem;
+}
+
+.headphone {
+  top: 18.3rem;
+  left: 27rem;
+}
 
 
 @keyframes clignoter {
