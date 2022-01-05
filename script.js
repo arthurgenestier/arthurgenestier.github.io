@@ -2,6 +2,11 @@ function playAudio(url) {
     new Audio(url).play();
 }
 
+function playMusic() {
+    var myMusic = document.getElementById("myMusic");
+    return myMusic.paused ? myMusic.play() : myMusic.pause();
+}
+
 function lightLamp() {
 var element = document.getElementById("lamp");
 element.classList.toggle("jaune");
@@ -21,3 +26,5 @@ function posterRotate() {
 var element = document.getElementById("poster");
 element.classList.toggle("poster-rotate");
 }
+
+
