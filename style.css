@@ -1,0 +1,96 @@
+body {
+  background-color: rgb(32, 32, 32);
+}
+
+.interrupteur:hover,
+.poster:hover {
+  cursor: crosshair;
+}
+
+.body-light {
+  animation-duration: 1s;
+  animation-name: clignoter;
+  transition: none;
+  background-color: beige;
+}
+
+.lamp {
+  display: inline-block;
+  top: 15rem;
+  position: absolute;
+  left: 10rem;
+}
+
+.interrupteur {
+  width: 8px;
+  height: 10px;
+  background-color: transparent;
+  position: absolute;
+  left: 31px;
+  top: 65px;
+}
+
+.jaune {
+  animation-duration: 1s;
+  animation-name: clignoter;
+  transition: none;
+  fill: #FFC700;
+}
+
+.poster {
+  top: 10rem;
+  position: absolute;
+  left: 20rem;
+  filter: grayscale(100%);
+  transform: rotate(0.05turn);
+}
+
+.poster-light {
+  filter: grayscale(0%);
+  animation-duration: 1s;
+  animation-name: grayscale;
+  transition: none;
+}
+
+.poster-rotate {
+  transform: rotate(0turn);
+  transition: all 1s ease;
+}
+
+
+
+@keyframes clignoter {
+
+  20% {
+   fill:#faeec2;
+   background-color: #f3f3c2;
+  }
+  40% { 
+   fill:#ffdf6d;
+   background-color: #c9c9a1;
+  }
+  60% {
+   fill:#faeec2;
+   background-color: #f3f3c2;
+  }
+  80% { 
+   fill:#ffdf6d;
+   background-color: #c9c9a1;
+  }
+}
+
+@keyframes grayscale {
+  20% {
+   filter: grayscale(40%);
+  }
+  40% {
+   filter: grayscale(60%);
+  }
+  60% {
+   filter: grayscale(40%);
+  }
+  80% {
+   filter: grayscale(60%);
+  }
+}
+
