@@ -1,13 +1,13 @@
-<svg width="50" height="165" viewBox="0 0 50 165" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="100" height="300" viewBox="0 0 100 300" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i_10_1620)">
-<path d="M15 162.008C15 159.457 16.0829 157.025 17.9793 155.319L25 149L32.0207 155.319C33.9171 157.025 35 159.457 35 162.008V163H15V162.008Z" fill="#666666"/>
-<path d="M25 149L17.9793 155.319C16.0829 157.025 15 159.457 15 162.008V163H35V162.008C35 159.457 33.9171 157.025 32.0207 155.319L25 149ZM25 149V48" stroke="black" stroke-width="4"/>
-<path d="M33 66H35H37V73H33V66Z" fill="#666666"/>
-<path d="M35 48V66M35 66H33V73H37V66H35Z" stroke="black" stroke-width="2"/>
-<path d="M11 2H39L47 48H3L11 2Z" fill="#FFC700" stroke="black" stroke-width="4"/>
+<path d="M30 294.56C30 289.922 32.1658 285.501 35.9586 282.397L50 270.909L64.0414 282.397C67.8342 285.501 70 289.922 70 294.56V296.364H30V294.56Z" fill="#666666"/>
+<path d="M50 270.909L35.9586 282.397C32.1658 285.501 30 289.922 30 294.56V296.364H70V294.56C70 289.922 67.8342 285.501 64.0414 282.397L50 270.909ZM50 270.909V87.2727" stroke="black" stroke-width="4"/>
+<path d="M66 120H70H74V132.727H66V120Z" fill="#666666"/>
+<path d="M70 87.2727V120M70 120H66V132.727H74V120H70Z" stroke="black" stroke-width="2"/>
+<path d="M22 3.63635H78L94 87.2727H6L22 3.63635Z" fill="#FFC700" stroke="black" stroke-width="4"/>
 </g>
 <defs>
-<filter id="filter0_i_10_1620" x="0" y="0" width="50" height="169" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_i_10_1620" x="0" y="0" width="100" height="304" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>

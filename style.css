@@ -7,9 +7,14 @@ body {
 }
 
 .interrupteur,
-.poster,
-.turntable {
+.poster {
   cursor: crosshair;
+}
+
+.turntable {
+  cursor: url("assets/img/electric-guitar.svg"), auto;
+  position: absolute;
+  top: -1.5rem;
 }
 
 .body-light {
@@ -27,12 +32,12 @@ body {
 }
 
 .interrupteur {
-  width: 8px;
-  height: 10px;
   background-color: transparent;
   position: absolute;
-  left: 31px;
-  top: 65px;
+  width: 15px;
+  height: 15px;
+  left: 64px;
+  top: 119px;
 }
 
 .jaune {
@@ -69,25 +74,45 @@ body {
 }
 
 .desk {
+  display: inline-block;
   position: relative;
   top: 20rem;
-  left: 25rem;
+  left: 29rem;
 }
 
 
 .turntable > svg:nth-child(1) {
   position: relative;
-  top: -7.7rem;
   left: 2rem;
-  width: 6rem;
+
 }
 
 .turntable > svg:nth-child(2) {
   position: relative;
-  width: 6rem;
-  top: -8.8rem;
-  left: -5rem;
+
+  top: -1.4rem;
+  left: -8rem;
 }
+
+
+
+.guy {
+  position: absolute;
+  top: -13rem;
+  right: -10rem;
+}
+
+
+.head {
+  position: absolute;
+  left: 15px;
+}
+.move-head {
+  animation: head .8s infinite;
+  animation-timing-function: linear;
+}
+
+
 
 
 @keyframes clignoter {
@@ -125,3 +150,14 @@ body {
   }
 }
 
+@keyframes head {
+  0% {
+    top: -4px;
+  }
+  50% {
+    top: 5px;
+  }
+  100% {
+    top: -4px;
+  }
+}

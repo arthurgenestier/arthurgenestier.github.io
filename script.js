@@ -12,6 +12,11 @@ var element = document.getElementById("lamp");
 element.classList.toggle("jaune");
 } 
 
+function moveHead() {
+var element = document.getElementById("head");
+element.classList.toggle("move-head");
+} 
+
 function lightBody() {
 var element = document.getElementById("body");
 element.classList.toggle("body-light");
