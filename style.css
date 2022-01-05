@@ -107,9 +107,10 @@ body {
   position: absolute;
   left: 15px;
 }
+
 .move-head {
   animation: head .8s infinite;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
 }
 
 
