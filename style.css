@@ -89,9 +89,12 @@ body {
 
 .turntable > svg:nth-child(2) {
   position: relative;
-
   top: -1.4rem;
   left: -8rem;
+}
+
+.move-vinyl {
+  animation: vinyl 1s linear infinite;
 }
 
 
@@ -161,4 +164,16 @@ body {
   100% {
     top: -4px;
   }
+}
+
+@keyframes vinyl { 
+  25% { 
+  transform:rotate(2deg); }
+  50% { 
+  transform:rotate(0deg);}
+  75% { 
+  transform:rotate(-2deg); }
+  100% { 
+  transform:rotate(0deg); 
+  } 
 }
