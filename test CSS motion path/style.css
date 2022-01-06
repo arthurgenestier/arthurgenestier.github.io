@@ -1,0 +1,44 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 2rem;
+    min-height: 100vh;
+    background-color: #1b1b24;
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    width: 500px;
+    margin: 1rem;
+}
+
+.obj {
+    offset-path: path('M2 23C2 13.6225 5.36305 1.241 16.4444 2C26.1627 2.66563 36.7585 12.4901 41.2778 20.8333C43.578 25.08 42 32.8112 42 37.5556C42 44.1349 43.0771 48 50.5 48C55.6984 48 58.7728 45.9232 61 41C63.7863 34.8409 61.3969 26.6423 62.0556 20.0556C62.3019 17.592 63 15.5245 63 13');
+    offset-distance: 0;
+    animation: move 2000ms infinite alternate;
+    width: 80px;
+    height: 80px;
+    background-image: url(/assets/img/electric-guitar.svg);
+    background-repeat:no-repeat;
+}
+.obj2 {
+    offset-path: path('M7.5 4C8.09646 1.01768 12 1 12 1H23C25.2092 1 27 2.79086 27 5V7H26V9H27V10H0V9H7C7 9 7 6.5 7.5 4Z');
+    offset-distance: 0;
+    animation: move 5s infinite alternate;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background:blue
+}
+
+@keyframes move {
+    to {
+        offset-distance: 100%;
+    }
+}
