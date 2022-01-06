@@ -4,6 +4,7 @@ body {
 
 .container {
   position: relative;
+  margin: 0 auto;
 }
 
 .interrupteur,
@@ -176,4 +177,37 @@ body {
   100% { 
   transform:rotate(0deg); 
   } 
+}
+
+@media (max-device-width : 320px) {
+  svg {
+    height: 50%;
+    width: 50%;
+  }
+
+  .lamp {
+    top: 2rem;
+    left: 1rem;
+  }
+
+  .interrupteur {
+    left: 1.6rem;
+    top: 3.5rem;
+  }
+
+  .desk {
+    top: 8rem;
+    left: 3rem;
+  }
+
+  #turntable > svg:nth-child(1) {
+    width: 35%;
+    top: 0.3rem;
+  }
+
+  #vinyl {
+    width: 35%;
+    top: -0.4rem;
+    left: -5rem;
+  }
 }
