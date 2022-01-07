@@ -6,8 +6,9 @@
 <path d="M9.33331 14.0917C8.99998 13.8695 8.19998 13.4917 7.66665 13.7584C7.13331 14.025 6.99998 14.425 6.99998 14.425" stroke="black"/>
 <path d="M12.3666 14.0917C12.7 13.8695 13.5 13.4917 14.0333 13.7584C14.5666 14.025 14.7 14.425 14.7 14.425" stroke="black"/>
 <path d="M7.5 4C8.09646 1.01768 12 1 12 1H23C25.2092 1 27 2.79086 27 5V7H26V9H27V10H0V9H7C7 9 7 6.5 7.5 4Z" fill="#F44D02"/>
-<mask id="mask0_8_264" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="1" width="27" height="9">
+
 <path d="M7.5 4C8.09646 1.01768 12 1 12 1H23C25.2092 1 27 2.79086 27 5V7H26V9H27V10H0V9H7C7 9 7 6.5 7.5 4Z" fill="#F44D02"/>
+<mask id="mask0_8_264" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="1" width="27" height="9">
 </mask>
 <g mask="url(#mask0_8_264)">
 <path d="M16 1L16 10H7L7 1L16 1Z" fill="url(#pattern0)"/>

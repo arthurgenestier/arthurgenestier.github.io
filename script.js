@@ -22,6 +22,12 @@ var element = document.getElementById("head");
 element.classList.toggle("move-head");
 } 
 
+function moveGuy() {
+var element = document.getElementById("guy");
+element.classList.toggle("move-guy");
+window.setTimeout(lampFull, 5000);
+} 
+
 function lightBody() {
 var element = document.getElementById("body");
 element.classList.toggle("body-light");
@@ -38,3 +44,10 @@ element.classList.toggle("poster-rotate");
 }
 
 
+function lampFull() {
+    playAudio('assets/audio/clic.ogg');
+    lightLamp();
+    lightBody();
+    lightPoster();
+    lightDesk();
+}
