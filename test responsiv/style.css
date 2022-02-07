@@ -1,0 +1,10 @@
+
+
+.fond {
+	background-image: 
+      linear-gradient(
+        rgba(255, 255, 255, 0.3), 
+        rgb(0, 0, 0)
+      ),  /*Applique un filtre noir sur l'image*/
+      url("./image-carrousel.jpg");
+}
