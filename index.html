@@ -134,6 +134,15 @@
                 margin-bottom: 10px !important;
             }
 
+            .radius-top {
+                border-top-right-radius: 15px !important;
+                border-bottom-left-radius: 0 !important;
+            }
+            .radius-bottom {
+                border-bottom-left-radius: 15px !important;
+                border-top-right-radius: 0 !important;
+            }
+
         }
     </style>
 </head>
@@ -154,7 +163,7 @@
                                 <td align="center" class="w600" width="600" height="20"
                                     style="font-size:9px;color: #C6C6C6; padding-bottom: 10px;">
                                     Wanneer dit bericht niet goed wordt weergegeven, <a
-                                        href="http://emailing-br.fr/nissan/nissan-now/210622/index.html"
+                                        href="{{mirror}}"
                                         style="text-decoration: underline; font-weight: bold; color: #C6C6C6;"> volg dan deze link</a>.
                                 </td>
                             </tr>
@@ -176,12 +185,12 @@
                             <tr class="content">
 
                                 <td
-                                    style="background-color: #ffffff;color: #161615;padding: 30px 10px 30px 10px;font-size: 14px; font-weight: normal;text-align: center;">
+                                    style="background-color: #ffffff;color: #161615;padding: 30px;font-size: 14px; font-weight: normal;text-align: center;">
 
                                     <font style="font-weight: bold;font-size: 16px; text-transform: uppercase;">
-                                        Geachte (Meneer/Mevrouw) XXX,
+                                        Geachte {{ contact.CIVILITE }} {{ contact.NOM|upper }},
                                     </font><br><br>
-                                    <font style="font-weight: bold;">Wij zijn zeer verheugd om het volgende hoofdstuk van Nissan met u te schrijven…
+                                    <font style="font-weight: bold;">Wij zijn zeer verheugd om het volgende hoofdstuk van Nissan met u te schrijven&hellip;
                                     </font><br><br>
 
                                     Het begint met ons loyaliteitsprogramma, onze nieuwe web-app die het onderhoud van uw Nissan vereenvoudigt en nog veel meer. Ontdek nu ons gratis Nissan Now-programma.
@@ -208,7 +217,7 @@
                             <tr class="content">
 
                                 <td
-                                    style="background-color: #ffffff;color: #161615;padding: 30px 10px 30px 10px;font-size: 14px; font-weight: normal;text-align: center;">
+                                    style="background-color: #ffffff;color: #161615;padding: 30px 60px 30px 60px;font-size: 14px; font-weight: normal;text-align: center;">
 
                                     <font style="font-weight: bold;font-size: 16px; text-transform: uppercase;">
                                         Uw loyaliteit doet ertoe                                    </font>
@@ -240,11 +249,11 @@
                                                     valign="middle"></td>
 
                                                 <td class=""
-                                                    style="height: 45px;text-align: center;font-size: 14px;background: #00A0DF;color: #FFFFFF;border-radius: 15px;"
+                                                    style="vertical-align: middle;height: 45px;text-align: center;font-size: 14px;background: #00A0DF;color: #FFFFFF;border-radius: 15px;"
                                                     valign="middle">
                                                     <a href="https://www.nissan.nl/nissan-services/loyalty-offers.html"
                                                         target="_blank"
-                                                        style="color: #FFFFFF;height: 45px; text-decoration: none;text-transform: uppercase;line-height: 1.2;">
+                                                        style="color: #FFFFFF;height: 45px; text-decoration: none;text-transform: uppercase;line-height: 0;">
                                                         Ontvang uw beloning <font style="font-size: 20px;">&rsaquo;
                                                         </font>
                                                     </a>
@@ -325,14 +334,14 @@
                                         cellpadding="0" border="0" align="center">
                                         <tbody style="background-color: #161615;">
                                             <tr>
-                                                <td class="mw15" style="height: 45px; width:30%; background: #161615;"
+                                                <td class="mw15" style="vertical-align: middle;height: 45px; width:30%; background: #161615;"
                                                     valign="middle"></td>
 
                                                 <td style="height: 45px;text-align: center;font-size: 14px;background: #00A0DF;color: #FFFFFF;border-radius: 15px;"
                                                     valign="middle">
                                                     <a href="https://www.nissan.nl/nissan-services/loyalty-offers.html"
                                                         target="_blank"
-                                                        style="color: #FFFFFF;height: 45px; text-decoration: none;text-transform: uppercase;line-height: 1.2;">Ontdek Nissan Now <font style="font-size: 20px;">&rsaquo;
+                                                        style="color: #FFFFFF;height: 45px; text-decoration: none;text-transform: uppercase;line-height: 0;">Ontdek Nissan Now <font style="font-size: 20px;">&rsaquo;
                                                         </font>
                                                     </a>
                                                 </td>
@@ -382,16 +391,16 @@
                                             <tr>
 
                                                 <td class="br alignCenter mXPadding10"
-                                                    style="vertical-align: baseline;background-color: #ffffff;color: #161615;padding: 10px;padding-left: 30px;font-size: 14px; font-weight: normal;text-align: left;">
+                                                    style="vertical-align: baseline;background-color: #ffffff;color: #161615;padding: 10px;padding-left: 50px;font-size: 14px; font-weight: normal;text-align: left;">
 
-                                                    <font style="font-weight: bold;font-size: 14px;">Gepersonaliseerde aanbiedingen, uw dealer is slechts één muisklik ver, en nog veel meer.</font>
+                                                    <font style="font-weight: bold;font-size: 14px;">Gepersonaliseerde aanbiedingen, uw dealer is slechts &eacute;&eacute;n muisklik ver, en nog veel meer.</font>
                                                     <br>
                                                     <br>
                                                     <font style="font-size: 14px;">Om er zeker van te zijn dat u niets mist, downloadt u Nissan Now rechtstreeks naar uw smartphone.</font>
 
                                                 </td>
                                                 
-                                                <td class="mBlock mXPadding10" style="padding: 10px;padding-right: 30px;">
+                                                <td class="mBlock mXPadding10" style="padding: 10px;padding-right: 50px;">
                                                     <table>
                                                         <tbody>
                                                             <tr>
@@ -442,34 +451,34 @@
 
                             <tr class="bulle">
                                 <td class="w600 mXPaddingNone " width="600" style="padding: 15px;">
-                                    <table style="margin: 0 auto;width: 100%;" width="100%" cellspacing="0"
+                                    <table class="mBlock" style="margin: 0 auto;width: 100%;" width="100%" cellspacing="0"
                                         cellpadding="0" border="0" align="center">
-                                        <tbody style="background-color: #EFEFEF;">
-                                            <tr>
+                                        <tbody class="mBlock" style="background-color: #EFEFEF;">
+                                            <tr class="mBlock">
 
 
-                                                <td class="mXPadding10"
+                                                <td class="mXPaddingNone mBlock mwauto alignCenter radius-top"
                                                     style="vertical-align: top;width: 50%;font-size: 13px;padding: 25px;padding-left: 70px;border-radius: 15px;border-top-right-radius: 0;border-bottom-right-radius: 0; background-color: #FFFFFF;color: #161615;"
                                                     valign="middle">
-                                                    <font style="font-size: 16px;font-weight: bold;">Hugues Breuze
+                                                    <font style="font-size: 16px;font-weight: bold;">{{ contact.CIVILITE }} {{ contact.NOM|upper }}
                                                     </font>
                                                     <br>
                                                     <br>
                                                     <font style="font-weight: bold;">Chassisnummer</font>
                                                     <br>
-                                                    SJNFCAF15U7085830
+                                                    {{ contact.VIN }}
                                                 </td>
 
-                                                <td class="mXPadding10 "
+                                                <td class="mXPaddingNone mBlock mwauto alignCenter radius-bottom"
                                                     style="width: 50%;font-size: 13px;padding: 25px;padding-left: 50px;border-radius: 15px;border-top-left-radius: 0;border-bottom-left-radius: 0; background-color: #FFFFFF;color: #161615;"
                                                     valign="middle">
                                                     <font style="font-size: 16px;font-weight: bold;">
-                                                        Auto sturm B. V.</font>
+                                                        {{ contact.NIS_DEALER_NAME }}</font>
                                                         <br>
                                                     <br>
-                                                    Amundsenweg 39 <br>
-                                                    4462 GP Goes <br>
-                                                    0113-602000
+                                                    {{ contact.NIS_DEALER_ADRESS }}<br>
+                                                    {{ contact.POST_CODE_VILLE }}<br>
+                                                    {{ contact.NIS_DEALER_TEL }}
                                                 </td>
 
                                             </tr>
@@ -486,12 +495,12 @@
 
                             <tr class="footer">
                                 <td class="w600" width="600"
-                                    style="font-size: 10px;color: #C6C6C6;padding: 30px 0;text-align: left;">
+                                    style="font-size: 10px;color: #C6C6C6;padding: 30px 0;text-align: center;">
 
                                     2022 Nissan, alle rechten voorbehouden. Ontwerp: Highco Mindoza. Foto's: www.gettyimages.fr
                                     <br>
                                     <br><a
-                                    href="http://emailing-br.fr/nissan/nissan-now/210622/index.html"
+                                    href="{{unsubscribe}}"
                                     style="text-decoration: underline; font-weight: bold; color: #C6C6C6;">Afmelden</a>
                                     
                                 </td>
