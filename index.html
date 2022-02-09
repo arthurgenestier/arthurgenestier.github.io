@@ -18,7 +18,7 @@
         body,
         td {
             font-family: Arial, Helvetica, Geneva, sans-serif;
-            font-size: 14px
+            font-size: 13px
         }
 
         .show {
@@ -118,8 +118,25 @@
                 padding-right: 10px !important;
             }
 
+            .mXPadding15 {
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+
             .mPaddingB10 {
                 padding-bottom: 10px !important;
+            }
+
+            .mPaddingB0 {
+                padding-bottom: 0px !important;
+            }
+
+            .pb35 {
+                padding-bottom: 35px !important;
+            }
+
+            .pb20 {
+                padding-bottom: 20px !important;
             }
 
             .fs16 {
@@ -138,6 +155,7 @@
                 border-top-right-radius: 15px !important;
                 border-bottom-left-radius: 0 !important;
             }
+
             .radius-bottom {
                 border-bottom-left-radius: 15px !important;
                 border-top-right-radius: 0 !important;
@@ -149,7 +167,7 @@
 
 <body style="margin:0; padding:0; -webkit-text-size-adjust:none;color: #161615;">
     <table width="100%" cellpadding="0" cellspacing="0" border="0"
-        style="margin: 0;padding: 0;background-color:#EFEFEF;color: #161615;font-family: Arial, Helvetica, Geneva, sans-serif; font-size:14px;">
+        style="margin: 0;padding: 0;background-color:#f8f8f8;color: #161615;font-family: Arial, Helvetica, Geneva, sans-serif; font-size:13px;">
         <tbody>
             <tr>
                 <td align="center">
@@ -171,7 +189,7 @@
                             <tr class="header">
                                 <td class="w600" width="600" style="padding: 0; text-align: center;color: #ffffff;">
 
-                                    <img src="http://emailing-br.fr/nissan/nissan-now/220209/img/header.jpg" alt="Nissan - For you at every moment - Nissan Now"
+                                    <img src="http://emailing-br.fr/nissan/nissan-now/220209/img/header-2.jpg" alt="Nissan - For you at every moment - Nissan Now"
                                         width="600" height="360"
                                         style="width: 100%; max-width: 600px; max-height: 360px; margin: 0;display: block; border: 0;"
                                         class="img-fluid">
@@ -185,10 +203,10 @@
                             <tr class="content">
 
                                 <td
-                                    style="background-color: #ffffff;color: #161615;padding: 30px;font-size: 14px; font-weight: normal;text-align: center;">
+                                    style="background-color: #ffffff;color: #161615;padding: 5px 30px 30px 30px;font-size: 13px; font-weight: normal;text-align: center;">
 
                                     <font style="font-weight: bold;font-size: 16px; text-transform: uppercase;">
-                                        Geachte {{ contact.CIVILITE }} {{ contact.NOM|upper }},
+                                        Geachte {% if not contact.CIVILITE %}Meneer/Mevrouw{% else %}{{ contact.CIVILITE }}{% endif %} {{ contact.NOM|upper }},
                                     </font><br><br>
                                     <font style="font-weight: bold;">Wij zijn zeer verheugd om het volgende hoofdstuk van Nissan met u te schrijven&hellip;
                                     </font><br><br>
@@ -216,8 +234,8 @@
 
                             <tr class="content">
 
-                                <td
-                                    style="background-color: #ffffff;color: #161615;padding: 30px 60px 30px 60px;font-size: 14px; font-weight: normal;text-align: center;">
+                                <td class="mXPadding15"
+                                    style="background-color: #ffffff;color: #161615;padding: 30px 60px 30px 60px;font-size: 13px; font-weight: normal;text-align: center;">
 
                                     <font style="font-weight: bold;font-size: 16px; text-transform: uppercase;">
                                         Uw loyaliteit doet ertoe                                    </font>
@@ -239,21 +257,21 @@
 
 
 
-                            <tr class="text-button">
-                                <td class="w600" width="600">
-                                    <table style="margin: 0 auto;width: 100%;" width="100%" cellspacing="0"
+                            <tr class="text-button" style="background-color: #ffffff;">
+                                <td class="w600" width="600" style="background-color: #ffffff;">
+                                    <table style="background-color: #ffffff;margin: 0 auto;width: 100%;" width="100%" cellspacing="0"
                                         cellpadding="0" border="0" align="center">
                                         <tbody style="background-color: #FFFFFF;">
-                                            <tr>
+                                            <tr style="background-color: #ffffff;">
                                                 <td class="mw15" style="height: 45px; width:30%; background: #ffffff;"
                                                     valign="middle"></td>
 
                                                 <td class=""
-                                                    style="vertical-align: middle;height: 45px;text-align: center;font-size: 14px;background: #00A0DF;color: #FFFFFF;border-radius: 15px;"
+                                                    style="vertical-align: middle;height: 45px;text-align: center;font-size: 13px;background: #00A0DF;color: #FFFFFF;border-radius: 15px;"
                                                     valign="middle">
                                                     <a href="https://www.nissan.nl/nissan-services/loyalty-offers.html"
                                                         target="_blank"
-                                                        style="color: #FFFFFF;height: 45px; text-decoration: none;text-transform: uppercase;line-height: 0;">
+                                                        style="display:block;color: #FFFFFF;height: 45px; text-decoration: none;text-transform: uppercase;line-height: 40px;">
                                                         Ontvang uw beloning <font style="font-size: 20px;">&rsaquo;
                                                         </font>
                                                     </a>
@@ -306,7 +324,7 @@
 
                                                 </td>
                                                 <td class="mXPadding10 alignCenter"
-                                                    style="background-color: #161615;color: #ffffff;padding: 20px 60px 30px 20px;font-size: 14px; font-weight: normal;text-align: left;">
+                                                    style="background-color: #161615;color: #ffffff;padding: 20px 60px 30px 20px;font-size: 13px; font-weight: normal;text-align: left;">
 
                                                     <font
                                                         style="font-weight: bold;font-size: 16px; text-transform: uppercase;">
@@ -337,11 +355,11 @@
                                                 <td class="mw15" style="vertical-align: middle;height: 45px; width:30%; background: #161615;"
                                                     valign="middle"></td>
 
-                                                <td style="height: 45px;text-align: center;font-size: 14px;background: #00A0DF;color: #FFFFFF;border-radius: 15px;"
+                                                <td style="height: 45px;text-align: center;font-size: 13px;background: #00A0DF;color: #FFFFFF;border-radius: 15px;"
                                                     valign="middle">
                                                     <a href="https://www.nissan.nl/nissan-services/loyalty-offers.html"
                                                         target="_blank"
-                                                        style="color: #FFFFFF;height: 45px; text-decoration: none;text-transform: uppercase;line-height: 0;">Ontdek Nissan Now <font style="font-size: 20px;">&rsaquo;
+                                                        style="display:block;color: #FFFFFF;height: 45px; text-decoration: none;text-transform: uppercase;line-height: 40px;">Ontdek Nissan Now <font style="font-size: 20px;">&rsaquo;
                                                         </font>
                                                     </a>
                                                 </td>
@@ -375,7 +393,7 @@
                             <tr class="content">
 
                                 <td
-                                    style="background-color: #ffffff;color: #161615;padding: 10px 10px 10px 10px;font-size: 14px; font-weight: normal;text-align: center;">
+                                    style="background-color: #ffffff;color: #161615;padding: 10px 10px 10px 10px;font-size: 13px; font-weight: normal;text-align: center;">
 
                                     <font style="font-weight: bold;font-size: 16px; text-transform: uppercase;">Nissan
                                         Nissan Now gaat ook over...</font>
@@ -391,12 +409,12 @@
                                             <tr>
 
                                                 <td class="br alignCenter mXPadding10"
-                                                    style="vertical-align: baseline;background-color: #ffffff;color: #161615;padding: 10px;padding-left: 50px;font-size: 14px; font-weight: normal;text-align: left;">
+                                                    style="vertical-align: baseline;background-color: #ffffff;color: #161615;padding: 10px;padding-left: 50px;font-size: 13px; font-weight: normal;text-align: left;">
 
-                                                    <font style="font-weight: bold;font-size: 14px;">Gepersonaliseerde aanbiedingen, uw dealer is slechts &eacute;&eacute;n muisklik ver, en nog veel meer.</font>
+                                                    <font style="font-weight: bold;font-size: 13px;">Gepersonaliseerde aanbiedingen, uw dealer is slechts &eacute;&eacute;n muisklik ver, en nog veel meer.</font>
                                                     <br>
                                                     <br>
-                                                    <font style="font-size: 14px;">Om er zeker van te zijn dat u niets mist, downloadt u Nissan Now rechtstreeks naar uw smartphone.</font>
+                                                    <font style="font-size: 13px;">Om er zeker van te zijn dat u niets mist, downloadt u Nissan Now rechtstreeks naar uw smartphone.</font>
 
                                                 </td>
                                                 
@@ -411,7 +429,7 @@
                                                                         1</font>
                                                                 </td>
                                                                 <td
-                                                                    style="padding-bottom: 10px;padding-left: 10px;background-color: #ffffff;color: #161615;font-size: 14px; font-weight: normal;text-align: left;">
+                                                                    style="padding-bottom: 10px;padding-left: 10px;background-color: #ffffff;color: #161615;font-size: 13px; font-weight: normal;text-align: left;">
                                                 
                                                                     Ga naar <a style="text-decoration: underline;" target="_blank"
                                                                         href="https://www.nissan.nl/nissan-services/loyalty-offers.html">nissannow.nl</a></td>
@@ -424,19 +442,19 @@
                                                                         2</font>
                                                                 </td>
                                                                 <td style="padding-bottom: 10px;padding-left: 10px;">
-                                                                    <font style="font-size: 14px; font-weight: bold;">Klik op de pop-up '</font>
-                                                                    <font style="font-size: 14px;">download Nissan Now' op uw smartphone</font>
+                                                                    <font style="font-size: 13px; font-weight: bold;">Klik op de pop-up '</font>
+                                                                    <font style="font-size: 13px;">download Nissan Now' op uw smartphone</font>
                                                                 </td>
                                                             </tr>
                                                             <tr>
-                                                                <td>
+                                                                <td class="padding-bottom: 35px;" style="vertical-align: middle;padding-bottom: 45px;">
                                                                     <font
                                                                         style="border: solid 1px;border-radius: 20px;padding: 5px;padding-left: 9px;padding-right: 9px;">
                                                                         3</font>
                                                                 </td>
-                                                                <td style="padding-bottom: 10px;padding-left: 10px;">
-                                                                    <font style="font-size: 14px;">U heeft nu rechtstreeks toegang tot Nissan Now </font>
-                                                                    <font style="font-size: 14px; font-weight: bold;">vanaf het startscherm van uw smartphone!</font>
+                                                                <td class="pb20" style="padding-bottom: 10px;padding-left: 10px;">
+                                                                    <font style="font-size: 13px;">U heeft nu rechtstreeks toegang tot Nissan Now </font>
+                                                                    <font style="font-size: 13px; font-weight: bold;">vanaf het startscherm van uw smartphone!</font>
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -453,11 +471,11 @@
                                 <td class="w600 mXPaddingNone " width="600" style="padding: 15px;">
                                     <table class="mBlock" style="margin: 0 auto;width: 100%;" width="100%" cellspacing="0"
                                         cellpadding="0" border="0" align="center">
-                                        <tbody class="mBlock" style="background-color: #EFEFEF;">
+                                        <tbody class="mBlock" style="background-color: #f8f8f8;">
                                             <tr class="mBlock">
 
 
-                                                <td class="mXPaddingNone mBlock mwauto alignCenter radius-top"
+                                                <td class="mXPaddingNone mBlock mwauto alignCenter radius-top mPaddingB0"
                                                     style="vertical-align: top;width: 50%;font-size: 13px;padding: 25px;padding-left: 70px;border-radius: 15px;border-top-right-radius: 0;border-bottom-right-radius: 0; background-color: #FFFFFF;color: #161615;"
                                                     valign="middle">
                                                     <font style="font-size: 16px;font-weight: bold;">{{ contact.CIVILITE }} {{ contact.NOM|upper }}
