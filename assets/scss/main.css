@@ -77,11 +77,9 @@ p {
   font-size: 1.2rem;
 }
 
-.home {
-  margin-bottom: 12rem;
-}
 .home .home-header {
   background-image: url(/assets/img/bg-home.jpg);
+  padding-top: 7.5rem !important;
 }
 .home .home-header .container .content {
   padding: 5%;

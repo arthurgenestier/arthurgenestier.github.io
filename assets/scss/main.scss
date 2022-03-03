@@ -93,9 +93,10 @@ p {
 }
 
 .home {
-    margin-bottom: 12rem;
+
     .home-header {
         background-image: url(/assets/img/bg-home.jpg);
+        padding-top: 7.5rem !important;
         .container {
             .content {
                 padding: 5%;
