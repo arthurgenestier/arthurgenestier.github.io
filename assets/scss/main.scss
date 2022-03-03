@@ -1,0 +1,236 @@
+@import 'Utils/fonts';
+@import 'Utils/vars';
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+    font-family: "NouvelR";
+    background-color: $white;
+}
+
+h1,
+h2,
+h3,
+.like-h1,
+.like-h2 {
+    //font-weight: bold;
+}
+
+h1,
+.like-h1 {
+    font-size: 4.6rem;
+    text-transform: lowercase;
+}
+
+h2,
+.like-h2 {
+    font-size: 2.2rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+.btn {
+    border-radius: 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.btn-white {
+    background: $white;
+    &:hover,
+    &:focus {
+        background: $black;
+        color: $white;
+    }
+}
+.btn-dark{
+    border: none;
+    &:hover,
+    &:focus {        
+        background: $white;
+        color: $black;
+        box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5);
+    }
+}
+
+.navbar {
+    img {
+        max-height: 4rem;
+    }
+    .navbar-nav {
+        margin-top: 1.8rem;
+        .nav-link {
+            color: $white;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            //font-weight: bold;
+            &:focus,
+            &:hover {
+                color: $grey-light;
+            }
+        }
+        .dropdown {
+            .dropdown-menu {
+                padding: 0;
+                .dropdown-item {
+                    text-transform: uppercase;
+                    text-transform: uppercase;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+    }
+}
+
+.home {
+    margin-bottom: 12rem;
+    .home-header {
+        background-image: url(/assets/img/bg-home.jpg);
+        .container {
+            .content {
+                padding: 5%;
+
+            }
+        }
+    }
+
+    .second-section {
+        background-image: url(/assets/img/bg-home-2.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .third-section {
+        .carousel {
+            .carousel-inner {
+                padding-bottom: 30rem;
+                .carousel-caption {
+                    bottom: -30rem;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    font-size: 1.6rem;
+    border-top: $white solid;
+    a {
+        color: $white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        &:focus,
+            &:hover {
+                color: $grey-light;
+            }
+    }
+}
+
+
+
+
+
+
+
+@media (min-width: $break-lg) {
+    h1,
+    .like-h1 {
+    font-size: 5.8rem;
+    }
+
+    .mr-15 {
+        margin-right: 15%;
+    }
+    .navbar {
+        .navbar-nav {
+            .dropdown {
+                .dropdown-menu {
+                    top: 4.3rem;
+                    min-width: 100%;
+                    border: 0;
+                    border-radius: 0;
+                    margin-top: 0;
+                    li {
+                        border-bottom: solid $grey-light 0.1rem;
+                        &:last-child {
+                            border-bottom: 0;
+                        }
+                        .dropdown-item {
+                            background-color:$white !important;
+                            color: $black !important;
+                            &:focus,
+                            &:hover {
+                                background-color: $grey-light !important;
+                            }
+                            //font-weight: bold;
+                        }
+                    }
+                }
+            }
+    
+        }
+    }
+    .home {
+        .home-header {
+            height: calc(100vh - 76.25px);
+
+            .container {
+                .content {
+                    width: 60%;
+                    padding-top: 20%;
+                }
+            }
+        }
+        .first-section {
+            img {
+                max-width: 60rem;
+            }
+        }
+
+        .second-section {
+            .content {
+                width: 40%;
+                padding-top: 15rem !important;
+                padding-bottom: 15rem !important;
+            }
+        }
+
+        .third-section {
+            h2 {
+                width: 50%;
+            }
+            .carousel {
+                .carousel-inner {
+                    padding: 15rem;
+                    .carousel-item {
+                        img {
+                            width: 50% !important;
+                        }
+                        .carousel-caption {
+                            right: 0;
+                            left: 50%;
+                            bottom: 40rem;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+
+
+@import 'Pages/home';
+
