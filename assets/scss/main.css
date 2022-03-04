@@ -31,6 +31,22 @@ p {
   font-size: 1.6rem;
 }
 
+.bg-yellow {
+  background: #FAEB68;
+}
+
+.bg-peach {
+  background: #F8CFA1;
+}
+
+.bg-blue {
+  background: #74BEC1;
+}
+
+.bg-pink {
+  background: #F6CDD2;
+}
+
 .btn {
   border-radius: 0;
   font-size: 1.2rem;
@@ -81,7 +97,8 @@ p {
 }
 
 .home,
-.objectifs {
+.objectifs,
+.media {
   padding-top: 7.625rem;
 }
 
@@ -109,6 +126,74 @@ p {
 .objectifs .caption {
   font-size: 2.1rem;
   font-weight: bold;
+}
+
+.media .calendrier {
+  position: relative;
+  margin-right: 9px;
+}
+.media .calendrier::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 19.75px 0 19.75px 9px;
+  border-color: transparent transparent transparent #FFFFFF;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.media .calendrier::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 19.75px 0 19.75px 9px;
+  border-color: transparent transparent transparent #212529;
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+.media .calendrier p {
+  margin: 0;
+  font-size: 1.3rem;
+}
+.media .calendrier h2 {
+  margin: 0;
+}
+.media .calendrier.bg-yellow, .media .calendrier.bg-blue, .media .calendrier.bg-pink, .media .calendrier.bg-peach {
+  margin-right: 15px;
+}
+.media .calendrier.bg-yellow::after, .media .calendrier.bg-blue::after, .media .calendrier.bg-pink::after, .media .calendrier.bg-peach::after {
+  content: "";
+  border-width: 23.2px 0 23.2px 15px;
+}
+.media .calendrier.bg-yellow::before, .media .calendrier.bg-blue::before, .media .calendrier.bg-pink::before, .media .calendrier.bg-peach::before {
+  content: "";
+  border-width: 23.2px 0 23.2px 15px;
+}
+.media .calendrier.bg-yellow::before {
+  content: "";
+  border-color: transparent transparent transparent #FAEB68;
+}
+.media .calendrier.bg-peach::before {
+  content: "";
+  border-color: transparent transparent transparent #F8CFA1;
+}
+.media .calendrier.bg-blue::before {
+  content: "";
+  border-color: transparent transparent transparent #74BEC1;
+}
+.media .calendrier.bg-pink::before {
+  content: "";
+  border-color: transparent transparent transparent #F6CDD2;
+}
+.media .calendrier .mini-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 2.5px 0 2.5px 6px;
+  border-color: transparent transparent transparent #ffffff;
 }
 
 footer {

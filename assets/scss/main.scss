@@ -38,6 +38,19 @@ p {
     font-size: 1.6rem;
 }
 
+.bg-yellow {
+    background: $yellow;
+}
+.bg-peach {
+    background: $peach;
+}
+.bg-blue {
+    background: $blue;
+}
+.bg-pink {
+    background: $pink;
+}
+
 .btn {
     border-radius: 0;
     font-size: 1.2rem;
@@ -95,7 +108,8 @@ p {
     }
 }
 .home,
-.objectifs {
+.objectifs,
+.media {
     padding-top: 7.625rem;
 }
 .home {
@@ -134,6 +148,89 @@ p {
     .caption {
         font-size: 2.1rem;
         font-weight: bold;
+    }
+}
+
+.media {
+    .calendrier {
+        position: relative;
+        margin-right: 9px;
+        &::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 19.75px 0 19.75px 9px;
+            border-color: transparent transparent transparent $white;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        &::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 19.75px 0 19.75px 9px;
+            border-color: transparent transparent transparent $dark;
+            position: absolute;
+            top: 0;
+            left: 100%;
+        }
+        p {
+            margin: 0;
+            font-size: 1.3rem;
+            // font-weight: bold;
+        }
+        h2 {
+            margin: 0;
+        }
+
+        &.bg-yellow,
+        &.bg-blue,
+        &.bg-pink,
+        &.bg-peach {
+            margin-right: 15px;
+            &::after {
+                content: '';
+                border-width: 23.2px 0 23.2px 15px;
+            }
+                &::before {
+                    content: '';
+                    border-width: 23.2px 0 23.2px 15px;
+                }
+        }
+        &.bg-yellow {
+            &::before {
+                content: '';
+                border-color: transparent transparent transparent $yellow;
+            }
+        }
+        &.bg-peach {
+            &::before {
+                content: '';
+                border-color: transparent transparent transparent $peach;
+            }
+        }
+        &.bg-blue {
+            &::before {
+                content: '';
+                border-color: transparent transparent transparent $blue;
+            }
+        }
+        &.bg-pink {
+            &::before {
+                content: '';
+                border-color: transparent transparent transparent $pink;
+            }
+        }
+        .mini-triangle {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 2.5px 0 2.5px 6px;
+            border-color: transparent transparent transparent #ffffff;
+        }
     }
 }
 footer {

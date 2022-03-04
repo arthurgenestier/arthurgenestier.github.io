@@ -7,49 +7,11 @@ $break-md: 768px;
 $break-sm: 576px;
 $break-xs: 480px;
 
-// Greys
-
-$grey: #45483E; // bg mobile menu 80%
-$grey-light: #CCCCCC;
-
-$gradient-dark: #2A3607;
-$gradient-dark2: #1B2206;
-
-// Colors
-
 $black: #000000;
+$dark: #212529;
+$grey-light: #CCCCCC;
+$yellow: #FAEB68;
+$peach:#F8CFA1;
+$blue:#74BEC1;
+$pink:#F6CDD2;
 $white: #FFFFFF;
-$blue: #004D97;
-$blue-light: #DFF9F7;
-$blue-bg: #BFF3F0;
-
-$green: #2BD6CE;
-$green-dark: #007675;
-
-
-
-$color-facebook: #3B5998;
-$color-twitter: #1DA1F2;
-$color-gplus: #DD4B39;
-$color-rss: #F26522;
-$color-messenger: #0084FF;
-
-$color-error: #FF4848;
-
-// Fonts
-
-$font-regular: 'Manjari', Arial, sans-serif;
-$font-pro: Arial, sans-serif;
-
-// Gradient
-
-$start-gradient: #99FF74;
-$end-gradient: #FF2B2B;
-
-// Shadows
-
-$black-shadow: rgba(0, 0, 0, .4);
-$black-shadow-light: rgba(0, 0, 0, .1);
-$black-opacity: rgba(0, 0, 0, 0);
-$grey-opacity: rgba(110, 110, 110, .6);
-$grey-border: transparentize($grey, .2);
