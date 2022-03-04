@@ -54,6 +54,12 @@ p {
 .bg-pink {
     background: $pink;
 }
+.bg-pink-dark {
+    background: $pink-dark;
+}
+.bg-orange {
+    background: $orange;
+}
 
 .btn {
     border-radius: 0;
@@ -116,7 +122,8 @@ p {
 .home,
 .objectifs,
 .media,
-.renew {
+.renew,
+.identite {
     padding-top: 7.625rem;
 }
 .hero-section {
@@ -280,6 +287,65 @@ p {
                 padding-left: 2rem;
             }
         }
+    }
+}
+
+.identite {
+    .chrono {
+        p {
+            margin: 0;
+            font-size: 3.2rem;
+        }
+        .date {
+            width: 10%;
+            text-align: center;
+            background:$black;
+            color:$white;
+            padding: 15% 0;
+
+        }
+        .photo,
+        .description {
+            width: 45%;
+        }
+        .description {
+            border: solid black;
+            padding: 2rem;
+            border-left: 0;
+            position: relative;
+            &.droite {
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 10px 0 10px 10px;
+                    border-color: transparent transparent transparent $black;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 0;
+                }
+            }
+            &.gauche {
+                border-left: solid $black;
+                border-right: 0;
+                &::before {
+                    content: '';
+                    position: absolute;
+    
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 10px 10px 10px 0;
+                    border-color: transparent $black transparent transparent;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 0;
+                }
+            }
+        }
+
     }
 }
 footer {
