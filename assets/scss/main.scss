@@ -9,6 +9,7 @@ html {
 body {
     font-family: "NouvelR";
     background-color: $white;
+    color: $black;
 }
 
 h1,
@@ -38,6 +39,9 @@ p {
     font-size: 1.6rem;
 }
 
+.bg-black {
+    background: $black;
+}
 .bg-yellow {
     background: $yellow;
 }
@@ -65,8 +69,10 @@ p {
         color: $white;
     }
 }
-.btn-dark{
+.btn-black{
     border: none;
+    background: $black;
+    color: $white;
     &:hover,
     &:focus {        
         background: $white;
@@ -109,8 +115,13 @@ p {
 }
 .home,
 .objectifs,
-.media {
+.media,
+.renew {
     padding-top: 7.625rem;
+}
+.hero-section {
+    background-size: cover;
+    background-position: center center;
 }
 .home {
     .parallax {
@@ -126,10 +137,8 @@ p {
         }
     }
 
-    .second-section {
+    .hero-section {
         background-image: url(/assets/img/bg-home-2.jpg);
-        background-size: cover;
-        background-position: center center;
     }
 
     .third-section {
@@ -154,7 +163,6 @@ p {
 .media {
     .calendrier {
         position: relative;
-        margin-right: 9px;
         &::after {
             content: '';
             width: 0;
@@ -172,7 +180,7 @@ p {
             height: 0;
             border-style: solid;
             border-width: 19.75px 0 19.75px 9px;
-            border-color: transparent transparent transparent $dark;
+            border-color: transparent transparent transparent $black;
             position: absolute;
             top: 0;
             left: 100%;
@@ -229,7 +237,48 @@ p {
             height: 0;
             border-style: solid;
             border-width: 2.5px 0 2.5px 6px;
-            border-color: transparent transparent transparent #ffffff;
+            border-color: transparent transparent transparent $white;
+        }
+    }
+}
+
+.renew {
+    .hero-section {
+        background-image: url(/assets/img/photo-refont.jpg);
+        min-height: 24.5rem;
+    }
+    .table {
+        font-size: 1.6rem;
+        color: $black;
+        h2 {
+            font-size: 3.2rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
+            text-transform: lowercase;
+            background: $black;
+            color:$white;
+            text-align: center;
+            border: solid 0.1rem $black;
+            &:first-child {
+                background: transparent;
+                border: 0;
+            }
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        td {
+            border: solid 0.1rem $black;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            text-align: center;
+            &:first-child {
+                text-align: left;
+                padding-left: 2rem;
+            }
         }
     }
 }
@@ -355,6 +404,19 @@ footer {
         .content {
             p {
                 width: 33%;
+            }
+        }
+    }
+    .media{
+        .calendrier {
+            margin-right: 9px;
+        }
+    }
+
+    .renew {
+        .hero-section {
+            h1 {
+                width: 40%
             }
         }
     }
