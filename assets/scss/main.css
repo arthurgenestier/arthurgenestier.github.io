@@ -68,6 +68,9 @@ p {
 .navbar .navbar-nav .nav-link:focus, .navbar .navbar-nav .nav-link:hover {
   color: #CCCCCC;
 }
+.navbar .navbar-nav .disabled {
+  color: #CCCCCC;
+}
 .navbar .navbar-nav .dropdown .dropdown-menu {
   padding: 0;
 }
@@ -77,9 +80,16 @@ p {
   font-size: 1.2rem;
 }
 
-.home .home-header {
+.home,
+.objectifs {
+  padding-top: 7.625rem;
+}
+
+.home .parallax {
   background-image: url(/assets/img/bg-home.jpg);
-  padding-top: 7.5rem !important;
+}
+.home .home-header .container {
+  height: 50rem;
 }
 .home .home-header .container .content {
   padding: 5%;
@@ -94,6 +104,11 @@ p {
 }
 .home .third-section .carousel .carousel-inner .carousel-caption {
   bottom: -30rem;
+}
+
+.objectifs .caption {
+  font-size: 2.1rem;
+  font-weight: bold;
 }
 
 footer {
@@ -141,12 +156,27 @@ footer a:focus, footer a:hover {
     background-color: #CCCCCC !important;
   }
 
+  .parallax {
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .home,
+.objectifs {
+    padding-top: 0;
+  }
+
   .home .home-header {
-    height: calc(100vh - 76.25px);
+    height: 100vh;
+  }
+  .home .home-header .container {
+    padding-top: 10%;
   }
   .home .home-header .container .content {
     width: 60%;
-    padding-top: 20%;
   }
   .home .first-section img {
     max-width: 60rem;
@@ -169,5 +199,9 @@ footer a:focus, footer a:hover {
     right: 0;
     left: 50%;
     bottom: 25%;
+  }
+
+  .objectifs .content p {
+    width: 33%;
   }
 }/*# sourceMappingURL=main.css.map */

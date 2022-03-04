@@ -78,6 +78,9 @@ p {
                 color: $grey-light;
             }
         }
+        .disabled {
+            color: $grey-light;
+        }
         .dropdown {
             .dropdown-menu {
                 padding: 0;
@@ -91,13 +94,17 @@ p {
 
     }
 }
-
+.home,
+.objectifs {
+    padding-top: 7.625rem;
+}
 .home {
-
-    .home-header {
+    .parallax {
         background-image: url(/assets/img/bg-home.jpg);
-        padding-top: 7.5rem !important;
+    }
+    .home-header {
         .container {
+            height: 50rem;
             .content {
                 padding: 5%;
 
@@ -123,6 +130,12 @@ p {
     }
 }
 
+.objectifs {
+    .caption {
+        font-size: 2.1rem;
+        font-weight: bold;
+    }
+}
 footer {
     font-size: 1.6rem;
     border-top: $white solid;
@@ -182,14 +195,26 @@ footer {
     
         }
     }
+    .parallax {
+        min-height: 100vh; 
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .home,
+    .objectifs {
+        padding-top: 0;
+    }
     .home {
         .home-header {
-            height: calc(100vh - 76.25px);
+            height: 100vh;
 
             .container {
+                padding-top: 10%;
                 .content {
                     width: 60%;
-                    padding-top: 20%;
                 }
             }
         }
@@ -228,6 +253,13 @@ footer {
             }
         }
 
+    }
+    .objectifs {
+        .content {
+            p {
+                width: 33%;
+            }
+        }
     }
 
 }
