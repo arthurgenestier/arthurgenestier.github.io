@@ -21,11 +21,11 @@ h1,
 
 h2,
 .like-h2 {
-  font-size: 2.2rem;
+  font-size: 4rem;
 }
 
 h3 {
-  font-size: 1.6rem;
+  font-size: 3.2rem;
 }
 
 p {
@@ -33,11 +33,11 @@ p {
 }
 
 .bg-black {
-  background: #000000;
+  background: #000000 !important;
 }
 
 .bg-yellow {
-  background: #FAEB68;
+  background: #FAEB68 !important;
 }
 
 .bg-peach {
@@ -45,7 +45,11 @@ p {
 }
 
 .bg-blue {
-  background: #74BEC1;
+  background: #74BEC1 !important;
+}
+
+.bg-blue2 {
+  background: #19B3D0;
 }
 
 .bg-pink {
@@ -58,6 +62,14 @@ p {
 
 .bg-orange {
   background: #FEB730;
+}
+
+.bg-grey-blue {
+  background: #929EA0;
+}
+
+.bg-grey-light {
+  background: #CCCCCC !important;
 }
 
 .btn {
@@ -124,6 +136,11 @@ p {
   background-position: center center;
 }
 
+.home .hero-section,
+.identite .hero-section {
+  background-image: url(/assets/img/bg-home-2.jpg);
+}
+
 .home .parallax {
   background-image: url(/assets/img/bg-home.jpg);
 }
@@ -132,9 +149,6 @@ p {
 }
 .home .home-header .container .content {
   padding: 5%;
-}
-.home .hero-section {
-  background-image: url(/assets/img/bg-home-2.jpg);
 }
 .home .third-section .carousel .carousel-inner {
   padding-bottom: 30rem;
@@ -254,6 +268,20 @@ p {
   padding-left: 2rem;
 }
 
+.identite {
+  list-style: url("/assets/img/icon-check.svg");
+}
+.identite ul li p {
+  vertical-align: top;
+  display: inline-block;
+}
+.identite .hero-section .content h2 {
+  font-size: 4rem;
+  width: 60%;
+}
+.identite .hero-section .content ul {
+  padding-left: 5rem;
+}
 .identite .chrono p {
   margin: 0;
   font-size: 3.2rem;
@@ -263,7 +291,16 @@ p {
   text-align: center;
   background: #000000;
   color: #FFFFFF;
+  padding: 7% 0;
+}
+.identite .chrono div.d-flex:nth-child(1) > .date:nth-child(2) {
+  padding: 20% 0;
+}
+.identite .chrono div.d-flex:nth-child(3) > .date:nth-child(2) {
   padding: 15% 0;
+}
+.identite .chrono div.d-flex:nth-child(9) > .date:nth-child(2) {
+  padding: 9% 0;
 }
 .identite .chrono .photo,
 .identite .chrono .description {
@@ -271,7 +308,7 @@ p {
 }
 .identite .chrono .description {
   border: solid black;
-  padding: 2rem;
+  padding: 2rem 3rem;
   border-left: 0;
   position: relative;
 }
@@ -302,6 +339,60 @@ p {
   top: 50%;
   transform: translateY(-50%);
   right: 0;
+}
+.identite .bg-black h3 {
+  font-size: 3.2rem;
+}
+.identite table {
+  border-collapse: unset;
+}
+.identite table tr {
+  vertical-align: middle;
+}
+.identite table tr:first-of-type th {
+  padding: 3rem;
+  background-size: cover;
+  background-position: center bottom;
+}
+.identite table tr:first-of-type th:nth-child(2) {
+  background-image: url(/assets/img/fond-noir-tableau.png);
+}
+.identite table tr:first-of-type th:nth-child(3) {
+  background-image: url(/assets/img/fond-blan-tableau.png);
+}
+.identite table tr:first-of-type th:nth-child(4) {
+  background-image: url(/assets/img/fond-bleu-tableau.png);
+}
+.identite table tr:first-of-type th:nth-child(5) {
+  background-image: url(/assets/img/fond-jaune-tableau.png);
+}
+.identite table tr img {
+  height: 10rem;
+}
+.identite table tr td {
+  text-align: center;
+  padding: 4rem;
+  width: 20%;
+  border: 0;
+}
+.identite table tr td p {
+  font-size: 1.8rem;
+  margin: 0;
+}
+.identite table tr td:nth-child(1) {
+  text-align: left;
+  text-transform: uppercase;
+}
+.identite table tr td:nth-child(3) {
+  border: solid #000000 0.1rem;
+}
+.identite table tr th {
+  width: 20%;
+  border: 0;
+  text-align: center;
+}
+.identite table tr th p {
+  font-size: 1.8rem;
 }
 
 footer {
