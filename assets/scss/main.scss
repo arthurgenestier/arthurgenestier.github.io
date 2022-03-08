@@ -12,13 +12,6 @@ body {
     color: $black;
 }
 
-h1,
-h2,
-h3,
-.like-h1,
-.like-h2 {
-    //font-weight: bold;
-}
 
 h1,
 .like-h1 {
@@ -37,6 +30,15 @@ h3 {
 
 p {
     font-size: 1.6rem;
+}
+
+ul {
+    li {
+         p {
+            vertical-align: top;
+            display: inline-block;
+         }
+    }
 }
 
 .bg-black {
@@ -132,7 +134,9 @@ p {
 .objectifs,
 .media,
 .renew,
-.identite {
+.identite,
+.apprvo,
+.restitution {
     padding-top: 7.625rem;
 }
 .hero-section {
@@ -147,7 +151,6 @@ p {
 
 .carousel {
     .carousel-inner {
-        padding-bottom: 30rem;
         .carousel-caption {
             bottom: -30rem;
         }
@@ -165,6 +168,11 @@ p {
                 padding: 5%;
 
             }
+        }
+    }
+    .carousel {
+        .carousel-inner {
+            padding-bottom: 30rem;
         }
     }
 
@@ -301,16 +309,9 @@ p {
     }
 }
 
+
 .identite {
     list-style: url('/assets/img/icon-check.svg');
-    ul {
-        li {
-             p {
-                vertical-align: top;
-                display: inline-block;
-             }
-        }
-    }
     .hero-section {
         .content {
             h2 {
@@ -473,16 +474,21 @@ p {
         }
     }
     list-style: url('/assets/img/icon-check-black.svg');
-    ul {
-        li {
-             p {
-                vertical-align: top;
-                display: inline-block;
-             }
+}
+
+.restitution {
+    .cross {
+        list-style: url('/assets/img/icon-cross.svg');
+    }
+    .check {
+        list-style: url('/assets/img/icon-check-black.svg');
+    }
+    .second-section {
+        img {
+            width: 10rem;
         }
     }
 }
-
 footer {
     font-size: 1.6rem;
     border-top: $white solid;
@@ -508,6 +514,7 @@ footer {
     h1,
     .like-h1 {
     font-size: 5.8rem;
+    width: 45%;
     }
 
     .mr-15 {
@@ -620,13 +627,6 @@ footer {
         }
     }
 
-    .renew {
-        .hero-section {
-            h1 {
-                width: 40%
-            }
-        }
-    }
 
     .apprvo {
         .carousel {
@@ -635,6 +635,14 @@ footer {
             }
         }
     }
+.restitution {
+
+    .second-section {
+        img {
+            width: 16rem;
+        }
+    }
+}
 
 }
 

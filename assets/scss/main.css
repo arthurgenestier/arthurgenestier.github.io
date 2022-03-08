@@ -32,6 +32,11 @@ p {
   font-size: 1.6rem;
 }
 
+ul li p {
+  vertical-align: top;
+  display: inline-block;
+}
+
 .bg-black {
   background: #000000 !important;
 }
@@ -127,7 +132,9 @@ p {
 .objectifs,
 .media,
 .renew,
-.identite {
+.identite,
+.apprvo,
+.restitution {
   padding-top: 7.625rem;
 }
 
@@ -141,9 +148,6 @@ p {
   background-image: url(/assets/img/bg-home-2.jpg);
 }
 
-.carousel .carousel-inner {
-  padding-bottom: 30rem;
-}
 .carousel .carousel-inner .carousel-caption {
   bottom: -30rem;
 }
@@ -156,6 +160,9 @@ p {
 }
 .home .home-header .container .content {
   padding: 5%;
+}
+.home .carousel .carousel-inner {
+  padding-bottom: 30rem;
 }
 
 .objectifs .caption {
@@ -271,10 +278,6 @@ p {
 
 .identite {
   list-style: url("/assets/img/icon-check.svg");
-}
-.identite ul li p {
-  vertical-align: top;
-  display: inline-block;
 }
 .identite .hero-section .content h2 {
   font-size: 4rem;
@@ -413,9 +416,15 @@ p {
 .apprvo .carousel .carousel-indicators button.active {
   background: #000000;
 }
-.apprvo ul li p {
-  vertical-align: top;
-  display: inline-block;
+
+.restitution .cross {
+  list-style: url("/assets/img/icon-cross.svg");
+}
+.restitution .check {
+  list-style: url("/assets/img/icon-check-black.svg");
+}
+.restitution .second-section img {
+  width: 10rem;
 }
 
 footer {
@@ -436,6 +445,7 @@ footer a:focus, footer a:hover {
   h1,
 .like-h1 {
     font-size: 5.8rem;
+    width: 45%;
   }
 
   .mr-15 {
@@ -517,11 +527,11 @@ footer a:focus, footer a:hover {
     margin-right: 9px;
   }
 
-  .renew .hero-section h1 {
-    width: 40%;
-  }
-
   .apprvo .carousel .carousel-inner {
     padding: 0;
+  }
+
+  .restitution .second-section img {
+    width: 16rem;
   }
 }/*# sourceMappingURL=main.css.map */
