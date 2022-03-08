@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "NouvelR";
   src: url("/assets/fonts/NouvelR-Variable.woff2") format("woff2"), url("/assets/fonts/NouvelR-Variable.woff") format("woff2"), url("/assets/fonts/NouvelR-Variable.ttf") format("ttf");
@@ -16,7 +17,6 @@ body {
 h1,
 .like-h1 {
   font-size: 4.6rem;
-  text-transform: lowercase;
 }
 
 h2,
@@ -26,6 +26,12 @@ h2,
 
 h3 {
   font-size: 3.2rem;
+}
+
+h1,
+h2,
+h3 {
+  text-transform: lowercase;
 }
 
 p {
@@ -74,7 +80,7 @@ ul li p {
 }
 
 .bg-grey-light {
-  background: #CCCCCC !important;
+  background: #F2F2F2 !important;
 }
 
 .btn {
@@ -114,10 +120,10 @@ ul li p {
   font-size: 1.2rem;
 }
 .navbar .navbar-nav .nav-link:focus, .navbar .navbar-nav .nav-link:hover {
-  color: #CCCCCC;
+  color: #F2F2F2;
 }
 .navbar .navbar-nav .disabled {
-  color: #CCCCCC;
+  color: #F2F2F2;
 }
 .navbar .navbar-nav .dropdown .dropdown-menu {
   padding: 0;
@@ -134,7 +140,8 @@ ul li p {
 .renew,
 .identite,
 .apprvo,
-.restitution {
+.restitution,
+.bilan {
   padding-top: 7.625rem;
 }
 
@@ -207,11 +214,11 @@ ul li p {
 }
 .media .calendrier.bg-yellow::after, .media .calendrier.bg-blue::after, .media .calendrier.bg-pink::after, .media .calendrier.bg-peach::after {
   content: "";
-  border-width: 23.2px 0 23.2px 15px;
+  border-width: 34px 0 34px 15px;
 }
 .media .calendrier.bg-yellow::before, .media .calendrier.bg-blue::before, .media .calendrier.bg-pink::before, .media .calendrier.bg-peach::before {
   content: "";
-  border-width: 23.2px 0 23.2px 15px;
+  border-width: 34px 0 34px 15px;
 }
 .media .calendrier.bg-yellow::before {
   content: "";
@@ -279,32 +286,27 @@ ul li p {
 .identite {
   list-style: url("/assets/img/icon-check.svg");
 }
-.identite .hero-section .content h2 {
-  font-size: 4rem;
-  width: 60%;
-}
 .identite .hero-section .content ul {
   padding-left: 5rem;
 }
 .identite .chrono p {
   margin: 0;
-  font-size: 3.2rem;
 }
 .identite .chrono .date {
   width: 10%;
   text-align: center;
   background: #000000;
   color: #FFFFFF;
-  padding: 7% 0;
+  padding: 5% 0;
 }
-.identite .chrono div.d-flex:nth-child(1) > .date:nth-child(2) {
-  padding: 20% 0;
+.identite .chrono .p-10 {
+  padding: 10% 0 !important;
 }
-.identite .chrono div.d-flex:nth-child(3) > .date:nth-child(2) {
-  padding: 15% 0;
+.identite .chrono .p-15 {
+  padding: 15% 0 !important;
 }
-.identite .chrono div.d-flex:nth-child(9) > .date:nth-child(2) {
-  padding: 9% 0;
+.identite .chrono .p-30 {
+  padding: 30% 0 !important;
 }
 .identite .chrono .photo,
 .identite .chrono .description {
@@ -312,7 +314,7 @@ ul li p {
 }
 .identite .chrono .description {
   border: solid black;
-  padding: 2rem 3rem;
+  padding: 1rem 2rem;
   border-left: 0;
   position: relative;
 }
@@ -326,7 +328,7 @@ ul li p {
   border-color: transparent transparent transparent #000000;
   top: 50%;
   transform: translateY(-50%);
-  left: 0;
+  left: -1%;
 }
 .identite .chrono .description.gauche {
   border-left: solid #000000;
@@ -362,7 +364,7 @@ ul li p {
   background-image: url(/assets/img/fond-noir-tableau.png);
 }
 .identite table tr:first-of-type th:nth-child(3) {
-  background-image: url(/assets/img/fond-blan-tableau.png);
+  background-image: url(/assets/img/Composant\ 17\ –\ 1.png);
 }
 .identite table tr:first-of-type th:nth-child(4) {
   background-image: url(/assets/img/fond-bleu-tableau.png);
@@ -377,6 +379,7 @@ ul li p {
   text-align: center;
   padding: 4rem;
   width: 20%;
+  min-width: 20rem;
   border: 0;
 }
 .identite table tr td p {
@@ -438,7 +441,7 @@ footer a {
   font-size: 1.2rem;
 }
 footer a:focus, footer a:hover {
-  color: #CCCCCC;
+  color: #F2F2F2;
 }
 
 @media (min-width: 992px) {
@@ -460,7 +463,7 @@ footer a:focus, footer a:hover {
     margin-top: 0;
   }
   .navbar .navbar-nav .dropdown .dropdown-menu li {
-    border-bottom: solid #CCCCCC 0.1rem;
+    border-bottom: solid #F2F2F2 0.1rem;
   }
   .navbar .navbar-nav .dropdown .dropdown-menu li:last-child {
     border-bottom: 0;
@@ -470,7 +473,7 @@ footer a:focus, footer a:hover {
     color: #000000 !important;
   }
   .navbar .navbar-nav .dropdown .dropdown-menu li .dropdown-item:focus, .navbar .navbar-nav .dropdown .dropdown-menu li .dropdown-item:hover {
-    background-color: #CCCCCC !important;
+    background-color: #F2F2F2 !important;
   }
 
   .parallax {
@@ -495,6 +498,10 @@ footer a:focus, footer a:hover {
     bottom: 25%;
   }
 
+  .home h1,
+.home .like-h1 {
+    width: 100%;
+  }
   .home .home-header {
     height: 100vh;
   }
@@ -515,8 +522,36 @@ footer a:focus, footer a:hover {
   .home .third-section h2 {
     width: 50%;
   }
+  .home .third-section .carousel .carousel-inner {
+    padding-top: 0;
+  }
   .home .third-section .carousel .carousel-inner .carousel-item img {
     width: 50% !important;
+  }
+
+  .identite .hero-section .content h2 {
+    width: 60%;
+  }
+  .identite .chrono p {
+    font-size: 3.2rem;
+  }
+  .identite .chrono .description {
+    padding: 2rem 3rem;
+  }
+  .identite .chrono .description.droite::after {
+    left: 0;
+  }
+  .identite .chrono .date {
+    padding: 5% 0;
+  }
+  .identite .chrono .p-10 {
+    padding: 5% 0 !important;
+  }
+  .identite .chrono .p-30 {
+    padding: 10% 0 !important;
+  }
+  .identite .table > tbody:nth-child(1) > tr:nth-child(1) > th:nth-child(3) {
+    border-top: solid 0.1rem;
   }
 
   .objectifs .content p {

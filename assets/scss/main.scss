@@ -16,7 +16,6 @@ body {
 h1,
 .like-h1 {
     font-size: 4.6rem;
-    text-transform: lowercase;
 }
 
 h2,
@@ -26,6 +25,12 @@ h2,
 
 h3 {
     font-size: 3.2rem;
+}
+
+h1,
+h2,
+h3 {
+    text-transform: lowercase;
 }
 
 p {
@@ -136,7 +141,8 @@ ul {
 .renew,
 .identite,
 .apprvo,
-.restitution {
+.restitution,
+.bilan {
     padding-top: 7.625rem;
 }
 .hero-section {
@@ -227,12 +233,13 @@ ul {
             margin-right: 15px;
             &::after {
                 content: '';
-                border-width: 23.2px 0 23.2px 15px;
+                border-width: 34px 0 34px 15px;
             }
-                &::before {
-                    content: '';
-                    border-width: 23.2px 0 23.2px 15px;
-                }
+            &::before {
+                content: '';
+
+                border-width: 34px 0 34px 15px;
+            }
         }
         &.bg-yellow {
             &::before {
@@ -314,10 +321,6 @@ ul {
     list-style: url('/assets/img/icon-check.svg');
     .hero-section {
         .content {
-            h2 {
-                font-size: 4rem;
-                width: 60%;
-            }
             ul {
                 padding-left: 5rem;
             }
@@ -326,24 +329,22 @@ ul {
     .chrono {
         p {
             margin: 0;
-            font-size: 3.2rem;
         }
         .date {
             width: 10%;
             text-align: center;
             background:$black;
             color:$white;
-            padding: 7% 0;
-
+            padding: 5% 0;
         }
-        div.d-flex:nth-child(1) > .date:nth-child(2) {
-            padding: 20% 0;
+        .p-10 {
+            padding: 10% 0 !important;
         }
-        div.d-flex:nth-child(3) > .date:nth-child(2) {
-            padding: 15% 0;
+        .p-15 {
+            padding: 15% 0 !important;
         }
-        div.d-flex:nth-child(9) > .date:nth-child(2) {
-            padding: 9% 0;
+        .p-30 {
+            padding: 30% 0 !important;
         }
   
         .photo,
@@ -352,7 +353,7 @@ ul {
         }
         .description {
             border: solid black;
-            padding: 2rem 3rem;
+            padding: 1rem 2rem;
             border-left: 0;
             position: relative;
             &.droite {
@@ -366,7 +367,7 @@ ul {
                     border-color: transparent transparent transparent $black;
                     top: 50%;
                     transform: translateY(-50%);
-                    left: 0;
+                    left: -1%;
                 }
             }
             &.gauche {
@@ -408,7 +409,7 @@ ul {
                         background-image: url(/assets/img/fond-noir-tableau.png);
                     }
                     &:nth-child(3) {
-                        background-image: url(/assets/img/fond-blan-tableau.png);
+                        background-image: url(/assets/img/Composant\ 17\ –\ 1.png);
                     }
                     &:nth-child(4) {
                         background-image: url(/assets/img/fond-bleu-tableau.png);
@@ -426,6 +427,7 @@ ul {
                 text-align: center;
                 padding: 4rem;
                 width: 20%;
+                min-width: 20rem;
                 border: 0;
                 p {
                     font-size: 1.8rem;
@@ -574,6 +576,10 @@ footer {
         }
     }
     .home {
+        h1,
+        .like-h1 {
+            width: 100%;
+        }
         .home-header {
             height: 100vh;
 
@@ -604,6 +610,7 @@ footer {
             }
             .carousel {
                 .carousel-inner {
+                    padding-top: 0;
                     .carousel-item {
                         img {
                             width: 50% !important;
@@ -613,6 +620,42 @@ footer {
             }
         }
 
+    }
+    .identite {
+        .hero-section {
+            .content {
+
+                h2 {
+                    width: 60%;
+                }
+            }
+        }
+        .chrono {
+            p {
+                font-size: 3.2rem;
+            }
+            .description {
+                padding: 2rem 3rem;
+                &.droite {
+                    &::after {
+                        left: 0;
+                    }
+                }
+            }
+            .date {
+                padding: 5% 0;
+            }
+            .p-10 {
+
+                padding: 5% 0 !important;
+            }
+            .p-30 {
+                padding: 10% 0 !important;
+            }
+        }
+        .table > tbody:nth-child(1) > tr:nth-child(1) > th:nth-child(3) {
+            border-top: solid 0.1rem;
+        }
     }
     .objectifs {
         .content {
@@ -635,14 +678,14 @@ footer {
             }
         }
     }
-.restitution {
+    .restitution {
 
-    .second-section {
-        img {
-            width: 16rem;
+        .second-section {
+            img {
+             width: 16rem;
+            }
         }
     }
-}
 
 }
 
