@@ -158,7 +158,7 @@ ul {
 .carousel {
     .carousel-inner {
         .carousel-caption {
-            bottom: -30rem;
+            bottom: -34rem;
         }
     }
 }
@@ -178,7 +178,7 @@ ul {
     }
     .carousel {
         .carousel-inner {
-            padding-bottom: 30rem;
+            padding-bottom: 34rem;
         }
     }
 
@@ -200,7 +200,7 @@ ul {
             width: 0;
             height: 0;
             border-style: solid;
-            border-width: 19.75px 0 19.75px 9px;
+            border-width: 23.5px 0 23.5px 9px;
             border-color: transparent transparent transparent $white;
             position: absolute;
             top: 0;
@@ -211,7 +211,7 @@ ul {
             width: 0;
             height: 0;
             border-style: solid;
-            border-width: 19.75px 0 19.75px 9px;
+            border-width: 23.5px 0 23.5px 9px;
             border-color: transparent transparent transparent $black;
             position: absolute;
             top: 0;
@@ -219,11 +219,18 @@ ul {
         }
         p {
             margin: 0;
-            font-size: 1.3rem;
+            font-size: 0.8rem;
             // font-weight: bold;
         }
         h2 {
             margin: 0;
+        }
+
+        &.bg-black {
+            &::after,
+            &::before {
+                display: none;
+            }
         }
 
         &.bg-yellow,
@@ -237,7 +244,6 @@ ul {
             }
             &::before {
                 content: '';
-
                 border-width: 34px 0 34px 15px;
             }
         }
@@ -338,13 +344,13 @@ ul {
             padding: 5% 0;
         }
         .p-10 {
-            padding: 10% 0 !important;
+            padding: 11% 0 !important;
         }
         .p-15 {
             padding: 15% 0 !important;
         }
         .p-30 {
-            padding: 30% 0 !important;
+            padding: 32% 0 !important;
         }
   
         .photo,
@@ -611,6 +617,7 @@ footer {
             .carousel {
                 .carousel-inner {
                     padding-top: 0;
+                    padding-bottom: 0;
                     .carousel-item {
                         img {
                             width: 50% !important;
@@ -667,6 +674,15 @@ footer {
     .media{
         .calendrier {
             margin-right: 9px;
+            &.bg-black {
+                &::after,
+                &::before {
+                    display: block;
+                }
+            }
+            p {
+                font-size: 1.8rem
+            };
         }
     }
 
