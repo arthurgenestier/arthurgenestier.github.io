@@ -144,6 +144,16 @@ p {
     background-image: url(/assets/img/bg-home-2.jpg);
 }
 
+
+.carousel {
+    .carousel-inner {
+        padding-bottom: 30rem;
+        .carousel-caption {
+            bottom: -30rem;
+        }
+    }
+}
+
 .home {
     .parallax {
         background-image: url(/assets/img/bg-home.jpg);
@@ -159,16 +169,6 @@ p {
     }
 
 
-    .third-section {
-        .carousel {
-            .carousel-inner {
-                padding-bottom: 30rem;
-                .carousel-caption {
-                    bottom: -30rem;
-                }
-            }
-        }
-    }
 }
 
 .objectifs {
@@ -451,6 +451,38 @@ p {
     }
 }
 
+.apprvo {
+    .carousel {
+        .carousel-caption {
+            color: $black;
+        }
+        .carousel-indicators {
+            & [data-bs-target] {
+
+                width: 2rem;
+                height: 2rem;
+            }
+            button {
+                border: solid 0.1rem $black;
+                border-radius: 2rem;
+                &.active {
+                    background: $black;
+
+                } 
+            }
+        }
+    }
+    list-style: url('/assets/img/icon-check-black.svg');
+    ul {
+        li {
+             p {
+                vertical-align: top;
+                display: inline-block;
+             }
+        }
+    }
+}
+
 footer {
     font-size: 1.6rem;
     border-top: $white solid;
@@ -522,6 +554,18 @@ footer {
     .objectifs {
         padding-top: 0;
     }
+    .carousel {
+        .carousel-inner {
+            padding: 15rem;
+            .carousel-item {
+                .carousel-caption {
+                    right: 0;
+                    left: 50%;
+                    bottom: 25%;
+                }
+            }
+        }
+    }
     .home {
         .home-header {
             height: 100vh;
@@ -553,15 +597,9 @@ footer {
             }
             .carousel {
                 .carousel-inner {
-                    padding: 15rem;
                     .carousel-item {
                         img {
                             width: 50% !important;
-                        }
-                        .carousel-caption {
-                            right: 0;
-                            left: 50%;
-                            bottom: 25%;
                         }
                     }
                 }
@@ -586,6 +624,14 @@ footer {
         .hero-section {
             h1 {
                 width: 40%
+            }
+        }
+    }
+
+    .apprvo {
+        .carousel {
+            .carousel-inner {
+                padding: 0;
             }
         }
     }

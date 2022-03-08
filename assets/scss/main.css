@@ -141,6 +141,13 @@ p {
   background-image: url(/assets/img/bg-home-2.jpg);
 }
 
+.carousel .carousel-inner {
+  padding-bottom: 30rem;
+}
+.carousel .carousel-inner .carousel-caption {
+  bottom: -30rem;
+}
+
 .home .parallax {
   background-image: url(/assets/img/bg-home.jpg);
 }
@@ -149,12 +156,6 @@ p {
 }
 .home .home-header .container .content {
   padding: 5%;
-}
-.home .third-section .carousel .carousel-inner {
-  padding-bottom: 30rem;
-}
-.home .third-section .carousel .carousel-inner .carousel-caption {
-  bottom: -30rem;
 }
 
 .objectifs .caption {
@@ -395,6 +396,28 @@ p {
   font-size: 1.8rem;
 }
 
+.apprvo {
+  list-style: url("/assets/img/icon-check-black.svg");
+}
+.apprvo .carousel .carousel-caption {
+  color: #000000;
+}
+.apprvo .carousel .carousel-indicators [data-bs-target] {
+  width: 2rem;
+  height: 2rem;
+}
+.apprvo .carousel .carousel-indicators button {
+  border: solid 0.1rem #000000;
+  border-radius: 2rem;
+}
+.apprvo .carousel .carousel-indicators button.active {
+  background: #000000;
+}
+.apprvo ul li p {
+  vertical-align: top;
+  display: inline-block;
+}
+
 footer {
   font-size: 1.6rem;
   border-top: #FFFFFF solid;
@@ -453,6 +476,15 @@ footer a:focus, footer a:hover {
     padding-top: 0;
   }
 
+  .carousel .carousel-inner {
+    padding: 15rem;
+  }
+  .carousel .carousel-inner .carousel-item .carousel-caption {
+    right: 0;
+    left: 50%;
+    bottom: 25%;
+  }
+
   .home .home-header {
     height: 100vh;
   }
@@ -473,16 +505,8 @@ footer a:focus, footer a:hover {
   .home .third-section h2 {
     width: 50%;
   }
-  .home .third-section .carousel .carousel-inner {
-    padding: 15rem;
-  }
   .home .third-section .carousel .carousel-inner .carousel-item img {
     width: 50% !important;
-  }
-  .home .third-section .carousel .carousel-inner .carousel-item .carousel-caption {
-    right: 0;
-    left: 50%;
-    bottom: 25%;
   }
 
   .objectifs .content p {
@@ -495,5 +519,9 @@ footer a:focus, footer a:hover {
 
   .renew .hero-section h1 {
     width: 40%;
+  }
+
+  .apprvo .carousel .carousel-inner {
+    padding: 0;
   }
 }/*# sourceMappingURL=main.css.map */
