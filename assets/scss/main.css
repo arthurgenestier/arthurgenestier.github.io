@@ -39,6 +39,10 @@ p {
   font-size: 1.6rem;
 }
 
+ul li {
+  position: relative;
+  list-style: none;
+}
 ul li p {
   vertical-align: top;
   display: inline-block;
@@ -310,11 +314,11 @@ header {
   padding-left: 2rem;
 }
 
-.identite {
-  list-style: url("/assets/img/icon-check.svg");
-}
 .identite .hero-section .content ul {
   padding-left: 5rem;
+}
+.identite .hero-section .content ul li::before {
+  content: url(/assets/img/icon-check.svg);
 }
 .identite .chrono p {
   margin: 0;
@@ -429,9 +433,6 @@ header {
   font-size: 1.8rem;
 }
 
-.apprvo {
-  list-style: url("/assets/img/icon-check-black.svg");
-}
 .apprvo .carousel .carousel-caption {
   color: #000000;
 }
@@ -446,12 +447,21 @@ header {
 .apprvo .carousel .carousel-indicators button.active {
   background: #000000;
 }
-
-.restitution .cross {
-  list-style: url("/assets/img/icon-cross.svg");
+.apprvo li::before {
+  position: absolute;
+  left: -2.5rem;
+  content: url(/assets/img/icon-check-black.svg);
 }
-.restitution .check {
-  list-style: url("/assets/img/icon-check-black.svg");
+
+.restitution .cross li::before {
+  position: absolute;
+  left: -2.5rem;
+  content: url(/assets/img/icon-cross.svg);
+}
+.restitution .check li::before {
+  position: absolute;
+  left: -2.5rem;
+  content: url(/assets/img/icon-check-black.svg);
 }
 .restitution .second-section img {
   width: 10rem;

@@ -40,6 +40,8 @@ p {
 
 ul {
     li {
+        position: relative;
+        list-style: none;
         p {
             vertical-align: top;
             display: inline-block;
@@ -346,11 +348,16 @@ header {
 
 
 .identite {
-    list-style: url('/assets/img/icon-check.svg');
+    // list-style: url('/assets/img/icon-check.svg');
     .hero-section {
         .content {
             ul {
                 padding-left: 5rem;
+                li {
+                    &::before {
+                        content: url(/assets/img/icon-check.svg);
+                    }
+                }
             }
         }
     }
@@ -503,15 +510,36 @@ header {
             }
         }
     }
-    list-style: url('/assets/img/icon-check-black.svg');
+    li {
+        &::before {
+            position: absolute;
+            left: -2.5rem;
+            content: url(/assets/img/icon-check-black.svg);
+        }
+    }
+    // list-style: url('/assets/img/icon-check-black.svg');
 }
 
 .restitution {
     .cross {
-        list-style: url('/assets/img/icon-cross.svg');
+        // list-style: url('/assets/img/icon-cross.svg');
+        li {
+            &::before {
+                position: absolute;
+                left: -2.5rem;
+                content: url(/assets/img/icon-cross.svg);
+            }
+        }
     }
     .check {
-        list-style: url('/assets/img/icon-check-black.svg');
+        // list-style: url('/assets/img/icon-check-black.svg');
+        li {
+            &::before {
+                position: absolute;
+                left: -2.5rem;
+                content: url(/assets/img/icon-check-black.svg);
+            }
+        }
     }
     .second-section {
         img {
