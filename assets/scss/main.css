@@ -170,6 +170,19 @@ header {
   bottom: -34rem;
 }
 
+.carousel-item,
+.carousel-item-start,
+.carousel-item-end {
+  position: relative;
+  display: none;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease-in-out;
+}
+
 .home .parallax {
   background-image: url(/assets/img/bg-home.jpg);
 }
