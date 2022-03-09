@@ -17,7 +17,7 @@ body {
 h1,
 .like-h1 {
   font-size: 4.6rem;
-  font-weight: bold;
+  font-weight: 900;
 }
 
 h2,
@@ -125,11 +125,12 @@ header {
 }
 .navbar .navbar-nav {
   margin-top: 1.8rem;
+  line-height: 2;
 }
 .navbar .navbar-nav .nav-link {
   color: #FFFFFF;
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 .navbar .navbar-nav .nav-link:focus, .navbar .navbar-nav .nav-link:hover {
   color: #F2F2F2;
@@ -146,7 +147,7 @@ header {
 .navbar .navbar-nav .dropdown .dropdown-menu .dropdown-item {
   text-transform: uppercase;
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .home,
@@ -194,7 +195,7 @@ header {
   height: 50rem;
 }
 .home .home-header .container .content {
-  padding: 5%;
+  padding: 5% 5% 5% 0;
 }
 .home .carousel .carousel-inner {
   padding-bottom: 34rem;
@@ -492,6 +493,12 @@ footer a:focus, footer a:hover {
     margin-right: 15%;
   }
 
+  .navbar .navbar-nav {
+    line-height: 1.5;
+  }
+  .navbar .navbar-nav .nav-link {
+    font-size: 1.2rem;
+  }
   .navbar .navbar-nav .dropdown .dropdown-toggle {
     margin-bottom: 11%;
   }
@@ -509,6 +516,7 @@ footer a:focus, footer a:hover {
     border-bottom: 0;
   }
   .navbar .navbar-nav .dropdown .dropdown-menu li .dropdown-item {
+    font-size: 1.2rem;
     background-color: #FFFFFF !important;
     color: #000000 !important;
   }
@@ -529,6 +537,9 @@ footer a:focus, footer a:hover {
     padding-top: 0;
   }
 
+  .carousel {
+    min-height: 70rem;
+  }
   .carousel .carousel-inner {
     padding: 15rem;
   }
@@ -552,7 +563,7 @@ footer a:focus, footer a:hover {
     width: 60%;
   }
   .home .first-section img {
-    max-width: 60rem;
+    max-width: 50rem;
   }
   .home .second-section .content {
     width: 40%;
