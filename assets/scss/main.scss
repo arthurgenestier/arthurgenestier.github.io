@@ -196,6 +196,12 @@ header {
             }
         }
     }
+    .carousel {
+        img {
+            max-height: 50rem;
+            width: 100%;
+        }
+    }
     .carousel-control-next-icon, 
     .carousel-control-prev-icon {
         width: 4rem;
@@ -565,9 +571,7 @@ footer {
 
 
 
-@media (min-width: $break-md) {
-  
-}
+
 @media (min-width: $break-lg) {
     h1,
     .like-h1 {
@@ -659,6 +663,19 @@ footer {
         .third-section {
             h2 {
                 width: 50%;
+            }
+        }
+        .carousel {
+            .content {
+                width: 50%;
+                &:nth-child(2) {
+
+                    margin-left: 10%;
+                }
+            }
+
+            .image {
+                margin-left: 10%;
             }
         }
 

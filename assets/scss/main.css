@@ -195,6 +195,10 @@ header {
 .home .home-header .container .content {
   padding: 5% 5% 5% 0;
 }
+.home .carousel img {
+  max-height: 50rem;
+  width: 100%;
+}
 .home .carousel-control-next-icon,
 .home .carousel-control-prev-icon {
   width: 4rem;
@@ -560,6 +564,15 @@ footer a:focus, footer a:hover {
   }
   .home .third-section h2 {
     width: 50%;
+  }
+  .home .carousel .content {
+    width: 50%;
+  }
+  .home .carousel .content:nth-child(2) {
+    margin-left: 10%;
+  }
+  .home .carousel .image {
+    margin-left: 10%;
   }
 
   .identite .hero-section .content h2 {
