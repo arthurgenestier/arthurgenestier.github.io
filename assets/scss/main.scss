@@ -17,6 +17,8 @@ h1,
 .like-h1 {
     font-size: 4.6rem;
     font-weight: 900;
+    line-height: 0.9;
+    margin-bottom: 1rem;
 }
 
 h2,
@@ -166,13 +168,6 @@ header {
 }
 
 
-.carousel {
-    .carousel-inner {
-        .carousel-caption {
-            bottom: -34rem;
-        }
-    }
-}
 
 .carousel-item,
 .carousel-item-start,
@@ -201,11 +196,12 @@ header {
             }
         }
     }
-    .carousel {
-        .carousel-inner {
-            padding-bottom: 34rem;
-        }
+    .carousel-control-next-icon, 
+    .carousel-control-prev-icon {
+        width: 4rem;
+        height: 4rem;
     }
+    
 
 
 }
@@ -569,6 +565,9 @@ footer {
 
 
 
+@media (min-width: $break-md) {
+  
+}
 @media (min-width: $break-lg) {
     h1,
     .like-h1 {
@@ -628,19 +627,6 @@ footer {
     .objectifs {
         padding-top: 0;
     }
-    .carousel {
-        min-height: 70rem;
-        .carousel-inner {
-            padding: 15rem;
-            .carousel-item {
-                .carousel-caption {
-                    right: 0;
-                    left: 50%;
-                    bottom: 25%;
-                }
-            }
-        }
-    }
     .home {
         h1,
         .like-h1 {
@@ -673,17 +659,6 @@ footer {
         .third-section {
             h2 {
                 width: 50%;
-            }
-            .carousel {
-                .carousel-inner {
-                    padding-top: 0;
-                    padding-bottom: 0;
-                    .carousel-item {
-                        img {
-                            width: 50% !important;
-                        }
-                    }
-                }
             }
         }
 

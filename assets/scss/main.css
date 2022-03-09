@@ -18,6 +18,8 @@ h1,
 .like-h1 {
   font-size: 4.6rem;
   font-weight: 900;
+  line-height: 0.9;
+  margin-bottom: 1rem;
 }
 
 h2,
@@ -171,10 +173,6 @@ header {
   background-image: url(/assets/img/bg-home-2.jpg);
 }
 
-.carousel .carousel-inner .carousel-caption {
-  bottom: -34rem;
-}
-
 .carousel-item,
 .carousel-item-start,
 .carousel-item-end {
@@ -197,8 +195,10 @@ header {
 .home .home-header .container .content {
   padding: 5% 5% 5% 0;
 }
-.home .carousel .carousel-inner {
-  padding-bottom: 34rem;
+.home .carousel-control-next-icon,
+.home .carousel-control-prev-icon {
+  width: 4rem;
+  height: 4rem;
 }
 
 .objectifs .caption {
@@ -537,18 +537,6 @@ footer a:focus, footer a:hover {
     padding-top: 0;
   }
 
-  .carousel {
-    min-height: 70rem;
-  }
-  .carousel .carousel-inner {
-    padding: 15rem;
-  }
-  .carousel .carousel-inner .carousel-item .carousel-caption {
-    right: 0;
-    left: 50%;
-    bottom: 25%;
-  }
-
   .home h1,
 .home .like-h1 {
     width: 100%;
@@ -572,13 +560,6 @@ footer a:focus, footer a:hover {
   }
   .home .third-section h2 {
     width: 50%;
-  }
-  .home .third-section .carousel .carousel-inner {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  .home .third-section .carousel .carousel-inner .carousel-item img {
-    width: 50% !important;
   }
 
   .identite .hero-section .content h2 {
