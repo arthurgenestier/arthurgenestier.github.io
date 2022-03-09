@@ -568,8 +568,11 @@ footer a:focus, footer a:hover {
   .home .carousel .content {
     width: 50%;
   }
-  .home .carousel .content:nth-child(2) {
+  .home .carousel .content-left {
     margin-left: 10%;
+  }
+  .home .carousel .content-right {
+    margin-right: 10%;
   }
   .home .carousel .image {
     margin-left: 10%;

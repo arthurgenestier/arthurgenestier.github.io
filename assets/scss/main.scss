@@ -668,11 +668,19 @@ footer {
         .carousel {
             .content {
                 width: 50%;
-                &:nth-child(2) {
 
-                    margin-left: 10%;
-                }
+
+                
             }
+            .content-left {
+
+                margin-left: 10%;
+            }
+            .content-right {
+
+                margin-right: 10%;
+            }
+
 
             .image {
                 margin-left: 10%;
