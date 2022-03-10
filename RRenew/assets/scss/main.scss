@@ -164,7 +164,7 @@ header {
 }
 .home .hero-section,
 .identite .hero-section {
-    background-image: url(/assets/img/bg-home-2.jpg);
+    background-image: url(/RRenew/assets/img/bg-home-2.jpg);
 }
 
 
@@ -185,7 +185,7 @@ header {
 
 .home {
     .parallax {
-        background-image: url(/assets/img/bg-home.jpg);
+        background-image: url(/RRenew/assets/img/bg-home.jpg);
     }
     .home-header {
         .container {
@@ -310,7 +310,7 @@ header {
 
 .renew {
     .hero-section {
-        background-image: url(/assets/img/photo-refont.jpg);
+        background-image: url(/RRenew/assets/img/photo-refont.jpg);
         min-height: 24.5rem;
     }
     .table {
@@ -351,14 +351,14 @@ header {
 
 
 .identite {
-    // list-style: url('/assets/img/icon-check.svg');
+    // list-style: url('/RRenew/assets/img/icon-check.svg');
     .hero-section {
         .content {
             ul {
                 padding-left: 5rem;
                 li {
                     &::before {
-                        content: url(/assets/img/icon-check.svg);
+                        content: url(/RRenew/assets/img/icon-check.svg);
                     }
                 }
             }
@@ -444,16 +444,16 @@ header {
                     background-size: cover;
                     background-position: center bottom;
                     &:nth-child(2) {
-                        background-image: url(/assets/img/fond-noir-tableau.png);
+                        background-image: url(/RRenew/assets/img/fond-noir-tableau.png);
                     }
                     &:nth-child(3) {
-                        background-image: url(/assets/img/Composant\ 17\ –\ 1.png);
+                        background-image: url(/RRenew/assets/img/Composant\ 17\ –\ 1.png);
                     }
                     &:nth-child(4) {
-                        background-image: url(/assets/img/fond-bleu-tableau.png);
+                        background-image: url(/RRenew/assets/img/fond-bleu-tableau.png);
                     }
                     &:nth-child(5) {
-                        background-image: url(/assets/img/fond-jaune-tableau.png);
+                        background-image: url(/RRenew/assets/img/fond-jaune-tableau.png);
                     }
 
                 }
@@ -517,30 +517,30 @@ header {
         &::before {
             position: absolute;
             left: -2.5rem;
-            content: url(/assets/img/icon-check-black.svg);
+            content: url(/RRenew/assets/img/icon-check-black.svg);
         }
     }
-    // list-style: url('/assets/img/icon-check-black.svg');
+    // list-style: url('/RRenew/assets/img/icon-check-black.svg');
 }
 
 .restitution {
     .cross {
-        // list-style: url('/assets/img/icon-cross.svg');
+        // list-style: url('/RRenew/assets/img/icon-cross.svg');
         li {
             &::before {
                 position: absolute;
                 left: -2.5rem;
-                content: url(/assets/img/icon-cross.svg);
+                content: url(/RRenew/assets/img/icon-cross.svg);
             }
         }
     }
     .check {
-        // list-style: url('/assets/img/icon-check-black.svg');
+        // list-style: url('/RRenew/assets/img/icon-check-black.svg');
         li {
             &::before {
                 position: absolute;
                 left: -2.5rem;
-                content: url(/assets/img/icon-check-black.svg);
+                content: url(/RRenew/assets/img/icon-check-black.svg);
             }
         }
     }
