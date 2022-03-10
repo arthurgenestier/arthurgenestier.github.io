@@ -1,0 +1,190 @@
+@import 'Utils/fonts';
+@import 'Utils/vars';
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+    
+    background-color: $blue;
+    color: $black;
+    font-family: "AmsiPro-Ultra";
+    letter-spacing: 0.08rem;
+}
+
+
+h1,
+.like-h1 {
+    font-size: 4.6rem;
+    font-weight: 900;
+    line-height: 0.9;
+    margin-bottom: 1rem;
+}
+
+h2,
+.like-h2 {
+    font-size: 3rem !important;
+    color: $white !important;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 3.2rem;
+}
+
+
+p {
+    font-size: 2rem;
+    color: $green;
+}
+
+.bg-pink {
+    background-color: $pink;
+}
+.bg-round {
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 4rem;
+        border-radius: 100%;
+        background-color: $blue3;
+        bottom: 98%;
+    }
+}
+.bg-blue3 {
+    background-color: $blue3;
+    position: relative;
+}
+
+.button-pink {
+    background: $pink;
+    padding: 1rem 3.6rem;
+    font-size: 1.8rem;
+    display: inline-block;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    border-radius: 4rem;
+    margin: 0 4%;
+}
+
+.text-blue4 {
+    color: $blue4;
+}
+
+nav {
+
+    .logo {
+        z-index: 1111;
+    }
+    .offcanvas {
+        background-color: transparent;
+        border-bottom: 0;
+        height: fit-content;
+        top: 12%;
+        .offcanvas-body {
+            font-family: "AmsiPro-Ultra";
+            .bg-pink,
+            .bg-white {
+                border-radius: 3rem;
+                margin: 5%;
+                padding: 2.5%;
+            }
+            .bg-pink {
+                p {
+                    color: $white;
+
+                }
+            }
+            .bg-white {
+                a {
+                    color: $blue2;
+                    font-size: 1.6rem;
+                    text-transform: uppercase;
+                    margin: 0;
+                    text-decoration: none;
+                }
+            }
+            p {
+                font-size: 1.6rem;
+                text-transform: uppercase;
+                margin: 0;
+            }
+            ul {
+                line-height: 2.5;
+                li {
+                    list-style: none;
+                    a {
+                        font-size: 1.4rem;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+main {
+    .modal {
+        background: $blue;
+    }
+    .modal-dialog {
+        max-width: max-content;
+        margin: 2rem;
+        .modal-content {
+            background: $blue2;
+            border-radius: 2rem;
+            height: 90%;
+            box-shadow: 10px 9px 0px 2px $green2;
+            .modal-header {
+                justify-content: end;
+                border: 0;
+            }
+            .modal-body {
+                .video {
+                    margin: 0 5%;
+                    video {
+                        border-radius: 2rem;
+                    }
+                }
+                p {
+                    color: $yellow;
+                    font-size: 1.6rem;
+                }
+                img {
+                    max-width: 9rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+@media (min-width: $break-lg) {
+    main {
+        .modal-dialog {
+            max-width: 90rem;
+            margin: 5% auto;
+            .modal-content {
+                .modal-body {
+                    img {
+                        max-width: 14rem;
+                    }
+                    .content {
+                        width: 80%;
+                        p {
+                            font-size: 2.2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}
