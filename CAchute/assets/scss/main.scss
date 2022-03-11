@@ -151,6 +151,26 @@ main {
     .modal-dialog {
         max-width: max-content;
         margin: 2rem;
+        .arrow {
+            img {
+                height: 3rem;
+                width: auto;
+            }
+            position: absolute;
+            top:10%;
+            z-index: 1;
+            width: 3rem;
+            height: 3rem;
+        }
+        .arrow-left {
+            left: -5%;
+
+        }
+        .arrow-right {
+
+            right: -5%;
+
+        }
         .modal-content {
             background: $blue2;
             border-radius: 2rem;
@@ -190,6 +210,21 @@ main {
     }
     .intro {
         padding-bottom: 10%;
+    }
+
+    .first,
+    .fourth,
+    .fifth {
+        &:hover {
+            transform: rotate(2deg);
+          }
+    }
+    .second,
+    .third,
+    .sixth {
+        &:hover {
+            transform: rotate(-2deg);
+          }
     }
     
 }
