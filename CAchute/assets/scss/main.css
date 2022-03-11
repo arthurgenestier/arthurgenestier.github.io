@@ -190,14 +190,10 @@ main .bg-blue3 {
 main .intro {
   padding-bottom: 10%;
 }
-main .first:hover,
-main .fourth:hover,
-main .fifth:hover {
+main .rotate-01:hover {
   transform: rotate(2deg);
 }
-main .second:hover,
-main .third:hover,
-main .sixth:hover {
+main .rotate-02:hover {
   transform: rotate(-2deg);
 }
 

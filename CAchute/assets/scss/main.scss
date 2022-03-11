@@ -212,20 +212,32 @@ main {
         padding-bottom: 10%;
     }
 
-    .first,
-    .fourth,
-    .fifth {
-        &:hover {
-            transform: rotate(2deg);
-          }
-    }
-    .second,
-    .third,
-    .sixth {
-        &:hover {
-            transform: rotate(-2deg);
-          }
-    }
+    // .first,
+    // .fourth,
+    // .fifth {
+    //     &:hover {
+    //         transform: rotate(2deg);
+    //       }
+    // }
+    // .second,
+    // .third,
+    // .sixth {
+    //     &:hover {
+    //         transform: rotate(-2deg);
+    //       }
+    // }
+    .rotate-01 {
+            &:hover {
+                transform: rotate(2deg);
+            }
+            
+        }
+    .rotate-02 {
+            &:hover {
+                transform: rotate(-2deg);
+            }
+            
+        }
     
 }
 
