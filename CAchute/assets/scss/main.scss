@@ -54,6 +54,7 @@ p {
                 right: 5%;
                 background-size: cover;
                 background-repeat: no-repeat;
+                z-index: 1;
             }
         }
     }
@@ -163,12 +164,12 @@ main {
             height: 3rem;
         }
         .arrow-left {
-            left: -5%;
+            left: 0;
 
         }
         .arrow-right {
 
-            right: -5%;
+            right: 0;
 
         }
         .modal-content {
@@ -212,20 +213,6 @@ main {
         padding-bottom: 10%;
     }
 
-    // .first,
-    // .fourth,
-    // .fifth {
-    //     &:hover {
-    //         transform: rotate(2deg);
-    //       }
-    // }
-    // .second,
-    // .third,
-    // .sixth {
-    //     &:hover {
-    //         transform: rotate(-2deg);
-    //       }
-    // }
     .rotate-01 {
             &:hover {
                 transform: rotate(2deg);
@@ -265,14 +252,30 @@ footer {
 
 
 @media (min-width: $break-lg) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        inset: 15px auto auto 0px !important;
+        width: 100%;
+        padding: 7% 2rem;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+    }
+    
     .dropdown {
         .dropdown-menu {
             width: 100%;
-            inset: -29px auto auto 0px !important;
             padding: 7% 2rem;
             border-bottom-left-radius: 2rem;
             border-bottom-right-radius: 2rem;
-
+            
+        }
+        &:hover .dropdown-menu {
+            display: block;
+            inset: 15px auto auto 0px !important;
+            width: 100%;
+            padding: 7% 2rem;
+            border-bottom-left-radius: 2rem;
+            border-bottom-right-radius: 2rem;
         }
         .button-pink {
             font-size: 1.6rem;
@@ -286,7 +289,7 @@ footer {
             font-size: 1.4rem;
         }
     }
-
+    
     .button-blue {
         background: $blue2;
         padding: 1rem 2rem;
@@ -302,7 +305,7 @@ footer {
             text-decoration: none;
         }
     }
-
+    
     .la-mif {
         position: absolute;
         top: 50%;
@@ -322,6 +325,17 @@ footer {
         .modal-dialog {
             max-width: 90rem;
             margin: 5% auto;
+            .arrow {
+                img {
+                    height: 8rem;
+                }
+            }
+            .arrow-left {
+                left: -4%;
+            }
+            .arrow-right {
+                right: 1%;
+            }
             .modal-content {
                 .modal-body {
                     img {
@@ -334,6 +348,20 @@ footer {
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+@media (min-width: $break-xl) {
+    main {
+        .modal-dialog {
+
+            .arrow-left {
+                left: -10%;
+            }
+            .arrow-right {
+                right: -6%;
             }
         }
     }
