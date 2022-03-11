@@ -42,6 +42,21 @@ p {
   color: #006A4E;
 }
 
+.first {
+  position: relative;
+}
+.first .first-link:hover::before, .first .first-link:visited::before {
+  content: "";
+  width: 10%;
+  height: 20%;
+  background-image: url(/CAchute/assets/img/icon-check-first.png);
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .bg-pink {
   background-color: #FA5061;
 }

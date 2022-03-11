@@ -39,6 +39,27 @@ p {
     font-size: 2rem;
     color: $green;
 }
+.first {
+    position: relative;
+    .first-link {
+        &:hover,
+        &:visited {
+            &::before {
+                content: "";
+                width: 10%;
+                height: 20%;
+                background-image: url(/CAchute/assets/img/icon-check-first.png);
+                position: absolute;
+                bottom: 10%;
+                right: 5%;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+}
+
 
 .bg-pink {
     background-color: $pink;
