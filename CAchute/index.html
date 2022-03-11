@@ -15,9 +15,9 @@
 </head>
 
 <body>
-    <header>
-        <nav role="navigation" class="container pt-5 sticky-top">
-            <div class="d-flex align-items-center justify-content-between">
+    <header role="banner" class="fixed-top">
+        <nav role="navigation" class="container pt-5">
+            <div class="d-flex align-items-center justify-content-between d-xl-none">
                 <div class="logo">
                     <a href="./index.html"><img src="./assets/img/logo-ca.png" alt=""></a>
                 </div>
@@ -26,11 +26,9 @@
                         aria-controls="offcanvasNav">
                         <img src="./assets/img/icone-menu.svg" alt="CA lien accueil" class="img-fluid">
                     </a>
-
                     <div class="text-center offcanvas offcanvas-top" tabindex="-1" id="offcanvasNav"
                         aria-labelledby="offcanvasNavLabel">
                         <div class="offcanvas-body">
-
                             <div class="bg-pink">
                                 <p>Nos fiches conseils prévention</p>
                                 <ul>
@@ -43,49 +41,73 @@
                                     <li><a href="#">Les transports en commun</a></li>
                                 </ul>
                             </div>
-
                             <div class="bg-white">
                                 <a href="">La check-list anti chute</a>
                             </div>
                             <div class="bg-white">
                                 <a href="">Le crédit agricole vous accompagne</a>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="d-none d-xl-flex align-items-center justify-content-between">
+                <div class="logo">
+                    <a href="./index.html"><img src="./assets/img/logo-ca.png" alt=""></a>
+                </div>
+                <div class="dropdown">
+                    <a class="button-pink" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Nos fiches conseils prévention
+                    </a>
 
+                    <ul class="dropdown-menu bg-pink" aria-labelledby="dropdownMenuLink">
+                        <li><a href="#">La rue</a></li>
+                        <li><a href="#">Les escaliers</a></li>
+                        <li><a href="#">La salle de bain</a></li>
+                        <li><a href="#">Le jardin</a></li>
+                        <li><a href="#">La cuisine</a></li>
+                        <li><a href="#">Le salon</a></li>
+                        <li><a href="#">Les transports en commun</a></li>
+                    </ul>
+                </div>
+
+                <div class="button-blue">
+                    <a href="">La check-list anti chute</a>
+                </div>
+                <div class="button-blue">
+                    <a href="">Le crédit agricole vous accompagne</a>
+                </div>
+
+            </div>
         </nav>
     </header>
-        <main>
-            <section class="position-relative">
+    <main>
+        <section class="position-relative">
 
 
-                    <div class="text-center title">
-                        <img src="./assets/img/illustration-title.png" alt="Les secrets de Jean et Sylie Laforme"
-                            class="img-fluid">
-                    </div>
+            <div class="text-center title">
+                <img src="./assets/img/illustration-title.png" alt="Les secrets de Jean et Sylie Laforme"
+                    class="img-fluid">
+            </div>
 
-                    <div class="text-center container la-mif">
-                        <img src="./assets/img/illustration-la-mif.png" alt="Famille Laforme" class="img-fluid mb-4">
-                    </div>
-                    <div class="intro container">
-                        <p class="text-center">Le Crédit Agricole vous présente la vie des Laforme ! Leur secret ? Avoir
-                            une
-                            bonne hygiène de vie et toujours bien évaluer les risques.
-                            Le combo gagnant pour éviter de nombreux accidents du quotidien.
-                        </p>
-                    </div>
-
-
-            </section>
+            <div class="text-center container la-mif">
+                <img src="./assets/img/illustration-la-mif.png" alt="Famille Laforme" class="img-fluid mb-4">
+            </div>
+            <div class="intro container">
+                <p class="text-center">Le Crédit Agricole vous présente la vie des Laforme ! Leur secret ? Avoir
+                    une
+                    bonne hygiène de vie et toujours bien évaluer les risques.
+                    Le combo gagnant pour éviter de nombreux accidents du quotidien.
+                </p>
+            </div>
 
 
-            <section class="bg-blue3 bg-round">
-                
-            </section>
+        </section>
+
+
+        <section class="bg-blue3 bg-round">
+
             <div class="container cards">
                 <div class="d-lg-flex justify-content-evenly align-items-center">
                     <div class="first my-3">
@@ -106,8 +128,8 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="video mb-5">
-                                            <video src="./assets/img/video-test.mp4"
-                                                class="img-fluid offcanvas-video" controls></video>
+                                            <video src="./assets/img/video-test.mp4" class="img-fluid offcanvas-video"
+                                                controls></video>
                                         </div>
                                         <div
                                             class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
@@ -170,8 +192,7 @@
                     <div class="second my-3">
                         <!-- Button trigger modal -->
                         <a role="button" data-bs-toggle="modal" data-bs-target="#cardModal02">
-                            <img src="./assets/img/card-second.png" alt="Un peu de sport pour Jean!"
-                                class="img-fluid">
+                            <img src="./assets/img/card-second.png" alt="Un peu de sport pour Jean!" class="img-fluid">
                         </a>
 
                         <!-- Modal -->
@@ -185,14 +206,13 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="video mb-5">
-                                            <video src="./assets/img/video-test.mp4"
-                                                class="img-fluid offcanvas-video" controls></video>
+                                            <video src="./assets/img/video-test.mp4" class="img-fluid offcanvas-video"
+                                                controls></video>
                                         </div>
                                         <div
                                             class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
                                             <div>
-                                                <img src="./assets/img/icon-sport-01.png" alt="table"
-                                                    class="img-fluid">
+                                                <img src="./assets/img/icon-sport-01.png" alt="table" class="img-fluid">
                                             </div>
                                             <div class="content text-lg-start ms-lg-5">
                                                 <h2>Activité physique</h2>
@@ -205,8 +225,7 @@
                                         <div
                                             class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
                                             <div>
-                                                <img src="./assets/img/icon-sport-02.png" alt="table"
-                                                    class="img-fluid">
+                                                <img src="./assets/img/icon-sport-02.png" alt="table" class="img-fluid">
                                             </div>
                                             <div class="content text-lg-start ms-lg-5">
                                                 <h2>Hydratation et alimentation</h2>
@@ -219,8 +238,7 @@
                                         <div
                                             class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
                                             <div>
-                                                <img src="./assets/img/icon-sport-03.png" alt="table"
-                                                    class="img-fluid">
+                                                <img src="./assets/img/icon-sport-03.png" alt="table" class="img-fluid">
                                             </div>
                                             <div class="content text-lg-start ms-lg-5">
                                                 <h2>Lien social</h2>
@@ -235,8 +253,7 @@
                                         <div
                                             class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
                                             <div>
-                                                <img src="./assets/img/icon-sport-04.png" alt="table"
-                                                    class="img-fluid">
+                                                <img src="./assets/img/icon-sport-04.png" alt="table" class="img-fluid">
                                             </div>
                                             <div class="content text-lg-start ms-lg-5">
                                                 <h2>Dans la rue</h2>
@@ -281,14 +298,13 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="video mb-5">
-                                            <video src="./assets/img/video-test.mp4"
-                                                class="img-fluid offcanvas-video" controls></video>
+                                            <video src="./assets/img/video-test.mp4" class="img-fluid offcanvas-video"
+                                                controls></video>
                                         </div>
                                         <div
                                             class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
                                             <div>
-                                                <img src="./assets/img/icon-bain-01.png" alt="table"
-                                                    class="img-fluid">
+                                                <img src="./assets/img/icon-bain-01.png" alt="table" class="img-fluid">
                                             </div>
                                             <div class="content text-lg-start ms-lg-5">
                                                 <h2>Dans la salle de bain</h2>
@@ -299,8 +315,7 @@
                                         <div
                                             class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
                                             <div>
-                                                <img src="./assets/img/icon-bain-02.png" alt="table"
-                                                    class="img-fluid">
+                                                <img src="./assets/img/icon-bain-02.png" alt="table" class="img-fluid">
                                             </div>
                                             <div class="content text-lg-start ms-lg-5">
                                                 <h2>Malaise vagale </h2>
@@ -343,8 +358,8 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="video mb-5">
-                                            <video src="./assets/img/video-test.mp4"
-                                                class="img-fluid offcanvas-video" controls></video>
+                                            <video src="./assets/img/video-test.mp4" class="img-fluid offcanvas-video"
+                                                controls></video>
                                         </div>
                                         <div
                                             class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
@@ -410,14 +425,13 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="video mb-5">
-                                            <video src="./assets/img/video-test.mp4"
-                                                class="img-fluid offcanvas-video" controls></video>
+                                            <video src="./assets/img/video-test.mp4" class="img-fluid offcanvas-video"
+                                                controls></video>
                                         </div>
                                         <div
                                             class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
                                             <div>
-                                                <img src="./assets/img/icon-ami-01.png" alt="table"
-                                                    class="img-fluid">
+                                                <img src="./assets/img/icon-ami-01.png" alt="table" class="img-fluid">
                                             </div>
                                             <div class="content text-lg-start ms-lg-5">
                                                 <h2>Pour attraper des objets en hauteur</h2>
@@ -428,8 +442,7 @@
                                         <div
                                             class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
                                             <div>
-                                                <img src="./assets/img/icon-ami-02.png" alt="table"
-                                                    class="img-fluid">
+                                                <img src="./assets/img/icon-ami-02.png" alt="table" class="img-fluid">
                                             </div>
                                             <div class="content text-lg-start ms-lg-5">
                                                 <h2>Lien social</h2>
@@ -471,8 +484,8 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="video mb-5">
-                                            <video src="./assets/img/video-test.mp4"
-                                                class="img-fluid offcanvas-video" controls></video>
+                                            <video src="./assets/img/video-test.mp4" class="img-fluid offcanvas-video"
+                                                controls></video>
                                         </div>
                                         <div
                                             class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
@@ -518,11 +531,23 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Button trigger modal -->
-
             </div>
-        </main>
+        </section>
+    </main>
+    <footer role="contentinfo">
+        <section class="bg-round position-relative">
+            <div class="d-lg-flex justify-content-evenly text-center">
+                <a class="d-block" href="">Protection des données personnelles</a>
+                <a class="d-block" href="">Politique des cookies</a>
+                <a class="d-block" href="">Gestion des cookies</a>
+            </div>
+            <div class="text-center">
+                <p>© Crédit Agricole</p>
+            </div>
+
+        </section>
+
+    </footer>
 
 
 
