@@ -53,7 +53,7 @@ p {
   height: 4rem;
   border-radius: 100%;
   background-color: #28ACAD;
-  bottom: 98%;
+  bottom: 98.5%;
 }
 
 .bg-blue3 {
@@ -151,8 +151,31 @@ main .modal-dialog .modal-content .modal-body p {
 main .modal-dialog .modal-content .modal-body img {
   max-width: 9rem;
 }
+main .first-link {
+  position: relative;
+}
+main .first-link:visited {
+  background-color: darkblue;
+}
 
+@media (min-width: 576px) {
+  .bg-round::before {
+    content: "";
+    bottom: 98.9%;
+  }
+}
+@media (min-width: 768px) {
+  .bg-round::before {
+    content: "";
+    bottom: 99.1%;
+  }
+}
 @media (min-width: 992px) {
+  .bg-round::before {
+    content: "";
+    bottom: 97.5%;
+  }
+
   main .modal-dialog {
     max-width: 90rem;
     margin: 5% auto;
