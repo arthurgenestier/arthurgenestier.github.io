@@ -35,6 +35,7 @@ h3 {
 }
 
 
+
 p {
     font-size: 2rem;
     color: $green;
@@ -243,6 +244,14 @@ footer {
     a {
         color: $green3;
         font-size: 1.5rem;
+        &:hover {
+            color: $green3;
+            text-decoration: none;
+            transform: rotate(-2deg);
+            &:nth-child(2) {
+                transform: rotate(2deg);
+            }
+        }
     }
     p {
         color: $green3;

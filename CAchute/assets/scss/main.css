@@ -215,6 +215,14 @@ footer a {
   color: #005D5D;
   font-size: 1.5rem;
 }
+footer a:hover {
+  color: #005D5D;
+  text-decoration: none;
+  transform: rotate(-2deg);
+}
+footer a:hover:nth-child(2) {
+  transform: rotate(2deg);
+}
 footer p {
   color: #005D5D;
   font-family: "AmsiProCondensed-Bold";
