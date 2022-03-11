@@ -151,29 +151,41 @@ main .modal-dialog .modal-content .modal-body p {
 main .modal-dialog .modal-content .modal-body img {
   max-width: 9rem;
 }
-main .first-link {
-  position: relative;
+main .bg-blue3 {
+  height: 100vh;
+  position: absolute;
+  top: 70%;
+  width: 96vw;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: -1;
 }
-main .first-link:visited {
-  background-color: darkblue;
+main .intro {
+  padding-bottom: 10%;
 }
 
 @media (min-width: 576px) {
-  .bg-round::before {
-    content: "";
-    bottom: 98.9%;
-  }
-}
-@media (min-width: 768px) {
-  .bg-round::before {
-    content: "";
-    bottom: 99.1%;
+  main .bg-blue3 {
+    top: 80%;
+    width: 97vw;
   }
 }
 @media (min-width: 992px) {
-  .bg-round::before {
-    content: "";
-    bottom: 97.5%;
+  .la-mif {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 55%;
+    width: 45%;
+  }
+
+  .title {
+    width: 65%;
+  }
+
+  .intro {
+    width: 50%;
+    margin-left: 5%;
   }
 
   main .modal-dialog {

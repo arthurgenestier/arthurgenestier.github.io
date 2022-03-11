@@ -160,41 +160,59 @@ main {
             }
         }
     }
-    .first-link {
-        position: relative;
-        &:visited {
-            background-color: darkblue;
-        }
-
+    .bg-blue3 {
+        height: 100vh;
+        position: absolute;
+        top: 70%;
+        width: 96vw;
+        left: 50%;
+        transform: translate(-50%);
+        z-index: -1;
     }
+    .intro {
+        padding-bottom: 10%;
+    }
+    // .cards {
+    //     position: absolute;
+    //     top: -5%;
+    //     left: 50%;
+    //     transform: translate(-50%);
+    // }
+    
 }
-
 
 
 
 
 @media (min-width: $break-sm) {
-    .bg-round {
-        &::before {
-            content: '';
-            bottom: 98.9%;
+    main {
+        .bg-blue3 {
+            top: 80%;
+            width: 97vw;
         }
     }
 }
-@media (min-width: $break-md) {
-    .bg-round {
-        &::before {
-                content: "";
-                bottom: 99.1%;
-        }
-    }
-}
+// @media (min-width: $break-lg) {
+
+// }
+// @media (min-width: $break-lg) {
+
+// }
 @media (min-width: $break-lg) {
-    .bg-round {
-        &::before {
-                content: "";
-                bottom: 97.5%;
-        }
+
+    .la-mif {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 55%;
+        width: 45%;
+    }
+    .title {
+        width: 65%;
+    }
+    .intro {
+        width: 50%;
+        margin-left: 5%;
     }
     main {
         .modal-dialog {
