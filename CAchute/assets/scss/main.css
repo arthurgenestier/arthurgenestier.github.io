@@ -18,6 +18,16 @@ body {
   letter-spacing: 0.08rem;
 }
 
+.line {
+  position: relative;
+}
+.line::before {
+  content: url(/CAchute/assets/img/icon-check-fifth.png);
+  height: 2rem;
+  width: 2rem;
+  position: absolute;
+}
+
 h1,
 .like-h1 {
   font-size: 4.6rem;
@@ -42,20 +52,102 @@ p {
   color: #006A4E;
 }
 
-.first {
-  position: relative;
-}
-.first .first-link:hover::before, .first .first-link:visited::before {
+.check::before {
   content: "";
-  width: 10%;
-  height: 20%;
-  background-image: url(/CAchute/assets/img/icon-check-first.png);
+  width: 5rem;
+  height: 5rem;
   position: absolute;
-  bottom: 10%;
-  right: 5%;
+  bottom: 11%;
+  right: 6%;
   background-size: cover;
   background-repeat: no-repeat;
   z-index: 1;
+  background-position: center center;
+}
+
+.container-line {
+  position: relative;
+  display: inline-block;
+}
+.container-line img {
+  height: 4rem;
+  width: auto;
+}
+.container-line::before {
+  content: "";
+  position: absolute;
+  height: 3rem;
+  width: 3rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.first {
+  position: relative;
+}
+.first .check::before {
+  background-image: url(/CAchute/assets/img/icon-check-first.png);
+}
+.first .container-line {
+  position: relative;
+  display: inline-block;
+}
+.first .container-line img {
+  height: 4rem;
+  width: auto;
+}
+.first .container-line::before {
+  background-image: url(/CAchute/assets/img/icon-check-first.png);
+  left: 4%;
+}
+
+.second {
+  position: relative;
+}
+.second .check::before {
+  background-image: url(/CAchute/assets/img/icon-check-second.png);
+}
+.second .container-line {
+  position: relative;
+  display: inline-block;
+}
+.second .container-line img {
+  height: 4rem;
+  width: auto;
+}
+.second .container-line::before {
+  background-image: url(/CAchute/assets/img/icon-check-second.png);
+  left: 19%;
+}
+
+.third {
+  position: relative;
+}
+.third .check::before {
+  background-image: url(/CAchute/assets/img/icon-check-third.png);
+}
+
+.fourth {
+  position: relative;
+}
+.fourth .check::before {
+  background-image: url(/CAchute/assets/img/icon-check-fourth.png);
+}
+
+.fifth {
+  position: relative;
+}
+.fifth .check::before {
+  background-image: url(/CAchute/assets/img/icon-check-fifth.png);
+}
+
+.sixth {
+  position: relative;
+}
+.sixth .check::before {
+  background-image: url(/CAchute/assets/img/icon-check-sixth.png);
 }
 
 .bg-pink {
@@ -82,6 +174,9 @@ p {
   text-decoration: none;
   border-radius: 4rem;
   margin: 0 4%;
+}
+.button-pink:hover {
+  color: #FFF5CC;
 }
 
 .text-blue4 {
@@ -278,6 +373,9 @@ footer p {
   .button-blue a {
     color: #FFFFFF;
     text-decoration: none;
+  }
+  .button-blue a:hover {
+    color: #FFF5CC;
   }
 
   .la-mif {

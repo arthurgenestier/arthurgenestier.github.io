@@ -111,7 +111,8 @@
                 <div class="d-lg-flex justify-content-evenly align-items-center">
                     <div class="first my-3">
                         <!-- Button trigger modal -->
-                        <a role="button" data-bs-toggle="modal" data-bs-target="#cardModal01" class="first-link">
+                        <a role="button" data-bs-toggle="modal" data-bs-target="#cardModal01" id="firstCard"
+                            onclick="addCheck()">
                             <img src="./assets/img/card-first.png" alt=" Jean et Sylvie font du rangement"
                                 class="img-fluid rotate-01">
                         </a>
@@ -129,7 +130,7 @@
                                         <a href="#" class="arrow-left arrow">
                                             <img src="/CAchute/assets/img/arrow.png" alt="">
                                         </a>
-                                        <a href="#" class="arrow-right arrow">
+                                        <a href="#sport" class="arrow-right arrow">
                                             <img src="/CAchute/assets/img/arrow02.png" alt="">
                                         </a>
                                         <div class="video mb-5">
@@ -191,13 +192,22 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="d-flex justify-content-center fixed-bottom">
+                                    <div class="container-line">
+                                        <img src="/CAchute/assets/img/Check-line.png" alt="" class="">
+                                    </div>
+                                </div>
+
+
                             </div>
                         </div>
                     </div>
                     <div class="second my-3">
                         <!-- Button trigger modal -->
-                        <a role="button" data-bs-toggle="modal" data-bs-target="#cardModal02">
-                            <img src="./assets/img/card-second.png" alt="Un peu de sport pour Jean!" class="img-fluid rotate-02">
+                        <a role="button" data-bs-toggle="modal" data-bs-target="#cardModal02" id="secondCard"
+                            onclick="addCheck2()">
+                            <img src="./assets/img/card-second.png" alt="Un peu de sport pour Jean!"
+                                class="img-fluid rotate-02">
                         </a>
 
                         <!-- Modal -->
@@ -205,18 +215,18 @@
                             aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <div class="modal-header">
+                                    <div class="modal-header" id="sport">
                                         <a role="button" data-bs-dismiss="modal" aria-label="Close"><img
                                                 src="./assets/img/icon-close-small.svg" alt=""></a>
                                     </div>
-                                                                        <div class="modal-body">
+                                    <div class="modal-body">
                                         <a href="#" class="arrow-left arrow">
                                             <img src="/CAchute/assets/img/arrow.png" alt="">
                                         </a>
                                         <a href="#" class="arrow-right arrow">
                                             <img src="/CAchute/assets/img/arrow02.png" alt="">
                                         </a>
-                                        
+
                                         <div class="video mb-5">
                                             <video src="./assets/img/video-test.mp4" class="img-fluid offcanvas-video"
                                                 controls></video>
@@ -288,6 +298,11 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="d-flex justify-content-center fixed-bottom">
+                                    <div class="container-line">
+                                        <img src="/CAchute/assets/img/Check-line.png" alt="" class="">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -295,8 +310,10 @@
                 <div class="d-lg-flex justify-content-evenly align-items-center">
                     <div class="third my-3">
                         <!-- Button trigger modal -->
-                        <a role="button" data-bs-toggle="modal" data-bs-target="#cardModal03">
-                            <img src="./assets/img/card-third.png" alt="Jean se fait mousser !" class="img-fluid rotate-02">
+                        <a role="button" data-bs-toggle="modal" data-bs-target="#cardModal03" id="thirdCard"
+                            onclick="addCheck3()">
+                            <img src="./assets/img/card-third.png" alt="Jean se fait mousser !"
+                                class="img-fluid rotate-02">
                         </a>
 
                         <!-- Modal -->
@@ -308,14 +325,14 @@
                                         <a role="button" data-bs-dismiss="modal" aria-label="Close"><img
                                                 src="./assets/img/icon-close-small.svg" alt=""></a>
                                     </div>
-                                                                        <div class="modal-body">
+                                    <div class="modal-body">
                                         <a href="#" class="arrow-left arrow">
                                             <img src="/CAchute/assets/img/arrow.png" alt="">
                                         </a>
                                         <a href="#" class="arrow-right arrow">
                                             <img src="/CAchute/assets/img/arrow02.png" alt="">
                                         </a>
-                                        
+
                                         <div class="video mb-5">
                                             <video src="./assets/img/video-test.mp4" class="img-fluid offcanvas-video"
                                                 controls></video>
@@ -361,7 +378,8 @@
                     </div>
                     <div class="fourth my-3">
                         <!-- Button trigger modal -->
-                        <a role="button" data-bs-toggle="modal" data-bs-target="#cardModal04">
+                        <a role="button" data-bs-toggle="modal" data-bs-target="#cardModal04" id="fourthCard"
+                            onclick="addCheck4()">
                             <img src="./assets/img/card-fourth.png" alt="Jean se lance dans le jardinage"
                                 class="img-fluid rotate-01">
                         </a>
@@ -375,14 +393,14 @@
                                         <a role="button" data-bs-dismiss="modal" aria-label="Close"><img
                                                 src="./assets/img/icon-close-small.svg" alt=""></a>
                                     </div>
-                                                                        <div class="modal-body">
+                                    <div class="modal-body">
                                         <a href="#" class="arrow-left arrow">
                                             <img src="/CAchute/assets/img/arrow.png" alt="">
                                         </a>
                                         <a href="#" class="arrow-right arrow">
                                             <img src="/CAchute/assets/img/arrow02.png" alt="">
                                         </a>
-                                        
+
                                         <div class="video mb-5">
                                             <video src="./assets/img/video-test.mp4" class="img-fluid offcanvas-video"
                                                 controls></video>
@@ -435,7 +453,8 @@
                 <div class="d-lg-flex justify-content-evenly align-items-center">
                     <div class="fifth my-3">
                         <!-- Button trigger modal -->
-                        <a role="button" data-bs-toggle="modal" data-bs-target="#cardModal05">
+                        <a role="button" data-bs-toggle="modal" data-bs-target="#cardModal05" id="fifthCard"
+                            onclick="addCheck5()">
                             <img src="./assets/img/card-fifth.png" alt="Sylvie et Jean recoivent leurs amis"
                                 class="img-fluid rotate-01">
                         </a>
@@ -449,14 +468,14 @@
                                         <a role="button" data-bs-dismiss="modal" aria-label="Close"><img
                                                 src="./assets/img/icon-close-small.svg" alt=""></a>
                                     </div>
-                                                                        <div class="modal-body">
+                                    <div class="modal-body">
                                         <a href="#" class="arrow-left arrow">
                                             <img src="/CAchute/assets/img/arrow.png" alt="">
                                         </a>
                                         <a href="#" class="arrow-right arrow">
                                             <img src="/CAchute/assets/img/arrow02.png" alt="">
                                         </a>
-                                        
+
                                         <div class="video mb-5">
                                             <video src="./assets/img/video-test.mp4" class="img-fluid offcanvas-video"
                                                 controls></video>
@@ -502,8 +521,10 @@
                     </div>
                     <div class="sixth my-3">
                         <!-- Button trigger modal -->
-                        <a role="button" data-bs-toggle="modal" data-bs-target="#cardModal06">
-                            <img src="./assets/img/card-sixth.png" alt="Sylvie part en voyage" class="img-fluid rotate-02">
+                        <a role="button" data-bs-toggle="modal" data-bs-target="#cardModal06" id="sixthCard"
+                            onclick="addCheck6()">
+                            <img src="./assets/img/card-sixth.png" alt="Sylvie part en voyage"
+                                class="img-fluid rotate-02">
                         </a>
 
                         <!-- Modal -->
@@ -515,14 +536,14 @@
                                         <a role="button" data-bs-dismiss="modal" aria-label="Close"><img
                                                 src="./assets/img/icon-close-small.svg" alt=""></a>
                                     </div>
-                                                                        <div class="modal-body">
+                                    <div class="modal-body">
                                         <a href="#" class="arrow-left arrow">
                                             <img src="/CAchute/assets/img/arrow.png" alt="">
                                         </a>
                                         <a href="#" class="arrow-right arrow">
                                             <img src="/CAchute/assets/img/arrow02.png" alt="">
                                         </a>
-                                        
+
                                         <div class="video mb-5">
                                             <video src="./assets/img/video-test.mp4" class="img-fluid offcanvas-video"
                                                 controls></video>
@@ -589,12 +610,11 @@
 
     </footer>
 
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
+    <script src="/CAchute/assets/js/app.js"></script>
 </body>
 
 </html>
