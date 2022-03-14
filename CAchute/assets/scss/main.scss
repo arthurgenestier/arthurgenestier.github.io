@@ -75,7 +75,6 @@ p {
     &::before {
         content: '';
         position:absolute;
-
         height: 2.5rem;
         width: 2.5rem;
         background-size: cover;
@@ -93,12 +92,6 @@ p {
         }
     }
     .container-line {
-        position: relative;
-        display: inline-block;
-        img {
-            height: 4rem;
-            width: auto;
-        }
         &::before {
             background-image: url(/CAchute/assets/img/icon-check-first.png);
             left: 4%;
@@ -113,12 +106,6 @@ p {
         }
     }
     .container-line {
-        position: relative;
-        display: inline-block;
-        img {
-            height: 4rem;
-            width: auto;
-        }
         &::before {
             background-image: url(/CAchute/assets/img/icon-check-second.png);
             left: 20%;
@@ -407,6 +394,19 @@ footer {
     }
 }
 
+@media (min-width: $break-sm) {
+    main {
+        .modal-dialog {
+
+            .arrow-left {
+                left: 4%;
+            }
+            .arrow-right {
+                right: 4%;
+            }
+        }
+    }
+}
 
 @media (min-width: $break-lg) {
     .dropdown:hover .dropdown-menu {
@@ -491,7 +491,7 @@ footer {
                 }
             }
             .arrow-left {
-                left: -4%;
+                left: 1%;
             }
             .arrow-right {
                 right: 1%;
@@ -508,20 +508,6 @@ footer {
                         }
                     }
                 }
-            }
-        }
-    }
-}
-
-@media (min-width: $break-xl) {
-    main {
-        .modal-dialog {
-
-            .arrow-left {
-                left: -10%;
-            }
-            .arrow-right {
-                right: -6%;
             }
         }
     }

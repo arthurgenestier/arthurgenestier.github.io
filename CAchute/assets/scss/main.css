@@ -90,14 +90,6 @@ p {
 .first .check::before {
   background-image: url(/CAchute/assets/img/icon-check-first.png);
 }
-.first .container-line {
-  position: relative;
-  display: inline-block;
-}
-.first .container-line img {
-  height: 4rem;
-  width: auto;
-}
 .first .container-line::before {
   background-image: url(/CAchute/assets/img/icon-check-first.png);
   left: 4%;
@@ -108,14 +100,6 @@ p {
 }
 .second .check::before {
   background-image: url(/CAchute/assets/img/icon-check-second.png);
-}
-.second .container-line {
-  position: relative;
-  display: inline-block;
-}
-.second .container-line img {
-  height: 4rem;
-  width: auto;
 }
 .second .container-line::before {
   background-image: url(/CAchute/assets/img/icon-check-second.png);
@@ -368,6 +352,14 @@ footer p {
   font-family: "AmsiProCondensed-Bold";
 }
 
+@media (min-width: 576px) {
+  main .modal-dialog .arrow-left {
+    left: 4%;
+  }
+  main .modal-dialog .arrow-right {
+    right: 4%;
+  }
+}
 @media (min-width: 992px) {
   .dropdown:hover .dropdown-menu {
     display: block;
@@ -451,7 +443,7 @@ footer p {
     height: 8rem;
   }
   main .modal-dialog .arrow-left {
-    left: -4%;
+    left: 1%;
   }
   main .modal-dialog .arrow-right {
     right: 1%;
@@ -464,13 +456,5 @@ footer p {
   }
   main .modal-dialog .modal-content .modal-body .content p {
     font-size: 2.2rem;
-  }
-}
-@media (min-width: 1200px) {
-  main .modal-dialog .arrow-left {
-    left: -10%;
-  }
-  main .modal-dialog .arrow-right {
-    right: -6%;
   }
 }/*# sourceMappingURL=main.css.map */
