@@ -76,8 +76,8 @@ p {
         content: '';
         position:absolute;
 
-        height: 3rem;
-        width: 3rem;
+        height: 2.5rem;
+        width: 2.5rem;
         background-size: cover;
         background-repeat: no-repeat;
         top: 50%;
@@ -121,7 +121,7 @@ p {
         }
         &::before {
             background-image: url(/CAchute/assets/img/icon-check-second.png);
-            left: 19%;
+            left: 20%;
         }
     }
 }
@@ -132,12 +132,36 @@ p {
             background-image: url(/CAchute/assets/img/icon-check-third.png);
         }
     }
+    .container-line {
+        position: relative;
+        display: inline-block;
+        img {
+            height: 4rem;
+            width: auto;
+        }
+        &::before {
+            background-image: url(/CAchute/assets/img/icon-check-third.png);
+            left: 36%;
+        }
+    }
 }
 .fourth {
     position: relative;
     .check {
         &::before {
             background-image: url(/CAchute/assets/img/icon-check-fourth.png);
+        }
+    }
+    .container-line {
+        position: relative;
+        display: inline-block;
+        img {
+            height: 4rem;
+            width: auto;
+        }
+        &::before {
+            background-image: url(/CAchute/assets/img/icon-check-fourth.png);
+            left: 52%;
         }
     }
 }
@@ -148,12 +172,36 @@ p {
             background-image: url(/CAchute/assets/img/icon-check-fifth.png);
         }
     }
+    .container-line {
+        position: relative;
+        display: inline-block;
+        img {
+            height: 4rem;
+            width: auto;
+        }
+        &::before {
+            background-image: url(/CAchute/assets/img/icon-check-fifth.png);
+            left: 69%;
+        }
+    }
 }
 .sixth {
     position: relative;
     .check {
         &::before {
             background-image: url(/CAchute/assets/img/icon-check-sixth.png);
+        }
+    }
+    .container-line {
+        position: relative;
+        display: inline-block;
+        img {
+            height: 4rem;
+            width: auto;
+        }
+        &::before {
+            background-image: url(/CAchute/assets/img/icon-check-sixth.png);
+            left: 85%;
         }
     }
 }
@@ -255,23 +303,20 @@ main {
         max-width: max-content;
         margin: 2rem;
         .arrow {
+            position: fixed;
+            top:40%;
             img {
                 height: 3rem;
                 width: auto;
             }
-            position: absolute;
-            top:10%;
-            z-index: 1;
-            width: 3rem;
-            height: 3rem;
         }
         .arrow-left {
-            left: 0;
+            left: 8%;
 
         }
         .arrow-right {
 
-            right: 0;
+            right: 8%;
 
         }
         .modal-content {

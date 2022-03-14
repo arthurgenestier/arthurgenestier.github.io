@@ -76,8 +76,8 @@ p {
 .container-line::before {
   content: "";
   position: absolute;
-  height: 3rem;
-  width: 3rem;
+  height: 2.5rem;
+  width: 2.5rem;
   background-size: cover;
   background-repeat: no-repeat;
   top: 50%;
@@ -119,7 +119,7 @@ p {
 }
 .second .container-line::before {
   background-image: url(/CAchute/assets/img/icon-check-second.png);
-  left: 19%;
+  left: 20%;
 }
 
 .third {
@@ -128,12 +128,36 @@ p {
 .third .check::before {
   background-image: url(/CAchute/assets/img/icon-check-third.png);
 }
+.third .container-line {
+  position: relative;
+  display: inline-block;
+}
+.third .container-line img {
+  height: 4rem;
+  width: auto;
+}
+.third .container-line::before {
+  background-image: url(/CAchute/assets/img/icon-check-third.png);
+  left: 36%;
+}
 
 .fourth {
   position: relative;
 }
 .fourth .check::before {
   background-image: url(/CAchute/assets/img/icon-check-fourth.png);
+}
+.fourth .container-line {
+  position: relative;
+  display: inline-block;
+}
+.fourth .container-line img {
+  height: 4rem;
+  width: auto;
+}
+.fourth .container-line::before {
+  background-image: url(/CAchute/assets/img/icon-check-fourth.png);
+  left: 52%;
 }
 
 .fifth {
@@ -142,12 +166,36 @@ p {
 .fifth .check::before {
   background-image: url(/CAchute/assets/img/icon-check-fifth.png);
 }
+.fifth .container-line {
+  position: relative;
+  display: inline-block;
+}
+.fifth .container-line img {
+  height: 4rem;
+  width: auto;
+}
+.fifth .container-line::before {
+  background-image: url(/CAchute/assets/img/icon-check-fifth.png);
+  left: 69%;
+}
 
 .sixth {
   position: relative;
 }
 .sixth .check::before {
   background-image: url(/CAchute/assets/img/icon-check-sixth.png);
+}
+.sixth .container-line {
+  position: relative;
+  display: inline-block;
+}
+.sixth .container-line img {
+  height: 4rem;
+  width: auto;
+}
+.sixth .container-line::before {
+  background-image: url(/CAchute/assets/img/icon-check-sixth.png);
+  left: 85%;
 }
 
 .bg-pink {
@@ -235,21 +283,18 @@ main .modal-dialog {
   margin: 2rem;
 }
 main .modal-dialog .arrow {
-  position: absolute;
-  top: 10%;
-  z-index: 1;
-  width: 3rem;
-  height: 3rem;
+  position: fixed;
+  top: 40%;
 }
 main .modal-dialog .arrow img {
   height: 3rem;
   width: auto;
 }
 main .modal-dialog .arrow-left {
-  left: 0;
+  left: 8%;
 }
 main .modal-dialog .arrow-right {
-  right: 0;
+  right: 8%;
 }
 main .modal-dialog .modal-content {
   background: #009697;
