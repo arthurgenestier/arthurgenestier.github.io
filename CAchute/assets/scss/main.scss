@@ -245,6 +245,9 @@ nav {
     
     .logo {
         z-index: 1111;
+        img {
+            height: 7rem;
+        }
     }
     .offcanvas {
         background-color: transparent;
@@ -481,7 +484,7 @@ footer {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        left: 55%;
+        left: 50%;
         width: 45%;
     }
     .title {
@@ -490,6 +493,11 @@ footer {
     .intro {
         width: 50%;
         margin-left: 5%;
+        p {
+            padding-left: 11%;
+            padding-right: 8%;
+            line-height: 1.2;
+        }
     }
     main {
         padding-top: 10%;
@@ -502,13 +510,14 @@ footer {
                 }
             }
             .arrow-left {
-                left: 1%;
+                left: 5%;
             }
             .arrow-right {
-                right: 1%;
+                right: 5%;
             }
             .modal-content {
                 .modal-body {
+                    padding: 0 5%;
                     img {
                         max-width: 14rem;
                     }
@@ -519,6 +528,20 @@ footer {
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+@media (min-width: $break-xl) {
+    main {
+
+        .modal-dialog {
+            .arrow-left {
+                left: 10%;
+            }
+            .arrow-right {
+                right: 10%;
             }
         }
     }
