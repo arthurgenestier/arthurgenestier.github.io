@@ -7,11 +7,15 @@ html {
 }
 
 body {
-    
+    background-image: url(/CAchute/assets/img/fond-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -15%;
     background-color: $blue;
     color: $black;
     font-family: "AmsiPro-Ultra";
     letter-spacing: 0.08rem;
+
 }
 
 .line {
@@ -105,53 +109,6 @@ p {
         }
     }
 }
-//     &::before {
-//         content: '';
-//         position:absolute;
-//         height: 2.5rem;
-//         width: 2.5rem;
-//         background-size: cover;
-//         background-repeat: no-repeat;
-//         top: 50%;
-//         transform: translateY(-50%);
-//     }
-// }
-// .container-line-first {
-//     &::before {
-//         background-image: url(/CAchute/assets/img/icon-check-first.png);
-//         left: 4%;
-//     }
-// }
-// .container-line-second {
-//     &::before {
-//         background-image: url(/CAchute/assets/img/icon-check-second.png);
-//         left: 20%;
-//     }
-// }
-// .container-line-third {
-//     &::before {
-//         background-image: url(/CAchute/assets/img/icon-check-third.png);
-//         left: 36%;
-//     }
-// }
-// .container-line-fourth {
-//     &::before {
-//         background-image: url(/CAchute/assets/img/icon-check-fourth.png);
-//         left: 52%;
-//     }
-// }
-// .container-line-fifth {
-//     &::before {
-//         background-image: url(/CAchute/assets/img/icon-check-fifth.png);
-//         left: 69%;
-//     }
-// }
-// .container-line-sixth {
-//     &::before {
-//         background-image: url(/CAchute/assets/img/icon-check-sixth.png);
-//         left: 85%;
-//     }
-// }
 
 .first {
     position: relative;
@@ -346,17 +303,6 @@ main {
             }
         }
     }
-    .bg-round {
-        &::before {
-            content: '';
-            background-color: $blue3;
-        }
-    }
-    .bg-blue3 {
-        background-color: $blue3;
-        position: relative;
-        padding-bottom: 5%;
-    }
     .intro {
         padding-bottom: 10%;
     }
@@ -409,6 +355,9 @@ footer {
 }
 
 @media (min-width: $break-sm) {
+    body {
+        background-position-y: 0;
+    }
     main {
         .modal-dialog {
 
@@ -422,7 +371,12 @@ footer {
     }
 }
 
+
 @media (min-width: $break-lg) {
+    body {
+        background-image: url(/CAchute/assets/img/fond-desktop.png);
+        background-position-y: -68%;
+    }
     .dropdown:hover .dropdown-menu {
         display: block;
         inset: 15px auto auto 0px !important;
@@ -534,6 +488,9 @@ footer {
 }
 
 @media (min-width: $break-xl) {
+    body {
+        background-position-y: -30%;
+    }
     main {
 
         .modal-dialog {

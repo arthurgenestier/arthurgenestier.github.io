@@ -12,6 +12,10 @@ html {
 }
 
 body {
+  background-image: url(/CAchute/assets/img/fond-mobile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -15%;
   background-color: #8AD9DD;
   color: #000000;
   font-family: "AmsiPro-Ultra";
@@ -275,15 +279,6 @@ main .modal-dialog .modal-content .modal-body p {
 main .modal-dialog .modal-content .modal-body img {
   max-width: 9rem;
 }
-main .bg-round::before {
-  content: "";
-  background-color: #28ACAD;
-}
-main .bg-blue3 {
-  background-color: #28ACAD;
-  position: relative;
-  padding-bottom: 5%;
-}
 main .intro {
   padding-bottom: 10%;
 }
@@ -325,6 +320,10 @@ footer p {
 }
 
 @media (min-width: 576px) {
+  body {
+    background-position-y: 0;
+  }
+
   main .modal-dialog .arrow-left {
     left: 4%;
   }
@@ -333,6 +332,11 @@ footer p {
   }
 }
 @media (min-width: 992px) {
+  body {
+    background-image: url(/CAchute/assets/img/fond-desktop.png);
+    background-position-y: -68%;
+  }
+
   .dropdown:hover .dropdown-menu {
     display: block;
     inset: 15px auto auto 0px !important;
@@ -439,6 +443,10 @@ footer p {
   }
 }
 @media (min-width: 1200px) {
+  body {
+    background-position-y: -30%;
+  }
+
   main .modal-dialog .arrow-left {
     left: 10%;
   }
