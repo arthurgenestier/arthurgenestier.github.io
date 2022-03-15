@@ -65,23 +65,48 @@ p {
   background-position: center center;
 }
 
-.container-line {
+.block {
+  display: block !important;
+}
+
+.flex {
+  display: flex !important;
+}
+
+.step {
+  z-index: 1061;
+}
+.step .container-line {
   position: relative;
   display: inline-block;
 }
-.container-line img {
+.step .container-line img {
   height: 4rem;
   width: auto;
 }
-.container-line::before {
-  content: "";
+.step .container-line .check-icon {
+  height: 3rem;
   position: absolute;
-  height: 2.5rem;
-  width: 2.5rem;
-  background-size: cover;
-  background-repeat: no-repeat;
   top: 50%;
   transform: translateY(-50%);
+}
+.step .container-line #check-icon-first {
+  left: 4%;
+}
+.step .container-line #check-icon-second {
+  left: 20%;
+}
+.step .container-line #check-icon-third {
+  left: 36%;
+}
+.step .container-line #check-icon-fourth {
+  left: 52%;
+}
+.step .container-line #check-icon-fifth {
+  left: 69%;
+}
+.step .container-line #check-icon-sixth {
+  left: 85%;
 }
 
 .first {
@@ -90,20 +115,12 @@ p {
 .first .check::before {
   background-image: url(/CAchute/assets/img/icon-check-first.png);
 }
-.first .container-line::before {
-  background-image: url(/CAchute/assets/img/icon-check-first.png);
-  left: 4%;
-}
 
 .second {
   position: relative;
 }
 .second .check::before {
   background-image: url(/CAchute/assets/img/icon-check-second.png);
-}
-.second .container-line::before {
-  background-image: url(/CAchute/assets/img/icon-check-second.png);
-  left: 20%;
 }
 
 .third {
@@ -112,36 +129,12 @@ p {
 .third .check::before {
   background-image: url(/CAchute/assets/img/icon-check-third.png);
 }
-.third .container-line {
-  position: relative;
-  display: inline-block;
-}
-.third .container-line img {
-  height: 4rem;
-  width: auto;
-}
-.third .container-line::before {
-  background-image: url(/CAchute/assets/img/icon-check-third.png);
-  left: 36%;
-}
 
 .fourth {
   position: relative;
 }
 .fourth .check::before {
   background-image: url(/CAchute/assets/img/icon-check-fourth.png);
-}
-.fourth .container-line {
-  position: relative;
-  display: inline-block;
-}
-.fourth .container-line img {
-  height: 4rem;
-  width: auto;
-}
-.fourth .container-line::before {
-  background-image: url(/CAchute/assets/img/icon-check-fourth.png);
-  left: 52%;
 }
 
 .fifth {
@@ -150,36 +143,12 @@ p {
 .fifth .check::before {
   background-image: url(/CAchute/assets/img/icon-check-fifth.png);
 }
-.fifth .container-line {
-  position: relative;
-  display: inline-block;
-}
-.fifth .container-line img {
-  height: 4rem;
-  width: auto;
-}
-.fifth .container-line::before {
-  background-image: url(/CAchute/assets/img/icon-check-fifth.png);
-  left: 69%;
-}
 
 .sixth {
   position: relative;
 }
 .sixth .check::before {
   background-image: url(/CAchute/assets/img/icon-check-sixth.png);
-}
-.sixth .container-line {
-  position: relative;
-  display: inline-block;
-}
-.sixth .container-line img {
-  height: 4rem;
-  width: auto;
-}
-.sixth .container-line::before {
-  background-image: url(/CAchute/assets/img/icon-check-sixth.png);
-  left: 85%;
 }
 
 .bg-pink {

@@ -64,37 +64,100 @@ p {
     }
     
 }
-
-.container-line {
-    position: relative;
-    display: inline-block;
-    img {
-        height: 4rem;
-        width: auto;
-    }
-    &::before {
-        content: '';
-        position:absolute;
-        height: 2.5rem;
-        width: 2.5rem;
-        background-size: cover;
-        background-repeat: no-repeat;
-        top: 50%;
-        transform: translateY(-50%);
+.block {
+    display: block !important;
+}
+.flex {
+    display: flex !important;
+}
+.step {
+    z-index: 1061;
+    .container-line {
+        position: relative;
+        display: inline-block;
+        img {
+            height: 4rem;
+            width: auto;
+        }
+        .check-icon {
+            height: 3rem;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #check-icon-first {
+            left: 4%;
+        }
+        #check-icon-second {
+            left: 20%;
+        }
+        #check-icon-third {
+            left: 36%;
+        }
+        #check-icon-fourth {
+            left: 52%;
+        }
+        #check-icon-fifth {
+            left: 69%;
+        }
+        #check-icon-sixth {
+            left: 85%;
+        }
     }
 }
+//     &::before {
+//         content: '';
+//         position:absolute;
+//         height: 2.5rem;
+//         width: 2.5rem;
+//         background-size: cover;
+//         background-repeat: no-repeat;
+//         top: 50%;
+//         transform: translateY(-50%);
+//     }
+// }
+// .container-line-first {
+//     &::before {
+//         background-image: url(/CAchute/assets/img/icon-check-first.png);
+//         left: 4%;
+//     }
+// }
+// .container-line-second {
+//     &::before {
+//         background-image: url(/CAchute/assets/img/icon-check-second.png);
+//         left: 20%;
+//     }
+// }
+// .container-line-third {
+//     &::before {
+//         background-image: url(/CAchute/assets/img/icon-check-third.png);
+//         left: 36%;
+//     }
+// }
+// .container-line-fourth {
+//     &::before {
+//         background-image: url(/CAchute/assets/img/icon-check-fourth.png);
+//         left: 52%;
+//     }
+// }
+// .container-line-fifth {
+//     &::before {
+//         background-image: url(/CAchute/assets/img/icon-check-fifth.png);
+//         left: 69%;
+//     }
+// }
+// .container-line-sixth {
+//     &::before {
+//         background-image: url(/CAchute/assets/img/icon-check-sixth.png);
+//         left: 85%;
+//     }
+// }
 
 .first {
     position: relative;
     .check {
         &::before {
             background-image: url(/CAchute/assets/img/icon-check-first.png);
-        }
-    }
-    .container-line {
-        &::before {
-            background-image: url(/CAchute/assets/img/icon-check-first.png);
-            left: 4%;
         }
     }
 }
@@ -105,12 +168,7 @@ p {
             background-image: url(/CAchute/assets/img/icon-check-second.png);
         }
     }
-    .container-line {
-        &::before {
-            background-image: url(/CAchute/assets/img/icon-check-second.png);
-            left: 20%;
-        }
-    }
+
 }
 .third {
     position: relative;
@@ -119,18 +177,7 @@ p {
             background-image: url(/CAchute/assets/img/icon-check-third.png);
         }
     }
-    .container-line {
-        position: relative;
-        display: inline-block;
-        img {
-            height: 4rem;
-            width: auto;
-        }
-        &::before {
-            background-image: url(/CAchute/assets/img/icon-check-third.png);
-            left: 36%;
-        }
-    }
+
 }
 .fourth {
     position: relative;
@@ -139,18 +186,7 @@ p {
             background-image: url(/CAchute/assets/img/icon-check-fourth.png);
         }
     }
-    .container-line {
-        position: relative;
-        display: inline-block;
-        img {
-            height: 4rem;
-            width: auto;
-        }
-        &::before {
-            background-image: url(/CAchute/assets/img/icon-check-fourth.png);
-            left: 52%;
-        }
-    }
+
 }
 .fifth {
     position: relative;
@@ -159,18 +195,7 @@ p {
             background-image: url(/CAchute/assets/img/icon-check-fifth.png);
         }
     }
-    .container-line {
-        position: relative;
-        display: inline-block;
-        img {
-            height: 4rem;
-            width: auto;
-        }
-        &::before {
-            background-image: url(/CAchute/assets/img/icon-check-fifth.png);
-            left: 69%;
-        }
-    }
+
 }
 .sixth {
     position: relative;
@@ -179,22 +204,8 @@ p {
             background-image: url(/CAchute/assets/img/icon-check-sixth.png);
         }
     }
-    .container-line {
-        position: relative;
-        display: inline-block;
-        img {
-            height: 4rem;
-            width: auto;
-        }
-        &::before {
-            background-image: url(/CAchute/assets/img/icon-check-sixth.png);
-            left: 85%;
-        }
-    }
+
 }
-
-
-
 
 .bg-pink {
     background-color: $pink;
