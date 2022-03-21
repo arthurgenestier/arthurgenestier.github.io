@@ -432,6 +432,20 @@ header {
         h3 {
             font-size: 3.2rem;
         }
+        ul {
+            li {
+                position: relative;
+                p{
+
+                    margin-left: 8%;
+                }
+                &::before {
+                    content: url(/RRenew/assets/img/icon-check.svg);
+                    position: absolute;
+                    top: 5%;
+                }
+            }
+        }
     }
     table {
         border-collapse: unset;
@@ -473,7 +487,7 @@ header {
                 }
                 &:nth-child(1) {
                     text-align: left;
-                    text-transform: uppercase;
+                    text-transform: lowercase;
                 }
                 &:nth-child(3) {
                     border: solid $black 0.1rem;

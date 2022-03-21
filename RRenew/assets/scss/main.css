@@ -385,6 +385,17 @@ header {
 .identite .bg-black h3 {
   font-size: 3.2rem;
 }
+.identite .bg-black ul li {
+  position: relative;
+}
+.identite .bg-black ul li p {
+  margin-left: 8%;
+}
+.identite .bg-black ul li::before {
+  content: url(/RRenew/assets/img/icon-check.svg);
+  position: absolute;
+  top: 5%;
+}
 .identite table {
   border-collapse: unset;
 }
@@ -424,7 +435,7 @@ header {
 }
 .identite table tr td:nth-child(1) {
   text-align: left;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 .identite table tr td:nth-child(3) {
   border: solid #000000 0.1rem;
