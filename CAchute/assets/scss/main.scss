@@ -377,15 +377,7 @@ footer {
         background-image: url(/CAchute/assets/img/fond-desktop.png);
         background-position-y: -68%;
     }
-    .dropdown:hover .dropdown-menu {
-        display: block;
-        inset: 15px auto auto 0px !important;
-        width: 100%;
-        padding: 7% 2rem;
-        border-bottom-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
-    }
-    
+
     .dropdown {
         .dropdown-menu {
             width: 100%;
