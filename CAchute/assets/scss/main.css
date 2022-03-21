@@ -333,6 +333,9 @@ footer p {
 .legales h2 {
   color: #005D5D !important;
 }
+.legales li {
+  font-size: 2rem;
+}
 
 @media (min-width: 576px) {
   body {

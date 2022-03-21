@@ -367,6 +367,9 @@ footer {
     h2 {
         color: $green3 !important;
     }
+    li {
+        font-size: 2rem;
+    }
 }
 
 @media (min-width: $break-sm) {
