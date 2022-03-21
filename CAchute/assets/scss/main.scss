@@ -15,7 +15,6 @@ body {
     color: $black;
     font-family: "AmsiPro-Ultra";
     letter-spacing: 0.08rem;
-
 }
 
 .line {
@@ -206,6 +205,7 @@ nav {
             height: 7rem;
         }
     }
+
     .offcanvas {
         background-color: transparent;
         border-bottom: 0;
@@ -254,6 +254,9 @@ nav {
 }
 
 main {
+    .title {
+        margin-top: 6rem;
+    }
     .modal {
         background: $blue;
     }
@@ -351,6 +354,18 @@ footer {
     p {
         color: $green3;
         font-family: "AmsiProCondensed-Bold";
+    }
+}
+
+.legales {
+    background-color: $blue;
+    background-image: none;
+    color: $green3;
+    p {
+        color: $green3;
+    }
+    h2 {
+        color: $green3 !important;
     }
 }
 
@@ -492,6 +507,9 @@ footer {
             .arrow-right {
                 right: 10%;
             }
+        }
+        .title {
+            margin-top: 0;
         }
     }
 }

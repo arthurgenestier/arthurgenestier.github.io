@@ -235,6 +235,9 @@ nav .offcanvas .offcanvas-body ul li a {
   color: #FFFFFF;
 }
 
+main .title {
+  margin-top: 6rem;
+}
 main .modal {
   background: #8AD9DD;
 }
@@ -317,6 +320,18 @@ footer a:hover:nth-child(2) {
 footer p {
   color: #005D5D;
   font-family: "AmsiProCondensed-Bold";
+}
+
+.legales {
+  background-color: #8AD9DD;
+  background-image: none;
+  color: #005D5D;
+}
+.legales p {
+  color: #005D5D;
+}
+.legales h2 {
+  color: #005D5D !important;
 }
 
 @media (min-width: 576px) {
@@ -443,5 +458,8 @@ footer p {
   }
   main .modal-dialog .arrow-right {
     right: 10%;
+  }
+  main .title {
+    margin-top: 0;
   }
 }/*# sourceMappingURL=main.css.map */
