@@ -368,14 +368,20 @@ footer {
 .legales {
     background-color: $blue;
     color: $green3;
+    h1, .like-h1 {
+        font-size: 3.6rem;
+    }
     p {
         color: $green3;
     }
-    h2 {
-        color: $green3 !important;
-    }
+    p,
     li {
-        font-size: 2rem;
+        font-size: 1.5rem;
+
+    }
+    h2, .like-h2 {
+        font-size: 2rem !important;
+        color: $green3 !important;
     }
 }
 

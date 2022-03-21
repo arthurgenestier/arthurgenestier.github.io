@@ -335,14 +335,19 @@ footer p {
   background-color: #8AD9DD;
   color: #005D5D;
 }
+.legales h1, .legales .like-h1 {
+  font-size: 3.6rem;
+}
 .legales p {
   color: #005D5D;
 }
-.legales h2 {
-  color: #005D5D !important;
-}
+.legales p,
 .legales li {
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+.legales h2, .legales .like-h2 {
+  font-size: 2rem !important;
+  color: #005D5D !important;
 }
 
 .index {
