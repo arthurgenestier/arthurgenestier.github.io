@@ -159,6 +159,10 @@ p {
   background-color: #FA5061;
 }
 
+.bg-blue {
+  background-color: #009697;
+}
+
 .bg-round::before {
   content: "";
   position: absolute;
@@ -322,9 +326,13 @@ footer p {
   font-family: "AmsiProCondensed-Bold";
 }
 
+.legales,
+.index {
+  background-image: none;
+}
+
 .legales {
   background-color: #8AD9DD;
-  background-image: none;
   color: #005D5D;
 }
 .legales p {
@@ -335,6 +343,25 @@ footer p {
 }
 .legales li {
   font-size: 2rem;
+}
+
+.index {
+  background-color: #6692D8;
+}
+.index .text p {
+  color: #FFFFFF;
+}
+.index .dropdown-menu {
+  background: #009697;
+}
+.index #dropdownMenuLink {
+  background: #009697;
+}
+.index div.button-blue:nth-child(3) {
+  background: #FA5061;
+}
+.index div.button-blue:nth-child(4) {
+  background: #FA5061;
 }
 
 @media (min-width: 576px) {
@@ -449,6 +476,10 @@ footer p {
   }
   main .modal-dialog .modal-content .modal-body .content p {
     font-size: 2.2rem;
+  }
+
+  .index {
+    margin-top: -10rem;
   }
 }
 @media (min-width: 1200px) {

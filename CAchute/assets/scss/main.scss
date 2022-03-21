@@ -166,6 +166,9 @@ p {
 .bg-pink {
     background-color: $pink;
 }
+.bg-blue {
+    background-color: $blue2;
+}
 .bg-round {
     &::before {
         content: '';
@@ -357,9 +360,13 @@ footer {
     }
 }
 
+.legales,
+.index {
+
+    background-image: none;
+}
 .legales {
     background-color: $blue;
-    background-image: none;
     color: $green3;
     p {
         color: $green3;
@@ -370,6 +377,31 @@ footer {
     li {
         font-size: 2rem;
     }
+}
+
+.index {
+    background-color: $blue5;
+    .text {
+        p {
+
+            color: $white;
+        }
+
+    }
+    .dropdown-menu {
+        background: $blue2;
+    }
+    
+    #dropdownMenuLink {
+        background: $blue2;
+    }
+    div.button-blue:nth-child(3) {
+        background: $pink;
+    }
+    div.button-blue:nth-child(4) {
+        background: $pink;
+    }
+
 }
 
 @media (min-width: $break-sm) {
@@ -494,6 +526,10 @@ footer {
                 }
             }
         }
+    }
+
+    .index {
+        margin-top: -10rem;
     }
 }
 
