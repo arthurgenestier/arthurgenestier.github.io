@@ -1,4 +1,4 @@
 AuthType Basic
-AuthName "Accès protégé"
-AuthUserFile /CAchute/.htpasswd
-require valid-user
+AuthName "Protected Area"
+AuthUserFile /full/path/to/.htpasswd
+Require valid-user
