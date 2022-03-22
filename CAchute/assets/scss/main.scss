@@ -10,7 +10,7 @@ body {
     background-image: url(/CAchute/assets/img/fond-mobile.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-y: -15%;
+    background-position-y: -25%;
     background-color: $blue;
     color: $black;
     font-family: "AmsiPro-Ultra";
@@ -46,8 +46,6 @@ h3 {
     font-size: 3.2rem;
 }
 
-
-
 p {
     font-size: 2rem;
     color: $green;
@@ -67,12 +65,15 @@ p {
     }
     
 }
+
 .block {
     display: block !important;
 }
+
 .flex {
     display: flex !important;
 }
+
 .step {
     z-index: 1061;
     .container-line {
@@ -169,6 +170,9 @@ p {
 .bg-blue {
     background-color: $blue2;
 }
+.bg-blue2 {
+    background-color: $blue3;
+}
 .bg-round {
     &::before {
         content: '';
@@ -181,24 +185,41 @@ p {
     }
 }
 
-.button-pink {
-    background: $pink;
-    padding: 1rem 3.6rem;
-    font-size: 1.8rem;
-    display: inline-block;
-    text-transform: uppercase;
-    color: white;
-    text-decoration: none;
-    border-radius: 4rem;
-    margin: 0 4%;
-    &:hover {
-        color: $yellow;
-    }
-}
-
 .text-blue4 {
     color: $blue4;
 }
+
+.button {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    display: inline-block;
+    text-transform: uppercase;
+    color: $white;
+    text-decoration: none;
+    border-radius: 4rem;
+    margin: 0;
+    a {
+        color: $white;
+        text-decoration: none;
+        &:hover {
+            color: $yellow;
+        }
+    }
+}
+
+.not-active {
+    background-color: $blue3 !important;
+    &:hover,
+    &:active {
+        background-color: $pink !important;
+    }
+}
+
+.active {
+    background-color: $pink !important;
+
+    }
+
 
 nav {
     
@@ -361,7 +382,7 @@ footer {
 }
 
 .legales,
-.index {
+.accompagne {
 
     background-image: none;
 }
@@ -385,7 +406,7 @@ footer {
     }
 }
 
-.index {
+.accompagne {
     background-color: $blue5;
     .text {
         p {
@@ -394,19 +415,7 @@ footer {
         }
 
     }
-    .dropdown-menu {
-        background: $blue2;
-    }
-    
-    #dropdownMenuLink {
-        background: $blue2;
-    }
-    div.button-blue:nth-child(3) {
-        background: $pink;
-    }
-    div.button-blue:nth-child(4) {
-        background: $pink;
-    }
+
 
 }
 
@@ -430,8 +439,8 @@ footer {
 
 @media (min-width: $break-lg) {
     body {
-        background-image: url(/CAchute/assets/img/fond-desktop.png);
-        background-position-y: -68%;
+        
+        background-position-y: 20%;
     }
 
     .dropdown {
@@ -440,7 +449,8 @@ footer {
             padding: 7% 2rem;
             border-bottom-left-radius: 2rem;
             border-bottom-right-radius: 2rem;
-            
+            z-index: 1;
+            border: 0;
         }
         &:hover .dropdown-menu {
             display: block;
@@ -450,12 +460,8 @@ footer {
             border-bottom-left-radius: 2rem;
             border-bottom-right-radius: 2rem;
         }
-        .button-pink {
-            font-size: 1.6rem;
-            margin: 0;
-            padding: 1rem 2rem;
-            z-index: 1001;
-            position: relative;
+        #dropdownMenuLink {
+            z-index: 2;
         }
         a {
             color: $white;
@@ -463,24 +469,7 @@ footer {
         }
     }
     
-    .button-blue {
-        background: $blue2;
-        padding: 1rem 2rem;
-        font-size: 1.5rem;
-        display: inline-block;
-        text-transform: uppercase;
-        color: $white;
-        text-decoration: none;
-        border-radius: 4rem;
-        margin: 0;
-        a {
-            color: $white;
-            text-decoration: none;
-            &:hover {
-                color: $yellow;
-            }
-        }
-    }
+    
     
     .la-mif {
         position: absolute;
@@ -490,7 +479,7 @@ footer {
         width: 45%;
     }
     .title {
-        width: 65%;
+        width: 60%;
     }
     .intro {
         width: 50%;
@@ -534,14 +523,15 @@ footer {
         }
     }
 
-    .index {
+    .accompagne {
         margin-top: -10rem;
     }
 }
 
 @media (min-width: $break-xl) {
     body {
-        background-position-y: -30%;
+        background-image: url(/CAchute/assets/img/fond-desktop.png);
+        background-position-y: -57%;
     }
     main {
 
@@ -556,5 +546,16 @@ footer {
         .title {
             margin-top: 0;
         }
+    }
+        .accompagne {
+        margin-top: -10rem;
+        #title {
+            height: 100vh;
+        }
+    }
+}
+@media (min-width: $break-ul) {
+    body {
+        background-position-y: -70%;
     }
 }

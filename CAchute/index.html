@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex" />
-    <script type="text/javascript" src="https://cdn.trustcommander.net/privacy/5793/privacy_v2_106.js"></script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -15,7 +14,7 @@
     <title>CA chute</title>
 </head>
 
-<body class="index">
+<body>
     <header role="banner" class="fixed-top">
         <nav role="navigation" class="container pt-5">
             <div class="d-flex align-items-center justify-content-between d-xl-none">
@@ -46,7 +45,7 @@
                                 <a href="">La check-list anti chute</a>
                             </div>
                             <div class="bg-white">
-                                <a href="">Le crédit agricole vous accompagne</a>
+                                <a href="./accompagne.html">Le crédit agricole vous accompagne</a>
                             </div>
                         </div>
                     </div>
@@ -57,47 +56,597 @@
                     <a href="./index.html"><img src="./assets/img/logo-ca.png" alt=""></a>
                 </div>
                 <div class="dropdown">
-                    <a class="button-pink" href="#" role="button" id="dropdownMenuLink">
+                    <a class="position-relative button not-active" href="#" role="button" id="dropdownMenuLink">
                         Nos fiches conseils prévention
                     </a>
 
-                    <ul class="dropdown-menu bg-pink" aria-labelledby="dropdownMenuLink">
-                        <li><a href="#">La rue</a></li>
-                        <li><a href="#">Les escaliers</a></li>
-                        <li><a href="#">La salle de bain</a></li>
-                        <li><a href="#">Le jardin</a></li>
-                        <li><a href="#">La cuisine</a></li>
-                        <li><a href="#">Le salon</a></li>
-                        <li><a href="#">Les transports en commun</a></li>
+                    <ul class="bg-blue2 dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li class="not-active p-1 rounded"><a href="#">La rue</a></li>
+                        <li class="not-active p-1 rounded"><a href="#">Les escaliers</a></li>
+                        <li class="not-active p-1 rounded"><a href="#">La salle de bain</a></li>
+                        <li class="not-active p-1 rounded"><a href="#">Le jardin</a></li>
+                        <li class="not-active p-1 rounded"><a href="#">La cuisine</a></li>
+                        <li class="not-active p-1 rounded"><a href="#">Le salon</a></li>
+                        <li class="not-active p-1 rounded"><a href="#">Les transports en commun</a></li>
                     </ul>
                 </div>
 
-                <div class="button-blue">
+                <div class="button not-active">
                     <a href="">La check-list anti chute</a>
                 </div>
-                <div class="button-blue">
-                    <a href="">Le crédit agricole vous accompagne</a>
+                <div class="button not-active">
+                    <a href="./accompagne.html">Le crédit agricole vous accompagne</a>
                 </div>
 
             </div>
         </nav>
     </header>
     <main role="main">
-        <section class="container">
-            <div class="text-center">
-                <img src="./assets/img/la-mif-2.png" class="img-fluid" alt="Famille Jean et Sylvie">
-                <div class="text p-5">
+        <div id="line" class="d-none justify-content-center justify-content-lg-end fixed-bottom mb-5 me-lg-5 step">
+            <div class="container-line">
+                <img src="/CAchute/assets/img/Check-line.png" alt="">
+                <img src="/CAchute/assets/img/icon-check-first.png" alt="" class="check-icon d-none"
+                    id="check-icon-first">
+                <img src="/CAchute/assets/img/icon-check-second.png" alt="" class="check-icon d-none"
+                    id="check-icon-second">
+                <img src="/CAchute/assets/img/icon-check-third.png" alt="" class="check-icon d-none"
+                    id="check-icon-third">
+                <img src="/CAchute/assets/img/icon-check-fourth.png" alt="" class="check-icon d-none"
+                    id="check-icon-fourth">
+                <img src="/CAchute/assets/img/icon-check-fifth.png" alt="" class="check-icon d-none"
+                    id="check-icon-fifth">
+                <img src="/CAchute/assets/img/icon-check-sixth.png" alt="" class="check-icon d-none"
+                    id="check-icon-sixth">
+            </div>
+        </div>
+        <section class="position-relative">
 
-                    <p class="like-h2 mb-5">Le Groupe Crédit Agricole accorde une importance particulière à la prévention des risques pour tous ses clients.</p>
-                    <p class="mb-5">Le dispositif « Prévention Chutes » que nous proposons sensibilise sur les risques de chutes qui concernent plus particulièrement les séniors et jeunes séniors. Les conséquences de telles chutes peuvent être de plus en plus graves avec l’âge.</p>
-                    <p class="mb-5">C’est pourquoi nous vous proposons ce dispositif ludique qui vous permettra d’en savoir plus sur les chutes, comment les éviter et nos conseils de la vie quotidienne pour rester en bonne santé le plus longtemps possible.</p>
-                    <p class="mb-5">Ce dispositif n’a pas vocation à se substituer à l’avis ni aux conseils d’un professionnel. Pour plus d’informations, contactez votre conseiller.</p>
-                    <a href="./front.html" class="button-pink m-5">C’est parti !</a>
-                </div>
+
+            <div class="text-center title">
+                <img src="./assets/img/illustration-title.png" alt="Les secrets de Jean et Sylie Laforme"
+                    class="img-fluid">
             </div>
 
+            <div class="text-center container la-mif">
+                <img src="./assets/img/illustration-la-mif.png" alt="Famille Laforme" class="img-fluid mb-4">
+            </div>
+            <div class="intro container">
+                <p class="text-center">Le Crédit Agricole vous présente la vie des Laforme ! Leur secret ? Avoir
+                    une
+                    bonne hygiène de vie et toujours bien évaluer les risques.
+                    Le combo gagnant pour éviter de nombreux accidents du quotidien.
+                </p>
+            </div>
+
+
         </section>
-        
+
+
+        <section class="bg-blue3 bg-round">
+
+            <div class="container cards">
+                <div class="d-lg-flex justify-content-evenly align-items-center">
+                    <div class="first my-3">
+                        <!-- Button trigger modal -->
+                        <a role="button" data-bs-toggle="modal" data-bs-target="#cardModal01" id="firstCard"
+                            onclick="addCheck()">
+                            <img src="./assets/img/card-first.png" alt=" Jean et Sylvie font du rangement"
+                                class="img-fluid rotate-01">
+                        </a>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="cardModal01" tabindex="-1" aria-labelledby="cardModal01Label"
+                            aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                            <div class="modal-dialog position-relative">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <a role="button" data-bs-dismiss="modal" aria-label="Close"
+                                            onclick="removeFlex()"><img src="./assets/img/icon-close-small.svg"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="modal-body">
+                                        <a onclick="addCheck6()" role="button" data-bs-dismiss="modal"
+                                            data-bs-toggle="modal" data-bs-target="#cardModal06"
+                                            class="arrow-left arrow">
+                                            <img src="/CAchute/assets/img/arrow.png" alt="">
+                                        </a>
+                                        <a onclick="addCheck2()" role="button" data-bs-dismiss="modal"
+                                            data-bs-toggle="modal" data-bs-target="#cardModal02"
+                                            class="arrow-right arrow">
+                                            <img src="/CAchute/assets/img/arrow02.png" alt="">
+                                        </a>
+                                        <div class="video mb-5">
+                                            <video src="./assets/img/video-test.mp4" class="img-fluid offcanvas-video"
+                                                controls></video>
+                                        </div>
+                                        <div
+                                            class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
+                                            <div>
+                                                <img src="./assets/img/icon-rangement-01.png" alt="table"
+                                                    class="img-fluid">
+                                            </div>
+                                            <div class="content text-lg-start ms-lg-5">
+                                                <h2>Dans le salon</h2>
+                                                <p>faites attention aux objets qui peuvent constituer un obstacle
+                                                    aux déplacements et qui favorisent les risques de chute.
+                                                    Particulièrement quand des enfants peuvent laisser trainer leurs
+                                                    jouets !</p>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
+                                            <div>
+                                                <img src="./assets/img/icon-rangement-02.png" alt="table"
+                                                    class="img-fluid">
+                                            </div>
+                                            <div class="content text-lg-start ms-lg-5">
+                                                <h2>Vision</h2>
+                                                <p>le vieillissement normal de l’œil peut entraîner des difficultés
+                                                    à lire, une vision floue de près, une fatigue des yeux… Pensez à
+                                                    faire contrôler régulièrement votre vue.</p>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
+                                            <div>
+                                                <img src="./assets/img/icon-rangement-03.png" alt="table"
+                                                    class="img-fluid">
+                                            </div>
+                                            <div class="content text-lg-start ms-lg-5">
+                                                <h2>Posture</h2>
+                                                <p>pensez à adopter les bonnes postures pour préserver votre dos. La
+                                                    courbure dorsale est à éviter. Si vous avez besoin de vous
+                                                    pencher, fléchissez les genoux tout en gardant le dos bien
+                                                    droit.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="text-center py-5">
+                                            <p class="like-h2 mb-5">Pour en savoir plus, retrouvez nos conseils
+                                                détaillés
+                                                dans
+                                                nos fiches.</p>
+                                            <a href="" class="button-pink mb-5">Télécharger la fiche conseil
+                                                prévention</a>
+                                            <p class="text-white">Pour en savoir plus sur notre Assurance des
+                                                Accidents de la Vie (AAV), <a href="" class="text-blue4">cliquez
+                                                    ici</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="second my-3">
+                        <!-- Button trigger modal -->
+                        <a role="button" data-bs-toggle="modal" data-bs-target="#cardModal02" id="secondCard"
+                            onclick="addCheck2()">
+                            <img src="./assets/img/card-second.png" alt="Un peu de sport pour Jean!"
+                                class="img-fluid rotate-02">
+                        </a>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="cardModal02" tabindex="-1" aria-labelledby="cardModal02Label"
+                            aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header" id="sport">
+                                        <a role="button" data-bs-dismiss="modal" aria-label="Close"
+                                            onclick="removeFlex()">
+                                            <img src="./assets/img/icon-close-small.svg" alt=""></a>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <a onclick="addCheck()" role="button" data-bs-dismiss="modal"
+                                            data-bs-toggle="modal" data-bs-target="#cardModal01"
+                                            class="arrow-left arrow">
+                                            <img src="/CAchute/assets/img/arrow.png" alt="">
+                                        </a>
+                                        <a onclick="addCheck3()" role="button" data-bs-dismiss="modal"
+                                            data-bs-toggle="modal" data-bs-target="#cardModal03"
+                                            class="arrow-right arrow">
+                                            <img src="/CAchute/assets/img/arrow02.png" alt="">
+                                        </a>
+
+                                        <div class="video mb-5">
+                                            <video src="./assets/img/video-test.mp4" class="img-fluid offcanvas-video"
+                                                controls></video>
+                                        </div>
+                                        <div
+                                            class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
+                                            <div>
+                                                <img src="./assets/img/icon-sport-01.png" alt="table" class="img-fluid">
+                                            </div>
+                                            <div class="content text-lg-start ms-lg-5">
+                                                <h2>Activité physique</h2>
+                                                <p>Il est recommandé de faire au moins 30 min d’activité physique
+                                                    dynamique par jour et de pratiquer différents types d’activités
+                                                    physiques pour développer l’endurance, la musculature, la
+                                                    souplesse et l’équilibre.</p>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
+                                            <div>
+                                                <img src="./assets/img/icon-sport-02.png" alt="table" class="img-fluid">
+                                            </div>
+                                            <div class="content text-lg-start ms-lg-5">
+                                                <h2>Hydratation et alimentation</h2>
+                                                <p>Notre corps n’est pas capable de stocker l’eau et celle qu’il
+                                                    perd naturellement par la transpiration, l’urine, la sueur, doit
+                                                    être renouvelée en permanence. Il est donc important de boire
+                                                    suffisamment chaque jour : entre 1 litre et 1,5 litre d’eau.</p>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
+                                            <div>
+                                                <img src="./assets/img/icon-sport-03.png" alt="table" class="img-fluid">
+                                            </div>
+                                            <div class="content text-lg-start ms-lg-5">
+                                                <h2>Lien social</h2>
+                                                <p>47 % des plus de 60 ans font partie d’au moins une association.
+                                                    Avoir des projets, voir du monde, sortir, visiter, … sont des
+                                                    activités indispensables au bien être de chacun. La vie en
+                                                    société permet de se réaliser au contact des autres. Pour
+                                                    conserver un lien social suscitez des occasions de sortir ou de
+                                                    recevoir chez vous vos amis, voisins…</p>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
+                                            <div>
+                                                <img src="./assets/img/icon-sport-04.png" alt="table" class="img-fluid">
+                                            </div>
+                                            <div class="content text-lg-start ms-lg-5">
+                                                <h2>Dans la rue</h2>
+                                                <p>Être bien chaussé, rester concentré sur la route et ne pas être
+                                                    sur son téléphone ou discuter avec un ami en marchant permettra
+                                                    de vous éviter de nombreuses chutes.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="text-center py-5">
+                                            <p class="like-h2 mb-5">Pour en savoir plus, retrouvez nos conseils
+                                                détaillés
+                                                dans
+                                                nos fiches.</p>
+                                            <a href="" class="button-pink mb-5">Télécharger la fiche conseil
+                                                prévention</a>
+                                            <p class="text-white">Pour en savoir plus sur notre Assurance des
+                                                Accidents de la Vie (AAV), <a href="" class="text-blue4">cliquez
+                                                    ici</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-lg-flex justify-content-evenly align-items-center">
+                    <div class="third my-3">
+                        <!-- Button trigger modal -->
+                        <a role="button" data-bs-toggle="modal" data-bs-target="#cardModal03" id="thirdCard"
+                            onclick="addCheck3()">
+                            <img src="./assets/img/card-third.png" alt="Jean se fait mousser !"
+                                class="img-fluid rotate-02">
+                        </a>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="cardModal03" tabindex="-1" aria-labelledby="cardModal03Label"
+                            aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <a role="button" data-bs-dismiss="modal" aria-label="Close"
+                                            onclick="removeFlex()">
+                                            <img src="./assets/img/icon-close-small.svg" alt=""></a>
+                                    </div>
+                                    <div class="modal-body">
+                                        <a onclick="addCheck2()" role="button" data-bs-dismiss="modal"
+                                            data-bs-toggle="modal" data-bs-target="#cardModal02"
+                                            class="arrow-left arrow">
+                                            <img src="/CAchute/assets/img/arrow.png" alt="">
+                                        </a>
+                                        <a onclick="addCheck4()" role="button" data-bs-dismiss="modal"
+                                            data-bs-toggle="modal" data-bs-target="#cardModal04"
+                                            class="arrow-right arrow">
+                                            <img src="/CAchute/assets/img/arrow02.png" alt="">
+                                        </a>
+
+                                        <div class="video mb-5">
+                                            <video src="./assets/img/video-test.mp4" class="img-fluid offcanvas-video"
+                                                controls></video>
+                                        </div>
+                                        <div
+                                            class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
+                                            <div>
+                                                <img src="./assets/img/icon-bain-01.png" alt="table" class="img-fluid">
+                                            </div>
+                                            <div class="content text-lg-start ms-lg-5">
+                                                <h2>Dans la salle de bain</h2>
+                                                <p>pensez à installer des tapis antidérapants dans et à l’extérieur
+                                                    de la baignoire pour éviter de glisser.</p>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
+                                            <div>
+                                                <img src="./assets/img/icon-bain-02.png" alt="table" class="img-fluid">
+                                            </div>
+                                            <div class="content text-lg-start ms-lg-5">
+                                                <h2>Distraction</h2>
+                                                <p>Ne soyez pas distrait par votre téléphone ou une sonnette. Prenez le temps qu’il faut pour sortir de l’eau et s’essuyer afin d’éviter les glissades sur un sol mouillé.</p>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
+                                            <div>
+                                                <img src="./assets/img/icon-bain-03.png" alt="table" class="img-fluid">
+                                            </div>
+                                            <div class="content text-lg-start ms-lg-5">
+                                                <h2>Malaise vagale </h2>
+                                                <p>La salle de bain est un endroit chaud, humide et confiné qui peut
+                                                    entraîner des chutes de tension. À la moindre alerte, pensez à
+                                                    vous allonger et à lever vos jambes.</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-center py-5">
+                                            <p class="like-h2 mb-5">Pour en savoir plus, retrouvez nos conseils
+                                                détaillés
+                                                dans
+                                                nos fiches.</p>
+                                            <a href="" class="button-pink mb-5">Télécharger la fiche conseil
+                                                prévention</a>
+                                            <p class="text-white">Pour en savoir plus sur notre Assurance des
+                                                Accidents de la Vie (AAV), <a href="" class="text-blue4">cliquez
+                                                    ici</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fourth my-3">
+                        <!-- Button trigger modal -->
+                        <a role="button" data-bs-toggle="modal" data-bs-target="#cardModal04" id="fourthCard"
+                            onclick="addCheck4()">
+                            <img src="./assets/img/card-fourth.png" alt="Jean se lance dans le jardinage"
+                                class="img-fluid rotate-01">
+                        </a>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="cardModal04" tabindex="-1" aria-labelledby="cardModal04Label"
+                            aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <a role="button" data-bs-dismiss="modal" aria-label="Close"
+                                            onclick="removeFlex()">
+                                            <img src="./assets/img/icon-close-small.svg" alt=""></a>
+                                    </div>
+                                    <div class="modal-body">
+                                        <a onclick="addCheck3()" role="button" data-bs-dismiss="modal"
+                                            data-bs-toggle="modal" data-bs-target="#cardModal03"
+                                            class="arrow-left arrow">
+                                            <img src="/CAchute/assets/img/arrow.png" alt="">
+                                        </a>
+                                        <a onclick="addCheck5()" role="button" data-bs-dismiss="modal"
+                                            data-bs-toggle="modal" data-bs-target="#cardModal05"
+                                            class="arrow-right arrow">
+                                            <img src="/CAchute/assets/img/arrow02.png" alt="">
+                                        </a>
+
+                                        <div class="video mb-5">
+                                            <video src="./assets/img/video-test.mp4" class="img-fluid offcanvas-video"
+                                                controls></video>
+                                        </div>
+                                        <div
+                                            class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
+                                            <div>
+                                                <img src="./assets/img/icon-jardinage-01.png" alt="table"
+                                                    class="img-fluid">
+                                            </div>
+                                            <div class="content text-lg-start ms-lg-5">
+                                                <h2>Les activités de jardinage</h2>
+                                                <p>prenez toutes les précautions nécessaires pour éviter chutes et
+                                                    accidents : mettre à l’écart les enfants, se faire aider d’un
+                                                    2ème adulte pour stabiliser l’escabeau et pensez à vous équiper
+                                                    en conséquence en fonction des outils utilisés.</p>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
+                                            <div>
+                                                <img src="./assets/img/icon-jardinage-02.png" alt="table"
+                                                    class="img-fluid">
+                                            </div>
+                                            <div class="content text-lg-start ms-lg-5">
+                                                <h2>Audition</h2>
+                                                <p>les travaux de jardinage peuvent représenter une sources de
+                                                    nuisance sonore. L’utilisation d’un protection auditive adaptée
+                                                    vous évite d’éventuelles lésions et facilite la concentration
+                                                    sur votre travail.</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-center py-5">
+                                            <p class="like-h2 mb-5">Pour en savoir plus, retrouvez nos conseils
+                                                détaillés
+                                                dans
+                                                nos fiches.</p>
+                                            <a href="" class="button-pink mb-5">Télécharger la fiche conseil
+                                                prévention</a>
+                                            <p class="text-white">Pour en savoir plus sur notre Assurance des
+                                                Accidents de la Vie (AAV), <a href="" class="text-blue4">cliquez
+                                                    ici</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-lg-flex justify-content-evenly align-items-center">
+                    <div class="fifth my-3">
+                        <!-- Button trigger modal -->
+                        <a role="button" data-bs-toggle="modal" data-bs-target="#cardModal05" id="fifthCard"
+                            onclick="addCheck5()">
+                            <img src="./assets/img/card-fifth.png" alt="Sylvie et Jean recoivent leurs amis"
+                                class="img-fluid rotate-01">
+                        </a>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="cardModal05" tabindex="-1" aria-labelledby="cardModal05Label"
+                            aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <a role="button" data-bs-dismiss="modal" aria-label="Close"
+                                            onclick="removeFlex()">
+                                            <img src="./assets/img/icon-close-small.svg" alt=""></a>
+                                    </div>
+                                    <div class="modal-body">
+                                        <a onclick="addCheck4()" role="button" data-bs-dismiss="modal"
+                                            data-bs-toggle="modal" data-bs-target="#cardModal04"
+                                            class="arrow-left arrow">
+                                            <img src="/CAchute/assets/img/arrow.png" alt="">
+                                        </a>
+                                        <a onclick="addCheck6()" role="button" data-bs-dismiss="modal"
+                                            data-bs-toggle="modal" data-bs-target="#cardModal06"
+                                            class="arrow-right arrow">
+                                            <img src="/CAchute/assets/img/arrow02.png" alt="">
+                                        </a>
+
+                                        <div class="video mb-5">
+                                            <video src="./assets/img/video-test.mp4" class="img-fluid offcanvas-video"
+                                                controls></video>
+                                        </div>
+                                        <div
+                                            class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
+                                            <div>
+                                                <img src="./assets/img/icon-ami-01.png" alt="table" class="img-fluid">
+                                            </div>
+                                            <div class="content text-lg-start ms-lg-5">
+                                                <h2>Pour attraper des objets en hauteur</h2>
+                                                <p>munissez-vous d’un escabeau bien stable et demandez à un de vos
+                                                    proches de le stabiliser.</p>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
+                                            <div>
+                                                <img src="./assets/img/icon-ami-02.png" alt="table" class="img-fluid">
+                                            </div>
+                                            <div class="content text-lg-start ms-lg-5">
+                                                <h2>Lien social</h2>
+                                                <p>Rien de tel que l’entraide pour créer des liens. N’hésitez pas à
+                                                    contacter vos amis, famille pour vous aider à réaliser certaines
+                                                    tâches. Et à l’inverse, soyez disponible pour les autres.</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-center py-5">
+                                            <p class="like-h2 mb-5">Pour en savoir plus, retrouvez nos conseils
+                                                détaillés
+                                                dans
+                                                nos fiches.</p>
+                                            <a href="" class="button-pink mb-5">Télécharger la fiche conseil
+                                                prévention</a>
+                                            <p class="text-white">Pour en savoir plus sur notre Assurance des
+                                                Accidents de la Vie (AAV), <a href="" class="text-blue4">cliquez
+                                                    ici</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sixth my-3">
+                        <!-- Button trigger modal -->
+                        <a role="button" data-bs-toggle="modal" data-bs-target="#cardModal06" id="sixthCard"
+                            onclick="addCheck6()">
+                            <img src="./assets/img/card-sixth.png" alt="Sylvie part en voyage"
+                                class="img-fluid rotate-02">
+                        </a>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="cardModal06" tabindex="-1" aria-labelledby="cardModal06Label"
+                            aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <a role="button" data-bs-dismiss="modal" aria-label="Close"
+                                            onclick="removeFlex()">
+                                            <img src="./assets/img/icon-close-small.svg" alt=""></a>
+                                    </div>
+                                    <div class="modal-body">
+                                        <a onclick="addCheck5()" role="button" data-bs-dismiss="modal"
+                                            data-bs-toggle="modal" data-bs-target="#cardModal05"
+                                            class="arrow-left arrow">
+                                            <img src="/CAchute/assets/img/arrow.png" alt="">
+                                        </a>
+                                        <a onclick="addCheck()" role="button" data-bs-dismiss="modal"
+                                            data-bs-toggle="modal" data-bs-target="#cardModal01"
+                                            class="arrow-right arrow">
+                                            <img src="/CAchute/assets/img/arrow02.png" alt="">
+                                        </a>
+
+                                        <div class="video mb-5">
+                                            <video src="./assets/img/video-test.mp4" class="img-fluid offcanvas-video"
+                                                controls></video>
+                                        </div>
+                                        <div
+                                            class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
+                                            <div>
+                                                <img src="./assets/img/icon-voyage-01.png" alt="table"
+                                                    class="img-fluid">
+                                            </div>
+                                            <div class="content text-lg-start ms-lg-5">
+                                                <h2>Dans les transports en commun</h2>
+                                                <p>Les zones d’accès aux transports sont des hauts lieux de chutes.
+                                                    Privilégiez les transports adaptés et n’hésitez pas à demander
+                                                    de l’aide. À l’avant des bus, des places vous sont réservés,
+                                                    n’hésitez pas à demander.</p>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="d-flex flex-column flex-lg-row align-items-center justify-content-between text-center px-5 mb-lg-5">
+                                            <div>
+                                                <img src="./assets/img/icon-voyage-02.png" alt="table"
+                                                    class="img-fluid">
+                                            </div>
+                                            <div class="content text-lg-start ms-lg-5">
+                                                <h2>Lien social</h2>
+                                                <p>Partir en voyage, avoir des projets, voir du monde, sortir,
+                                                    visiter etc… Sont des activités indispensables au bien être de
+                                                    chacun.</p>
+                                            </div>
+                                        </div>
+                                        <div class="text-center py-5">
+                                            <p class="like-h2 mb-5">Pour en savoir plus, retrouvez nos conseils
+                                                détaillés
+                                                dans
+                                                nos fiches.</p>
+                                            <a href="" class="button-pink mb-5">Télécharger la fiche conseil
+                                                prévention</a>
+                                            <p class="text-white">Pour en savoir plus sur notre Assurance des
+                                                Accidents de la Vie (AAV), <a href="" class="text-blue4">cliquez
+                                                    ici</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer role="contentinfo" class="mt-5">
         <section class="bg-round position-relative">

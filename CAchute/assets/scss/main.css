@@ -15,7 +15,7 @@ body {
   background-image: url(/CAchute/assets/img/fond-mobile.png);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-y: -15%;
+  background-position-y: -25%;
   background-color: #8AD9DD;
   color: #000000;
   font-family: "AmsiPro-Ultra";
@@ -163,6 +163,10 @@ p {
   background-color: #009697;
 }
 
+.bg-blue2 {
+  background-color: #28ACAD;
+}
+
 .bg-round::before {
   content: "";
   position: absolute;
@@ -173,23 +177,37 @@ p {
   z-index: -1;
 }
 
-.button-pink {
-  background: #FA5061;
-  padding: 1rem 3.6rem;
-  font-size: 1.8rem;
+.text-blue4 {
+  color: #46B9BF;
+}
+
+.button {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
   display: inline-block;
   text-transform: uppercase;
-  color: white;
+  color: #FFFFFF;
   text-decoration: none;
   border-radius: 4rem;
-  margin: 0 4%;
+  margin: 0;
 }
-.button-pink:hover {
+.button a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.button a:hover {
   color: #FFF5CC;
 }
 
-.text-blue4 {
-  color: #46B9BF;
+.not-active {
+  background-color: #28ACAD !important;
+}
+.not-active:hover, .not-active:active {
+  background-color: #FA5061 !important;
+}
+
+.active {
+  background-color: #FA5061 !important;
 }
 
 nav .logo {
@@ -327,7 +345,7 @@ footer p {
 }
 
 .legales,
-.index {
+.accompagne {
   background-image: none;
 }
 
@@ -350,23 +368,11 @@ footer p {
   color: #005D5D !important;
 }
 
-.index {
+.accompagne {
   background-color: #6692D8;
 }
-.index .text p {
+.accompagne .text p {
   color: #FFFFFF;
-}
-.index .dropdown-menu {
-  background: #009697;
-}
-.index #dropdownMenuLink {
-  background: #009697;
-}
-.index div.button-blue:nth-child(3) {
-  background: #FA5061;
-}
-.index div.button-blue:nth-child(4) {
-  background: #FA5061;
 }
 
 @media (min-width: 576px) {
@@ -383,8 +389,7 @@ footer p {
 }
 @media (min-width: 992px) {
   body {
-    background-image: url(/CAchute/assets/img/fond-desktop.png);
-    background-position-y: -68%;
+    background-position-y: 20%;
   }
 
   .dropdown .dropdown-menu {
@@ -392,6 +397,8 @@ footer p {
     padding: 7% 2rem;
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
+    z-index: 1;
+    border: 0;
   }
   .dropdown:hover .dropdown-menu {
     display: block;
@@ -401,35 +408,12 @@ footer p {
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
   }
-  .dropdown .button-pink {
-    font-size: 1.6rem;
-    margin: 0;
-    padding: 1rem 2rem;
-    z-index: 1001;
-    position: relative;
+  .dropdown #dropdownMenuLink {
+    z-index: 2;
   }
   .dropdown a {
     color: #FFFFFF;
     font-size: 1.4rem;
-  }
-
-  .button-blue {
-    background: #009697;
-    padding: 1rem 2rem;
-    font-size: 1.5rem;
-    display: inline-block;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    text-decoration: none;
-    border-radius: 4rem;
-    margin: 0;
-  }
-  .button-blue a {
-    color: #FFFFFF;
-    text-decoration: none;
-  }
-  .button-blue a:hover {
-    color: #FFF5CC;
   }
 
   .la-mif {
@@ -441,7 +425,7 @@ footer p {
   }
 
   .title {
-    width: 65%;
+    width: 60%;
   }
 
   .intro {
@@ -483,13 +467,14 @@ footer p {
     font-size: 2.2rem;
   }
 
-  .index {
+  .accompagne {
     margin-top: -10rem;
   }
 }
 @media (min-width: 1200px) {
   body {
-    background-position-y: -30%;
+    background-image: url(/CAchute/assets/img/fond-desktop.png);
+    background-position-y: -57%;
   }
 
   main .modal-dialog .arrow-left {
@@ -500,5 +485,17 @@ footer p {
   }
   main .title {
     margin-top: 0;
+  }
+
+  .accompagne {
+    margin-top: -10rem;
+  }
+  .accompagne #title {
+    height: 100vh;
+  }
+}
+@media (min-width: 1400px) {
+  body {
+    background-position-y: -70%;
   }
 }/*# sourceMappingURL=main.css.map */
