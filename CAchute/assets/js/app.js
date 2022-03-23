@@ -46,9 +46,21 @@ function addCheck6() {
     var lineCheck = document.getElementById("check-icon-sixth");
     lineCheck.classList.add("block");
 }
-function removeFlex() {
+function removeCheckLine() {
     var cross = document.getElementById("line");
     cross.classList.remove("flex");
+}
+
+function verifCheck() {
+    if ($('#line > .container-line img:visible').length == 7) {
+        var myModal = new bootstrap.Modal(document.getElementById('endModal'), {
+            keyboard: false
+          });
+          myModal.show();
+    };
+    var cross = document.getElementById("line");
+    cross.classList.remove("flex");
+    console.log($('#line > .container-line img:visible').length);
 }
 
 function addEvent(obj, evt, fn) {
@@ -66,13 +78,13 @@ window.addEventListener("beforeunload", function (e) {
     return confirmationMessage;              // Gecko, WebKit, Chrome <34
 });
 
-addEvent(document, "mouseout", function (evt) {
-    if (evt.toElement == null && evt.relatedTarget == null) {
-    $(".exit").show();
-    }
-});
+// addEvent(document, "mouseout", function (evt) {
+//     if (evt.toElement == null && evt.relatedTarget == null) {
+//     $(".exit").show();
+//     }
+// });
 
-$("a.close").click(function () {
-    $(".exit").hide();
-});
+// $("a.close").click(function () {
+//     $(".exit").hide();
+// });
 
