@@ -17,6 +17,9 @@ body {
     letter-spacing: 0.08rem;
 }
 
+
+
+
 .line {
     position: relative;
     &::before {
@@ -217,7 +220,10 @@ p {
 
 .active {
     background-color: $pink !important;
-
+    &:hover,
+    &:active {
+        background-color: $pink !important;
+    }
     }
 
 
@@ -451,6 +457,13 @@ footer {
             border-bottom-right-radius: 2rem;
             z-index: 1;
             border: 0;
+            li {
+                a {
+                    text-decoration-line: underline;
+                    text-transform: initial;
+                }
+            }
+            
         }
         &:hover .dropdown-menu {
             display: block;

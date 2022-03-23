@@ -209,6 +209,9 @@ p {
 .active {
   background-color: #FA5061 !important;
 }
+.active:hover, .active:active {
+  background-color: #FA5061 !important;
+}
 
 nav .logo {
   z-index: 1111;
@@ -399,6 +402,10 @@ footer p {
     border-bottom-right-radius: 2rem;
     z-index: 1;
     border: 0;
+  }
+  .dropdown .dropdown-menu li a {
+    text-decoration-line: underline;
+    text-transform: initial;
   }
   .dropdown:hover .dropdown-menu {
     display: block;
