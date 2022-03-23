@@ -368,7 +368,30 @@ main {
             }
             
         }
-    
+
+    .opinion {
+        .modal-dialog {
+            .modal-content {
+                .modal-body {
+                    p,
+                    .form-check-label {
+                        color: $white;
+                        text-align: center;
+                        font-size: 2rem
+                    }
+                    .form-check-input {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                    }
+                    .number {
+                        .form-check {
+                            display: grid;
+                        }
+                    }
+                }
+            }
+        }  
+    }
 }
 
 

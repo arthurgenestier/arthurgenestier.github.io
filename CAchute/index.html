@@ -84,7 +84,7 @@
             </div>
         </nav>
     </header>
-    <main role="main">
+    <main role="main" id="main">
         <div id="line" class="d-none justify-content-center justify-content-lg-end fixed-bottom mb-5 me-lg-5 step">
             <div class="container-line">
                 <img src="/CAchute/assets/img/Check-line.png" alt="">
@@ -650,14 +650,173 @@
                         </div>
                     </div>
                 </div>
+                <div class="end my-3">
+                    <!-- Button trigger modal
+                    <a role="button" data-bs-toggle="modal" data-bs-target="#endModal" id="endCard">
+                        end
+                    </a> -->
+
+                    <!-- Modal -->
+                    <div class="modal exit" id="endModal" tabindex="-1" aria-labelledby="endModalLabel"
+                        aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <a role="button" data-bs-dismiss="modal" aria-label="Close" onclick="removeFlex()"
+                                        class="close">
+                                        <img src="./assets/img/icon-close-small.svg" alt=""></a>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-5 text-center">
+                                        <h2>Avez-vous 2 minutes pour nous donner vote avis sur ce dispositif de
+                                            prévention ?</h2>
+                                    </div>
+                                    <div class="text-center d-lg-flex justify-content-evenly px-5 mb-lg-5">
+                                        <a role="button" data-bs-dismiss="modal" aria-label="Close" onclick="removeFlex()"class="button active d-inline-block mb-4 mb-lg-0" role="button" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#opinionModal">OUI AVEC PLAISIR</a>
+                                        <a class="button active d-inline-block close" href="#main">RETOUR À L’ACCUEIL</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="opinion my-3">
+                    <!-- Button trigger modal
+                    <a role="button" data-bs-toggle="modal" data-bs-target="#opinionModal" id="opinionCard"
+                        onclick="addCheck6()">
+                        opinion
+                    </a> -->
+
+                    <!-- Modal -->
+                    <div class="modal" id="opinionModal" tabindex="-1" aria-labelledby="opinionModalLabel"
+                        aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <a role="button" data-bs-dismiss="modal" aria-label="Close" onclick="removeFlex()"
+                                        class="close">
+                                        <img src="./assets/img/icon-close-small.svg" alt=""></a>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="container" id="formOpinion">
+                                        <p>Sur une échelle de 0 à 10, dans quelle mesure
+                                            recommanderiez-vous cette
+                                            expérience à vos proches ?</p>
+                                        <div class="mb-5 d-lg-flex justify-content-center">
+                                            <div class="number row mb-4 mb-lg-0 me-lg-3">
+                                                <div class="form-check col justify-content-center"><input class="form-check-input ms-1" type="radio"
+                                                        name="ratingQuiz" value="0" required=""><label class="form-check-label d-block" for="noteXP0">0</label>
+                                                </div>
+                                                <div class="form-check col justify-content-center"><input class="form-check-input ms-1" type="radio"
+                                                        name="ratingQuiz" value="1" required=""><label class="form-check-label d-block" for="noteXP1">1</label>
+                                                </div>
+                                                <div class="form-check col justify-content-center"><input class="form-check-input ms-1" type="radio"
+                                                        name="ratingQuiz" value="2" required=""><label class="form-check-label d-block" for="noteXP2">2</label>
+                                                </div>
+                                                <div class="form-check col justify-content-center"><input class="form-check-input ms-1" type="radio"
+                                                        name="ratingQuiz" value="3" required=""><label class="form-check-label d-block" for="noteXP3">3</label>
+                                                </div>
+                                                <div class="form-check col justify-content-center"><input class="form-check-input ms-1" type="radio"
+                                                        name="ratingQuiz" value="4" required=""><label class="form-check-label d-block" for="noteXP4">4</label>
+                                                </div>
+                                                <div class="form-check col justify-content-center"><input class="form-check-input ms-1" type="radio"
+                                                        name="ratingQuiz" value="5" required=""><label class="form-check-label d-block" for="noteXP5">5</label>
+                                                </div>
+                                            </div>
+                                            <div class="number row">
+                                                <div class="form-check col justify-content-center"><input class="form-check-input ms-1" type="radio"
+                                                        name="ratingQuiz" value="6" required=""><label class="form-check-label d-block" for="noteXP6">6</label>
+                                                </div>
+                                                <div class="form-check col justify-content-center"><input class="form-check-input ms-1" type="radio"
+                                                        name="ratingQuiz" value="7" required=""><label class="form-check-label d-block" for="noteXP7">7</label>
+                                                </div>
+                                                <div class="form-check col justify-content-center"><input class="form-check-input ms-1" type="radio"
+                                                        name="ratingQuiz" value="8" required=""><label class="form-check-label d-block" for="noteXP8">8</label>
+                                                </div>
+                                                <div class="form-check col justify-content-center"><input class="form-check-input ms-1" type="radio"
+                                                        name="ratingQuiz" value="9" required=""><label class="form-check-label d-block" for="noteXP9">9</label>
+                                                </div>
+                                                <div class="form-check col justify-content-center"><input class="form-check-input ms-1" type="radio"
+                                                        name="ratingQuiz" value="10" required=""><label class="form-check-label d-block"
+                                                        for="noteXP10">10</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>Cette expérience vous a-t-elle instruit sur les chutes, leurs conséquences et comment les éviter ?</p>
+                                        <div class="row mb-5">
+                                            <div class="form-check col-6 col-lg-3 d-flex align-items-center justify-content-center">
+                                                <input class="form-check-input me-1 me-md-2 me-lg-3" type="radio" name="usefulOrNot" value="Pas du tout" required="">
+                                                <label class="form-check-label" for="useful0">Pas du tout</label>
+                                            </div>
+                                            <div class="form-check col-6 col-lg-3 d-flex align-items-center justify-content-center">
+                                                <input class="form-check-input me-1 me-md-2 me-lg-3" type="radio" name="usefulOrNot" value="Plutôt non" required="">
+                                                <label class="form-check-label" for="useful1">Plutôt non</label>
+                                            </div>
+                                            <div class="form-check col-6 col-lg-3 d-flex align-items-center justify-content-center">
+                                                <input class="form-check-input me-1 me-md-2 me-lg-3" type="radio" name="usefulOrNot" value="Plutôt oui" required="">
+                                                <label class="form-check-label" for="useful2">Plutôt oui</label>
+                                            </div>
+                                            <div class="form-check col-6 col-lg-3 d-flex align-items-center justify-content-center">
+                                                <input class="form-check-input me-1 me-md-2 me-lg-3" type="radio" name="usefulOrNot" value="Tout à fait" required="">
+                                                <label class="form-check-label" for="useful3">Tout à fait</label>
+                                            </div>
+                                        </div>
+                                        <p>Pensez-vous que cette expérience vous aidera à être  plus vigilant à l’avenir ?</p>
+                                        <div class="row mb-5">
+                                            <div class="form-check col-6 col-lg-3 d-flex align-items-center justify-content-center">
+                                                <input class="form-check-input me-1 me-md-2 me-lg-3" type="radio" name="usefulOrNot" value="Pas du tout" required="">
+                                                <label class="form-check-label" for="useful0">Pas du tout</label>
+                                            </div>
+                                            <div class="form-check col-6 col-lg-3 d-flex align-items-center justify-content-center">
+                                                <input class="form-check-input me-1 me-md-2 me-lg-3" type="radio" name="usefulOrNot" value="Plutôt non" required="">
+                                                <label class="form-check-label" for="useful1">Plutôt non</label>
+                                            </div>
+                                            <div class="form-check col-6 col-lg-3 d-flex align-items-center justify-content-center">
+                                                <input class="form-check-input me-1 me-md-2 me-lg-3" type="radio" name="usefulOrNot" value="Plutôt oui" required="">
+                                                <label class="form-check-label" for="useful2">Plutôt oui</label>
+                                            </div>
+                                            <div class="form-check col-6 col-lg-3 d-flex align-items-center justify-content-center">
+                                                <input class="form-check-input me-1 me-md-2 me-lg-3" type="radio" name="usefulOrNot" value="Tout à fait" required="">
+                                                <label class="form-check-label" for="useful3">Tout à fait</label>
+                                            </div>
+                                        </div>
+                                        <p>Quels autres thèmes aimeriez-vous qu’on aborde ? 
+                                            Plusieurs choix possibles.
+                                        </p>
+                                        <div class="row mb-5">
+                                            <div class="form-check col-6 col-lg-3 d-flex align-items-center justify-content-center">
+                                                <input class="form-check-input me-1 me-md-2 me-lg-3" type="checkbox" value="Feu de récoltes" name="newTopics">
+                                                <label class="form-check-label" for="picked0">Thème</label>
+                                            </div>
+                                            <div class="form-check col-6 col-lg-3 d-flex align-items-center justify-content-center">
+                                                <input class="form-check-input me-1 me-md-2 me-lg-3" type="checkbox" value="Feu de récoltes" name="newTopics">
+                                                <label class="form-check-label" for="picked0">Thème</label>
+                                            </div>
+                                            <div class="form-check col-6 col-lg-3 d-flex align-items-center justify-content-center">
+                                                <input class="form-check-input me-1 me-md-2 me-lg-3" type="checkbox" value="Feu de récoltes" name="newTopics">
+                                                <label class="form-check-label" for="picked0">Thème</label>
+                                            </div>
+                                            <div class="form-check col-6 col-lg-3 d-flex align-items-center justify-content-center">
+                                                <input class="form-check-input me-1 me-md-2 me-lg-3" type="checkbox" value="Feu de récoltes" name="newTopics">
+                                                <label class="form-check-label" for="picked0">Thème</label>
+                                            </div>
+                                        </div>
+                                        <div class="my-5 text-center">
+                                            <a type="submit" class="button active">Valider</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </section>
-        <div class="exit">
-            <div class="box">
-                <h2>Please, don't leave us! </h2>
-                <p>This is a simple Exit Intent Popup example ;) <a href="#" class="close">X</a></p>
-            </div>
-        </div>
+
     </main>
     <footer role="contentinfo" class="mt-5">
         <section class="bg-round position-relative">
@@ -669,7 +828,6 @@
             <div class="text-center">
                 <p>© Crédit Agricole</p>
             </div>
-
         </section>
 
     </footer>
@@ -677,10 +835,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="/CAchute/assets/js/app.js"></script>
-
 
 </body>
 

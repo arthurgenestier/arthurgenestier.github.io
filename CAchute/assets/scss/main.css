@@ -333,6 +333,19 @@ main .rotate-01:hover {
 main .rotate-02:hover {
   transform: rotate(-2deg);
 }
+main .opinion .modal-dialog .modal-content .modal-body p,
+main .opinion .modal-dialog .modal-content .modal-body .form-check-label {
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 2rem;
+}
+main .opinion .modal-dialog .modal-content .modal-body .form-check-input {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+main .opinion .modal-dialog .modal-content .modal-body .number .form-check {
+  display: grid;
+}
 
 footer {
   background: #FFF5CC;
