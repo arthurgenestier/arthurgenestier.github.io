@@ -71,12 +71,12 @@ function addEvent(obj, evt, fn) {
     }
 }
 
-window.addEventListener("beforeunload", function (e) {
-    var confirmationMessage = "\o/";
+// window.addEventListener("beforeunload", function (e) {
+//     var confirmationMessage = "\o/";
 
-    e.returnValue = confirmationMessage;     // Gecko, Trident, Chrome 34+
-    return confirmationMessage;              // Gecko, WebKit, Chrome <34
-});
+//     e.returnValue = confirmationMessage;     // Gecko, Trident, Chrome 34+
+//     return confirmationMessage;              // Gecko, WebKit, Chrome <34
+// });
 
 // addEvent(document, "mouseout", function (evt) {
 //     if (evt.toElement == null && evt.relatedTarget == null) {
