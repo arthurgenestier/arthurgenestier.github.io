@@ -586,6 +586,14 @@ footer {
     }
 }
 
+#endModal {
+    a {
+        &:hover {
+            color: $yellow;
+        }
+    }
+}
+
 @media (min-width: $break-xl) {
     body {
         background-image: url(/CAchute/assets/img/fond-desktop.png);

@@ -511,6 +511,10 @@ footer p {
     margin-top: -10rem;
   }
 }
+#endModal a:hover {
+  color: #FFF5CC;
+}
+
 @media (min-width: 1200px) {
   body {
     background-image: url(/CAchute/assets/img/fond-desktop.png);
