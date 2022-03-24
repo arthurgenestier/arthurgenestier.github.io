@@ -13,19 +13,75 @@
         <title>CA chute</title>
     </head>
 <body>
-    <script type="text/javascript">
-window.onbeforeunload = function (e) {
-  var e = e || window.event;
+    <header role="banner" class="fixed-top">
+        <nav role="navigation" class="container pt-5">
+            <div class="d-flex align-items-center justify-content-between d-xl-none">
+                <div class="logo">
+                    <a href="./index.html"><img src="./assets/img/logo-ca.png" alt=""></a>
+                </div>
+                <div>
+                    <a class="" data-bs-toggle="offcanvas" href="#offcanvasNav" role="button"
+                        aria-controls="offcanvasNav">
+                        <img src="./assets/img/icone-menu.svg" alt="CA lien accueil" class="img-fluid">
+                    </a>
+                    <div class="text-center offcanvas offcanvas-top" tabindex="-1" id="offcanvasNav"
+                        aria-labelledby="offcanvasNavLabel">
+                        <div class="offcanvas-body">
+                            <div class="bg-pink">
+                                <p>Nos fiches conseils prévention</p>
+                                <ul>
+                                    <li><a href="#">La rue</a></li>
+                                    <li><a href="#">Les escaliers</a></li>
+                                    <li><a href="#">La salle de bain</a></li>
+                                    <li><a href="#">Le jardin</a></li>
+                                    <li><a href="#">La cuisine</a></li>
+                                    <li><a href="#">Le salon</a></li>
+                                    <li><a href="#">Les transports en commun</a></li>
+                                </ul>
+                            </div>
+                            <div class="bg-white">
+                                <a href="">La check-list anti chute</a>
+                            </div>
+                            <div class="bg-white">
+                                <a href="./accompagne.html">Le crédit agricole vous accompagne</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-none d-xl-flex align-items-center justify-content-evenly">
+                <div class="logo">
+                    <a href="./index.html"><img src="./assets/img/logo-ca.png" alt=""></a>
+                </div>
+                <div class="dropdown button not-active">
+                    <a class="position-relative" href="#" role="button" id="dropdownMenuLink">
+                        Nos fiches conseils prévention
+                    </a>
 
-  // For IE and Firefox
-  if (e) {
-    e.returnValue = 'Any string';
-  }
+                    <ul class="bg-pink dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li class="active p-1 rounded"><a href="#">La rue</a></li>
+                        <li class="active p-1 rounded"><a href="#">Les escaliers</a></li>
+                        <li class="active p-1 rounded"><a href="#">La salle de bain</a></li>
+                        <li class="active p-1 rounded"><a href="#">Le jardin</a></li>
+                        <li class="active p-1 rounded"><a href="#">La cuisine</a></li>
+                        <li class="active p-1 rounded"><a href="#">Le salon</a></li>
+                        <li class="active p-1 rounded"><a href="#">Les transports en commun</a></li>
+                    </ul>
+                </div>
+                <a href="">
+                    <div class="button not-active">
+                        La check-list anti chute
+                    </div>
+                </a>
+                <a href="./accompagne.html">
+                    <div class="button not-active">
+                        Le crédit agricole vous accompagne
+                    </div>
+                </a>
 
-  // For Safari
-  return 'Any string';
-};
-    </script>
+            </div>
+        </nav>
+    </header>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
