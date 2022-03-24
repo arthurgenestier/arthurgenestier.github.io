@@ -1,10 +1,10 @@
 @font-face {
   font-family: "AmsiPro-Ultra";
-  src: url("/CAchute/assets/fonts/AmsiPro-Ultra.ttf") format("truetype");
+  src: url("./../fonts/AmsiPro-Ultra.ttf") format("truetype");
 }
 @font-face {
   font-family: "AmsiProCondensed-Bold";
-  src: url("/CAchute/assets/fonts/AmsiProCondensed-Bold.ttf") format("truetype");
+  src: url("./../fonts/AmsiProCondensed-Bold.ttf") format("truetype");
 }
 html {
   font-size: 62.5%;

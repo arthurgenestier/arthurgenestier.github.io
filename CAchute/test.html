@@ -82,6 +82,27 @@
             </div>
         </nav>
     </header>
+    <main>
+        <script type="text/javascript">
+            var mypopup=window.open("popup.html","nom_popup","width=200, height=200");
+           
+            function openMypopup() {
+              mypopup=window.open("popup.html","nom_popup","width=200, height=200");
+            }
+           
+            function closeMypopup() {
+              if (mypopup===null) {
+                console.log("Le popup n'existe pas");
+              } else {
+                console.log("Le popup existe : on peut le fermer");
+                mypopup.close();
+              }
+            }
+           
+           </script>
+           <p><a href="javascript:openMypopup()">Ouvrir le popup (car le bloqueur a probablement empêché l'ouverture automatique)</a></p>
+           <p><a href="javascript:closeMypopup()">Fermer le popup</a></p>
+    </main>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
