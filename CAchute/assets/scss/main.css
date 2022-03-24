@@ -194,8 +194,8 @@ p {
   z-index: -1;
 }
 
-.text-blue4 {
-  color: #46B9BF;
+.text-pink {
+  color: #FA5061;
 }
 
 .button {
@@ -407,7 +407,10 @@ footer p {
 .accompagne .text p {
   color: #FFFFFF;
 }
-
+.accompagne .warning {
+  background: #FFF5CC;
+  color: #6692D8;
+}
 @media (min-width: 576px) {
   body {
     background-position-y: 0;

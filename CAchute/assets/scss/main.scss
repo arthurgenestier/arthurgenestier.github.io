@@ -204,8 +204,8 @@ p {
     }
 }
 
-.text-blue4 {
-    color: $blue4;
+.text-pink {
+    color: $pink;
 }
 
 .button {
@@ -455,10 +455,16 @@ footer {
     background-color: $blue5;
     .text {
         p {
-
             color: $white;
         }
 
+    }
+    .warning {
+        background: $yellow;
+        color: $blue5;
+        p {
+
+        }
     }
 
 
