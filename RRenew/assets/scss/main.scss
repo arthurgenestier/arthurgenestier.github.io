@@ -188,6 +188,7 @@ header {
         background-image: url(/RRenew/assets/img/bg-home.jpg);
     }
     .home-header {
+        height: 60vh;
         .container {
             height: 50rem;
             .content {
@@ -222,28 +223,28 @@ header {
 .media {
     .calendrier {
         position: relative;
-        &::after {
-            content: '';
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 23.5px 0 23.5px 9px;
-            border-color: transparent transparent transparent $white;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        &::before {
-            content: '';
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 23.5px 0 23.5px 9px;
-            border-color: transparent transparent transparent $black;
-            position: absolute;
-            top: 0;
-            left: 100%;
-        }
+        // &::after {
+        //     content: '';
+        //     width: 0;
+        //     height: 0;
+        //     border-style: solid;
+        //     border-width: 23.5px 0 23.5px 9px;
+        //     border-color: transparent transparent transparent $white;
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        // }
+        // &::before {
+        //     content: '';
+        //     width: 0;
+        //     height: 0;
+        //     border-style: solid;
+        //     border-width: 23.5px 0 23.5px 9px;
+        //     border-color: transparent transparent transparent $black;
+        //     position: absolute;
+        //     top: 0;
+        //     left: 100%;
+        // }
         p {
             margin: 0;
             font-size: 0.8rem;
@@ -264,7 +265,7 @@ header {
         &.bg-blue,
         &.bg-pink,
         &.bg-peach {
-            margin-right: 15px;
+            // margin-right: 15px;
             &::after {
                 content: '';
                 border-width: 34px 0 34px 15px;
@@ -527,6 +528,10 @@ header {
             }
         }
     }
+    // list-style: url('/RRenew/assets/img/icon-check-black.svg');
+}
+.apprvo,
+.identite-3 {
     li {
         &::before {
             position: absolute;
@@ -534,7 +539,7 @@ header {
             content: url(/RRenew/assets/img/icon-check-black.svg);
         }
     }
-    // list-style: url('/RRenew/assets/img/icon-check-black.svg');
+
 }
 
 .restitution {
@@ -747,7 +752,7 @@ footer {
     }
     .media{
         .calendrier {
-            margin-right: 9px;
+            // margin-right: 9px;
             &.bg-black {
                 &::after,
                 &::before {

@@ -189,6 +189,9 @@ header {
 .home .parallax {
   background-image: url(/RRenew/assets/img/bg-home.jpg);
 }
+.home .home-header {
+  height: 60vh;
+}
 .home .home-header .container {
   height: 50rem;
 }
@@ -213,28 +216,6 @@ header {
 .media .calendrier {
   position: relative;
 }
-.media .calendrier::after {
-  content: "";
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 23.5px 0 23.5px 9px;
-  border-color: transparent transparent transparent #FFFFFF;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.media .calendrier::before {
-  content: "";
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 23.5px 0 23.5px 9px;
-  border-color: transparent transparent transparent #000000;
-  position: absolute;
-  top: 0;
-  left: 100%;
-}
 .media .calendrier p {
   margin: 0;
   font-size: 0.8rem;
@@ -244,9 +225,6 @@ header {
 }
 .media .calendrier.bg-black::after, .media .calendrier.bg-black::before {
   display: none;
-}
-.media .calendrier.bg-yellow, .media .calendrier.bg-blue, .media .calendrier.bg-pink, .media .calendrier.bg-peach {
-  margin-right: 15px;
 }
 .media .calendrier.bg-yellow::after, .media .calendrier.bg-blue::after, .media .calendrier.bg-pink::after, .media .calendrier.bg-peach::after {
   content: "";
@@ -463,7 +441,9 @@ header {
 .apprvo .carousel .carousel-indicators button.active {
   background: #000000;
 }
-.apprvo li::before {
+
+.apprvo li::before,
+.identite-3 li::before {
   position: absolute;
   left: -2.5rem;
   content: url(/RRenew/assets/img/icon-check-black.svg);
@@ -618,9 +598,6 @@ footer a:focus, footer a:hover {
     width: 33%;
   }
 
-  .media .calendrier {
-    margin-right: 9px;
-  }
   .media .calendrier.bg-black::after, .media .calendrier.bg-black::before {
     display: block;
   }
