@@ -406,7 +406,7 @@ header {
 }
 .identite table tr td {
   text-align: center;
-  padding: 4rem;
+  padding: 4rem 3rem;
   width: 20%;
   min-width: 20rem;
   border: 0;
