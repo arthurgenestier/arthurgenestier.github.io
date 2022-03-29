@@ -208,6 +208,9 @@ header {
   height: 4rem;
 }
 
+.objectifs .video {
+  max-width: 1600px;
+}
 .objectifs .caption {
   font-size: 2.1rem;
   font-weight: bold;
@@ -219,7 +222,7 @@ header {
 .media .calendrier p {
   margin: 0;
   margin-right: 0.2rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 .media .calendrier p:last-child {
   margin-right: 0;
@@ -254,12 +257,35 @@ header {
   content: "";
   border-color: transparent transparent transparent #F6CDD2;
 }
-.media .calendrier .mini-triangle {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 2.5px 0 2.5px 6px;
-  border-color: transparent transparent transparent #FFFFFF;
+.media .container-img-media {
+  height: 12rem;
+  position: relative;
+}
+.media .container-img-media .img-media {
+  position: absolute;
+  width: 5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.media .container-img-media .img-media-01 {
+  left: 1%;
+}
+.media .container-img-media .img-media-02 {
+  left: 17%;
+}
+.media .container-img-media .img-media-03 {
+  left: 34%;
+}
+.media .container-img-media .img-media-04 {
+  left: 59%;
+  top: 75%;
+}
+.media .container-img-media .img-media-05 {
+  left: 59%;
+  top: 25%;
+}
+.media .container-img-media .img-media-06 {
+  left: 80%;
 }
 
 .renew .hero-section {
@@ -434,6 +460,9 @@ header {
 .apprvo .carousel .carousel-caption {
   color: #1D1D1B;
 }
+.apprvo .carousel .carousel-indicators {
+  left: -15%;
+}
 .apprvo .carousel .carousel-indicators [data-bs-target] {
   width: 2rem;
   height: 2rem;
@@ -481,6 +510,75 @@ footer a:focus, footer a:hover {
   color: #F2F2F2;
 }
 
+@media (min-width: 480px) {
+  .media .container-img-media .img-media-02 {
+    left: 20%;
+  }
+  .media .container-img-media .img-media-03 {
+    left: 36%;
+  }
+  .media .container-img-media .img-media-04 {
+    left: 62%;
+  }
+  .media .container-img-media .img-media-05 {
+    left: 62%;
+  }
+  .media .container-img-media .img-media-06 {
+    left: 82%;
+  }
+}
+@media (min-width: 576px) {
+  .media .container-img-media {
+    height: 14rem;
+  }
+  .media .container-img-media .img-media {
+    width: 6rem;
+  }
+  .media .container-img-media .img-media-01 {
+    left: 2%;
+  }
+  .media .container-img-media .img-media-02 {
+    left: 20%;
+  }
+  .media .container-img-media .img-media-03 {
+    left: 36%;
+  }
+  .media .container-img-media .img-media-04 {
+    left: 62%;
+  }
+  .media .container-img-media .img-media-05 {
+    left: 62%;
+  }
+  .media .container-img-media .img-media-06 {
+    left: 82%;
+  }
+}
+@media (min-width: 768px) {
+  .media .container-img-media {
+    height: 18rem;
+  }
+  .media .container-img-media .img-media {
+    width: 8rem;
+  }
+  .media .container-img-media .img-media-01 {
+    left: 4%;
+  }
+  .media .container-img-media .img-media-02 {
+    left: 22%;
+  }
+  .media .container-img-media .img-media-03 {
+    left: 38%;
+  }
+  .media .container-img-media .img-media-04 {
+    left: 64%;
+  }
+  .media .container-img-media .img-media-05 {
+    left: 64%;
+  }
+  .media .container-img-media .img-media-06 {
+    left: 84%;
+  }
+}
 @media (min-width: 992px) {
   h1,
 .like-h1 {
@@ -607,6 +705,30 @@ footer a:focus, footer a:hover {
   }
   .media .calendrier p {
     font-size: 1.8rem;
+  }
+  .media .container-img-media {
+    height: 30rem;
+  }
+  .media .container-img-media .img-media {
+    width: 14rem;
+  }
+  .media .container-img-media .img-media-01 {
+    left: 1%;
+  }
+  .media .container-img-media .img-media-02 {
+    left: 18%;
+  }
+  .media .container-img-media .img-media-03 {
+    left: 33%;
+  }
+  .media .container-img-media .img-media-04 {
+    left: 62%;
+  }
+  .media .container-img-media .img-media-05 {
+    left: 62%;
+  }
+  .media .container-img-media .img-media-06 {
+    left: 80%;
   }
 
   .apprvo .carousel .carousel-inner {

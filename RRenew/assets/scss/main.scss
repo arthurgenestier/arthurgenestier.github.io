@@ -214,6 +214,9 @@ header {
 }
 
 .objectifs {
+    .video  {
+        max-width: 1600px;
+    }
     .caption {
         font-size: 2.1rem;
         font-weight: bold;
@@ -245,13 +248,14 @@ header {
         //     top: 0;
         //     left: 100%;
         // }
+        
         p {
             margin: 0;
             margin-right: 0.2rem;
             &:last-child {
                 margin-right: 0;
             }
-            font-size: 1rem;
+            font-size: 1.2rem;
             // font-weight: bold;
         }
         h2 {
@@ -303,12 +307,42 @@ header {
                 border-color: transparent transparent transparent $pink;
             }
         }
-        .mini-triangle {
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 2.5px 0 2.5px 6px;
-            border-color: transparent transparent transparent $white;
+        // .mini-triangle {
+        //     width: 0;
+        //     height: 0;
+        //     border-style: solid;
+        //     border-width: 2.5px 0 2.5px 6px;
+        //     border-color: transparent transparent transparent $white;
+        // }
+    }
+    .container-img-media {
+        height: 12rem;
+        position: relative;
+        .img-media {
+            position: absolute;
+            width: 5rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .img-media-01 {
+            left: 1%;
+        }
+        .img-media-02 {
+            left: 17%;
+        }
+        .img-media-03 {
+            left: 34%;
+        }
+        .img-media-04 {
+            left: 59%;
+            top: 75%;
+        }
+        .img-media-05 {
+            left: 59%;
+            top: 25%;
+        }
+        .img-media-06 {
+            left: 80%;
         }
     }
 }
@@ -517,6 +551,7 @@ header {
             color: $black;
         }
         .carousel-indicators {
+            left: -15%;
             & [data-bs-target] {
 
                 width: 2rem;
@@ -594,6 +629,87 @@ footer {
 
 
 
+
+@media (min-width: $break-xs) {
+    .media {
+        .container-img-media {
+            .img-media-02 {
+                left: 20%;
+            }
+            .img-media-03 {
+                left: 36%;
+            }
+            .img-media-04 {
+                left: 62%;
+            }
+            .img-media-05 {
+                left: 62%;
+            }
+            .img-media-06 {
+                left: 82%;
+            }
+        }
+    }
+}
+@media (min-width: $break-sm) {
+    .media {
+        .container-img-media {
+            height: 14rem;
+            .img-media {
+                width: 6rem;
+            }
+            .img-media-01 {
+                left: 2%;
+            }
+            .img-media-02 {
+                left: 20%;
+            }
+            .img-media-03 {
+                left: 36%;
+            }
+            .img-media-04 {
+                left: 62%;
+            }
+            .img-media-05 {
+                left: 62%;
+            }
+            .img-media-06 {
+                left: 82%;
+            }
+        }
+    }
+}
+@media (min-width: $break-md) {
+    .media {
+        .container-img-media {
+            height: 18rem;
+            .img-media {
+                width: 8rem;
+            }
+            .img-media-01 {
+                left: 4%;
+            }
+            .img-media-02 {
+                left: 22%;
+            }
+            .img-media-03 {
+                left: 38%;
+            }
+            .img-media-04 {
+                left: 64%;
+            }
+            .img-media-05 {
+                left: 64%;
+            }
+            .img-media-06 {
+                left: 84%;
+            }
+        }
+    }
+}
+@media (min-width: $break-lg) {
+
+}
 
 @media (min-width: $break-lg) {
     h1,
@@ -766,6 +882,30 @@ footer {
             p {
                 font-size: 1.8rem
             };
+        }
+        .container-img-media {
+            height: 30rem;
+            .img-media {
+                width: 14rem;
+            }
+            .img-media-01 {
+                left: 1%;
+            }
+            .img-media-02 {
+                left: 18%;
+            }
+            .img-media-03 {
+                left: 33%;
+            }
+            .img-media-04 {
+                left: 62%;
+            }
+            .img-media-05 {
+                left: 62%;
+            }
+            .img-media-06 {
+                left: 80%;
+            }
         }
     }
 
