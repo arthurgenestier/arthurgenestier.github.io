@@ -71,6 +71,10 @@ function addEvent(obj, evt, fn) {
     }
 }
 
+function pauseVideo() {
+    $('.sample_video').trigger('pause');
+}
+
 // window.addEventListener("beforeunload", function (e) {
 //     var confirmationMessage = "\o/";
 
