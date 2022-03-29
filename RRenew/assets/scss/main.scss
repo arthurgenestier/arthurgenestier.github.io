@@ -247,7 +247,11 @@ header {
         // }
         p {
             margin: 0;
-            font-size: 0.8rem;
+            margin-right: 0.2rem;
+            &:last-child {
+                margin-right: 0;
+            }
+            font-size: 1rem;
             // font-weight: bold;
         }
         h2 {

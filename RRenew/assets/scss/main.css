@@ -11,7 +11,7 @@ html {
 body {
   font-family: "NouvelR";
   background-color: #FFFFFF;
-  color: #000000;
+  color: #1D1D1B;
 }
 
 h1,
@@ -51,7 +51,7 @@ ul li p {
 }
 
 .bg-black {
-  background: #000000 !important;
+  background: #1D1D1B !important;
 }
 
 .bg-yellow {
@@ -100,23 +100,23 @@ ul li p {
   background: #FFFFFF;
 }
 .btn-white:hover, .btn-white:focus {
-  background: #000000;
+  background: #1D1D1B;
   color: #FFFFFF;
 }
 
 .btn-black {
   border: none;
-  background: #000000;
+  background: #1D1D1B;
   color: #FFFFFF;
 }
 .btn-black:hover, .btn-black:focus {
   background: #FFFFFF;
-  color: #000000;
+  color: #1D1D1B;
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
 }
 
 header {
-  background-color: #000000;
+  background-color: #1D1D1B;
 }
 
 .navbar {
@@ -218,7 +218,11 @@ header {
 }
 .media .calendrier p {
   margin: 0;
-  font-size: 0.8rem;
+  margin-right: 0.2rem;
+  font-size: 1rem;
+}
+.media .calendrier p:last-child {
+  margin-right: 0;
 }
 .media .calendrier h2 {
   margin: 0;
@@ -264,7 +268,7 @@ header {
 }
 .renew .table {
   font-size: 1.6rem;
-  color: #000000;
+  color: #1D1D1B;
 }
 .renew .table h2 {
   font-size: 3.2rem;
@@ -275,10 +279,10 @@ header {
 }
 .renew .table th {
   text-transform: lowercase;
-  background: #000000;
+  background: #1D1D1B;
   color: #FFFFFF;
   text-align: center;
-  border: solid 0.1rem #000000;
+  border: solid 0.1rem #1D1D1B;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -287,7 +291,7 @@ header {
   border: 0;
 }
 .renew .table td {
-  border: solid 0.1rem #000000;
+  border: solid 0.1rem #1D1D1B;
   padding-top: 1rem;
   padding-bottom: 1rem;
   text-align: center;
@@ -309,7 +313,7 @@ header {
 .identite .chrono .date {
   width: 10%;
   text-align: center;
-  background: #000000;
+  background: #1D1D1B;
   color: #FFFFFF;
   padding: 5% 0;
 }
@@ -339,13 +343,13 @@ header {
   height: 0;
   border-style: solid;
   border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent #000000;
+  border-color: transparent transparent transparent #1D1D1B;
   top: 50%;
   transform: translateY(-50%);
   left: -1%;
 }
 .identite .chrono .description.gauche {
-  border-left: solid #000000;
+  border-left: solid #1D1D1B;
   border-right: 0;
 }
 .identite .chrono .description.gauche::before {
@@ -355,7 +359,7 @@ header {
   height: 0;
   border-style: solid;
   border-width: 10px 10px 10px 0;
-  border-color: transparent #000000 transparent transparent;
+  border-color: transparent #1D1D1B transparent transparent;
   top: 50%;
   transform: translateY(-50%);
   right: 0;
@@ -416,7 +420,7 @@ header {
   text-transform: lowercase;
 }
 .identite table tr td:nth-child(3) {
-  border: solid #000000 0.1rem;
+  border: solid #1D1D1B 0.1rem;
 }
 .identite table tr th {
   width: 20%;
@@ -428,18 +432,18 @@ header {
 }
 
 .apprvo .carousel .carousel-caption {
-  color: #000000;
+  color: #1D1D1B;
 }
 .apprvo .carousel .carousel-indicators [data-bs-target] {
   width: 2rem;
   height: 2rem;
 }
 .apprvo .carousel .carousel-indicators button {
-  border: solid 0.1rem #000000;
+  border: solid 0.1rem #1D1D1B;
   border-radius: 2rem;
 }
 .apprvo .carousel .carousel-indicators button.active {
-  background: #000000;
+  background: #1D1D1B;
 }
 
 .apprvo li::before,
@@ -513,7 +517,7 @@ footer a:focus, footer a:hover {
   .navbar .navbar-nav .dropdown .dropdown-menu li .dropdown-item {
     font-size: 1.2rem;
     background-color: #FFFFFF !important;
-    color: #000000 !important;
+    color: #1D1D1B !important;
   }
   .navbar .navbar-nav .dropdown .dropdown-menu li .dropdown-item:focus, .navbar .navbar-nav .dropdown .dropdown-menu li .dropdown-item:hover {
     background-color: #F2F2F2 !important;
