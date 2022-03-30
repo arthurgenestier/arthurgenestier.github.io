@@ -25,6 +25,7 @@ h1,
 h2,
 .like-h2 {
   font-size: 4rem;
+  line-height: 0.9;
 }
 
 h3 {
@@ -210,6 +211,9 @@ header {
 
 .objectifs .video {
   max-width: 1600px;
+}
+.objectifs .video video {
+  height: 70vh;
 }
 .objectifs .caption {
   font-size: 2.1rem;
@@ -629,8 +633,7 @@ footer a:focus, footer a:hover {
     background-size: cover;
   }
 
-  .home,
-.objectifs {
+  .home {
     padding-top: 0;
   }
 
