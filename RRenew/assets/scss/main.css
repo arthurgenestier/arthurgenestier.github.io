@@ -697,6 +697,9 @@ footer a:focus, footer a:hover {
     border-top: solid 0.1rem;
   }
 
+  .objectifs .like-h1 {
+    width: 80%;
+  }
   .objectifs .content p {
     width: 33%;
   }
