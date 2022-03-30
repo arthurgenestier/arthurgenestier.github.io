@@ -144,6 +144,9 @@ header {
 .navbar .navbar-nav .dropdown:hover .dropdown-menu {
   display: block;
 }
+.navbar .navbar-nav .dropdown .scale-up-ver-top {
+  animation: scale-up-ver-top 0.2s ease-in-out both;
+}
 .navbar .navbar-nav .dropdown .dropdown-menu {
   padding: 0;
 }
@@ -211,9 +214,6 @@ header {
 
 .objectifs .video {
   max-width: 1600px;
-}
-.objectifs .video video {
-  height: 70vh;
 }
 .objectifs .caption {
   font-size: 2.1rem;
@@ -740,5 +740,15 @@ footer a:focus, footer a:hover {
 
   .restitution .second-section img {
     width: 16rem;
+  }
+}
+@keyframes scale-up-ver-top {
+  0% {
+    transform: scaleY(0);
+    transform-origin: 100% 0%;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: 100% 0%;
   }
 }/*# sourceMappingURL=main.css.map */
