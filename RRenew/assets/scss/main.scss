@@ -139,10 +139,8 @@ header {
         
          }
         .dropdown {
-            .scale-up-ver-top {
-                animation: scale-up-ver-top 0.2s ease-in-out both;
-            }
             .dropdown-menu {
+                animation: scale-up-ver-top 0.2s ease-in-out both;
                 padding: 0;
                 .dropdown-item {
                     text-transform: uppercase;

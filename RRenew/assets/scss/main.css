@@ -144,10 +144,8 @@ header {
 .navbar .navbar-nav .dropdown:hover .dropdown-menu {
   display: block;
 }
-.navbar .navbar-nav .dropdown .scale-up-ver-top {
-  animation: scale-up-ver-top 0.2s ease-in-out both;
-}
 .navbar .navbar-nav .dropdown .dropdown-menu {
+  animation: scale-up-ver-top 0.2s ease-in-out both;
   padding: 0;
 }
 .navbar .navbar-nav .dropdown .dropdown-menu .dropdown-item {
