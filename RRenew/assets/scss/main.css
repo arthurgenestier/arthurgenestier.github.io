@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @font-face {
   font-family: "NouvelR";
-  src: url("/RRenew/assets/fonts/NouvelR-Variable.woff2") format("woff2"), url("/RRenew/assets/fonts/NouvelR-Variable.woff") format("woff2"), url("/RRenew/assets/fonts/NouvelR-Variable.ttf") format("ttf");
+  src: url("./../fonts/NouvelR-Variable.woff2") format("woff2"), url("./../fonts/NouvelR-Variable.woff") format("woff2"), url("./../fonts/NouvelR-Variable.ttf") format("ttf");
 }
 html {
   font-size: 62.5%;
@@ -172,7 +172,7 @@ header {
 
 .home .hero-section,
 .identite .hero-section {
-  background-image: url(/RRenew/assets/img/bg-home-2.jpg);
+  background-image: url(/assets/img/bg-home-2.jpg);
 }
 
 .carousel-item,
@@ -189,7 +189,7 @@ header {
 }
 
 .home .parallax {
-  background-image: url(/RRenew/assets/img/bg-home.jpg);
+  background-image: url(/assets/img/bg-home.jpg);
 }
 .home .home-header {
   height: 60vh;
@@ -202,7 +202,8 @@ header {
 }
 .home .carousel img {
   max-height: 50rem;
-  width: 100%;
+  width: auto;
+  max-width: 45rem;
 }
 .home .carousel-control-next-icon,
 .home .carousel-control-prev-icon {
@@ -291,7 +292,7 @@ header {
 }
 
 .renew .hero-section {
-  background-image: url(/RRenew/assets/img/photo-refont.jpg);
+  background-image: url(/assets/img/photo-refont.jpg);
   min-height: 24.5rem;
 }
 .renew .table {
@@ -333,7 +334,7 @@ header {
   padding-left: 5rem;
 }
 .identite .hero-section .content ul li::before {
-  content: url(/RRenew/assets/img/icon-check.svg);
+  content: url(/assets/img/icon-check.svg);
 }
 .identite .chrono p {
   margin: 0;
@@ -402,7 +403,7 @@ header {
   margin-left: 8%;
 }
 .identite .bg-black ul li::before {
-  content: url(/RRenew/assets/img/icon-check.svg);
+  content: url(/assets/img/icon-check.svg);
   position: absolute;
   top: 5%;
 }
@@ -418,16 +419,16 @@ header {
   background-position: center bottom;
 }
 .identite table tr:first-of-type th:nth-child(2) {
-  background-image: url(/RRenew/assets/img/fond-noir-tableau.png);
+  background-image: url(/assets/img/fond-noir-tableau.png);
 }
 .identite table tr:first-of-type th:nth-child(3) {
-  background-image: url(/RRenew/assets/img/Composant\ 17\ –\ 1.png);
+  background-image: url(/assets/img/Composant\ 17\ –\ 1.png);
 }
 .identite table tr:first-of-type th:nth-child(4) {
-  background-image: url(/RRenew/assets/img/fond-bleu-tableau.png);
+  background-image: url(/assets/img/fond-bleu-tableau.png);
 }
 .identite table tr:first-of-type th:nth-child(5) {
-  background-image: url(/RRenew/assets/img/fond-jaune-tableau.png);
+  background-image: url(/assets/img/fond-jaune-tableau.png);
 }
 .identite table tr img {
   height: 10rem;
@@ -481,18 +482,18 @@ header {
 .identite-3 li::before {
   position: absolute;
   left: -2.5rem;
-  content: url(/RRenew/assets/img/icon-check-black.svg);
+  content: url(/assets/img/icon-check-black.svg);
 }
 
 .restitution .cross li::before {
   position: absolute;
   left: -2.5rem;
-  content: url(/RRenew/assets/img/icon-cross.svg);
+  content: url(/assets/img/icon-cross.svg);
 }
 .restitution .check li::before {
   position: absolute;
   left: -2.5rem;
-  content: url(/RRenew/assets/img/icon-check-black.svg);
+  content: url(/assets/img/icon-check-black.svg);
 }
 .restitution .second-section img {
   width: 10rem;
