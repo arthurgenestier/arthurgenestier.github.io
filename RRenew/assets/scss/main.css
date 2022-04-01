@@ -210,6 +210,9 @@ header {
   width: 4rem;
   height: 4rem;
 }
+.home .carousel-inner {
+  height: 80rem;
+}
 
 .objectifs .video {
   max-width: 1600px;
@@ -635,7 +638,6 @@ footer a:focus, footer a:hover {
   .home {
     padding-top: 0;
   }
-
   .home h1,
 .home .like-h1 {
     width: 100%;
@@ -659,6 +661,9 @@ footer a:focus, footer a:hover {
   }
   .home .third-section h2 {
     width: 50%;
+  }
+  .home .carousel .carousel-inner {
+    height: 55rem;
   }
   .home .carousel .content {
     width: 50%;

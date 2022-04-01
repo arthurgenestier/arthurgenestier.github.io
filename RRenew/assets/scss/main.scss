@@ -213,6 +213,9 @@ header {
         width: 4rem;
         height: 4rem;
     }
+    .carousel-inner {
+        height: 80rem;
+    }
     
 
 
@@ -712,9 +715,7 @@ footer {
         }
     }
 }
-@media (min-width: $break-lg) {
 
-}
 
 @media (min-width: $break-lg) {
     h1,
@@ -771,10 +772,9 @@ footer {
         background-size: cover;
     }
 
+
     .home {
         padding-top: 0;
-    }
-    .home {
         h1,
         .like-h1 {
             width: 100%;
@@ -809,6 +809,9 @@ footer {
             }
         }
         .carousel {
+            .carousel-inner {
+                height: 55rem;
+            }
             .content {
                 width: 50%;
 
