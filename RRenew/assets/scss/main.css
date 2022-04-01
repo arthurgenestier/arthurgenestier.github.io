@@ -205,6 +205,10 @@ header {
   width: auto;
   max-width: 45rem;
 }
+.home .carousel-control-next, .home .carousel-control-prev {
+  top: 0;
+  top: -2rem;
+}
 .home .carousel-control-next-icon,
 .home .carousel-control-prev-icon {
   width: 4rem;
