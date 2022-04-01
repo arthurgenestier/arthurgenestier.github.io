@@ -172,7 +172,7 @@ header {
 
 .home .hero-section,
 .identite .hero-section {
-  background-image: url(/assets/img/bg-home-2.jpg);
+  background-image: url(./../img/bg-home-2.jpg);
 }
 
 .carousel-item,
@@ -189,7 +189,7 @@ header {
 }
 
 .home .parallax {
-  background-image: url(/assets/img/bg-home.jpg);
+  background-image: url(./../img/bg-home.jpg);
 }
 .home .home-header {
   height: 60vh;
