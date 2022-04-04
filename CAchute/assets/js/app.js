@@ -60,7 +60,7 @@ function verifCheck() {
     };
     var cross = document.getElementById("line");
     cross.classList.remove("flex");
-    console.log($('#line > .container-line img:visible').length);
+    //console.log($('#line > .container-line img:visible').length);
 }
 
 function addEvent(obj, evt, fn) {
