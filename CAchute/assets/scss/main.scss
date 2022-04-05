@@ -7,10 +7,10 @@ html {
 }
 
 body {
-    background-image: url(/CAchute/assets/img/fond-mobile.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-y: -25%;
+    // background-image: url(/CAchute/assets/img/fond-mobile.png);
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position-y: -25%;
     background-color: $blue;
     color: $black;
     font-family: "AmsiPro-Ultra";
@@ -130,6 +130,7 @@ p {
 }
 
 .first {
+    // z-index: 1041;
     position: relative;
     .check {
         &::before {
@@ -190,8 +191,36 @@ p {
     background-color: $blue2;
 }
 .bg-blue2 {
+    top: -0.5%;
     background-color: $blue3;
+    &.bg-round {
+        &::before {
+            background-color: $blue3;
+            left: 0;
+            z-index: 0
+            }
+    }
 }
+.bg-blue3 {
+    background-color: $blue6;
+    &.bg-round {
+        &::before {
+            background-color: $blue6;
+            left: 0;
+            }
+    }
+}
+.bg-yellow {
+    background-color: $yellow;
+    &.bg-round {
+        &::before {
+            background-color: $yellow;
+            left: 0;
+            z-index: 1
+            }
+    }
+}
+
 .bg-round {
     &::before {
         content: '';
@@ -211,7 +240,7 @@ p {
 
 .button {
     padding: 1rem 2rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     display: inline-block;
     text-transform: uppercase;
     text-decoration: none;
@@ -246,7 +275,9 @@ p {
     }
     }
 
-
+.fixed-top {
+    // z-index: 1041;
+}
 nav {
     
     .logo {
@@ -294,7 +325,7 @@ nav {
                 li {
                     list-style: none;
                     a {
-                        font-size: 1.4rem;
+                        font-size: 1.2rem;
                         color: $white;
                     }
                 }
@@ -304,6 +335,10 @@ nav {
 }
 
 main {
+    .cards {
+        margin-bottom: 8%;
+        position: relative;
+    }
     .title {
         margin-top: 6rem;
     }
@@ -362,14 +397,13 @@ main {
 
     .rotate-01 {
             &:hover {
-                animation: jello-horizontal 0.9s both;
+                transform: rotate(2deg);
             }
             
         }
     .rotate-02 {
             &:hover {
                 transform: rotate(-2deg);
-                animation: jello-horizontal 0.9s both;
             }
             
         }
@@ -402,17 +436,9 @@ main {
 
 
 footer {
-    background: $yellow;
     z-index: 1;
     line-height: 2.5;
     margin-bottom: -10px;
-    .bg-round {
-        z-index: 1;
-        &::before {
-            background-color: $yellow;
-            z-index: -1;
-        }
-    }
     a {
         color: $green3;
         font-size: 1.5rem;
@@ -529,7 +555,7 @@ footer {
         }
         a {
             color: $white;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
     }
     
@@ -601,10 +627,7 @@ footer {
 }
 
 @media (min-width: $break-xl) {
-    body {
-        background-image: url(/CAchute/assets/img/fond-desktop.png);
-        background-position-y: -57%;
-    }
+
     main {
 
         .modal-dialog {
@@ -640,31 +663,5 @@ footer {
     100% {
       transform: scaleY(1);
       transform-origin: 100% 0%;
-    }
-}
-
-@keyframes jello-horizontal {
-    0% {
-      transform: scale3d(1, 1, 1);
-    }
-    30% {
-      transform: scale3d(1.05, 0.95, 1);
-    }
-    40% {
-      transform: scale3d(0.95, 1.05, 1);
-    }
-    50% {
-      transform: scale3d(1.05, 0.95, 1);
-      transform: rotate(0.5deg);
-    }
-    65% {
-      transform: scale3d(0.95, 1.05, 1);
-    }
-    75% {
-      transform: scale3d(1.05, 0.95, 1);
-    }
-    100% {
-      transform: scale3d(1, 1, 1);
-      transform: rotate(1deg);
     }
 }
