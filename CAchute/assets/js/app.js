@@ -74,3 +74,9 @@ function addEvent(obj, evt, fn) {
 function pauseVideo() {
     $('.sample_video').trigger('pause');
 }
+
+$(document).ready(function(){
+	$('#nav-icon1').click(function(){
+		$(this).toggleClass('open');
+	});
+});

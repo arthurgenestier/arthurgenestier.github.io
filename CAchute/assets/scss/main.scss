@@ -228,7 +228,7 @@ p {
         width: 100%;
         height: 5rem;
         border-radius: 100%;
-        top: -26px;
+        top: -2.6rem;
         z-index: -1;
     }
 }
@@ -275,9 +275,68 @@ p {
     }
     }
 
-.fixed-top {
-    // z-index: 1041;
+.burger-to-cross {
+    background: $pink;
+    padding: 2rem;
+    border-radius: 5rem;
+    .burger-to-cross-link {
+        position: relative;
+        z-index: 1041;
+    }
 }
+
+#nav-icon1{
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+
+    transform: rotate(0deg);
+
+    transition: .5s ease-in-out;
+    cursor: pointer;
+  }
+  
+  #nav-icon1 span{
+    display: block;
+    position: absolute;
+    height: 0.4rem;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 1rem;
+    opacity: 1;
+    left: 0;
+
+    transform: rotate(0deg);
+
+    transition: .25s ease-in-out;
+  }
+  
+  #nav-icon1 span:nth-child(1) {
+    top: 0;
+  }
+  
+  #nav-icon1 span:nth-child(2) {
+    top: 1rem;
+  }
+  
+  #nav-icon1 span:nth-child(3) {
+    top: 2rem;
+  }
+  
+  #nav-icon1.open span:nth-child(1) {
+    top: 1rem;
+    transform: rotate(135deg);
+  }
+  
+  #nav-icon1.open span:nth-child(2) {
+    opacity: 0;
+    left: -6rem;
+  }
+  
+  #nav-icon1.open span:nth-child(3) {
+    top: 1rem;
+    transform: rotate(-135deg);
+  }
 nav {
     
     .logo {
@@ -369,7 +428,7 @@ main {
             background: $blue2;
             border-radius: 2rem;
             height: 90%;
-            box-shadow: 10px 9px 0px 2px $green2;
+            box-shadow: 1rem 0.9rem 0 0.2rem $green2;
             .modal-header {
                 justify-content: end;
                 border: 0;
@@ -438,7 +497,7 @@ main {
 footer {
     z-index: 1;
     line-height: 2.5;
-    margin-bottom: -10px;
+    margin-bottom: -1rem;
     a {
         color: $green3;
         font-size: 1.5rem;
@@ -544,7 +603,7 @@ footer {
         }
         &:hover .dropdown-menu {
             display: block;
-            inset: 15px auto auto 0px !important;
+            inset: 1.5rem auto auto 0 !important;
             width: 100%;
             padding: 7% 2rem;
             border-bottom-left-radius: 2rem;
@@ -563,7 +622,7 @@ footer {
     
     .la-mif {
         position: absolute;
-        top: 50%;
+        top: 45%;
         transform: translateY(-50%);
         left: 50%;
         width: 45%;
@@ -571,17 +630,18 @@ footer {
     .title {
         width: 60%;
     }
-    .intro {
-        width: 50%;
-        margin-left: 5%;
-        p {
-            padding-left: 11%;
-            padding-right: 8%;
-            line-height: 1.2;
-        }
-    }
     main {
-        padding-top: 10%;
+        padding-top: 7%;
+        .intro {
+            width: 50%;
+            margin-left: 5%;
+            padding-bottom: 3%;
+            p {
+                padding-left: 11%;
+                padding-right: 8%;
+                line-height: 1.2;
+            }
+        }
         .modal-dialog {
             max-width: 90rem;
             margin: 5% auto;
