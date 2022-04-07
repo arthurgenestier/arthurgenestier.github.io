@@ -82,6 +82,15 @@ submitButton.addEventListener("click", (e)=>{
 
   // Clear form after submit
   document.getElementById('contactForm').reset();
+
+  // tagcommander variables
+  window.tc_vars = {
+            environnement : 'dev',
+            page_chapter1 : 'avis',
+            page_chapter2 : '',
+            page_chapter3 : '',
+            page : 'merci'
+        };
 });
 
 

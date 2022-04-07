@@ -46,7 +46,7 @@
                                 </ul>
                             </div>
                             <div class="bg-white">
-                                <a href="">La check-list anti chute</a>
+                                <a href="#" onclick="checklistAntichute()">La check-list anti chute</a>
                             </div>
                             <div class="bg-white">
                                 <a href="./accompagne.html">Le crédit agricole vous accompagne</a>
@@ -63,7 +63,7 @@
                     <a href="./index.html"><img src="./assets/img/logo-ca.png" alt=""></a>
                 </div>
                 <div class="dropdown button not-active">
-                    <a class="position-relative" href="#" role="button" id="dropdownMenuLink">
+                    <a class="position-relative" href="#" role="button" id="dropdownMenuLink" onclick="ficheConseils()">
                         Nos fiches conseils prévention
                     </a>
 
@@ -839,6 +839,17 @@
         </div>
 
     </footer>
+    <script>
+        tc_vars = {
+        environnement : 'dev',
+        page_chapter1 : '',
+        page_chapter2 : '',
+        page_chapter3 : '',
+        page : 'accueil'
+        }
+    </script>
+    <script src='//cdn.tagcommander.com/5793/uat/tc_CreditAgricoleAssurances_20.js'></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>

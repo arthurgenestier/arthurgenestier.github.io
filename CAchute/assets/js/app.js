@@ -5,7 +5,15 @@ function addCheck() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-first");
     lineCheck.classList.add("block");
-} 
+    window.tc_vars = {
+        environnement : 'dev',
+        page_chapter1 : '',
+        page_chapter2 : '',
+        page_chapter3 : '',
+        page : 'salon'
+    };
+}
+
 function addCheck2() {
     var cardCheck = document.getElementById("secondCard");
     cardCheck.classList.add("check");
@@ -13,7 +21,15 @@ function addCheck2() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-second");
     lineCheck.classList.add("block");
+    window.tc_vars = {
+        environnement : 'dev',
+        page_chapter1 : '',
+        page_chapter2 : '',
+        page_chapter3 : '',
+        page : 'sport'
+    };
 }
+
 function addCheck3() {
     var cardCheck = document.getElementById("thirdCard");
     cardCheck.classList.add("check");
@@ -21,7 +37,15 @@ function addCheck3() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-third");
     lineCheck.classList.add("block");
-} 
+    window.tc_vars = {
+        environnement : 'dev',
+        page_chapter1 : '',
+        page_chapter2 : '',
+        page_chapter3 : '',
+        page : 'salle_de_bain'
+    };
+}
+
 function addCheck4() {
     var cardCheck = document.getElementById("fourthCard");
     cardCheck.classList.add("check");
@@ -29,7 +53,15 @@ function addCheck4() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-fourth");
     lineCheck.classList.add("block");
-} 
+    window.tc_vars = {
+        environnement : 'dev',
+        page_chapter1 : '',
+        page_chapter2 : '',
+        page_chapter3 : '',
+        page : 'jardin'
+    };
+}
+
 function addCheck5() {
     var cardCheck = document.getElementById("fifthCard");
     cardCheck.classList.add("check");
@@ -37,7 +69,15 @@ function addCheck5() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-fifth");
     lineCheck.classList.add("block");
-} 
+    window.tc_vars = {
+        environnement : 'dev',
+        page_chapter1 : '',
+        page_chapter2 : '',
+        page_chapter3 : '',
+        page : 'social'
+    };
+}
+
 function addCheck6() {
     var cardCheck = document.getElementById("sixthCard");
     cardCheck.classList.add("check");
@@ -45,7 +85,45 @@ function addCheck6() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-sixth");
     lineCheck.classList.add("block");
+    window.tc_vars = {
+        environnement : 'dev',
+        page_chapter1 : '',
+        page_chapter2 : '',
+        page_chapter3 : '',
+        page : 'transport'
+    };
 }
+
+function ficheConseils() {
+    window.tc_vars = {
+        environnement : 'dev',
+        page_chapter1 : '',
+        page_chapter2 : '',
+        page_chapter3 : '',
+        page : 'nos_fiches_conseils_prevention'
+    };
+}
+
+function checklistAntichute() {
+    window.tc_vars = {
+        environnement : 'dev',
+        page_chapter1 : '',
+        page_chapter2 : '',
+        page_chapter3 : '',
+        page : 'check_liste_anti_chute'
+    };
+}
+
+// function opinionModal() {
+//     window.tc_vars = {
+//         environnement : 'dev',
+//         page_chapter1 : '',
+//         page_chapter2 : '',
+//         page_chapter3 : '',
+//         page : 'demande'
+//     };
+// }
+
 function removeCheckLine() {
     var cross = document.getElementById("line");
     cross.classList.remove("flex");
