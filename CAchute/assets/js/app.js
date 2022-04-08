@@ -114,15 +114,15 @@ function checklistAntichute() {
     };
 }
 
-// function opinionModal() {
-//     window.tc_vars = {
-//         environnement : 'dev',
-//         page_chapter1 : '',
-//         page_chapter2 : '',
-//         page_chapter3 : '',
-//         page : 'demande'
-//     };
-// }
+function demandeAvis() {
+    window.tc_vars = {
+        environnement : 'dev',
+        page_chapter1 : 'avis',
+        page_chapter2 : '',
+        page_chapter3 : '',
+        page : 'demande'
+    };
+}
 
 function removeCheckLine() {
     var cross = document.getElementById("line");

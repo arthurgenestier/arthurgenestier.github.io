@@ -77,7 +77,7 @@
                         <li class="active p-1 rounded"><a href="#">Les escaliers</a></li>
                     </ul>
                 </div>
-                <a href="">
+                <a href="#" onclick="checklistAntichute()">
                     <div class="button not-active">
                         La check-list anti chute
                     </div>
@@ -88,7 +88,7 @@
                     </div>
                 </a>
 
-                <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#opinionModal">
+                <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#opinionModal" onclick="demandeAvis()">
                     <div class="button not-active">
                         Laissez-nous votre avis
                     </div>
@@ -824,7 +824,8 @@
         page_chapter1 : '',
         page_chapter2 : '',
         page_chapter3 : '',
-        page : 'accueil'
+        page : 'accueil',
+        tc_events_20: (this,'click',{'evt_click_name':'accueil'})
         }
     </script>
     <script src='//cdn.tagcommander.com/5793/uat/tc_CreditAgricoleAssurances_20.js'></script>

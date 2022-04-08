@@ -42,10 +42,6 @@ submitButton.addEventListener("click", (e)=>{
    var vigilant_plutotnon = document.getElementById('vigilant_plutotnon').checked;
    var vigilant_plutotoui = document.getElementById('vigilant_plutotoui').checked;
    var vigilant_toutafait = document.getElementById('vigilant_toutafait').checked;
-   var theme_1 = document.getElementById('theme_1').checked;
-   var theme_2 = document.getElementById('theme_2').checked;
-   var theme_3 = document.getElementById('theme_3').checked;
-   var theme_4 = document.getElementById('theme_4').checked;
 
   db.doc().set({
     // send a promise and log errors or success
@@ -67,11 +63,8 @@ submitButton.addEventListener("click", (e)=>{
     vigilant_pasdutout: vigilant_pasdutout,
     vigilant_plutotnon: vigilant_plutotnon,
     vigilant_plutotoui: vigilant_plutotoui,
-    vigilant_toutafait: vigilant_toutafait,
-    theme_1: theme_1,
-    theme_2: theme_2,
-    theme_3: theme_3,
-    theme_4: theme_4
+    vigilant_toutafait: vigilant_toutafait
+    
   }).then( () => {
     console.log("réponses envoyées");
   }).catch( (error) => {
