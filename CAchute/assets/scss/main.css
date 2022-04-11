@@ -607,9 +607,6 @@ footer p {
   .accompagne {
     margin-top: -10rem;
   }
-  .accompagne #title {
-    height: 100vh;
-  }
 }
 @media (min-width: 1400px) {
   body {

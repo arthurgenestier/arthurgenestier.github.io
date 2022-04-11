@@ -32,13 +32,13 @@
                             <div class="bg-pink">
                                 <p>Nos fiches conseils prévention</p>
                                 <ul>
-                                    <li><a href="#">La rue</a></li>
-                                    <li><a href="#">Les escaliers</a></li>
-                                    <li><a href="#">La salle de bain</a></li>
-                                    <li><a href="#">Le jardin</a></li>
-                                    <li><a href="#">La cuisine</a></li>
                                     <li><a href="#">Le salon</a></li>
+                                    <li><a href="#">La salle de bain</a></li>
+                                    <li><a href="#">La rue</a></li>
+                                    <li><a href="#">Le jardin</a></li>
                                     <li><a href="#">Les transports en commun</a></li>
+                                    <li><a href="#">La cuisine</a></li>
+                                    <li><a href="#">Les escaliers</a></li>
                                 </ul>
                             </div>
                             <div class="bg-white">
@@ -46,6 +46,11 @@
                             </div>
                             <div class="bg-white">
                                 <a href="./accompagne.html">Le crédit agricole vous accompagne</a>
+                            </div>
+                            <div class="bg-white" style="margin-top: 40%;">
+                                <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button"
+                                    data-bs-dismiss="modal" data-bs-toggle="modal"
+                                    data-bs-target="#opinionModal">Laissez-nous votre avis</a>
                             </div>
                         </div>
                     </div>
@@ -61,13 +66,13 @@
                     </a>
 
                     <ul class="bg-pink dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li class="active p-1 rounded"><a href="#">La rue</a></li>
-                        <li class="active p-1 rounded"><a href="#">Les escaliers</a></li>
-                        <li class="active p-1 rounded"><a href="#">La salle de bain</a></li>
-                        <li class="active p-1 rounded"><a href="#">Le jardin</a></li>
-                        <li class="active p-1 rounded"><a href="#">La cuisine</a></li>
                         <li class="active p-1 rounded"><a href="#">Le salon</a></li>
+                        <li class="active p-1 rounded"><a href="#">La salle de bain</a></li>
+                        <li class="active p-1 rounded"><a href="#">La rue</a></li>
+                        <li class="active p-1 rounded"><a href="#">Le jardin</a></li>
                         <li class="active p-1 rounded"><a href="#">Les transports en commun</a></li>
+                        <li class="active p-1 rounded"><a href="#">La cuisine</a></li>
+                        <li class="active p-1 rounded"><a href="#">Les escaliers</a></li>
                     </ul>
                 </div>
                 <a href="">
@@ -78,6 +83,13 @@
                 <a href="./accompagne.html">
                     <div class="button active">
                         Le crédit agricole vous accompagne
+                    </div>
+                </a>
+
+                <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button" data-bs-dismiss="modal"
+                    data-bs-toggle="modal" data-bs-target="#opinionModal" onclick="demandeAvis()">
+                    <div class="button not-active">
+                        Laissez-nous votre avis
                     </div>
                 </a>
 
@@ -106,12 +118,14 @@
                         rester en bonne santé le plus longtemps possible.
                     </p>
                 </div>
-                <p class="warning rounded d-inline-block px-3 mb-5">Ce dispositif n’a pas vocation à se substituer à
+                <p class="warning rounded d-inline-block px-3 mb-5 pb-2">Ce dispositif n’a pas vocation à se substituer
+                    à
                     l’avis ni aux conseils d’un professionnel de santé.
                 </p>
                 <div class="text">
 
-                    <p class="mb-5">Pour plus d’informations, contactez votre conseiller.</p>
+                    <p class="mb-5">Pour plus d’informations sur nos contrats d’assurance, contactez votre conseiller.
+                    </p>
                 </div>
             </div>
             <div class="text-center">
@@ -136,11 +150,11 @@
     </footer>
     <script>
         tc_vars = {
-        environnement : 'dev',
-        page_chapter1 : '',
-        page_chapter2 : '',
-        page_chapter3 : '',
-        page : 'le_credit_agricole_vous_accompagne'
+            environnement: 'dev',
+            page_chapter1: '',
+            page_chapter2: '',
+            page_chapter3: '',
+            page: 'le_credit_agricole_vous_accompagne'
         }
     </script>
     <script src='//cdn.tagcommander.com/5793/uat/tc_CreditAgricoleAssurances_20.js'></script>
