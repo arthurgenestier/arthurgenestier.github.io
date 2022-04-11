@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    
     <header role="banner" class="fixed-top">
         <nav role="navigation" class="container pt-5">
             <div class="d-flex align-items-center justify-content-between d-xl-none">
@@ -703,12 +704,6 @@
                     </div>
                 </div>
                 <div class="end my-3">
-                    <!-- Button trigger modal
-                    <a role="button" data-bs-toggle="modal" data-bs-target="#endModal" id="endCard">
-                        end
-                    </a> -->
-
-                    <!-- Modal -->
                     <div class="modal exit" id="endModal" tabindex="-1" aria-labelledby="endModalLabel"
                         aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
                         <div class="modal-dialog">
@@ -739,13 +734,6 @@
                     </div>
                 </div>
                 <div class="opinion my-3">
-                    <!-- Button trigger modal
-                    <a role="button" data-bs-toggle="modal" data-bs-target="#opinionModal" id="opinionCard"
-                        onclick="addCheck6()">
-                        opinion
-                    </a> -->
-
-                    <!-- Modal -->
                     <div class="modal" id="opinionModal" tabindex="-1" aria-labelledby="opinionModalLabel"
                         aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
                         <div class="modal-dialog">
@@ -756,7 +744,7 @@
                                         <img src="./assets/img/icon-close-small.svg" alt=""></a>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="container" id="contactForm">
+                                    <form class="container needs-validation" id="contactForm" novalidate>
                                         <p>Sur une échelle de 0 à 10, dans quelle mesure
                                             recommanderiez-vous cette
                                             expérience à vos proches ?</p>
@@ -764,60 +752,60 @@
                                             <div class="number row mb-4 mb-lg-0 me-lg-3">
                                                 <div class="form-check col justify-content-center">
                                                     <input id="XP0" class="form-check-input ms-1" type="radio"
-                                                        name="note" value="0">
-                                                    <label class="form-check-label d-block">0</label>
+                                                        name="note" value="0" required>
+                                                    <label class="form-check-label d-block" for="XP0">0</label>
                                                 </div>
                                                 <div class="form-check col justify-content-center">
                                                     <input id="XP1" class="form-check-input ms-1" type="radio"
-                                                        name="note" value="1">
-                                                    <label class="form-check-label d-block">1</label>
+                                                        name="note" value="1" required>
+                                                    <label class="form-check-label d-block" for="XP1">1</label>
                                                 </div>
                                                 <div class="form-check col justify-content-center">
                                                     <input id="XP2" class="form-check-input ms-1" type="radio"
-                                                        name="note" value="2">
-                                                    <label class="form-check-label d-block">2</label>
+                                                        name="note" value="2" required>
+                                                    <label class="form-check-label d-block" for="XP2">2</label>
                                                 </div>
                                                 <div class="form-check col justify-content-center">
                                                     <input id="XP3" class="form-check-input ms-1" type="radio"
-                                                        name="note" value="3">
-                                                    <label class="form-check-label d-block">3</label>
+                                                        name="note" value="3" required>
+                                                    <label class="form-check-label d-block" for="XP3">3</label>
                                                 </div>
                                                 <div class="form-check col justify-content-center">
                                                     <input id="XP4" class="form-check-input ms-1" type="radio"
-                                                        name="note" value="4">
-                                                    <label class="form-check-label d-block">4</label>
+                                                        name="note" value="4" required>
+                                                    <label class="form-check-label d-block" for="XP4">4</label>
                                                 </div>
                                                 <div class="form-check col justify-content-center">
                                                     <input id="XP5" class="form-check-input ms-1" type="radio"
-                                                        name="note" value="5">
-                                                    <label class="form-check-label d-block">5</label>
+                                                        name="note" value="5" required>
+                                                    <label class="form-check-label d-block" for="XP5">5</label>
                                                 </div>
                                             </div>
                                             <div class="number row">
                                                 <div class="form-check col justify-content-center">
                                                     <input id="XP6" class="form-check-input ms-1" type="radio"
-                                                        name="note" value="6">
-                                                    <label class="form-check-label d-block">6</label>
+                                                        name="note" value="6" required>
+                                                    <label class="form-check-label d-block" for="XP6">6</label>
                                                 </div>
                                                 <div class="form-check col justify-content-center">
                                                     <input id="XP7" class="form-check-input ms-1" type="radio"
-                                                        name="note" value="7">
-                                                    <label class="form-check-label d-block">7</label>
+                                                        name="note" value="7" required>
+                                                    <label class="form-check-label d-block" for="XP7">7</label>
                                                 </div>
                                                 <div class="form-check col justify-content-center">
                                                     <input id="XP8" class="form-check-input ms-1" type="radio"
-                                                        name="note" value="8">
-                                                    <label class="form-check-label d-block">8</label>
+                                                        name="note" value="8" required>
+                                                    <label class="form-check-label d-block" for="XP8">8</label>
                                                 </div>
                                                 <div class="form-check col justify-content-center">
                                                     <input id="XP9" class="form-check-input ms-1" type="radio"
-                                                        name="note" value="9">
-                                                    <label class="form-check-label d-block">9</label>
+                                                        name="note" value="9" required>
+                                                    <label class="form-check-label d-block" for="XP9">9</label>
                                                 </div>
                                                 <div class="form-check col justify-content-center">
                                                     <input id="XP10" class="form-check-input ms-1" type="radio"
-                                                        name="note" value="10">
-                                                    <label class="form-check-label d-block">10</label>
+                                                        name="note" value="10" required>
+                                                    <label class="form-check-label d-block" for="XP10">10</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -828,29 +816,29 @@
                                                 class="form-check col-6 col-lg-3 d-flex align-items-center justify-content-center">
                                                 <input id="useful_pasdutout"
                                                     class="form-check-input me-1 me-md-2 me-lg-3" type="radio"
-                                                    name="useful" value="Pas du tout">
-                                                <label class="form-check-label">Pas du tout</label>
+                                                    name="useful" value="Pas du tout" required>
+                                                <label class="form-check-label" for="useful_pasdutout">Pas du tout</label>
                                             </div>
                                             <div
                                                 class="form-check col-6 col-lg-3 d-flex align-items-center justify-content-center">
                                                 <input id="useful_plutotnon"
                                                     class="form-check-input me-1 me-md-2 me-lg-3" type="radio"
-                                                    name="useful" value="Plutôt non">
-                                                <label class="form-check-label">Plutôt non</label>
+                                                    name="useful" value="Plutôt non" required>
+                                                <label class="form-check-label" for="useful_plutotnon">Plutôt non</label>
                                             </div>
                                             <div
                                                 class="form-check col-6 col-lg-3 d-flex align-items-center justify-content-center">
                                                 <input id="useful_plutotoui"
                                                     class="form-check-input me-1 me-md-2 me-lg-3" type="radio"
-                                                    name="useful" value="Plutôt oui">
-                                                <label class="form-check-label">Plutôt oui</label>
+                                                    name="useful" value="Plutôt oui" required>
+                                                <label class="form-check-label" for="useful_plutotoui">Plutôt oui</label>
                                             </div>
                                             <div
                                                 class="form-check col-6 col-lg-3 d-flex align-items-center justify-content-center">
                                                 <input id="useful-toutafait"
                                                     class="form-check-input me-1 me-md-2 me-lg-3" type="radio"
-                                                    name="useful" value="Tout à fait">
-                                                <label class="form-check-label">Tout à fait</label>
+                                                    name="useful" value="Tout à fait" required>
+                                                <label class="form-check-label" for="useful-toutafait">Tout à fait</label>
                                             </div>
                                         </div>
                                         <p>Pensez-vous que cette expérience vous aidera à être plus vigilant à l’avenir
@@ -860,35 +848,61 @@
                                                 class="form-check col-6 col-lg-3 d-flex align-items-center justify-content-center">
                                                 <input id="vigilant_pasdutout"
                                                     class="form-check-input me-1 me-md-2 me-lg-3" type="radio"
-                                                    name="vigilant" value="Pas du tout">
-                                                <label class="form-check-label">Pas du tout</label>
+                                                    name="vigilant" value="Pas du tout" required>
+                                                <label class="form-check-label" for="vigilant_pasdutout">Pas du tout</label>
                                             </div>
                                             <div
                                                 class="form-check col-6 col-lg-3 d-flex align-items-center justify-content-center">
                                                 <input id="vigilant_plutotnon"
                                                     class="form-check-input me-1 me-md-2 me-lg-3" type="radio"
-                                                    name="vigilant" value="Plutôt non">
-                                                <label class="form-check-label">Plutôt non</label>
+                                                    name="vigilant" value="Plutôt non" required>
+                                                <label class="form-check-label" for="vigilant_plutotnon">Plutôt non</label>
                                             </div>
                                             <div
                                                 class="form-check col-6 col-lg-3 d-flex align-items-center justify-content-center">
                                                 <input id="vigilant_plutotoui"
                                                     class="form-check-input me-1 me-md-2 me-lg-3" type="radio"
-                                                    name="vigilant" value="Plutôt oui">
-                                                <label class="form-check-label">Plutôt oui</label>
+                                                    name="vigilant" value="Plutôt oui" required>
+                                                <label class="form-check-label" for="vigilant_plutotoui">Plutôt oui</label>
                                             </div>
                                             <div
                                                 class="form-check col-6 col-lg-3 d-flex align-items-center justify-content-center">
                                                 <input id="vigilant_toutafait"
                                                     class="form-check-input me-1 me-md-2 me-lg-3" type="radio"
-                                                    name="vigilant" value="Tout à fait">
-                                                <label class="form-check-label">Tout à fait</label>
+                                                    name="vigilant" value="Tout à fait" required>
+                                                <label class="form-check-label" for="vigilant_toutafait">Tout à fait</label>
                                             </div>
                                         </div>
                                         <div class="my-5 text-center">
-                                            <button type="submit" id="submit" class="button active">Valider</button>
+                                            <button type="submit" id="submit" class="button active" data-bs-dismiss="modal" aria-label="Close" role="button"
+                                            data-bs-dismiss="modal" data-bs-toggle="modal"
+                                            data-bs-target="#endFormModal">Valider</button>
                                         </div>
                                     </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="end my-3">
+                    <div class="modal exit" id="endFormModal" tabindex="-1" aria-labelledby="endFormModalLabel"
+                        aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <a role="button" data-bs-dismiss="modal" aria-label="Close"
+                                        onclick="removeCheckLine()" class="close">
+                                        <img src="./assets/img/icon-close-small.svg" alt=""></a>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-5 text-center">
+                                        <h2>Votre avis a bien été envoyé. Merci!</h2>
+                                    </div>
+                                    <div class="text-center d-lg-flex justify-content-center px-5 mb-lg-5">
+                                        <a class="button active d-inline-block close" href="./index.html">RETOUR À
+                                            L’ACCUEIL</a>
+                                    </div>
                                 </div>
                             </div>
 
@@ -901,6 +915,8 @@
         </section>
 
     </main>
+
+
     <footer role="contentinfo" class="mt-5">
         <div class="text-center bg-yellow position-relative bg-round pb-5" style="margin-bottom: -1%;">
             <div class="d-lg-flex justify-content-evenly position-relative" style="z-index: 2;">

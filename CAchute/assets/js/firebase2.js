@@ -77,7 +77,7 @@ submitButton.addEventListener("click", (e)=>{
     console.log(error);
   });
   // TODO : afficher une alerte "success" en CSS/JS à la place de ceci
-  alert("Votre avis a bien été envoyé. Merci!")
+  //alert("Votre avis a bien été envoyé. Merci!")
 
   // Clear form after submit
   document.getElementById('contactForm').reset();
