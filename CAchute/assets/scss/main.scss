@@ -471,9 +471,14 @@ main {
         .modal-dialog {
             .modal-content {
                 .modal-body {
-                    p,
+                    p {
+                        color:$purple;
+                    }
                     .form-check-label {
                         color: $white;
+                    }
+                    .form-check-label,
+                    p {
                         text-align: center;
                         font-size: 2rem
                     }
