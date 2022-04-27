@@ -544,15 +544,18 @@ footer p {
     top: 45%;
     transform: translateY(-50%);
     left: 50%;
-    width: 45%;
+    width: 40%;
   }
 
   .title {
-    width: 60%;
+    width: 50%;
+  }
+  .title img {
+    margin-left: 10%;
   }
 
   main {
-    padding-top: 7%;
+    padding-top: 5%;
   }
   main .intro {
     width: 50%;
