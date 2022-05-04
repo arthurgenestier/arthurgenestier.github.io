@@ -262,6 +262,10 @@ p {
   z-index: 1041;
 }
 
+header.fixed-top {
+  z-index: 1061;
+}
+
 #nav-icon1 {
   width: 2.5rem;
   height: 2.5rem;
@@ -370,7 +374,7 @@ main .modal {
 }
 main .modal-dialog {
   max-width: max-content;
-  margin: 2rem;
+  margin: 30% 2rem 2rem 2rem;
 }
 main .modal-dialog .arrow {
   position: fixed;
@@ -498,6 +502,9 @@ footer p {
     background-position-y: 0;
   }
 
+  main .modal-dialog {
+    margin: 15% 2rem 2rem 2rem;
+  }
   main .modal-dialog .arrow-left {
     left: 4%;
   }
@@ -569,7 +576,7 @@ footer p {
   }
   main .modal-dialog {
     max-width: 90rem;
-    margin: 5% auto;
+    margin: 10% auto;
   }
   main .modal-dialog .arrow img {
     height: 8rem;
@@ -595,6 +602,9 @@ footer p {
 
   .accompagne {
     margin-top: -10rem;
+  }
+  .accompagne main #title img {
+    max-width: 85%;
   }
 }
 #endModal a:hover {

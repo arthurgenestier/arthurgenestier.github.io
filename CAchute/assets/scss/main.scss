@@ -285,6 +285,12 @@ p {
     }
 }
 
+header {
+    &.fixed-top {
+        z-index: 1061;
+    }
+}
+
 #nav-icon1{
     width: 2.5rem;
     height: 2.5rem;
@@ -406,7 +412,7 @@ main {
     }
     .modal-dialog {
         max-width: max-content;
-        margin: 2rem;
+        margin: 30% 2rem 2rem 2rem;
         .arrow {
             position: fixed;
             top:40%;
@@ -571,6 +577,7 @@ footer {
     }
     main {
         .modal-dialog {
+            margin: 15% 2rem 2rem 2rem;
 
             .arrow-left {
                 left: 4%;
@@ -652,7 +659,7 @@ footer {
         }
         .modal-dialog {
             max-width: 90rem;
-            margin: 5% auto;
+            margin: 10% auto;
             .arrow {
                 img {
                     height: 8rem;
@@ -683,6 +690,14 @@ footer {
 
     .accompagne {
         margin-top: -10rem;
+        main {
+
+            #title {
+                img {
+                    max-width: 85%;
+                }
+            }
+        }
     }
 }
 
