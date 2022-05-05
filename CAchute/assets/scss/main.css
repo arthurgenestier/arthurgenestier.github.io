@@ -548,14 +548,14 @@ footer p {
     top: 45%;
     transform: translateY(-50%);
     left: 50%;
-    width: 40%;
+    width: 35%;
   }
 
   .title {
-    width: 50%;
+    width: 45%;
   }
   .title img {
-    margin-left: 10%;
+    margin-left: 20%;
   }
 
   main .intro {
