@@ -594,9 +594,6 @@ footer p {
     font-size: 2.2rem;
   }
 
-  .accompagne {
-    margin-top: -10rem;
-  }
   .accompagne main #title img {
     max-width: 85%;
   }
@@ -614,10 +611,6 @@ footer p {
   }
   main .title {
     margin-top: 0;
-  }
-
-  .accompagne {
-    margin-top: -10rem;
   }
 }
 @media (min-width: 1400px) {
