@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <header role="banner" class="fixed-top">
+    <header role="banner">
         <nav role="navigation" class="container pt-5">
             <div class="d-flex align-items-center justify-content-between d-xl-none">
                 <div class="logo">
@@ -176,6 +176,112 @@
                         <!-- Modal -->
                         <div class="modal" id="cardModal01" tabindex="-1" aria-labelledby="cardModal01Label"
                             aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                            <nav role="navigation" class="container pt-5">
+                                <div class="d-flex align-items-center justify-content-between d-xl-none">
+                                    <div class="logo">
+                                        <a href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'accueil'});"><img
+                                                src="./assets/img/logo-ca.png" alt="CA lien accueil" /></a>
+                                    </div>
+                                    <div class="burger-to-cross">
+                                        <a class="burger-to-cross-link" data-bs-toggle="offcanvas" href="#offcanvasNav" role="button"
+                                            aria-controls="offcanvasNav">
+                                            <div id="nav-icon1">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                        </a>
+                                        <div class="text-center offcanvas offcanvas-top" tabindex="-1" id="offcanvasNav"
+                                            aria-labelledby="offcanvasNavLabel">
+                                            <div class="offcanvas-body">
+                                                <div class="bg-pink">
+                                                    <p>Nos fiches conseils prévention</p>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="./assets/pdf/salon-vision.pdf" target="_blank">Le salon</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/salle-de-bain.pdf" target="_blank">La salle de
+                                                                bain</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/sport-rue.pdf" target="_blank">La rue</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/jardinage-bricolage.pdf" target="_blank">Le jardin</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/transport-voyage.pdf" target="_blank">Les transports en
+                                                                commun</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/cuisine-amis.pdf" target="_blank">La cuisine</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="bg-white">
+                                                    <a href="./assets/pdf/checklist-antichute.pdf" target="_blank"
+                                                        onclick="checklistAntichute()">La check-list anti chute</a>
+                                                </div>
+                                                <div class="bg-white">
+                                                    <a href="./accompagne.html">Le crédit agricole vous accompagne</a>
+                                                </div>
+                                                <div class="bg-white" style="margin-top: 40%">
+                                                    <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button"
+                                                        data-bs-dismiss="modal" data-bs-toggle="modal"
+                                                        data-bs-target="#opinionModal">Laissez-nous votre avis</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-none d-xl-flex align-items-center justify-content-between">
+                                    <div class="logo">
+                                        <a href="./index.html"><img src="./assets/img/logo-ca.png" alt="" /></a>
+                                    </div>
+                                    <div class="dropdown button not-active">
+                                        <a class="position-relative" href="#" role="button" id="dropdownMenuLink" onclick="ficheConseils()">
+                                            Nos fiches conseils prévention
+                                        </a>
+                    
+                                        <ul class="bg-pink dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/salon-vision.pdf" target="_blank">Le salon</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/salle-de-bain.pdf" target="_blank">La salle de bain</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/sport-rue.pdf" target="_blank">La rue</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/jardinage-bricolage.pdf" target="_blank">Le jardin</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/transport-voyage.pdf" target="_blank">Les transports en commun</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/cuisine-amis.pdf" target="_blank">La cuisine</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <a href="./assets/pdf/checklist-antichute.pdf" target="_blank"
+                                        onclick="checklistAntichute()">
+                                        <div class="button not-active">La check-list anti chute</div>
+                                    </a>
+                                    <a href="./accompagne.html">
+                                        <div class="button not-active">
+                                            Le crédit agricole vous accompagne
+                                        </div>
+                                    </a>
+                    
+                                    <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button" data-bs-dismiss="modal"
+                                        data-bs-toggle="modal" data-bs-target="#opinionModal" onclick="demandeAvis()">
+                                        <div class="button not-active">Laissez-nous votre avis</div>
+                                    </a>
+                                </div>
+                            </nav>
+                    
                             <div class="modal-dialog position-relative">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -278,6 +384,112 @@
                         <!-- Modal -->
                         <div class="modal" id="cardModal03" tabindex="-1" aria-labelledby="cardModal03Label"
                             aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                            <nav role="navigation" class="container pt-5">
+                                <div class="d-flex align-items-center justify-content-between d-xl-none">
+                                    <div class="logo">
+                                        <a href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'accueil'});"><img
+                                                src="./assets/img/logo-ca.png" alt="CA lien accueil" /></a>
+                                    </div>
+                                    <div class="burger-to-cross">
+                                        <a class="burger-to-cross-link" data-bs-toggle="offcanvas" href="#offcanvasNav" role="button"
+                                            aria-controls="offcanvasNav">
+                                            <div id="nav-icon1">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                        </a>
+                                        <div class="text-center offcanvas offcanvas-top" tabindex="-1" id="offcanvasNav"
+                                            aria-labelledby="offcanvasNavLabel">
+                                            <div class="offcanvas-body">
+                                                <div class="bg-pink">
+                                                    <p>Nos fiches conseils prévention</p>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="./assets/pdf/salon-vision.pdf" target="_blank">Le salon</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/salle-de-bain.pdf" target="_blank">La salle de
+                                                                bain</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/sport-rue.pdf" target="_blank">La rue</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/jardinage-bricolage.pdf" target="_blank">Le jardin</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/transport-voyage.pdf" target="_blank">Les transports en
+                                                                commun</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/cuisine-amis.pdf" target="_blank">La cuisine</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="bg-white">
+                                                    <a href="./assets/pdf/checklist-antichute.pdf" target="_blank"
+                                                        onclick="checklistAntichute()">La check-list anti chute</a>
+                                                </div>
+                                                <div class="bg-white">
+                                                    <a href="./accompagne.html">Le crédit agricole vous accompagne</a>
+                                                </div>
+                                                <div class="bg-white" style="margin-top: 40%">
+                                                    <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button"
+                                                        data-bs-dismiss="modal" data-bs-toggle="modal"
+                                                        data-bs-target="#opinionModal">Laissez-nous votre avis</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-none d-xl-flex align-items-center justify-content-between">
+                                    <div class="logo">
+                                        <a href="./index.html"><img src="./assets/img/logo-ca.png" alt="" /></a>
+                                    </div>
+                                    <div class="dropdown button not-active">
+                                        <a class="position-relative" href="#" role="button" id="dropdownMenuLink" onclick="ficheConseils()">
+                                            Nos fiches conseils prévention
+                                        </a>
+                    
+                                        <ul class="bg-pink dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/salon-vision.pdf" target="_blank">Le salon</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/salle-de-bain.pdf" target="_blank">La salle de bain</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/sport-rue.pdf" target="_blank">La rue</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/jardinage-bricolage.pdf" target="_blank">Le jardin</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/transport-voyage.pdf" target="_blank">Les transports en commun</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/cuisine-amis.pdf" target="_blank">La cuisine</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <a href="./assets/pdf/checklist-antichute.pdf" target="_blank"
+                                        onclick="checklistAntichute()">
+                                        <div class="button not-active">La check-list anti chute</div>
+                                    </a>
+                                    <a href="./accompagne.html">
+                                        <div class="button not-active">
+                                            Le crédit agricole vous accompagne
+                                        </div>
+                                    </a>
+                    
+                                    <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button" data-bs-dismiss="modal"
+                                        data-bs-toggle="modal" data-bs-target="#opinionModal" onclick="demandeAvis()">
+                                        <div class="button not-active">Laissez-nous votre avis</div>
+                                    </a>
+                                </div>
+                            </nav>
+
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -380,6 +592,112 @@
                         <!-- Modal -->
                         <div class="modal" id="cardModal02" tabindex="-1" aria-labelledby="cardModal02Label"
                             aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                            <nav role="navigation" class="container pt-5">
+                                <div class="d-flex align-items-center justify-content-between d-xl-none">
+                                    <div class="logo">
+                                        <a href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'accueil'});"><img
+                                                src="./assets/img/logo-ca.png" alt="CA lien accueil" /></a>
+                                    </div>
+                                    <div class="burger-to-cross">
+                                        <a class="burger-to-cross-link" data-bs-toggle="offcanvas" href="#offcanvasNav" role="button"
+                                            aria-controls="offcanvasNav">
+                                            <div id="nav-icon1">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                        </a>
+                                        <div class="text-center offcanvas offcanvas-top" tabindex="-1" id="offcanvasNav"
+                                            aria-labelledby="offcanvasNavLabel">
+                                            <div class="offcanvas-body">
+                                                <div class="bg-pink">
+                                                    <p>Nos fiches conseils prévention</p>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="./assets/pdf/salon-vision.pdf" target="_blank">Le salon</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/salle-de-bain.pdf" target="_blank">La salle de
+                                                                bain</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/sport-rue.pdf" target="_blank">La rue</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/jardinage-bricolage.pdf" target="_blank">Le jardin</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/transport-voyage.pdf" target="_blank">Les transports en
+                                                                commun</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/cuisine-amis.pdf" target="_blank">La cuisine</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="bg-white">
+                                                    <a href="./assets/pdf/checklist-antichute.pdf" target="_blank"
+                                                        onclick="checklistAntichute()">La check-list anti chute</a>
+                                                </div>
+                                                <div class="bg-white">
+                                                    <a href="./accompagne.html">Le crédit agricole vous accompagne</a>
+                                                </div>
+                                                <div class="bg-white" style="margin-top: 40%">
+                                                    <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button"
+                                                        data-bs-dismiss="modal" data-bs-toggle="modal"
+                                                        data-bs-target="#opinionModal">Laissez-nous votre avis</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-none d-xl-flex align-items-center justify-content-between">
+                                    <div class="logo">
+                                        <a href="./index.html"><img src="./assets/img/logo-ca.png" alt="" /></a>
+                                    </div>
+                                    <div class="dropdown button not-active">
+                                        <a class="position-relative" href="#" role="button" id="dropdownMenuLink" onclick="ficheConseils()">
+                                            Nos fiches conseils prévention
+                                        </a>
+                    
+                                        <ul class="bg-pink dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/salon-vision.pdf" target="_blank">Le salon</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/salle-de-bain.pdf" target="_blank">La salle de bain</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/sport-rue.pdf" target="_blank">La rue</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/jardinage-bricolage.pdf" target="_blank">Le jardin</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/transport-voyage.pdf" target="_blank">Les transports en commun</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/cuisine-amis.pdf" target="_blank">La cuisine</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <a href="./assets/pdf/checklist-antichute.pdf" target="_blank"
+                                        onclick="checklistAntichute()">
+                                        <div class="button not-active">La check-list anti chute</div>
+                                    </a>
+                                    <a href="./accompagne.html">
+                                        <div class="button not-active">
+                                            Le crédit agricole vous accompagne
+                                        </div>
+                                    </a>
+                    
+                                    <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button" data-bs-dismiss="modal"
+                                        data-bs-toggle="modal" data-bs-target="#opinionModal" onclick="demandeAvis()">
+                                        <div class="button not-active">Laissez-nous votre avis</div>
+                                    </a>
+                                </div>
+                            </nav>
+
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header" id="sport">
@@ -505,6 +823,112 @@
                         <!-- Modal -->
                         <div class="modal" id="cardModal04" tabindex="-1" aria-labelledby="cardModal04Label"
                             aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                            <nav role="navigation" class="container pt-5">
+                                <div class="d-flex align-items-center justify-content-between d-xl-none">
+                                    <div class="logo">
+                                        <a href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'accueil'});"><img
+                                                src="./assets/img/logo-ca.png" alt="CA lien accueil" /></a>
+                                    </div>
+                                    <div class="burger-to-cross">
+                                        <a class="burger-to-cross-link" data-bs-toggle="offcanvas" href="#offcanvasNav" role="button"
+                                            aria-controls="offcanvasNav">
+                                            <div id="nav-icon1">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                        </a>
+                                        <div class="text-center offcanvas offcanvas-top" tabindex="-1" id="offcanvasNav"
+                                            aria-labelledby="offcanvasNavLabel">
+                                            <div class="offcanvas-body">
+                                                <div class="bg-pink">
+                                                    <p>Nos fiches conseils prévention</p>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="./assets/pdf/salon-vision.pdf" target="_blank">Le salon</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/salle-de-bain.pdf" target="_blank">La salle de
+                                                                bain</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/sport-rue.pdf" target="_blank">La rue</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/jardinage-bricolage.pdf" target="_blank">Le jardin</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/transport-voyage.pdf" target="_blank">Les transports en
+                                                                commun</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/cuisine-amis.pdf" target="_blank">La cuisine</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="bg-white">
+                                                    <a href="./assets/pdf/checklist-antichute.pdf" target="_blank"
+                                                        onclick="checklistAntichute()">La check-list anti chute</a>
+                                                </div>
+                                                <div class="bg-white">
+                                                    <a href="./accompagne.html">Le crédit agricole vous accompagne</a>
+                                                </div>
+                                                <div class="bg-white" style="margin-top: 40%">
+                                                    <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button"
+                                                        data-bs-dismiss="modal" data-bs-toggle="modal"
+                                                        data-bs-target="#opinionModal">Laissez-nous votre avis</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-none d-xl-flex align-items-center justify-content-between">
+                                    <div class="logo">
+                                        <a href="./index.html"><img src="./assets/img/logo-ca.png" alt="" /></a>
+                                    </div>
+                                    <div class="dropdown button not-active">
+                                        <a class="position-relative" href="#" role="button" id="dropdownMenuLink" onclick="ficheConseils()">
+                                            Nos fiches conseils prévention
+                                        </a>
+                    
+                                        <ul class="bg-pink dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/salon-vision.pdf" target="_blank">Le salon</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/salle-de-bain.pdf" target="_blank">La salle de bain</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/sport-rue.pdf" target="_blank">La rue</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/jardinage-bricolage.pdf" target="_blank">Le jardin</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/transport-voyage.pdf" target="_blank">Les transports en commun</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/cuisine-amis.pdf" target="_blank">La cuisine</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <a href="./assets/pdf/checklist-antichute.pdf" target="_blank"
+                                        onclick="checklistAntichute()">
+                                        <div class="button not-active">La check-list anti chute</div>
+                                    </a>
+                                    <a href="./accompagne.html">
+                                        <div class="button not-active">
+                                            Le crédit agricole vous accompagne
+                                        </div>
+                                    </a>
+                    
+                                    <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button" data-bs-dismiss="modal"
+                                        data-bs-toggle="modal" data-bs-target="#opinionModal" onclick="demandeAvis()">
+                                        <div class="button not-active">Laissez-nous votre avis</div>
+                                    </a>
+                                </div>
+                            </nav>
+
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -610,6 +1034,112 @@
                         <!-- Modal -->
                         <div class="modal" id="cardModal05" tabindex="-1" aria-labelledby="cardModal05Label"
                             aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                            <nav role="navigation" class="container pt-5">
+                                <div class="d-flex align-items-center justify-content-between d-xl-none">
+                                    <div class="logo">
+                                        <a href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'accueil'});"><img
+                                                src="./assets/img/logo-ca.png" alt="CA lien accueil" /></a>
+                                    </div>
+                                    <div class="burger-to-cross">
+                                        <a class="burger-to-cross-link" data-bs-toggle="offcanvas" href="#offcanvasNav" role="button"
+                                            aria-controls="offcanvasNav">
+                                            <div id="nav-icon1">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                        </a>
+                                        <div class="text-center offcanvas offcanvas-top" tabindex="-1" id="offcanvasNav"
+                                            aria-labelledby="offcanvasNavLabel">
+                                            <div class="offcanvas-body">
+                                                <div class="bg-pink">
+                                                    <p>Nos fiches conseils prévention</p>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="./assets/pdf/salon-vision.pdf" target="_blank">Le salon</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/salle-de-bain.pdf" target="_blank">La salle de
+                                                                bain</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/sport-rue.pdf" target="_blank">La rue</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/jardinage-bricolage.pdf" target="_blank">Le jardin</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/transport-voyage.pdf" target="_blank">Les transports en
+                                                                commun</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/cuisine-amis.pdf" target="_blank">La cuisine</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="bg-white">
+                                                    <a href="./assets/pdf/checklist-antichute.pdf" target="_blank"
+                                                        onclick="checklistAntichute()">La check-list anti chute</a>
+                                                </div>
+                                                <div class="bg-white">
+                                                    <a href="./accompagne.html">Le crédit agricole vous accompagne</a>
+                                                </div>
+                                                <div class="bg-white" style="margin-top: 40%">
+                                                    <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button"
+                                                        data-bs-dismiss="modal" data-bs-toggle="modal"
+                                                        data-bs-target="#opinionModal">Laissez-nous votre avis</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-none d-xl-flex align-items-center justify-content-between">
+                                    <div class="logo">
+                                        <a href="./index.html"><img src="./assets/img/logo-ca.png" alt="" /></a>
+                                    </div>
+                                    <div class="dropdown button not-active">
+                                        <a class="position-relative" href="#" role="button" id="dropdownMenuLink" onclick="ficheConseils()">
+                                            Nos fiches conseils prévention
+                                        </a>
+                    
+                                        <ul class="bg-pink dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/salon-vision.pdf" target="_blank">Le salon</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/salle-de-bain.pdf" target="_blank">La salle de bain</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/sport-rue.pdf" target="_blank">La rue</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/jardinage-bricolage.pdf" target="_blank">Le jardin</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/transport-voyage.pdf" target="_blank">Les transports en commun</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/cuisine-amis.pdf" target="_blank">La cuisine</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <a href="./assets/pdf/checklist-antichute.pdf" target="_blank"
+                                        onclick="checklistAntichute()">
+                                        <div class="button not-active">La check-list anti chute</div>
+                                    </a>
+                                    <a href="./accompagne.html">
+                                        <div class="button not-active">
+                                            Le crédit agricole vous accompagne
+                                        </div>
+                                    </a>
+                    
+                                    <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button" data-bs-dismiss="modal"
+                                        data-bs-toggle="modal" data-bs-target="#opinionModal" onclick="demandeAvis()">
+                                        <div class="button not-active">Laissez-nous votre avis</div>
+                                    </a>
+                                </div>
+                            </nav>
+
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -707,6 +1237,112 @@
                         <!-- Modal -->
                         <div class="modal" id="cardModal06" tabindex="-1" aria-labelledby="cardModal06Label"
                             aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                            <nav role="navigation" class="container pt-5">
+                                <div class="d-flex align-items-center justify-content-between d-xl-none">
+                                    <div class="logo">
+                                        <a href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'accueil'});"><img
+                                                src="./assets/img/logo-ca.png" alt="CA lien accueil" /></a>
+                                    </div>
+                                    <div class="burger-to-cross">
+                                        <a class="burger-to-cross-link" data-bs-toggle="offcanvas" href="#offcanvasNav" role="button"
+                                            aria-controls="offcanvasNav">
+                                            <div id="nav-icon1">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                        </a>
+                                        <div class="text-center offcanvas offcanvas-top" tabindex="-1" id="offcanvasNav"
+                                            aria-labelledby="offcanvasNavLabel">
+                                            <div class="offcanvas-body">
+                                                <div class="bg-pink">
+                                                    <p>Nos fiches conseils prévention</p>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="./assets/pdf/salon-vision.pdf" target="_blank">Le salon</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/salle-de-bain.pdf" target="_blank">La salle de
+                                                                bain</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/sport-rue.pdf" target="_blank">La rue</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/jardinage-bricolage.pdf" target="_blank">Le jardin</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/transport-voyage.pdf" target="_blank">Les transports en
+                                                                commun</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="./assets/pdf/cuisine-amis.pdf" target="_blank">La cuisine</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="bg-white">
+                                                    <a href="./assets/pdf/checklist-antichute.pdf" target="_blank"
+                                                        onclick="checklistAntichute()">La check-list anti chute</a>
+                                                </div>
+                                                <div class="bg-white">
+                                                    <a href="./accompagne.html">Le crédit agricole vous accompagne</a>
+                                                </div>
+                                                <div class="bg-white" style="margin-top: 40%">
+                                                    <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button"
+                                                        data-bs-dismiss="modal" data-bs-toggle="modal"
+                                                        data-bs-target="#opinionModal">Laissez-nous votre avis</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-none d-xl-flex align-items-center justify-content-between">
+                                    <div class="logo">
+                                        <a href="./index.html"><img src="./assets/img/logo-ca.png" alt="" /></a>
+                                    </div>
+                                    <div class="dropdown button not-active">
+                                        <a class="position-relative" href="#" role="button" id="dropdownMenuLink" onclick="ficheConseils()">
+                                            Nos fiches conseils prévention
+                                        </a>
+                    
+                                        <ul class="bg-pink dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/salon-vision.pdf" target="_blank">Le salon</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/salle-de-bain.pdf" target="_blank">La salle de bain</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/sport-rue.pdf" target="_blank">La rue</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/jardinage-bricolage.pdf" target="_blank">Le jardin</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/transport-voyage.pdf" target="_blank">Les transports en commun</a>
+                                            </li>
+                                            <li class="active p-1 rounded">
+                                                <a href="./assets/pdf/cuisine-amis.pdf" target="_blank">La cuisine</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <a href="./assets/pdf/checklist-antichute.pdf" target="_blank"
+                                        onclick="checklistAntichute()">
+                                        <div class="button not-active">La check-list anti chute</div>
+                                    </a>
+                                    <a href="./accompagne.html">
+                                        <div class="button not-active">
+                                            Le crédit agricole vous accompagne
+                                        </div>
+                                    </a>
+                    
+                                    <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button" data-bs-dismiss="modal"
+                                        data-bs-toggle="modal" data-bs-target="#opinionModal" onclick="demandeAvis()">
+                                        <div class="button not-active">Laissez-nous votre avis</div>
+                                    </a>
+                                </div>
+                            </nav>
+
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">

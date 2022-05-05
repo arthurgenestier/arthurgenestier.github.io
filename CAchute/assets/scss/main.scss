@@ -404,15 +404,12 @@ main {
         margin-bottom: 8%;
         position: relative;
     }
-    .title {
-        margin-top: 6rem;
-    }
     .modal {
         background: $blue;
     }
     .modal-dialog {
         max-width: max-content;
-        margin: 30% 2rem 2rem 2rem;
+        margin: 5% 2rem 2rem 2rem;
         .arrow {
             position: fixed;
             top:40%;
@@ -646,7 +643,6 @@ footer {
         }
     }
     main {
-        padding-top: 5%;
         .intro {
             width: 50%;
             margin-left: 5%;
@@ -659,7 +655,7 @@ footer {
         }
         .modal-dialog {
             max-width: 90rem;
-            margin: 10% auto;
+            margin: 1% auto;
             .arrow {
                 img {
                     height: 8rem;

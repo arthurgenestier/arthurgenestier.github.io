@@ -366,15 +366,12 @@ main .cards {
   margin-bottom: 8%;
   position: relative;
 }
-main .title {
-  margin-top: 6rem;
-}
 main .modal {
   background: #8AD9DD;
 }
 main .modal-dialog {
   max-width: max-content;
-  margin: 30% 2rem 2rem 2rem;
+  margin: 5% 2rem 2rem 2rem;
 }
 main .modal-dialog .arrow {
   position: fixed;
@@ -561,9 +558,6 @@ footer p {
     margin-left: 10%;
   }
 
-  main {
-    padding-top: 5%;
-  }
   main .intro {
     width: 50%;
     margin-left: 5%;
@@ -576,7 +570,7 @@ footer p {
   }
   main .modal-dialog {
     max-width: 90rem;
-    margin: 10% auto;
+    margin: 1% auto;
   }
   main .modal-dialog .arrow img {
     height: 8rem;
