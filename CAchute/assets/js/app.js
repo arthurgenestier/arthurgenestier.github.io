@@ -5,7 +5,9 @@ function addCheck() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-first");
     lineCheck.classList.add("block");
+
     tc_events_20(this,'load',{'page':'salon','page_chapter1':'','page_chapter2':'','page_chapter3':''});
+
 }
 
 function addCheck2() {
@@ -15,6 +17,7 @@ function addCheck2() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-second");
     lineCheck.classList.add("block");
+
     tc_events_20(this,'load',{'page':'sport','page_chapter1':'','page_chapter2':'','page_chapter3':''});
 }
 
@@ -25,7 +28,9 @@ function addCheck3() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-third");
     lineCheck.classList.add("block");
+
     tc_events_20(this,'load',{'page':'salle_de_bain','page_chapter1':'','page_chapter2':'','page_chapter3':''});
+
 }
 
 function addCheck4() {
@@ -35,7 +40,9 @@ function addCheck4() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-fourth");
     lineCheck.classList.add("block");
+
     tc_events_20(this,'load',{'page':'jardin','page_chapter1':'','page_chapter2':'','page_chapter3':''});
+
 }
 
 function addCheck5() {
@@ -45,7 +52,9 @@ function addCheck5() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-fifth");
     lineCheck.classList.add("block");
+
     tc_events_20(this,'load',{'page':'social','page_chapter1':'','page_chapter2':'','page_chapter3':''});
+
 }
 
 function addCheck6() {
@@ -55,6 +64,7 @@ function addCheck6() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-sixth");
     lineCheck.classList.add("block");
+
     tc_events_20(this,'load',{'page':'transport','page_chapter1':'','page_chapter2':'','page_chapter3':''});
 }
 
@@ -85,6 +95,7 @@ function accompagne() {
 function acceuil() {
     tc_events_20(this, 'click', { 'evt_click_name': 'accueil' });
     tc_events_20(this, 'click', { 'evt_click_name': 'logo_credit_agricole' })
+
 }
 
 function removeCheckLine() {
