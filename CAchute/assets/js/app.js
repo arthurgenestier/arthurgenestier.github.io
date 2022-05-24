@@ -5,13 +5,13 @@ function addCheck() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-first");
     lineCheck.classList.add("block");
-    tc_vars = {
+    tc_vars.page.send( {
         environnement : 'dev',
         page_chapter1 : '',
         page_chapter2 : '',
         page_chapter3 : '',
         page : 'salon'
-    };
+    });
 }
 
 function addCheck2() {
