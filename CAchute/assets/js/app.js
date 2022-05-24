@@ -5,7 +5,7 @@ function addCheck() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-first");
     lineCheck.classList.add("block");
-    window.tc_vars = {
+    tc_vars = {
         environnement : 'dev',
         page_chapter1 : '',
         page_chapter2 : '',
@@ -21,7 +21,7 @@ function addCheck2() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-second");
     lineCheck.classList.add("block");
-    window.tc_vars = {
+    tc_vars = {
         environnement : 'dev',
         page_chapter1 : '',
         page_chapter2 : '',
@@ -37,7 +37,7 @@ function addCheck3() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-third");
     lineCheck.classList.add("block");
-    window.tc_vars = {
+    tc_vars = {
         environnement : 'dev',
         page_chapter1 : '',
         page_chapter2 : '',
@@ -53,7 +53,7 @@ function addCheck4() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-fourth");
     lineCheck.classList.add("block");
-    window.tc_vars = {
+    tc_vars = {
         environnement : 'dev',
         page_chapter1 : '',
         page_chapter2 : '',
@@ -69,7 +69,7 @@ function addCheck5() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-fifth");
     lineCheck.classList.add("block");
-    window.tc_vars = {
+    tc_vars = {
         environnement : 'dev',
         page_chapter1 : '',
         page_chapter2 : '',
@@ -85,7 +85,7 @@ function addCheck6() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-sixth");
     lineCheck.classList.add("block");
-    window.tc_vars = {
+    tc_vars = {
         environnement : 'dev',
         page_chapter1 : '',
         page_chapter2 : '',
@@ -95,7 +95,7 @@ function addCheck6() {
 }
 
 function ficheConseils() {
-    window.tc_vars = {
+    tc_vars = {
         environnement : 'dev',
         page_chapter1 : '',
         page_chapter2 : '',
@@ -105,7 +105,7 @@ function ficheConseils() {
 }
 
 function checklistAntichute() {
-    window.tc_vars = {
+    tc_vars = {
         environnement : 'dev',
         page_chapter1 : '',
         page_chapter2 : '',
@@ -115,7 +115,7 @@ function checklistAntichute() {
 }
 
 function demandeAvis() {
-    window.tc_vars = {
+    tc_vars = {
         environnement : 'dev',
         page_chapter1 : 'avis',
         page_chapter2 : '',
