@@ -59,7 +59,7 @@ function addCheck6() {
 }
 
 function ficheConseils() {
-    tc_events_20(this,'load',{'page':'nos_fiches_conseils_prevention','page_chapter1':'','page_chapter2':'','page_chapter3':''});
+    tc_events_20(this, 'load', { 'page': 'nos_fiches_conseils_prevention', 'page_chapter1': '', 'page_chapter2': '', 'page_chapter3': '' });
 }
 
 function checklistAntichute() {
@@ -72,6 +72,19 @@ function demandeAvis() {
 //onclick="questionnaire()"
 function questionnaire() {
     tc_events_20(this,'load',{'page':'questionnaire','page_chapter1':'avis','page_chapter2':'','page_chapter3':''})
+}
+
+function merci() {
+    tc_events_20(this, 'load', { 'page': 'merci', 'page_chapter1': 'avis', 'page_chapter2': '', 'page_chapter3': '' })
+}
+//onclick="accompagne()"
+function accompagne() {
+    tc_events_20(this, 'load', { 'page': 'le_credit_agricole_vous_accompagne', 'page_chapter1': '', 'page_chapter2': '', 'page_chapter3': '' })
+}
+//onclick="acceuil()"
+function acceuil() {
+    tc_events_20(this, 'click', { 'evt_click_name': 'accueil' });
+    tc_events_20(this, 'click', { 'evt_click_name': 'logo_credit_agricole' })
 }
 
 function removeCheckLine() {
