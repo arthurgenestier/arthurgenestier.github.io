@@ -22,7 +22,7 @@
         <nav role="navigation" class="container pt-5">
             <div class="d-flex align-items-center justify-content-between d-xl-none">
                 <div class="logo">
-                    <a href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'accueil'});"><img
+                    <a href="./index.html" onclick="acceuil()"><img
                             src="./assets/img/logo-ca.png" alt="CA lien accueil" /></a>
                 </div>
                 <div class="burger-to-cross">
@@ -67,7 +67,7 @@
                                     onclick="checklistAntichute()">La check-list anti chute</a>
                             </div>
                             <div class="bg-white">
-                                <a href="./accompagne.html">Le crédit agricole vous accompagne</a>
+                                <a href="./accompagne.html" onclick="accompagne()">Le crédit agricole vous accompagne</a>
                             </div>
                             <div class="bg-white" style="margin-top: 40%">
                                 <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button"
@@ -80,7 +80,9 @@
             </div>
             <div class="d-none d-xl-flex align-items-center justify-content-between">
                 <div class="logo">
-                    <a href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'acceuil'}); tc_events_20(this, 'click', {'evt_click_name': 'logo_credit_agricole'});"><img src="./assets/img/logo-ca.png" alt="" / ></a>
+
+                    <a href="./index.html" onclick="acceuil()"><img src="./assets/img/logo-ca.png" alt="" /></a>
+
                 </div>
                 <div class="dropdown button not-active">
                     <a class="position-relative" href="#" role="button" id="dropdownMenuLink" onclick="ficheConseils()">
@@ -181,7 +183,7 @@
                             <nav role="navigation" class="container pt-5">
                                 <div class="d-flex align-items-center justify-content-between d-xl-none">
                                     <div class="logo">
-                                        <a href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'accueil'});"><img
+                                        <a href="./index.html" onclick="acceuil()"><img
                                                 src="./assets/img/logo-ca.png" alt="CA lien accueil" /></a>
                                     </div>
                                     <div class="burger-to-cross">
@@ -226,7 +228,7 @@
                                                         onclick="checklistAntichute()">La check-list anti chute</a>
                                                 </div>
                                                 <div class="bg-white">
-                                                    <a href="./accompagne.html">Le crédit agricole vous accompagne</a>
+                                                    <a href="./accompagne.html" onclick="accompagne()">Le crédit agricole vous accompagne</a>
                                                 </div>
                                                 <div class="bg-white" style="margin-top: 40%">
                                                     <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button"
@@ -239,7 +241,9 @@
                                 </div>
                                 <div class="d-none d-xl-flex align-items-center justify-content-between">
                                     <div class="logo">
-                                        <a href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'logo_credit_agricole'});"><img src="./assets/img/logo-ca.png" alt="" / ></a>
+
+                                        <a href="./index.html" onclick="acceuil()"><img src="./assets/img/logo-ca.png" alt="" /></a>
+
                                     </div>
                                     <div class="dropdown button not-active">
                                         <a class="position-relative" href="#" role="button" id="dropdownMenuLink" onclick="ficheConseils()">
@@ -271,7 +275,7 @@
                                         onclick="checklistAntichute()">
                                         <div class="button not-active">La check-list anti chute</div>
                                     </a>
-                                    <a href="./accompagne.html">
+                                    <a href="./accompagne.html" onclick="accompagne()">
                                         <div class="button not-active">
                                             Le crédit agricole vous accompagne
                                         </div>
@@ -361,13 +365,17 @@
                                                 Pour en savoir plus, retrouvez des conseils détaillés
                                                 dans nos fiches.
                                             </p>
-                                            <a href="./assets/pdf/salon-vision.pdf" target="_blank" class="button active mb-5" onclick="tc_events_20(this, 'click', {'evt_click_name': 'fiche_conseil'});">Télécharger la fiche conseil
+
+                                            <a href="./assets/pdf/salon-vision.pdf" target="_blank" class="button active mb-5" onclick="tc_events_20(this,'click',{'evt_click_name':'fiche_conseil'})">Télécharger la fiche conseil
+
                                                 prévention</a>
-                                            <p class="text-white">
+                                            <p class="text-white mb-5">
                                                 Pour en savoir plus sur notre Assurance des Accidents
                                                 de la Vie (AAV),
                                                 <a href="https://www.credit-agricole.fr/particulier/assurances/loisir-quotidien/assurance-des-
-                                                accidents-de-la-vie-aav.html" class="text-pink" target="_blank" onclick="tc_events_20(this, 'click', {'evt_click_name': 'assurance_aav'});">cliquez ici</a>
+
+                                                accidents-de-la-vie-aav.html" class="text-pink" target="_blank" onclick="tc_events_20(this,'click',{'evt_click_name':'assurance_aav'})">cliquez ici</a>
+
                                             </p>
                                         </div>
                                     </div>
@@ -389,7 +397,7 @@
                             <nav role="navigation" class="container pt-5">
                                 <div class="d-flex align-items-center justify-content-between d-xl-none">
                                     <div class="logo">
-                                        <a href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'accueil'});"><img
+                                        <a href="./index.html" onclick="acceuil()"><img
                                                 src="./assets/img/logo-ca.png" alt="CA lien accueil" /></a>
                                     </div>
                                     <div class="burger-to-cross">
@@ -434,7 +442,7 @@
                                                         onclick="checklistAntichute()">La check-list anti chute</a>
                                                 </div>
                                                 <div class="bg-white">
-                                                    <a href="./accompagne.html">Le crédit agricole vous accompagne</a>
+                                                    <a href="./accompagne.html" onclick="accompagne()">Le crédit agricole vous accompagne</a>
                                                 </div>
                                                 <div class="bg-white" style="margin-top: 40%">
                                                     <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button"
@@ -447,10 +455,12 @@
                                 </div>
                                 <div class="d-none d-xl-flex align-items-center justify-content-between">
                                     <div class="logo">
-                                        <a href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'logo_credit_agricole'});"><img src="./assets/img/logo-ca.png" alt="" / ></a>
+
+                                        <a href="./index.html" onclick="acceuil()"><img src="./assets/img/logo-ca.png" alt="" /></a>
+
                                     </div>
                                     <div class="dropdown button not-active">
-                                        <a class="position-relative" href="#" role="button" id="dropdownMenuLink" onclick="ficheConseils()">
+                                        <a class="position-relative" href="#" role="button" id="dropdownMenuLink" onclick="ficheConseils(), tc_events_20(this,'click',{'evt_click_name':'fiche_conseil'})">
                                             Nos fiches conseils prévention
                                         </a>
                     
@@ -479,7 +489,7 @@
                                         onclick="checklistAntichute()">
                                         <div class="button not-active">La check-list anti chute</div>
                                     </a>
-                                    <a href="./accompagne.html">
+                                    <a href="./accompagne.html" onclick="accompagne()">
                                         <div class="button not-active">
                                             Le crédit agricole vous accompagne
                                         </div>
@@ -567,13 +577,17 @@
                                                 Pour en savoir plus, retrouvez des conseils détaillés
                                                 dans nos fiches.
                                             </p>
-                                                <a href="./assets/pdf/salle-de-bain.pdf" target="_blank" class="button active mb-5" onclick="tc_events_20(this, 'click', {'evt_click_name': 'fiche_conseil'});">Télécharger la fiche conseil
+
+                                                <a href="./assets/pdf/salle-de-bain.pdf" target="_blank" class="button active mb-5" onclick="tc_events_20(this,'click',{'evt_click_name':'fiche_conseil'})">Télécharger la fiche conseil
+
                                                 prévention</a>
-                                            <p class="text-white">
+                                            <p class="text-white mb-5">
                                                 Pour en savoir plus sur notre Assurance des Accidents
                                                 de la Vie (AAV),
                                                 <a href="https://www.credit-agricole.fr/particulier/assurances/loisir-quotidien/assurance-des-
-                                                accidents-de-la-vie-aav.html" class="text-pink" target="_blank" onclick="tc_events_20(this, 'click', {'evt_click_name': 'assurance_aav'});">cliquez ici</a>
+
+                                                accidents-de-la-vie-aav.html" class="text-pink" target="_blank" onclick="tc_events_20(this,'click',{'evt_click_name':'assurance_aav'})">cliquez ici</a>
+
                                             </p>
                                         </div>
                                     </div>
@@ -597,7 +611,7 @@
                             <nav role="navigation" class="container pt-5">
                                 <div class="d-flex align-items-center justify-content-between d-xl-none">
                                     <div class="logo">
-                                        <a href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'accueil'});"><img
+                                        <a href="./index.html" onclick="acceuil()"><img
                                                 src="./assets/img/logo-ca.png" alt="CA lien accueil" /></a>
                                     </div>
                                     <div class="burger-to-cross">
@@ -642,7 +656,7 @@
                                                         onclick="checklistAntichute()">La check-list anti chute</a>
                                                 </div>
                                                 <div class="bg-white">
-                                                    <a href="./accompagne.html">Le crédit agricole vous accompagne</a>
+                                                    <a href="./accompagne.html" onclick="accompagne()">Le crédit agricole vous accompagne</a>
                                                 </div>
                                                 <div class="bg-white" style="margin-top: 40%">
                                                     <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button"
@@ -655,7 +669,9 @@
                                 </div>
                                 <div class="d-none d-xl-flex align-items-center justify-content-between">
                                     <div class="logo">
-                                        <a href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'logo_credit_agricole'});"><img src="./assets/img/logo-ca.png" alt="" / ></a>
+
+                                        <a href="./index.html" onclick="acceuil()"><img src="./assets/img/logo-ca.png" alt="" /></a>
+
                                     </div>
                                     <div class="dropdown button not-active">
                                         <a class="position-relative" href="#" role="button" id="dropdownMenuLink" onclick="ficheConseils()">
@@ -687,7 +703,7 @@
                                         onclick="checklistAntichute()">
                                         <div class="button not-active">La check-list anti chute</div>
                                     </a>
-                                    <a href="./accompagne.html">
+                                    <a href="./accompagne.html" onclick="accompagne()">
                                         <div class="button not-active">
                                             Le crédit agricole vous accompagne
                                         </div>
@@ -799,13 +815,17 @@
                                                 Pour en savoir plus, retrouvez des conseils détaillés
                                                 dans nos fiches.
                                             </p>
-                                                <a href="./assets/pdf/sport-rue.pdf" target="_blank" class="button active mb-5" onclick="tc_events_20(this, 'click', {'evt_click_name': 'fiche_conseil'});">Télécharger la fiche conseil
+
+                                                <a href="./assets/pdf/sport-rue.pdf" target="_blank" class="button active mb-5" onclick="tc_events_20(this,'click',{'evt_click_name':'fiche_conseil'})">Télécharger la fiche conseil
+
                                                 prévention</a>
-                                            <p class="text-white">
+                                            <p class="text-white mb-5">
                                                 Pour en savoir plus sur notre Assurance des Accidents
                                                 de la Vie (AAV),
                                                 <a href="https://www.credit-agricole.fr/particulier/assurances/loisir-quotidien/assurance-des-
-                                                accidents-de-la-vie-aav.html" class="text-pink" target="_blank" onclick="tc_events_20(this, 'click', {'evt_click_name': 'assurance_aav'});">cliquez ici</a>
+
+                                                accidents-de-la-vie-aav.html" class="text-pink" target="_blank" onclick="tc_events_20(this,'click',{'evt_click_name':'assurance_aav'})">cliquez ici</a>
+
                                             </p>
                                         </div>
                                     </div>
@@ -828,7 +848,7 @@
                             <nav role="navigation" class="container pt-5">
                                 <div class="d-flex align-items-center justify-content-between d-xl-none">
                                     <div class="logo">
-                                        <a href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'accueil'});"><img
+                                        <a href="./index.html" onclick="acceuil()"><img
                                                 src="./assets/img/logo-ca.png" alt="CA lien accueil" /></a>
                                     </div>
                                     <div class="burger-to-cross">
@@ -873,7 +893,7 @@
                                                         onclick="checklistAntichute()">La check-list anti chute</a>
                                                 </div>
                                                 <div class="bg-white">
-                                                    <a href="./accompagne.html">Le crédit agricole vous accompagne</a>
+                                                    <a href="./accompagne.html" onclick="accompagne()">Le crédit agricole vous accompagne</a>
                                                 </div>
                                                 <div class="bg-white" style="margin-top: 40%">
                                                     <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button"
@@ -886,7 +906,9 @@
                                 </div>
                                 <div class="d-none d-xl-flex align-items-center justify-content-between">
                                     <div class="logo">
-                                        <a href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'logo_credit_agricole'});"><img src="./assets/img/logo-ca.png" alt="" / ></a>
+
+                                        <a href="./index.html" onclick="acceuil()"><img src="./assets/img/logo-ca.png" alt="" /></a>
+
                                     </div>
                                     <div class="dropdown button not-active">
                                         <a class="position-relative" href="#" role="button" id="dropdownMenuLink" onclick="ficheConseils()">
@@ -918,7 +940,7 @@
                                         onclick="checklistAntichute()">
                                         <div class="button not-active">La check-list anti chute</div>
                                     </a>
-                                    <a href="./accompagne.html">
+                                    <a href="./accompagne.html" onclick="accompagne()">
                                         <div class="button not-active">
                                             Le crédit agricole vous accompagne
                                         </div>
@@ -1009,13 +1031,17 @@
                                                 Pour en savoir plus, retrouvez des conseils détaillés
                                                 dans nos fiches.
                                             </p>
-                                                <a href="./assets/pdf/jardinage-bricolage.pdf" target="_blank" class="button active mb-5" onclick="tc_events_20(this, 'click', {'evt_click_name': 'fiche_conseil'});">Télécharger la fiche conseil
+
+                                                <a href="./assets/pdf/jardinage-bricolage.pdf" target="_blank" class="button active mb-5" onclick="tc_events_20(this,'click',{'evt_click_name':'fiche_conseil'})">Télécharger la fiche conseil
+
                                                 prévention</a>
-                                            <p class="text-white">
+                                            <p class="text-white mb-5">
                                                 Pour en savoir plus sur notre Assurance des Accidents
                                                 de la Vie (AAV),
                                                 <a href="https://www.credit-agricole.fr/particulier/assurances/loisir-quotidien/assurance-des-
-                                                accidents-de-la-vie-aav.html" class="text-pink" target="_blank" onclick="tc_events_20(this, 'click', {'evt_click_name': 'assurance_aav'});">cliquez ici</a>
+
+                                                accidents-de-la-vie-aav.html" class="text-pink" target="_blank" onclick="tc_events_20(this,'click',{'evt_click_name':'assurance_aav'})">cliquez ici</a>
+
                                             </p>
                                         </div>
                                     </div>
@@ -1039,7 +1065,7 @@
                             <nav role="navigation" class="container pt-5">
                                 <div class="d-flex align-items-center justify-content-between d-xl-none">
                                     <div class="logo">
-                                        <a href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'accueil'});"><img
+                                        <a href="./index.html" onclick="acceuil()"><img
                                                 src="./assets/img/logo-ca.png" alt="CA lien accueil" /></a>
                                     </div>
                                     <div class="burger-to-cross">
@@ -1084,7 +1110,7 @@
                                                         onclick="checklistAntichute()">La check-list anti chute</a>
                                                 </div>
                                                 <div class="bg-white">
-                                                    <a href="./accompagne.html">Le crédit agricole vous accompagne</a>
+                                                    <a href="./accompagne.html" onclick="accompagne()">Le crédit agricole vous accompagne</a>
                                                 </div>
                                                 <div class="bg-white" style="margin-top: 40%">
                                                     <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button"
@@ -1097,7 +1123,9 @@
                                 </div>
                                 <div class="d-none d-xl-flex align-items-center justify-content-between">
                                     <div class="logo">
-                                        <a href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'logo_credit_agricole'});"><img src="./assets/img/logo-ca.png" alt="" / ></a>
+
+                                        <a href="./index.html" onclick="acceuil()"><img src="./assets/img/logo-ca.png" alt="" /></a>
+
                                     </div>
                                     <div class="dropdown button not-active">
                                         <a class="position-relative" href="#" role="button" id="dropdownMenuLink" onclick="ficheConseils()">
@@ -1129,7 +1157,7 @@
                                         onclick="checklistAntichute()">
                                         <div class="button not-active">La check-list anti chute</div>
                                     </a>
-                                    <a href="./accompagne.html">
+                                    <a href="./accompagne.html" onclick="accompagne()">
                                         <div class="button not-active">
                                             Le crédit agricole vous accompagne
                                         </div>
@@ -1214,13 +1242,17 @@
                                                 Pour en savoir plus, retrouvez des conseils détaillés
                                                 dans nos fiches.
                                             </p>
-                                                <a href="./assets/pdf/cuisine-amis.pdf" target="_blank" class="button active mb-5" onclick="tc_events_20(this, 'click', {'evt_click_name': 'fiche_conseil'});">Télécharger la fiche conseil
+
+                                                <a href="./assets/pdf/cuisine-amis.pdf" target="_blank" class="button active mb-5" onclick="tc_events_20(this,'click',{'evt_click_name':'fiche_conseil'})">Télécharger la fiche conseil
+
                                                 prévention</a>
-                                            <p class="text-white">
+                                            <p class="text-white mb-5">
                                                 Pour en savoir plus sur notre Assurance des Accidents
                                                 de la Vie (AAV),
                                                 <a href="https://www.credit-agricole.fr/particulier/assurances/loisir-quotidien/assurance-des-
-                                                accidents-de-la-vie-aav.html" class="text-pink" target="_blank" onclick="tc_events_20(this, 'click', {'evt_click_name': 'assurance_aav'});">cliquez ici</a>
+
+                                                accidents-de-la-vie-aav.html" class="text-pink" target="_blank" onclick="tc_events_20(this,'click',{'evt_click_name':'assurance_aav'})">cliquez ici</a>
+
                                             </p>
                                         </div>
                                     </div>
@@ -1242,7 +1274,7 @@
                             <nav role="navigation" class="container pt-5">
                                 <div class="d-flex align-items-center justify-content-between d-xl-none">
                                     <div class="logo">
-                                        <a href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'accueil'});"><img
+                                        <a href="./index.html" onclick="acceuil()"><img
                                                 src="./assets/img/logo-ca.png" alt="CA lien accueil" /></a>
                                     </div>
                                     <div class="burger-to-cross">
@@ -1287,7 +1319,7 @@
                                                         onclick="checklistAntichute()">La check-list anti chute</a>
                                                 </div>
                                                 <div class="bg-white">
-                                                    <a href="./accompagne.html">Le crédit agricole vous accompagne</a>
+                                                    <a href="./accompagne.html" onclick="accompagne()">Le crédit agricole vous accompagne</a>
                                                 </div>
                                                 <div class="bg-white" style="margin-top: 40%">
                                                     <a role="button" data-bs-dismiss="modal" aria-label="Close" role="button"
@@ -1300,7 +1332,9 @@
                                 </div>
                                 <div class="d-none d-xl-flex align-items-center justify-content-between">
                                     <div class="logo">
-                                        <a href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'logo_credit_agricole'});"><img src="./assets/img/logo-ca.png" alt="" / ></a>
+
+                                        <a href="./index.html" onclick="acceuil()"><img src="./assets/img/logo-ca.png" alt="" /></a>
+
                                     </div>
                                     <div class="dropdown button not-active">
                                         <a class="position-relative" href="#" role="button" id="dropdownMenuLink" onclick="ficheConseils()">
@@ -1332,7 +1366,7 @@
                                         onclick="checklistAntichute()">
                                         <div class="button not-active">La check-list anti chute</div>
                                     </a>
-                                    <a href="./accompagne.html">
+                                    <a href="./accompagne.html" onclick="accompagne()">
                                         <div class="button not-active">
                                             Le crédit agricole vous accompagne
                                         </div>
@@ -1421,13 +1455,17 @@
                                                 Pour en savoir plus, retrouvez des conseils détaillés
                                                 dans nos fiches.
                                             </p>
-                                                <a href="./assets/pdf/transport-voyage.pdf" target="_blank" class="button active mb-5" onclick="tc_events_20(this, 'click', {'evt_click_name': 'fiche_conseil'});">Télécharger la fiche conseil
+
+                                                <a href="./assets/pdf/transport-voyage.pdf" target="_blank" class="button active mb-5" onclick="tc_events_20(this,'click',{'evt_click_name':'fiche_conseil'})">Télécharger la fiche conseil
+
                                                 prévention</a>
-                                            <p class="text-white">
+                                            <p class="text-white mb-5">
                                                 Pour en savoir plus sur notre Assurance des Accidents
                                                 de la Vie (AAV),
                                                 <a href="https://www.credit-agricole.fr/particulier/assurances/loisir-quotidien/assurance-des-
-                                                accidents-de-la-vie-aav.html" class="text-pink" target="_blank" onclick="tc_events_20(this, 'click', {'evt_click_name': 'assurance_aav'});">cliquez ici</a>
+
+                                                accidents-de-la-vie-aav.html" class="text-pink" target="_blank" onclick="tc_events_20(this,'click',{'evt_click_name':'assurance_aav'})">cliquez ici</a>
+
                                             </p>
                                         </div>
                                     </div>
@@ -1455,11 +1493,13 @@
                                     </div>
                                     <div class="text-center d-lg-flex justify-content-evenly px-5 mb-lg-5">
                                         <a role="button" data-bs-dismiss="modal" aria-label="Close"
-                                            onclick="removeCheckLine()"
+                                            onclick="removeCheckLine(); questionnaire()"
                                             class="button active d-inline-block mb-4 mb-lg-0" role="button"
                                             data-bs-dismiss="modal" data-bs-toggle="modal"
                                             data-bs-target="#opinionModal">OUI AVEC PLAISIR</a>
-                                        <a class="button active d-inline-block close"  href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'acceuil'});">RETOUR À
+
+                                        <a class="button active d-inline-block close" href="./index.html" onclick="acceuil()">RETOUR À
+
                                             L’ACCUEIL</a>
                                     </div>
                                 </div>
@@ -1621,7 +1661,7 @@
                                             </div>
                                         </div>
                                         <div class="my-5 text-center">
-                                            <button type="submit" id="submit" class="button active"
+                                            <button type="submit" id="submit" onclick="merci()" class="button active"
                                                 data-bs-dismiss="modal" aria-label="Close" role="button"
                                                 data-bs-dismiss="modal" data-bs-toggle="modal"
                                                 data-bs-target="#endFormModal">
@@ -1649,7 +1689,9 @@
                                         <h2>Votre avis a bien été envoyé. Merci!</h2>
                                     </div>
                                     <div class="text-center d-lg-flex justify-content-center px-5 mb-lg-5">
-                                        <a class="button active d-inline-block close" href="./index.html" onclick="tc_events_20(this, 'click', {'evt_click_name': 'acceuil'});">RETOUR À
+
+                                        <a class="button active d-inline-block close" href="./index.html" onclick="acceuil()">RETOUR À
+
                                             L’ACCUEIL</a>
                                     </div>
                                 </div>

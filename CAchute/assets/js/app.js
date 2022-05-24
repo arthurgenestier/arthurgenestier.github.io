@@ -5,13 +5,9 @@ function addCheck() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-first");
     lineCheck.classList.add("block");
-    tc_vars.page.send( {
-        environnement : 'dev',
-        page_chapter1 : '',
-        page_chapter2 : '',
-        page_chapter3 : '',
-        page : 'salon'
-    });
+
+    tc_events_20(this,'load',{'page':'salon','page_chapter1':'','page_chapter2':'','page_chapter3':''});
+
 }
 
 function addCheck2() {
@@ -21,13 +17,8 @@ function addCheck2() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-second");
     lineCheck.classList.add("block");
-    tc_vars = {
-        environnement : 'dev',
-        page_chapter1 : '',
-        page_chapter2 : '',
-        page_chapter3 : '',
-        page : 'sport'
-    };
+
+    tc_events_20(this,'load',{'page':'sport','page_chapter1':'','page_chapter2':'','page_chapter3':''});
 }
 
 function addCheck3() {
@@ -37,13 +28,9 @@ function addCheck3() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-third");
     lineCheck.classList.add("block");
-    tc_vars = {
-        environnement : 'dev',
-        page_chapter1 : '',
-        page_chapter2 : '',
-        page_chapter3 : '',
-        page : 'salle_de_bain'
-    };
+
+    tc_events_20(this,'load',{'page':'salle_de_bain','page_chapter1':'','page_chapter2':'','page_chapter3':''});
+
 }
 
 function addCheck4() {
@@ -53,13 +40,9 @@ function addCheck4() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-fourth");
     lineCheck.classList.add("block");
-    tc_vars = {
-        environnement : 'dev',
-        page_chapter1 : '',
-        page_chapter2 : '',
-        page_chapter3 : '',
-        page : 'jardin'
-    };
+
+    tc_events_20(this,'load',{'page':'jardin','page_chapter1':'','page_chapter2':'','page_chapter3':''});
+
 }
 
 function addCheck5() {
@@ -69,13 +52,9 @@ function addCheck5() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-fifth");
     lineCheck.classList.add("block");
-    tc_vars = {
-        environnement : 'dev',
-        page_chapter1 : '',
-        page_chapter2 : '',
-        page_chapter3 : '',
-        page : 'social'
-    };
+
+    tc_events_20(this,'load',{'page':'social','page_chapter1':'','page_chapter2':'','page_chapter3':''});
+
 }
 
 function addCheck6() {
@@ -85,43 +64,38 @@ function addCheck6() {
     line.classList.add("flex");
     var lineCheck = document.getElementById("check-icon-sixth");
     lineCheck.classList.add("block");
-    tc_vars = {
-        environnement : 'dev',
-        page_chapter1 : '',
-        page_chapter2 : '',
-        page_chapter3 : '',
-        page : 'transport'
-    };
+
+    tc_events_20(this,'load',{'page':'transport','page_chapter1':'','page_chapter2':'','page_chapter3':''});
 }
 
 function ficheConseils() {
-    tc_vars = {
-        environnement : 'dev',
-        page_chapter1 : '',
-        page_chapter2 : '',
-        page_chapter3 : '',
-        page : 'nos_fiches_conseils_prevention'
-    };
+    tc_events_20(this, 'load', { 'page': 'nos_fiches_conseils_prevention', 'page_chapter1': '', 'page_chapter2': '', 'page_chapter3': '' });
 }
 
 function checklistAntichute() {
-    tc_vars = {
-        environnement : 'dev',
-        page_chapter1 : '',
-        page_chapter2 : '',
-        page_chapter3 : '',
-        page : 'check_liste_anti_chute'
-    };
+    tc_events_20(this,'load',{'page':'check_liste_anti_chute','page_chapter1':'','page_chapter2':'','page_chapter3':''});
 }
 
 function demandeAvis() {
-    tc_vars = {
-        environnement : 'dev',
-        page_chapter1 : 'avis',
-        page_chapter2 : '',
-        page_chapter3 : '',
-        page : 'demande'
-    };
+    tc_events_20(this,'load',{'page':'demande','page_chapter1':'avis','page_chapter2':'','page_chapter3':''});
+}
+//onclick="questionnaire()"
+function questionnaire() {
+    tc_events_20(this,'load',{'page':'questionnaire','page_chapter1':'avis','page_chapter2':'','page_chapter3':''})
+}
+
+function merci() {
+    tc_events_20(this, 'load', { 'page': 'merci', 'page_chapter1': 'avis', 'page_chapter2': '', 'page_chapter3': '' })
+}
+//onclick="accompagne()"
+function accompagne() {
+    tc_events_20(this, 'load', { 'page': 'le_credit_agricole_vous_accompagne', 'page_chapter1': '', 'page_chapter2': '', 'page_chapter3': '' })
+}
+//onclick="acceuil()"
+function acceuil() {
+    tc_events_20(this, 'click', { 'evt_click_name': 'accueil' });
+    tc_events_20(this, 'click', { 'evt_click_name': 'logo_credit_agricole' })
+
 }
 
 function removeCheckLine() {
