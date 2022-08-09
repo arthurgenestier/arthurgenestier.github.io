@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            background-color: black;
+            height: 10rem;
+            width: 10rem;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+
+    <script src="anime.min.js"></script>
+    <script>
+        anime({
+            targets: 'div',
+            duration: 3000,
+            delay: anime.stagger(300),
+            endDelay: 1000,
+            direction: 'alternate',
+            backgroundColor: '#008008',
+            easing: 'easeInOutQuad',
+            borderRadius: ['0%', '50%', '0%'],
+            skew: '30deg',
+            loop: true,
+            translateX: function() {
+      return anime.random(100, 200);
+    },
+            translateY: '100px',
+            rotate: {
+                value: 100,
+                duration: 1000,
+                easing: 'easeInOutSine'
+            },
+            scale: {
+                value: 1.9,
+                duration: 200,
+                delay: 200,
+                easing: 'easeInOutQuart'
+            },
+        });
+    </script>
+</body>
+</html>
