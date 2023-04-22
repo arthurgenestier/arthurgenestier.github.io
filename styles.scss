@@ -1,28 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Stick+No+Bills:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 body {
     perspective: 2000px;
-    color: #080808;
     background-color: #f2f3f4;
-    font-family: 'Stick No Bills', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-weight: 400;
     line-height: 1.2;
     color: #00121794;
+    overflow-x: hidden;
 }
 
 h1 {
     text-transform: uppercase;
-    font-size: 20vw;
+    font-size: 5rem;
     font-weight: 600;
 }
 
-// img {
+h1,
+h2,
+h3 {
+    font-family: 'Special Elite', cursive;
+}
 
-//     filter: brightness(150%) saturate(200%) hue-rotate(90deg);
-//     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-//   }
-//   img:hover {
+h2 {
+    font-size: 10vw;
+}
 
-//     filter: contrast(100%) brightness(100%) blur(100%);
-//   }
-  
-  
+h3 {
+    font-size: 5vw;
+}
+
+p {
+    
+    font-size: 3.5vw;
+    line-height: 5vw;
+}
+
+img {
+    border-radius: 0.5rem;
+}
+
+.separateur {
+    height: 1vw;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+#title {
+    min-height: 18rem;
+}
+
+.photo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    svg {
+        position: absolute;
+        top: 10%;
+        width: 2.5rem;
+        height: 2.5rem;
+        opacity: 0;
+        animation-duration: 1.5s;
+        animation-name: clignoter;
+        animation-iteration-count: infinite;
+        animation-delay: 3s;
+        transition: none;
+    }
+}
+
+@keyframes clignoter {
+    0%   { opacity:0; }
+    50%   {opacity:1; }
+    100% { opacity:0; }
+  }
