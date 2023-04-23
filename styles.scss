@@ -13,7 +13,7 @@ body {
 
 h1 {
     text-transform: uppercase;
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 600;
 }
 
@@ -48,7 +48,10 @@ img {
 }
 
 #title {
-    min-height: 18rem;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .photo {
