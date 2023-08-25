@@ -9,6 +9,7 @@ body {
   line-height: 1.2;
   color: rgba(0, 18, 23, 0.5803921569);
   overflow-x: hidden;
+  min-width: 375px;
 }
 
 main {
@@ -71,6 +72,15 @@ svg {
   animation-iteration-count: infinite;
   animation-delay: 3s;
   transition: none;
+}
+
+a {
+  color: rgba(0, 18, 23, 0.5803921569);
+  text-decoration: none;
+}
+
+.contact img {
+  border-radius: 0;
 }
 
 @keyframes clignoter {

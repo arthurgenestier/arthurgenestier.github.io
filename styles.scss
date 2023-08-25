@@ -9,6 +9,7 @@ body {
     line-height: 1.2;
     color: #00121794;
     overflow-x: hidden;
+    min-width: 375px;
 }
 
 main {
@@ -70,6 +71,17 @@ svg {
     animation-iteration-count: infinite;
     animation-delay: 3s;
     transition: none;
+}
+
+a {
+    color: #00121794;
+    text-decoration: none;
+}
+
+.contact {
+    img {
+        border-radius: 0;
+    }
 }
 
 @keyframes clignoter {
