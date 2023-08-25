@@ -11,6 +11,10 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  overflow-y: hidden;
+}
+
 h1 {
   text-transform: uppercase;
   font-size: 4rem;
@@ -40,6 +44,11 @@ img {
   border-radius: 0.5rem;
 }
 
+.start {
+  height: 100vh;
+  text-align: center;
+}
+
 .separateur {
   height: 1vw;
   width: 100%;
@@ -53,16 +62,7 @@ img {
   align-items: center;
 }
 
-.photo {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.photo svg {
-  position: absolute;
-  top: 10%;
+svg {
   width: 2.5rem;
   height: 2.5rem;
   opacity: 0;
