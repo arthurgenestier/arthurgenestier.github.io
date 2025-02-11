@@ -117,11 +117,11 @@ h3 {
             align-items: center;
             gap: 8px;
         }
-
+    
         i {
             color: #5A5848;
         }
-
+    
         p {
             margin: 0.5rem 0;
         }
@@ -171,12 +171,6 @@ h3 {
         font-size: 0.7rem;
     }
 
-    .contact-info {
-        position: absolute;
-        top: 10rem;
-        left: -1rem;
-    }
-
     .profile {
         .title {
             font-size: 1.4rem;
@@ -202,6 +196,14 @@ h3 {
     .projets {
         .projet {
             height: 3rem;
+        }
+    }
+    .contact-info {
+        position: fixed;
+        left: 5%;
+        top: 10rem;
+        a {
+            font-size: 0.8rem;
         }
     }
 
@@ -247,15 +249,11 @@ h3 {
             height: 14rem;
         }
     }
-
     .contact-info {
-        position: absolute;
         top: 15rem;
-        left: 0;
-        a {
-            font-size: 1rem;
-        }
     }
+
+
 }
 
 @media (min-width: $breakpoint-lg) {
@@ -274,13 +272,13 @@ h3 {
     }
 
     .contact-info {
-        top: 24rem;
-        left: 0;
         a {
             font-size: 1.2rem;
         }
+        top: 22rem;
     }
 }
+
 
 @media (min-width: $breakpoint-xl) {
     h1 {
@@ -299,7 +297,6 @@ h3 {
     }
 
     .contact-info {
-        top: 30rem;
         a {
             font-size: 1.5rem;
         }
