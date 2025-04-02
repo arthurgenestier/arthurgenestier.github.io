@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertisseur CSV vers HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .input-section, .output-section {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        #csvInput {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        #fileInput {
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .generated-file {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        .file-heading {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .download-btn {
+            background-color: #2196F3;
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            overflow: auto;
+        }
+        #htmlTemplate {
+            width: 100%;
+            height: 150px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Convertisseur CSV vers HTML</h1>
+    
+    <div class="container">
+        <div class="input-section">
+            <h2>1. Chargez votre fichier CSV</h2>
+            <p>Sélectionnez un fichier CSV ou collez son contenu ci-dessous:</p>
+            <input type="file" id="fileInput" accept=".csv">
+            <textarea id="csvInput" placeholder="Collez votre CSV ici (format: h1,h2,p avec une ligne d'en-tête)"></textarea>
+            
+            <h2>2. Modifiez le modèle HTML si nécessaire</h2>
+            <p>Utilisez les balises {h1}, {h2} et {p} pour indiquer où insérer les données:</p>
+            <textarea id="htmlTemplate"><html>
+<head>
+    <title>{h1}</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #333; }
+        h2 { color: #666; }
+    </style>
+</head>
+<body>
+    <h1>{h1}</h1>
+    <h2>{h2}</h2>
+    <p>{p}</p>
+</body>
+</html></textarea>
+            
+            <button id="generateBtn">Générer les fichiers HTML</button>
+        </div>
+        
+        <div class="output-section">
+            <h2>Fichiers HTML générés</h2>
+            <p>Aperçu des fichiers générés (cliquez sur "Télécharger" pour enregistrer):</p>
+            <div id="outputFiles"></div>
+        </div>
+    </div>
+
+    <script>
+        // Ajout de la bibliothèque JSZip
+        document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"><\/script>');
+        document.getElementById('fileInput').addEventListener('change', handleFileSelect);
+        document.getElementById('generateBtn').addEventListener('click', generateHTMLFiles);
+
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('csvInput').value = e.target.result;
+                };
+                reader.readAsText(file);
+            }
+        }
+
+        function parseCSV(csv) {
+            // Utilisation d'une fonction simple de parsing CSV
+            const lines = csv.split('\n');
+            const result = [];
+            const headers = lines[0].split(',').map(header => header.trim());
+            
+            for (let i = 1; i < lines.length; i++) {
+                if (lines[i].trim() === '') continue;
+                
+                const obj = {};
+                const currentLine = lines[i].split(',');
+                
+                for (let j = 0; j < headers.length; j++) {
+                    obj[headers[j]] = currentLine[j] ? currentLine[j].trim() : '';
+                }
+                
+                result.push(obj);
+            }
+            
+            return result;
+        }
+
+        function generateHTMLFiles() {
+            const csvContent = document.getElementById('csvInput').value;
+            const htmlTemplate = document.getElementById('htmlTemplate').value;
+            const outputDiv = document.getElementById('outputFiles');
+            
+            if (!csvContent) {
+                alert('Veuillez entrer ou charger des données CSV.');
+                return;
+            }
+            
+            outputDiv.innerHTML = '';
+            
+            try {
+                const data = parseCSV(csvContent);
+                
+                data.forEach((row, index) => {
+                    // Créer le contenu HTML en remplaçant les balises dans le modèle
+                    let htmlContent = htmlTemplate;
+                    for (const [key, value] of Object.entries(row)) {
+                        const regex = new RegExp(`{${key}}`, 'g');
+                        htmlContent = htmlContent.replace(regex, value);
+                    }
+                    
+                    // Créer un nom de fichier basé sur le contenu h1 ou un index
+                    const fileName = (row.h1 ? row.h1.replace(/[^a-z0-9]/gi, '_').toLowerCase() : `page_${index + 1}`) + '.html';
+                    
+                    // Créer l'élément d'affichage du fichier
+                    const fileElement = document.createElement('div');
+                    fileElement.className = 'generated-file';
+                    
+                    const fileHeading = document.createElement('div');
+                    fileHeading.className = 'file-heading';
+                    
+                    const fileTitle = document.createElement('h3');
+                    fileTitle.textContent = fileName;
+                    
+                    const downloadBtn = document.createElement('button');
+                    downloadBtn.className = 'download-btn';
+                    downloadBtn.textContent = 'Télécharger';
+                    downloadBtn.onclick = function() {
+                        downloadFile(fileName, htmlContent);
+                    };
+                    
+                    fileHeading.appendChild(fileTitle);
+                    fileHeading.appendChild(downloadBtn);
+                    
+                    const preElement = document.createElement('pre');
+                    preElement.textContent = htmlContent;
+                    
+                    fileElement.appendChild(fileHeading);
+                    fileElement.appendChild(preElement);
+                    
+                    outputDiv.appendChild(fileElement);
+                });
+                
+                // Ajouter un bouton pour télécharger tous les fichiers en ZIP
+                if (data.length > 1) {
+                    const zipAllBtn = document.createElement('button');
+                    zipAllBtn.textContent = 'Télécharger tous les fichiers (ZIP)';
+                    zipAllBtn.style.marginTop = '20px';
+                    zipAllBtn.style.backgroundColor = '#FF5722';
+                    zipAllBtn.style.padding = '10px 15px';
+                    zipAllBtn.style.fontSize = '16px';
+                    
+                    // Créer un objet pour stocker tous les fichiers HTML
+                    const htmlFiles = [];
+                    data.forEach((row, index) => {
+                        // Créer le contenu HTML
+                        let htmlContent = htmlTemplate;
+                        for (const [key, value] of Object.entries(row)) {
+                            const regex = new RegExp(`{${key}}`, 'g');
+                            htmlContent = htmlContent.replace(regex, value);
+                        }
+                        
+                        // Créer un nom de fichier
+                        const fileName = (row.h1 ? row.h1.replace(/[^a-z0-9]/gi, '_').toLowerCase() : `page_${index + 1}`) + '.html';
+                        
+                        // Ajouter à la liste des fichiers
+                        htmlFiles.push({
+                            name: fileName,
+                            content: htmlContent
+                        });
+                    });
+                    
+                    zipAllBtn.onclick = function() {
+                        downloadAllAsZip(htmlFiles);
+                    };
+                    outputDiv.appendChild(zipAllBtn);
+                }
+                
+            } catch (error) {
+                alert('Erreur lors du traitement du CSV: ' + error.message);
+                console.error(error);
+            }
+        }
+
+        function downloadFile(filename, content) {
+            const element = document.createElement('a');
+            element.setAttribute('href', 'data:text/html;charset=utf-8,' + encodeURIComponent(content));
+            element.setAttribute('download', filename);
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
+        
+        function downloadAllAsZip(files) {
+            // Créer un nouvel objet JSZip
+            const zip = new JSZip();
+            
+            // Ajouter chaque fichier HTML au ZIP
+            files.forEach(file => {
+                zip.file(file.name, file.content);
+            });
+            
+            // Générer le ZIP et le télécharger
+            zip.generateAsync({type: 'blob'})
+                .then(function(content) {
+                    // Créer un lien de téléchargement et déclencher le téléchargement
+                    const element = document.createElement('a');
+                    element.href = URL.createObjectURL(content);
+                    element.download = 'pages_html.zip';
+                    element.style.display = 'none';
+                    document.body.appendChild(element);
+                    element.click();
+                    document.body.removeChild(element);
+                })
+                .catch(function(error) {
+                    alert('Erreur lors de la création du ZIP: ' + error.message);
+                    console.error(error);
+                });
+        }
+    </script>
+</body>
+</html>
