@@ -85,7 +85,7 @@
           if (lines[i].trim() === "") continue;
 
           const obj = {};
-          const currentLine = lines[i].split(",");
+          const currentLine = lines[i].split(";");
 
           for (let j = 0; j < headers.length; j++) {
             obj[headers[j]] = currentLine[j] ? currentLine[j].trim() : "";
