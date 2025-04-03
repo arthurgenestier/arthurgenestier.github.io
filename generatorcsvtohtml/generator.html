@@ -16,12 +16,12 @@
         <input type="file" id="fileInput" accept=".csv" />
         <textarea
           id="csvInput"
-          placeholder="Collez votre CSV ici (format: h1,h2,p avec une ligne d'en-tête)"
+          placeholder="Collez votre CSV ici (format: h1;h2;p avec une ligne d'en-tête)"
         ></textarea>
 
         <h2>2. Modifiez le modèle HTML si nécessaire</h2>
         <p>
-          Utilisez les balises {h1}, {h2} et {p} pour indiquer où insérer les
+          Utilisez les balises {h1} ,{h2} et {p} pour indiquer où insérer les
           données:
         </p>
         <textarea id="htmlTemplate"> 
@@ -79,7 +79,7 @@
         // Utilisation d'une fonction simple de parsing CSV
         const lines = csv.split("\n");
         const result = [];
-        const headers = lines[0].split(",").map((header) => header.trim());
+        const headers = lines[0].split(";").map((header) => header.trim());
 
         for (let i = 1; i < lines.length; i++) {
           if (lines[i].trim() === "") continue;
