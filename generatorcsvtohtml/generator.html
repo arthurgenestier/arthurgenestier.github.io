@@ -1,71 +1,68 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Convertisseur DOCX vers HTML CMS</title>
-    <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        textarea { width: 100%; height: 300px; margin-top: 20px; }
-    </style>
+  <meta charset="UTF-8">
+  <title>Générateur HTML CMS</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+    textarea { width: 100%; height: 250px; margin: 15px 0; padding: 10px; font-size: 14px; }
+    button { padding: 10px 20px; font-size: 16px; }
+    .output-area { background: #fff; border: 1px solid #ccc; }
+    label { font-weight: bold; display: block; margin-top: 20px; }
+  </style>
 </head>
 <body>
-    <h2>Convertisseur DOCX vers HTML CMS</h2>
-    <input type="file" id="upload" accept=".docx" />
-    <button onclick="clearOutput()">🧹 Vider</button>
 
-    <textarea id="output" placeholder="Le code HTML généré apparaîtra ici..."></textarea>
+  <h2>Convertisseur de contenu CMS</h2>
 
-    <script>
-        const templateDebut = `
+  <label for="rawInput">Collez ici le contenu brut :</label>
+  <textarea id="rawInput" placeholder="Collez ici votre texte Word ou autre..."></textarea>
+
+  <button onclick="convert()">Générer le HTML</button>
+
+  <label for="htmlPart1">🔹 Partie 1 : avant la {COUPURE}</label>
+  <textarea id="htmlPart1" class="output-area" readonly></textarea>
+
+  <label for="htmlPart2">🔸 Partie 2 : après la {COUPURE}</label>
+  <textarea id="htmlPart2" class="output-area" readonly></textarea>
+
+  <script>
+    function convert() {
+      let content = document.getElementById("rawInput").value;
+
+      // Nettoyage léger (préserve le texte brut)
+      let safeContent = content.replace(/berner/gi, "BERNER");
+
+      // Crée une division (manuelle) selon un séparateur s'il y en a, sinon coupe au milieu
+      const split = Math.floor(safeContent.length / 2);
+      let part1 = safeContent.slice(0, split);
+      let part2 = safeContent.slice(split);
+
+      // Templates CMS
+      const template1 = `
 <style>
 .container-introduction-sitemap-page{
-    color:black;
-    max-width: 1094px;
-    padding: 25px;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    flex-direction: row;
+    color:black; max-width: 1094px; padding: 25px; margin: auto;
+    display: flex; justify-content: space-around; flex-wrap: wrap; flex-direction: row;
 }
 .container-introduction-sitemap-page p {
-    font-size:1.2em;
-    width:100%;
-    text-align:justify;
-    padding:15px;
+    font-size:1.2em; width:100%; text-align:justify; padding:15px;
 }
 .container-introduction-sitemap-page .intro-seo{
-    width:100%;
-    border-radius:25%;
-    padding:15px;
-    display:block;
+    width:100%; border-radius:25%; padding:15px; display:block;
 }
 @media only screen and (max-width: 750px) {
-    .container-introduction-sitemap-page {
-        max-width: 990px;
-        padding: 20px;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-    .container-introduction-sitemap-page .intro-seo{
-        width:100%;
-        border-radius:25%;
-        padding:5px;
-        display:block;
-    }
+    .container-introduction-sitemap-page { max-width: 990px; padding: 20px; flex-direction: column; }
+    .container-introduction-sitemap-page .intro-seo{ padding:5px; }
 }
 </style>
 <div class="container-introduction-sitemap-page">
     <div class="intro-seo">
-`;
-
-const templateFin = `
+        <p>${part1}</p>
     </div>
-</div>
-{COUPURE}
+</div>`;
+
+      const template2 = `
 <style>
 .container-seo{ color:black; }
 @media only screen and (max-width: 990px){
@@ -79,44 +76,19 @@ const templateFin = `
 }
 .titre-seo{
     font-family: 'Archivo', Verdana, Arial, sans-serif;
-    font-size: 26px;
-    line-height: 31px;
-    font-weight: bold;
-    color: #000;
-    padding:15px;
+    font-size: 26px; line-height: 31px;
+    font-weight: bold; color: #000; padding:15px;
 }
 .titre-seo span{ color:#97c1de; }
 .container-seo li{ padding: 10px; width:100%; }
 </style>
 <div class="container-seo">
-<!-- Ajoute ici le reste du contenu après la coupure -->
-</div>
-`;
+    <p class="text-seo">${part2}</p>
+</div>`;
 
-        document.getElementById('upload').addEventListener('change', function(event) {
-            const reader = new FileReader();
-            reader.onload = function(event) {
-                mammoth.convertToHtml({arrayBuffer: event.target.result}, {
-                    styleMap: ["b => strong"]
-                }).then(function(result) {
-                    let html = result.value;
-
-                    // Réinjection du lien si besoin (exemple pour "rondelles de calages et paumelles")
-                    html = html.replace(/(rondelles? de calages? et paumelles?)/gi, `<a href="https://shop.berner.eu/fr-fr/dsc/43681901-rondelle-de-calage-et-paumelle/">$1</a>`);
-
-                    // S'assurer que BERNER est toujours en majuscule
-                    html = html.replace(/berner/gi, "BERNER");
-
-                    // Affichage dans le template
-                    document.getElementById('output').value = templateDebut + html + templateFin;
-                });
-            };
-            reader.readAsArrayBuffer(this.files[0]);
-        });
-
-        function clearOutput() {
-            document.getElementById('output').value = "";
-        }
-    </script>
+      document.getElementById("htmlPart1").value = template1.trim();
+      document.getElementById("htmlPart2").value = template2.trim();
+    }
+  </script>
 </body>
 </html>
