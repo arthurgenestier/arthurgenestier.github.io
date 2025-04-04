@@ -76,7 +76,11 @@
 
             reader.onload = function(event) {
                 mammoth.convertToHtml({ arrayBuffer: event.target.result }).then(function(result) {
-                    const htmlContent = result.value;
+                    let htmlContent = result.value;
+
+                    // Ajouter la classe 'titre-seo' aux balises <h2>
+                    htmlContent = htmlContent.replace(/<h2>/g, '<h2 class="titre-seo">');
+
                     const fullHtmlPart2 = templatePart2 + htmlContent + "</div>";
                     document.getElementById("outputPart2").value = fullHtmlPart2;  // Affichage dans la textarea
                     downloadHtml('part2.html', fullHtmlPart2);  // Générer le fichier .html pour la Partie 2
