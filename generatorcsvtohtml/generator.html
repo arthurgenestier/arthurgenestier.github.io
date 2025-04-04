@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convertisseur Word/CSV vers HTML</title>
+    <title>Convertisseur Word vers HTML</title>
 
 
 </head>
 <body>
-    <h1>Convertisseur Word/CSV vers HTML</h1>
+    <h1>Convertisseur Word vers HTML</h1>
     
     <div class="container">
         <div class="input-section">
@@ -16,7 +16,6 @@
             
             <div class="tabs">
                 <div class="tab active" data-tab="word-tab">Fichier Word</div>
-                <div class="tab" data-tab="csv-tab">Fichier CSV</div>
             </div>
             
             <div class="tab-content active" id="word-tab">
@@ -27,11 +26,7 @@
                 </div>
             </div>
             
-            <div class="tab-content" id="csv-tab">
-                <p>Sélectionnez un fichier CSV ou collez son contenu ci-dessous:</p>
-                <input type="file" id="csvFileInput" accept=".csv">
-                <textarea id="csvInput" placeholder="Collez votre CSV ici (format: h1,h2,p avec une ligne d'en-tête)"></textarea>
-            </div>
+
             
             <div id="loadingSpinner">
                 <div class="spinner"></div>
@@ -109,7 +104,6 @@
         
         // Gestionnaires d'événements pour les fichiers
         document.getElementById('wordFileInput').addEventListener('change', handleWordFileSelect);
-        document.getElementById('csvFileInput').addEventListener('change', handleCSVFileSelect);
         document.getElementById('proceedToTemplateBtn').addEventListener('click', showTemplateSection);
         document.getElementById('generateBtn').addEventListener('click', generateHTMLFiles);
         
@@ -196,57 +190,11 @@
                 });
         }
         
-        // Fonction pour traiter le fichier CSV sélectionné
-        function handleCSVFileSelect(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    document.getElementById('csvInput').value = e.target.result;
-                    parseCSVInput();
-                };
-                reader.readAsText(file);
-            }
-        }
         
-        // Fonction pour analyser l'entrée CSV
-        function parseCSVInput() {
-            const csvContent = document.getElementById('csvInput').value;
-            if (!csvContent) {
-                alert('Veuillez entrer ou charger des données CSV.');
-                return;
-            }
-            
-            try {
-                extractedData = parseCSV(csvContent);
-                displayExtractedData();
-            } catch (error) {
-                alert('Erreur lors du traitement du CSV: ' + error.message);
-                console.error(error);
-            }
-        }
         
-        // Fonction simple pour analyser le CSV
-        function parseCSV(csv) {
-            const lines = csv.split('\n');
-            const result = [];
-            const headers = lines[0].split(',').map(header => header.trim());
-            
-            for (let i = 1; i < lines.length; i++) {
-                if (lines[i].trim() === '') continue;
-                
-                const obj = {};
-                const currentLine = lines[i].split(',');
-                
-                for (let j = 0; j < headers.length; j++) {
-                    obj[headers[j]] = currentLine[j] ? currentLine[j].trim() : '';
-                }
-                
-                result.push(obj);
-            }
-            
-            return result;
-        }
+        
+        
+        
         
         // Fonction pour afficher les données extraites
         function displayExtractedData() {
