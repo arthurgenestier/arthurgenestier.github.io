@@ -56,7 +56,31 @@
     }
 
     function generatePart2() {
-      const text = document.getElementById("input2").value;
+      let text = document.getElementById("input2").value;
+
+      // Transformation des puces (•) en listes
+      const lines = text.split('\n');
+      let formatted = '';
+      let inList = false;
+
+      for (let line of lines) {
+        if (line.trim().startsWith('•')) {
+          if (!inList) {
+            formatted += '<ul>\n';
+            inList = true;
+          }
+          const item = line.replace(/^•\s*/, '').trim();
+          formatted += `<li>${item}</li>\n`;
+        } else {
+          if (inList) {
+            formatted += '</ul>\n';
+            inList = false;
+          }
+          formatted += line + '\n';
+        }
+      }
+      if (inList) formatted += '</ul>\n';
+
       const html = `
 <style>
 .container-seo{ color:black; }
@@ -78,8 +102,9 @@
 .container-seo li{ padding: 10px; width:100%; }
 </style>
 <div class="container-seo">
-  ${text}
+  ${formatted.trim()}
 </div>`.trim();
+
       document.getElementById("output2").innerText = html;
     }
   </script>
