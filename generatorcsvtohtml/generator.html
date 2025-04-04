@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Générateur de HTML depuis Word</title>
+    <meta charset="UTF-8">
+    <title>Convertisseur DOCX vers HTML CMS</title>
+    <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        textarea { width: 100%; height: 300px; margin-top: 20px; }
+    </style>
 </head>
 <body>
-  <h1>Convertisseur DOCX vers HTML Berner</h1>
-  <input type="file" id="fileInput" accept=".docx" />
-  <button onclick="convertDocx()">Convertir en HTML</button>
+    <h2>Convertisseur DOCX vers HTML CMS</h2>
+    <input type="file" id="upload" accept=".docx" />
+    <button onclick="clearOutput()">🧹 Vider</button>
 
-  <h2>Code HTML généré :</h2>
-  <textarea id="output" rows="30" style="width:100%"></textarea>
+    <textarea id="output" placeholder="Le code HTML généré apparaîtra ici..."></textarea>
 
-  <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
-  <script>
-    const introStyle = `
+    <script>
+        const templateDebut = `
 <style>
 .container-introduction-sitemap-page{
     color:black;
@@ -54,38 +57,25 @@
         display:block;
     }
 }
-</style>`;
+</style>
+<div class="container-introduction-sitemap-page">
+    <div class="intro-seo">
+`;
 
-    const contentStyle = `
+const templateFin = `
+    </div>
+</div>
+{COUPURE}
 <style>
-.container-seo{
-    color:black;
-}
+.container-seo{ color:black; }
 @media only screen and (max-width: 990px){
-    .container-seo{
-        width:90%;
-        margin:auto;
-        padding:5px;
-    }
-    .text-seo{
-        text-align:left!important;
-        padding:10px!important;
-    }
-    .titre-seo{
-        text-align:left!important;
-        padding:10px!important;
-    }
+    .container-seo{ width:90%; margin:auto; padding:5px; }
+    .text-seo{ text-align:left!important; padding:10px!important; }
+    .titre-seo{ text-align:left!important; padding:10px!important; }
 }
 @media only screen and (min-width: 991px){
-    .container-seo{
-        width:80%;
-        margin: auto;
-        padding: 20px;
-    }
-    .text-seo{
-        text-align:left!important;
-        padding:15px;
-    }
+    .container-seo{ width:80%; margin: auto; padding: 20px; }
+    .text-seo{ text-align:left!important; padding:15px; }
 }
 .titre-seo{
     font-family: 'Archivo', Verdana, Arial, sans-serif;
@@ -95,66 +85,38 @@
     color: #000;
     padding:15px;
 }
-.titre-seo span{
-    color:#97c1de;
-}
-.container-seo li{
-    padding: 10px;
-    width:100%;
-}
-</style>`;
-
-    function convertDocx() {
-      const file = document.getElementById("fileInput").files[0];
-      if (!file) return alert("Merci de sélectionner un fichier .docx");
-
-      mammoth.convertToHtml({ arrayBuffer: file })
-        .then(result => {
-          let html = result.value;
-          let parser = new DOMParser();
-          let doc = parser.parseFromString(html, 'text/html');
-          let paragraphs = [...doc.body.querySelectorAll('p')];
-
-          // Ignore premier paragraphe s'il y en a au moins 2 sous h1
-          if (doc.querySelector('h1')) {
-            let h1Index = paragraphs.findIndex(p => p.textContent.includes(doc.querySelector('h1').textContent));
-            if (h1Index >= 0 && paragraphs.length > h1Index + 2) {
-              paragraphs.splice(h1Index + 1, 1); // retire le paragraphe juste après h1
-            }
-            doc.querySelector('h1').remove(); // supprimer le H1
-          }
-
-          // Génère le contenu HTML
-          let firstParagraph = paragraphs.shift()?.outerHTML || "";
-          let intro = `
-${introStyle}
-<div class="container-introduction-sitemap-page">
-  <div class="intro-seo">
-    ${firstParagraph}
-  </div>
-</div>`;
-
-          let seo = `
-${contentStyle}
+.titre-seo span{ color:#97c1de; }
+.container-seo li{ padding: 10px; width:100%; }
+</style>
 <div class="container-seo">
+<!-- Ajoute ici le reste du contenu après la coupure -->
+</div>
 `;
 
-          paragraphs.forEach(p => {
-            if (p.querySelector('strong') && p.textContent.trim().endsWith('?')) {
-              seo += `<h2 class="titre-seo">${p.innerHTML}</h2>\n`;
-            } else {
-              seo += `<p class="text-seo">${p.innerHTML}</p>\n`;
-            }
-          });
+        document.getElementById('upload').addEventListener('change', function(event) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                mammoth.convertToHtml({arrayBuffer: event.target.result}, {
+                    styleMap: ["b => strong"]
+                }).then(function(result) {
+                    let html = result.value;
 
-          seo += "</div>";
+                    // Réinjection du lien si besoin (exemple pour "rondelles de calages et paumelles")
+                    html = html.replace(/(rondelles? de calages? et paumelles?)/gi, `<a href="https://shop.berner.eu/fr-fr/dsc/43681901-rondelle-de-calage-et-paumelle/">$1</a>`);
 
-          document.getElementById("output").value = intro + "\n\n" + seo;
-        })
-        .catch(err => {
-          alert("Erreur lors de la lecture du fichier : " + err.message);
+                    // S'assurer que BERNER est toujours en majuscule
+                    html = html.replace(/berner/gi, "BERNER");
+
+                    // Affichage dans le template
+                    document.getElementById('output').value = templateDebut + html + templateFin;
+                });
+            };
+            reader.readAsArrayBuffer(this.files[0]);
         });
-    }
-  </script>
+
+        function clearOutput() {
+            document.getElementById('output').value = "";
+        }
+    </script>
 </body>
 </html>
