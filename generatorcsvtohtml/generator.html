@@ -1,243 +1,605 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Convertisseur CSV vers HTML</title>
-  </head>
-
-  <body>
-    <h1>Convertisseur CSV vers HTML</h1>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertisseur Word/CSV vers HTML</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .input-section, .output-section, .extraction-section {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        #csvInput {
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        #fileInput {
+            margin-bottom: 10px;
+        }
+        .file-type {
+            margin-bottom: 15px;
+        }
+        .tabs {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        .tab {
+            padding: 10px 15px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            border-radius: 4px 4px 0 0;
+            background-color: #f5f5f5;
+            margin-right: 5px;
+        }
+        .tab.active {
+            background-color: #fff;
+            border-bottom: 1px solid #fff;
+        }
+        .tab-content {
+            display: none;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 0 4px 4px 4px;
+            margin-top: -1px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .generated-file {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        .file-heading {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .download-btn {
+            background-color: #2196F3;
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            overflow: auto;
+        }
+        #htmlTemplate {
+            height: 150px;
+            font-family: monospace;
+        }
+        #loadingSpinner {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #09f;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .extraction-result {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f0f8ff;
+            border-radius: 4px;
+            border: 1px solid #b0c4de;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .alert {
+            padding: 10px;
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .note {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <h1>Convertisseur Word/CSV vers HTML</h1>
+    
     <div class="container">
-      <div class="input-section">
-        <h2>1. Chargez votre fichier CSV</h2>
-        <p>Sélectionnez un fichier CSV ou collez son contenu ci-dessous:</p>
-        <input type="file" id="fileInput" accept=".csv" />
-        <textarea
-          id="csvInput"
-          placeholder="Collez votre CSV ici (format: h1;h2;p avec une ligne d'en-tête)"
-        ></textarea>
-
-        <h2>2. Modifiez le modèle HTML si nécessaire</h2>
-        <p>
-          Utilisez les balises {h1} ,{h2} et {p} pour indiquer où insérer les
-          données:
-        </p>
-        <textarea id="htmlTemplate"> 
-
-            <div class="stage-container-container text-component  stage-container-BG-black ">
-                <img class="stage-component-geometric stage-component-geometric-right" src="/fr-fr/_ui/common/img/stage-component/stage-component-geometric-right-blue-orange-text.png" alt="">
-                <div class="stage-container-container-content text-elements-container">
-                    <div class="stage-container-container-content-text-elements">
-                        <h1 class="stage-container-headline topSpacing">{h1}</h1>
-                        <div class="stage-container-description">{description}</div>
-                    </div>
+        <div class="input-section">
+            <h2>1. Choisissez votre format d'entrée</h2>
+            
+            <div class="tabs">
+                <div class="tab active" data-tab="word-tab">Fichier Word</div>
+                <div class="tab" data-tab="csv-tab">Fichier CSV</div>
+            </div>
+            
+            <div class="tab-content active" id="word-tab">
+                <p>Sélectionnez un fichier Word (.docx):</p>
+                <input type="file" id="wordFileInput" accept=".docx">
+                <div class="note" style="padding: 10px; margin-top: 10px;">
+                    Note: L'outil va tenter d'extraire les titres (H1), sous-titres (H2) et paragraphes (P) du document Word.
                 </div>
-                <img class="stage-component-geometric-left-text d-mobile-none d-tablet-none d-desktop-sm-none" src="/fr-fr/_ui/common/img/stage-component/stage-component-geometric-left-blue-orange-text.png" alt="">
-                <img class="stage-component-geometric stage-component-geometric-left d-desktop-none" src="/fr-fr/_ui/common/img/stage-component/stage-component-geometric-mobile-text-left-black.png" alt="">
-                </div>
-        </textarea>
-
-        <button id="generateBtn">Générer les fichiers HTML</button>
-      </div>
-
-      <div class="output-section">
-        <h2>Fichiers HTML générés</h2>
-        <p>
-          Aperçu des fichiers générés (cliquez sur "Télécharger" pour
-          enregistrer):
-        </p>
-        <div id="outputFiles"></div>
-      </div>
+            </div>
+            
+            <div class="tab-content" id="csv-tab">
+                <p>Sélectionnez un fichier CSV ou collez son contenu ci-dessous:</p>
+                <input type="file" id="csvFileInput" accept=".csv">
+                <textarea id="csvInput" placeholder="Collez votre CSV ici (format: h1,h2,p avec une ligne d'en-tête)"></textarea>
+            </div>
+            
+            <div id="loadingSpinner">
+                <div class="spinner"></div>
+                <p>Traitement en cours...</p>
+            </div>
+        </div>
+        
+        <div class="extraction-section" id="extractionSection" style="display: none;">
+            <h2>2. Données extraites</h2>
+            <p>Voici les données extraites de votre document. Vous pouvez les modifier si nécessaire:</p>
+            <div class="extraction-result">
+                <table id="extractedDataTable">
+                    <thead>
+                        <tr>
+                            <th>H1</th>
+                            <th>H2</th>
+                            <th>P</th>
+                        </tr>
+                    </thead>
+                    <tbody id="extractedDataBody">
+                        <!-- Les données extraites seront ajoutées ici -->
+                    </tbody>
+                </table>
+            </div>
+            <button id="proceedToTemplateBtn">Continuer avec ces données</button>
+        </div>
+        
+        <div class="input-section" id="templateSection" style="display: none;">
+            <h2>3. Modifiez le modèle HTML si nécessaire</h2>
+            <p>Utilisez les balises {h1}, {h2} et {p} pour indiquer où insérer les données:</p>
+            <textarea id="htmlTemplate"><html>
+<head>
+    <title>{h1}</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #333; }
+        h2 { color: #666; }
+    </style>
+</head>
+<body>
+    <h1>{h1}</h1>
+    <h2>{h2}</h2>
+    <p>{p}</p>
+</body>
+</html></textarea>
+            
+            <button id="generateBtn">Générer les fichiers HTML</button>
+        </div>
+        
+        <div class="output-section" id="outputSection" style="display: none;">
+            <h2>4. Fichiers HTML générés</h2>
+            <p>Aperçu des fichiers générés:</p>
+            <div id="outputFiles"></div>
+        </div>
     </div>
 
     <script>
-      // Ajout de la bibliothèque JSZip
-      document.write(
-        '<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"><\/script>'
-      );
-      document
-        .getElementById("fileInput")
-        .addEventListener("change", handleFileSelect);
-      document
-        .getElementById("generateBtn")
-        .addEventListener("click", generateHTMLFiles);
-
-      function handleFileSelect(event) {
-        const file = event.target.files[0];
-        if (file) {
-          const reader = new FileReader();
-          reader.onload = function (e) {
-            document.getElementById("csvInput").value = e.target.result;
-          };
-          reader.readAsText(file);
-        }
-      }
-
-      function parseCSV(csv) {
-        // Utilisation d'une fonction simple de parsing CSV
-        const lines = csv.split("\n");
-        const result = [];
-        const headers = lines[0].split(";").map((header) => header.trim());
-
-        for (let i = 1; i < lines.length; i++) {
-          if (lines[i].trim() === "") continue;
-
-          const obj = {};
-          const currentLine = lines[i].split(";");
-
-          for (let j = 0; j < headers.length; j++) {
-            obj[headers[j]] = currentLine[j] ? currentLine[j].trim() : "";
-          }
-
-          result.push(obj);
-        }
-
-        return result;
-      }
-
-      function generateHTMLFiles() {
-        const csvContent = document.getElementById("csvInput").value;
-        const htmlTemplate = document.getElementById("htmlTemplate").value;
-        const outputDiv = document.getElementById("outputFiles");
-
-        if (!csvContent) {
-          alert("Veuillez entrer ou charger des données CSV.");
-          return;
-        }
-
-        outputDiv.innerHTML = "";
-
-        try {
-          const data = parseCSV(csvContent);
-
-          data.forEach((row, index) => {
-            // Créer le contenu HTML en remplaçant les balises dans le modèle
-            let htmlContent = htmlTemplate;
-            for (const [key, value] of Object.entries(row)) {
-              const regex = new RegExp(`{${key}}`, "g");
-              htmlContent = htmlContent.replace(regex, value);
-            }
-
-            // Créer un nom de fichier basé sur le contenu h1 ou un index
-            const fileName =
-              (row.h1
-                ? row.h1.replace(/[^a-z0-9]/gi, "_").toLowerCase()
-                : `page_${index + 1}`) + ".html";
-
-            // Créer l'élément d'affichage du fichier
-            const fileElement = document.createElement("div");
-            fileElement.className = "generated-file";
-
-            const fileHeading = document.createElement("div");
-            fileHeading.className = "file-heading";
-
-            const fileTitle = document.createElement("h3");
-            fileTitle.textContent = fileName;
-
-            const downloadBtn = document.createElement("button");
-            downloadBtn.className = "download-btn";
-            downloadBtn.textContent = "Télécharger";
-            downloadBtn.onclick = function () {
-              downloadFile(fileName, htmlContent);
-            };
-
-            fileHeading.appendChild(fileTitle);
-            fileHeading.appendChild(downloadBtn);
-
-            const preElement = document.createElement("pre");
-            preElement.textContent = htmlContent;
-
-            fileElement.appendChild(fileHeading);
-            fileElement.appendChild(preElement);
-
-            outputDiv.appendChild(fileElement);
-          });
-
-          // Ajouter un bouton pour télécharger tous les fichiers en ZIP
-          if (data.length > 1) {
-            const zipAllBtn = document.createElement("button");
-            zipAllBtn.textContent = "Télécharger tous les fichiers (ZIP)";
-            zipAllBtn.style.marginTop = "20px";
-            zipAllBtn.style.backgroundColor = "#FF5722";
-            zipAllBtn.style.padding = "10px 15px";
-            zipAllBtn.style.fontSize = "16px";
-
-            // Créer un objet pour stocker tous les fichiers HTML
-            const htmlFiles = [];
-            data.forEach((row, index) => {
-              // Créer le contenu HTML
-              let htmlContent = htmlTemplate;
-              for (const [key, value] of Object.entries(row)) {
-                const regex = new RegExp(`{${key}}`, "g");
-                htmlContent = htmlContent.replace(regex, value);
-              }
-
-              // Créer un nom de fichier
-              const fileName =
-                (row.h1
-                  ? row.h1.replace(/[^a-z0-9]/gi, "_").toLowerCase()
-                  : `page_${index + 1}`) + ".html";
-
-              // Ajouter à la liste des fichiers
-              htmlFiles.push({
-                name: fileName,
-                content: htmlContent,
-              });
+        // Variables globales pour stocker les données
+        let extractedData = [];
+        
+        // Gestionnaires d'événements pour les onglets
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Désactiver tous les onglets et contenus
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Activer l'onglet cliqué et son contenu
+                this.classList.add('active');
+                document.getElementById(this.getAttribute('data-tab')).classList.add('active');
             });
-
-            zipAllBtn.onclick = function () {
-              downloadAllAsZip(htmlFiles);
-            };
-            outputDiv.appendChild(zipAllBtn);
-          }
-        } catch (error) {
-          alert("Erreur lors du traitement du CSV: " + error.message);
-          console.error(error);
-        }
-      }
-
-      function downloadFile(filename, content) {
-        const element = document.createElement("a");
-        element.setAttribute(
-          "href",
-          "data:text/html;charset=utf-8," + encodeURIComponent(content)
-        );
-        element.setAttribute("download", filename);
-        element.style.display = "none";
-        document.body.appendChild(element);
-        element.click();
-        document.body.removeChild(element);
-      }
-
-      function downloadAllAsZip(files) {
-        // Créer un nouvel objet JSZip
-        const zip = new JSZip();
-
-        // Ajouter chaque fichier HTML au ZIP
-        files.forEach((file) => {
-          zip.file(file.name, file.content);
         });
-
-        // Générer le ZIP et le télécharger
-        zip
-          .generateAsync({ type: "blob" })
-          .then(function (content) {
-            // Créer un lien de téléchargement et déclencher le téléchargement
-            const element = document.createElement("a");
-            element.href = URL.createObjectURL(content);
-            element.download = "pages_html.zip";
-            element.style.display = "none";
+        
+        // Gestionnaires d'événements pour les fichiers
+        document.getElementById('wordFileInput').addEventListener('change', handleWordFileSelect);
+        document.getElementById('csvFileInput').addEventListener('change', handleCSVFileSelect);
+        document.getElementById('proceedToTemplateBtn').addEventListener('click', showTemplateSection);
+        document.getElementById('generateBtn').addEventListener('click', generateHTMLFiles);
+        
+        // Fonction pour traiter le fichier Word sélectionné
+        function handleWordFileSelect(event) {
+            const file = event.target.files[0];
+            if (file) {
+                showLoading(true);
+                
+                // Lire le fichier Word avec mammoth.js
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const arrayBuffer = e.target.result;
+                    processWordDocument(arrayBuffer);
+                };
+                reader.readAsArrayBuffer(file);
+            }
+        }
+        
+        // Fonction pour traiter le document Word
+        function processWordDocument(arrayBuffer) {
+            mammoth.extractRawText({ arrayBuffer: arrayBuffer })
+                .then(function(result) {
+                    const text = result.value;
+                    const lines = text.split('\n').filter(line => line.trim() !== '');
+                    
+                    // Essayer d'extraire le contenu sous forme de sections
+                    extractedData = [];
+                    let currentH1 = '';
+                    let currentH2 = '';
+                    let currentP = '';
+                    
+                    lines.forEach(line => {
+                        const trimmedLine = line.trim();
+                        
+                        // Règles simples: 
+                        // - Les lignes courtes en début de paragraphe sont des titres
+                        // - Les lignes plus longues sont des paragraphes
+                        if (trimmedLine.length < 100 && (currentP === '' || currentH1 === '')) {
+                            if (currentH1 === '') {
+                                currentH1 = trimmedLine;
+                            } else if (currentH2 === '') {
+                                currentH2 = trimmedLine;
+                            }
+                        } else {
+                            if (currentP === '') {
+                                currentP = trimmedLine;
+                            } else {
+                                currentP += ' ' + trimmedLine;
+                            }
+                            
+                            // Si nous avons les trois éléments, enregistrer cette section
+                            if (currentH1 && currentH2 && currentP) {
+                                extractedData.push({
+                                    h1: currentH1,
+                                    h2: currentH2,
+                                    p: currentP
+                                });
+                                
+                                // Réinitialiser pour la prochaine section
+                                currentH1 = '';
+                                currentH2 = '';
+                                currentP = '';
+                            }
+                        }
+                    });
+                    
+                    // S'il reste des données non enregistrées à la fin
+                    if (currentH1 || currentH2 || currentP) {
+                        extractedData.push({
+                            h1: currentH1 || 'Sans titre',
+                            h2: currentH2 || 'Sans sous-titre',
+                            p: currentP || 'Sans contenu'
+                        });
+                    }
+                    
+                    showLoading(false);
+                    displayExtractedData();
+                })
+                .catch(function(error) {
+                    console.error('Erreur lors du traitement du document Word:', error);
+                    showLoading(false);
+                    alert('Erreur lors du traitement du document Word: ' + error.message);
+                });
+        }
+        
+        // Fonction pour traiter le fichier CSV sélectionné
+        function handleCSVFileSelect(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('csvInput').value = e.target.result;
+                    parseCSVInput();
+                };
+                reader.readAsText(file);
+            }
+        }
+        
+        // Fonction pour analyser l'entrée CSV
+        function parseCSVInput() {
+            const csvContent = document.getElementById('csvInput').value;
+            if (!csvContent) {
+                alert('Veuillez entrer ou charger des données CSV.');
+                return;
+            }
+            
+            try {
+                extractedData = parseCSV(csvContent);
+                displayExtractedData();
+            } catch (error) {
+                alert('Erreur lors du traitement du CSV: ' + error.message);
+                console.error(error);
+            }
+        }
+        
+        // Fonction simple pour analyser le CSV
+        function parseCSV(csv) {
+            const lines = csv.split('\n');
+            const result = [];
+            const headers = lines[0].split(',').map(header => header.trim());
+            
+            for (let i = 1; i < lines.length; i++) {
+                if (lines[i].trim() === '') continue;
+                
+                const obj = {};
+                const currentLine = lines[i].split(',');
+                
+                for (let j = 0; j < headers.length; j++) {
+                    obj[headers[j]] = currentLine[j] ? currentLine[j].trim() : '';
+                }
+                
+                result.push(obj);
+            }
+            
+            return result;
+        }
+        
+        // Fonction pour afficher les données extraites
+        function displayExtractedData() {
+            if (extractedData.length === 0) {
+                alert('Aucune donnée n\'a pu être extraite du fichier.');
+                return;
+            }
+            
+            const tableBody = document.getElementById('extractedDataBody');
+            tableBody.innerHTML = '';
+            
+            extractedData.forEach((row, index) => {
+                const tr = document.createElement('tr');
+                
+                const tdH1 = document.createElement('td');
+                const inputH1 = document.createElement('input');
+                inputH1.type = 'text';
+                inputH1.value = row.h1 || '';
+                inputH1.style.width = '100%';
+                inputH1.addEventListener('change', function() {
+                    extractedData[index].h1 = this.value;
+                });
+                tdH1.appendChild(inputH1);
+                
+                const tdH2 = document.createElement('td');
+                const inputH2 = document.createElement('input');
+                inputH2.type = 'text';
+                inputH2.value = row.h2 || '';
+                inputH2.style.width = '100%';
+                inputH2.addEventListener('change', function() {
+                    extractedData[index].h2 = this.value;
+                });
+                tdH2.appendChild(inputH2);
+                
+                const tdP = document.createElement('td');
+                const textareaP = document.createElement('textarea');
+                textareaP.value = row.p || '';
+                textareaP.style.width = '100%';
+                textareaP.rows = 3;
+                textareaP.addEventListener('change', function() {
+                    extractedData[index].p = this.value;
+                });
+                tdP.appendChild(textareaP);
+                
+                tr.appendChild(tdH1);
+                tr.appendChild(tdH2);
+                tr.appendChild(tdP);
+                
+                tableBody.appendChild(tr);
+            });
+            
+            document.getElementById('extractionSection').style.display = 'block';
+        }
+        
+        // Fonction pour afficher la section du modèle
+        function showTemplateSection() {
+            document.getElementById('templateSection').style.display = 'block';
+            document.getElementById('outputSection').style.display = 'none';
+            
+            // Faire défiler la page vers la section du modèle
+            document.getElementById('templateSection').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Fonction pour générer les fichiers HTML
+        function generateHTMLFiles() {
+            const htmlTemplate = document.getElementById('htmlTemplate').value;
+            const outputDiv = document.getElementById('outputFiles');
+            
+            if (extractedData.length === 0) {
+                alert('Aucune donnée disponible pour générer des fichiers HTML.');
+                return;
+            }
+            
+            outputDiv.innerHTML = '';
+            
+            try {
+                // Créer un objet pour stocker tous les fichiers HTML
+                const htmlFiles = [];
+                
+                extractedData.forEach((row, index) => {
+                    // Créer le contenu HTML en remplaçant les balises dans le modèle
+                    let htmlContent = htmlTemplate;
+                    for (const [key, value] of Object.entries(row)) {
+                        const regex = new RegExp(`{${key}}`, 'g');
+                        htmlContent = htmlContent.replace(regex, value || '');
+                    }
+                    
+                    // Créer un nom de fichier basé sur le contenu h1 ou un index
+                    const fileName = (row.h1 ? row.h1.replace(/[^a-z0-9]/gi, '_').toLowerCase() : `page_${index + 1}`) + '.html';
+                    
+                    // Ajouter à la liste des fichiers
+                    htmlFiles.push({
+                        name: fileName,
+                        content: htmlContent
+                    });
+                    
+                    // Créer l'élément d'affichage du fichier
+                    const fileElement = document.createElement('div');
+                    fileElement.className = 'generated-file';
+                    
+                    const fileHeading = document.createElement('div');
+                    fileHeading.className = 'file-heading';
+                    
+                    const fileTitle = document.createElement('h3');
+                    fileTitle.textContent = fileName;
+                    
+                    const downloadBtn = document.createElement('button');
+                    downloadBtn.className = 'download-btn';
+                    downloadBtn.textContent = 'Télécharger';
+                    downloadBtn.onclick = function() {
+                        downloadFile(fileName, htmlContent);
+                    };
+                    
+                    fileHeading.appendChild(fileTitle);
+                    fileHeading.appendChild(downloadBtn);
+                    
+                    const preElement = document.createElement('pre');
+                    preElement.textContent = htmlContent;
+                    
+                    fileElement.appendChild(fileHeading);
+                    fileElement.appendChild(preElement);
+                    
+                    outputDiv.appendChild(fileElement);
+                });
+                
+                // Ajouter un bouton pour télécharger tous les fichiers en ZIP
+                if (htmlFiles.length > 1) {
+                    const zipAllBtn = document.createElement('button');
+                    zipAllBtn.textContent = 'Télécharger tous les fichiers en ZIP';
+                    zipAllBtn.style.marginTop = '20px';
+                    zipAllBtn.style.backgroundColor = '#FF5722';
+                    zipAllBtn.style.padding = '10px 15px';
+                    zipAllBtn.style.fontSize = '16px';
+                    
+                    zipAllBtn.onclick = function() {
+                        downloadAllAsZip(htmlFiles);
+                    };
+                    
+                    outputDiv.appendChild(zipAllBtn);
+                }
+                
+                // Afficher la section de sortie
+                document.getElementById('outputSection').style.display = 'block';
+                document.getElementById('outputSection').scrollIntoView({ behavior: 'smooth' });
+                
+            } catch (error) {
+                alert('Erreur lors de la génération des fichiers HTML: ' + error.message);
+                console.error(error);
+            }
+        }
+        
+        // Fonction pour télécharger un fichier unique
+        function downloadFile(filename, content) {
+            const element = document.createElement('a');
+            element.setAttribute('href', 'data:text/html;charset=utf-8,' + encodeURIComponent(content));
+            element.setAttribute('download', filename);
+            element.style.display = 'none';
             document.body.appendChild(element);
             element.click();
             document.body.removeChild(element);
-          })
-          .catch(function (error) {
-            alert("Erreur lors de la création du ZIP: " + error.message);
-            console.error(error);
-          });
-      }
+        }
+        
+        // Fonction pour télécharger tous les fichiers en ZIP
+        function downloadAllAsZip(files) {
+            // Créer un nouvel objet JSZip
+            const zip = new JSZip();
+            
+            // Ajouter chaque fichier HTML au ZIP
+            files.forEach(file => {
+                zip.file(file.name, file.content);
+            });
+            
+            // Générer le ZIP et le télécharger
+            zip.generateAsync({type: 'blob'})
+                .then(function(content) {
+                    // Créer un lien de téléchargement et déclencher le téléchargement
+                    const element = document.createElement('a');
+                    element.href = URL.createObjectURL(content);
+                    element.download = 'pages_html.zip';
+                    element.style.display = 'none';
+                    document.body.appendChild(element);
+                    element.click();
+                    document.body.removeChild(element);
+                })
+                .catch(function(error) {
+                    alert('Erreur lors de la création du ZIP: ' + error.message);
+                    console.error(error);
+                });
+        }
+        
+        // Fonction pour afficher/masquer l'indicateur de chargement
+        function showLoading(isLoading) {
+            document.getElementById('loadingSpinner').style.display = isLoading ? 'block' : 'none';
+        }
     </script>
-  </body>
+</body>
 </html>
