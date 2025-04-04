@@ -4,8 +4,170 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Convertisseur Word vers HTML</title>
-
-
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1, h2 {
+            color: #333;
+        }
+        
+        .input-section, .extraction-section, .output-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            background-color: #eee;
+            cursor: pointer;
+            margin-right: 5px;
+            border-radius: 4px 4px 0 0;
+        }
+        
+        .tab.active {
+            background-color: #007BFF;
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 0 4px 4px 4px;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        input[type="file"] {
+            margin: 10px 0;
+        }
+        
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        #loadingSpinner {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #007BFF;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            margin: 10px 0;
+            font-family: monospace;
+            padding:
+            10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        .generated-file {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .file-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f2f2f2;
+        }
+        
+        .file-heading h3 {
+            margin: 0;
+        }
+        
+        pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            overflow: auto;
+            margin: 0;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        
+        .download-btn {
+            background-color: #28a745;
+        }
+        
+        .download-btn:hover {
+            background-color: #218838;
+        }
+        
+        .note {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+        }
+    </style>
 </head>
 <body>
     <h1>Convertisseur Word vers HTML</h1>
@@ -22,11 +184,9 @@
                 <p>Sélectionnez un fichier Word (.docx):</p>
                 <input type="file" id="wordFileInput" accept=".docx">
                 <div class="note" style="padding: 10px; margin-top: 10px;">
-                    Note: L'outil va tenter d'extraire les titres (H1), sous-titres (H2) et paragraphes (P) du document Word.
+                    Note: L'outil va extraire les titres (H1), sous-titres (H2) et paragraphes (P) du document Word en conservant le formatage (gras, italique, liens, etc.).
                 </div>
             </div>
-            
-
             
             <div id="loadingSpinner">
                 <div class="spinner"></div>
@@ -70,7 +230,9 @@
 <body>
     <h1>{h1}</h1>
     <h2>{h2}</h2>
-    <p>{p}</p>
+    <div>
+        {p}
+    </div>
 </body>
 </html></textarea>
             
@@ -123,61 +285,109 @@
             }
         }
         
-        // Fonction pour traiter le document Word
+        // Fonction pour traiter le document Word en conservant le formatage
         function processWordDocument(arrayBuffer) {
-            mammoth.extractRawText({ arrayBuffer: arrayBuffer })
+            // Utiliser convertToHtml au lieu de extractRawText pour conserver le formatage
+            mammoth.convertToHtml({ arrayBuffer: arrayBuffer })
                 .then(function(result) {
-                    const text = result.value;
-                    const lines = text.split('\n').filter(line => line.trim() !== '');
+                    const htmlContent = result.value;
+                    const warnings = result.messages;
+                    
+                    if (warnings.length > 0) {
+                        console.warn("Avertissements lors de la conversion:", warnings);
+                    }
+                    
+                    // Créer un élément DOM temporaire pour manipuler le HTML
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = htmlContent;
                     
                     // Essayer d'extraire le contenu sous forme de sections
                     extractedData = [];
-                    let currentH1 = '';
-                    let currentH2 = '';
-                    let currentP = '';
                     
-                    lines.forEach(line => {
-                        const trimmedLine = line.trim();
+                    // On va considérer les premiers éléments comme titres et sous-titres
+                    // et le reste comme paragraphes
+                    const elements = tempDiv.querySelectorAll('h1, h2, h3, h4, h5, h6, p');
+                    
+                    if (elements.length > 0) {
+                        let currentH1 = '';
+                        let currentH2 = '';
+                        let currentP = '';
+                        let pElements = [];
                         
-                        // Règles simples: 
-                        // - Les lignes courtes en début de paragraphe sont des titres
-                        // - Les lignes plus longues sont des paragraphes
-                        if (trimmedLine.length < 100 && (currentP === '' || currentH1 === '')) {
-                            if (currentH1 === '') {
-                                currentH1 = trimmedLine;
-                            } else if (currentH2 === '') {
-                                currentH2 = trimmedLine;
-                            }
-                        } else {
-                            if (currentP === '') {
-                                currentP = trimmedLine;
+                        // Parcourir les éléments et les organiser en sections
+                        Array.from(elements).forEach((element, index) => {
+                            const tagName = element.tagName.toLowerCase();
+                            const htmlContent = element.outerHTML;
+                            
+                            if (tagName === 'h1' || tagName === 'h2') {
+                                // Si on trouve un nouveau titre et qu'on a déjà des données, on les enregistre
+                                if ((currentH1 || currentH2) && pElements.length > 0) {
+                                    extractedData.push({
+                                        h1: currentH1,
+                                        h2: currentH2,
+                                        p: pElements.join('')
+                                    });
+                                    
+                                    // Réinitialiser les paragraphes
+                                    pElements = [];
+                                }
+                                
+                                if (tagName === 'h1') {
+                                    currentH1 = htmlContent;
+                                    currentH2 = ''; // Réinitialiser le sous-titre avec un nouveau titre
+                                } else if (tagName === 'h2') {
+                                    currentH2 = htmlContent;
+                                }
                             } else {
-                                currentP += ' ' + trimmedLine;
+                                // Considérer tous les autres éléments comme des paragraphes
+                                pElements.push(htmlContent);
+                            }
+                        });
+                        
+                        // S'il reste des données non enregistrées à la fin
+                        if ((currentH1 || currentH2) && pElements.length > 0) {
+                            extractedData.push({
+                                h1: currentH1 || '<h1>Sans titre</h1>',
+                                h2: currentH2 || '<h2>Sans sous-titre</h2>',
+                                p: pElements.join('')
+                            });
+                        }
+                    }
+                    
+                    // Si aucune structure claire n'a été détectée, utiliser une approche plus simple
+                    if (extractedData.length === 0) {
+                        const paragraphs = tempDiv.querySelectorAll('p');
+                        
+                        if (paragraphs.length > 0) {
+                            let title = '<h1>' + (paragraphs[0].textContent || 'Sans titre') + '</h1>';
+                            let subtitle = paragraphs.length > 1 ? 
+                                '<h2>' + (paragraphs[1].textContent || 'Sans sous-titre') + '</h2>' : 
+                                '<h2>Sans sous-titre</h2>';
+                            
+                            // Collecter tous les paragraphes en HTML
+                            let contentHtml = '';
+                            for (let i = 2; i < paragraphs.length; i++) {
+                                contentHtml += paragraphs[i].outerHTML;
                             }
                             
-                            // Si nous avons les trois éléments, enregistrer cette section
-                            if (currentH1 && currentH2 && currentP) {
-                                extractedData.push({
-                                    h1: currentH1,
-                                    h2: currentH2,
-                                    p: currentP
-                                });
-                                
-                                // Réinitialiser pour la prochaine section
-                                currentH1 = '';
-                                currentH2 = '';
-                                currentP = '';
+                            // Si nous n'avons pas assez de paragraphes, utiliser tout
+                            if (contentHtml === '') {
+                                contentHtml = htmlContent;
                             }
+                            
+                            extractedData.push({
+                                h1: title,
+                                h2: subtitle,
+                                p: contentHtml || '<p>Sans contenu</p>'
+                            });
+                        } else {
+                            // Si aucun paragraphe n'est trouvé, utiliser tout le HTML
+                            extractedData.push({
+                                h1: '<h1>Document importé</h1>',
+                                h2: '<h2>Contenu</h2>',
+                                p: htmlContent || '<p>Sans contenu</p>'
+                            });
                         }
-                    });
-                    
-                    // S'il reste des données non enregistrées à la fin
-                    if (currentH1 || currentH2 || currentP) {
-                        extractedData.push({
-                            h1: currentH1 || 'Sans titre',
-                            h2: currentH2 || 'Sans sous-titre',
-                            p: currentP || 'Sans contenu'
-                        });
                     }
                     
                     showLoading(false);
@@ -189,12 +399,6 @@
                     alert('Erreur lors du traitement du document Word: ' + error.message);
                 });
         }
-        
-        
-        
-        
-        
-        
         
         // Fonction pour afficher les données extraites
         function displayExtractedData() {
@@ -209,31 +413,32 @@
             extractedData.forEach((row, index) => {
                 const tr = document.createElement('tr');
                 
+                // Créer des cellules pour H1, H2 et P qui affichent le HTML
                 const tdH1 = document.createElement('td');
-                const inputH1 = document.createElement('input');
-                inputH1.type = 'text';
-                inputH1.value = row.h1 || '';
-                inputH1.style.width = '100%';
-                inputH1.addEventListener('change', function() {
+                const textareaH1 = document.createElement('textarea');
+                textareaH1.value = row.h1 || '';
+                textareaH1.style.width = '100%';
+                textareaH1.rows = 3;
+                textareaH1.addEventListener('change', function() {
                     extractedData[index].h1 = this.value;
                 });
-                tdH1.appendChild(inputH1);
+                tdH1.appendChild(textareaH1);
                 
                 const tdH2 = document.createElement('td');
-                const inputH2 = document.createElement('input');
-                inputH2.type = 'text';
-                inputH2.value = row.h2 || '';
-                inputH2.style.width = '100%';
-                inputH2.addEventListener('change', function() {
+                const textareaH2 = document.createElement('textarea');
+                textareaH2.value = row.h2 || '';
+                textareaH2.style.width = '100%';
+                textareaH2.rows = 3;
+                textareaH2.addEventListener('change', function() {
                     extractedData[index].h2 = this.value;
                 });
-                tdH2.appendChild(inputH2);
+                tdH2.appendChild(textareaH2);
                 
                 const tdP = document.createElement('td');
                 const textareaP = document.createElement('textarea');
                 textareaP.value = row.p || '';
                 textareaP.style.width = '100%';
-                textareaP.rows = 3;
+                textareaP.rows = 5;
                 textareaP.addEventListener('change', function() {
                     extractedData[index].p = this.value;
                 });
@@ -282,8 +487,13 @@
                         htmlContent = htmlContent.replace(regex, value || '');
                     }
                     
+                    // Extraire le texte du titre pour créer un nom de fichier
+                    const tempH1 = document.createElement('div');
+                    tempH1.innerHTML = row.h1;
+                    const titleText = tempH1.textContent || tempH1.innerText || `page_${index + 1}`;
+                    
                     // Créer un nom de fichier basé sur le contenu h1 ou un index
-                    const fileName = (row.h1 ? row.h1.replace(/[^a-z0-9]/gi, '_').toLowerCase() : `page_${index + 1}`) + '.html';
+                    const fileName = titleText.replace(/[^a-z0-9]/gi, '_').toLowerCase() + '.html';
                     
                     // Ajouter à la liste des fichiers
                     htmlFiles.push({
