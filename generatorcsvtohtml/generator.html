@@ -15,73 +15,42 @@
 
   <h1>🛠 Générateur de blocs HTML CMS</h1>
 
-  <h2>🔹 Partie 1 (avant {COUPURE})</h2>
-  <textarea id="input1" placeholder="Collez ici le texte de la première partie..."></textarea>
-  <button onclick="generatePart1()">Générer HTML Partie 1</button>
-  <div class="output" id="output1"></div>
-
   <h2>🔸 Partie 2 (après {COUPURE})</h2>
   <textarea id="input2" placeholder="Collez ici le texte de la deuxième partie..."></textarea>
   <button onclick="generatePart2()">Générer HTML Partie 2</button>
   <div class="output" id="output2"></div>
 
   <script>
-    function generatePart1() {
-      const text = document.getElementById("input1").value;
-      const html = `
-<style>
-.container-introduction-sitemap-page{
-    color:black; max-width: 1094px; padding: 25px; margin: auto;
-    display: flex; justify-content: space-around; flex-wrap: wrap; flex-direction: row;
-}
-.container-introduction-sitemap-page p {
-    font-size:1.2em; width:100%; text-align:justify; padding:15px;
-}
-.container-introduction-sitemap-page .intro-seo{
-    width:100%; border-radius:25%; padding:15px; display:block;
-}
-@media only screen and (max-width: 750px) {
-    .container-introduction-sitemap-page {
-        max-width: 990px; padding: 20px; flex-direction: column;
-    }
-    .container-introduction-sitemap-page .intro-seo{ padding:5px; }
-}
-</style>
-<div class="container-introduction-sitemap-page">
-  <div class="intro-seo">
-    <p>${text}</p>
-  </div>
-</div>`.trim();
-      document.getElementById("output1").innerText = html;
-    }
-
     function generatePart2() {
-      let text = document.getElementById("input2").value;
+      const raw = document.getElementById("input2").value;
+      const lines = raw.split('\n');
 
-      // Transformation des puces (•) en listes
-      const lines = text.split('\n');
-      let formatted = '';
+      let html = '';
       let inList = false;
 
-      for (let line of lines) {
+      for (let i = 0; i < lines.length; i++) {
+        let line = lines[i];
+
         if (line.trim().startsWith('•')) {
           if (!inList) {
-            formatted += '<ul>\n';
+            html += '<ul>\n';
             inList = true;
           }
-          const item = line.replace(/^•\s*/, '').trim();
-          formatted += `<li>${item}</li>\n`;
-        } else {
+          const content = line.trim().substring(1).trim();
+          html += `<li>${content}</li>\n`;
+        } else if (line.trim() === '') {
           if (inList) {
-            formatted += '</ul>\n';
+            html += '</ul>\n';
             inList = false;
           }
-          formatted += line + '\n';
+          html += '\n';
+        } else {
+          html += line + '\n';
         }
       }
-      if (inList) formatted += '</ul>\n';
+      if (inList) html += '</ul>\n';
 
-      const html = `
+      const result = `
 <style>
 .container-seo{ color:black; }
 @media only screen and (max-width: 990px){
@@ -102,10 +71,11 @@
 .container-seo li{ padding: 10px; width:100%; }
 </style>
 <div class="container-seo">
-  ${formatted.trim()}
-</div>`.trim();
+${html.trim()}
+</div>
+      `.trim();
 
-      document.getElementById("output2").innerText = html;
+      document.getElementById("output2").innerText = result;
     }
   </script>
 </body>
