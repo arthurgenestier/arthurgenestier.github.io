@@ -1,82 +1,99 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Générateur CMS HTML</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; background: #f0f0f0; }
-    textarea { width: 100%; height: 200px; margin-bottom: 15px; padding: 10px; font-size: 14px; }
-    .output { background: #fff; border: 1px solid #ccc; padding: 10px; height: 250px; overflow-y: auto; white-space: pre-wrap; }
-    button { padding: 10px 15px; font-size: 14px; margin-bottom: 20px; }
-    h2 { margin-top: 30px; }
-  </style>
+    <meta charset="UTF-8">
+    <title>Générateur HTML depuis DOCX</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        textarea { width: 100%; height: 200px; margin-bottom: 15px; padding: 10px; font-size: 14px; }
+        button { padding: 10px 15px; font-size: 16px; }
+        .output-area { background: #f5f5f5; padding: 10px; margin-top: 15px; border: 1px solid #ccc; }
+        .output { background: #fff; border: 1px solid #ccc; padding: 10px; height: 250px; overflow-y: auto; white-space: pre-wrap; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
 </head>
 <body>
+    <h1>Générateur HTML depuis DOCX</h1>
 
-  <h1>🛠 Générateur de blocs HTML CMS</h1>
+    <!-- Importer le premier fichier (Partie 1) -->
+    <h2>1. Importer la Partie 1 (Introduction)</h2>
+    <input type="file" id="uploadPart1" accept=".docx" />
+    <button onclick="generatePart1()">Générer HTML Partie 1</button>
+    <textarea id="outputPart1" class="output-area" readonly></textarea>
 
-  <h2>🔸 Partie 2 (après {COUPURE})</h2>
-  <textarea id="input2" placeholder="Collez ici le texte de la deuxième partie..."></textarea>
-  <button onclick="generatePart2()">Générer HTML Partie 2</button>
-  <div class="output" id="output2"></div>
+    <!-- Importer le second fichier (Partie 2) -->
+    <h2>2. Importer la Partie 2 (Détails SEO)</h2>
+    <input type="file" id="uploadPart2" accept=".docx" />
+    <button onclick="generatePart2()">Générer HTML Partie 2</button>
+    <textarea id="outputPart2" class="output-area" readonly></textarea>
 
-  <script>
-    function generatePart2() {
-      const raw = document.getElementById("input2").value;
-      const lines = raw.split('\n');
-
-      let html = '';
-      let inList = false;
-
-      for (let i = 0; i < lines.length; i++) {
-        let line = lines[i];
-
-        if (line.trim().startsWith('•')) {
-          if (!inList) {
-            html += '<ul>\n';
-            inList = true;
-          }
-          const content = line.trim().substring(1).trim();
-          html += `<li>${content}</li>\n`;
-        } else if (line.trim() === '') {
-          if (inList) {
-            html += '</ul>\n';
-            inList = false;
-          }
-          html += '\n';
-        } else {
-          html += line + '\n';
-        }
-      }
-      if (inList) html += '</ul>\n';
-
-      const result = `
+    <script>
+        // Template CSS pour chaque partie
+        const templatePart1 = `
 <style>
-.container-seo{ color:black; }
-@media only screen and (max-width: 990px){
-  .container-seo{ width:90%; margin:auto; padding:5px; }
-  .text-seo{ text-align:left!important; padding:10px!important; }
-  .titre-seo{ text-align:left!important; padding:10px!important; }
-}
-@media only screen and (min-width: 991px){
-  .container-seo{ width:80%; margin: auto; padding: 20px; }
-  .text-seo{ text-align:left!important; padding:15px; }
-}
-.titre-seo{
-  font-family: 'Archivo', Verdana, Arial, sans-serif;
-  font-size: 26px; line-height: 31px;
-  font-weight: bold; color: #000; padding:15px;
-}
-.titre-seo span{ color:#97c1de; }
-.container-seo li{ padding: 10px; width:100%; }
+.container-introduction-sitemap-page{ color:black; max-width: 1094px; padding: 25px; margin: auto; display: flex; justify-content: space-around; flex-wrap: wrap; flex-direction: row; }
+.container-introduction-sitemap-page p { font-size:1.2em; width:100%; text-align:justify; padding:15px; }
+.container-introduction-sitemap-page .intro-seo{ width:100%; border-radius:25%; padding:15px; display:block; }
+@media only screen and (max-width: 750px) { .container-introduction-sitemap-page { max-width: 990px; padding: 20px; margin: auto; display: flex; flex-direction: column; flex-wrap: wrap; } .container-introduction-sitemap-page .intro-seo{ padding:5px; } }
+</style>
+<div class="container-introduction-sitemap-page">
+    <div class="intro-seo">
+`;
+
+        const templatePart2 = `
+<style>
+.container-seo { color: black; }
+@media only screen and (max-width: 990px) { .container-seo { width: 90%; margin: auto; padding: 5px; } .text-seo { text-align: left!important; padding: 10px!important; } .titre-seo { text-align: left!important; padding: 10px!important; } }
+@media only screen and (min-width: 991px) { .container-seo { width: 80%; margin: auto; padding: 20px; } .text-seo { text-align: left!important; padding: 15px; } }
+.titre-seo { font-family: 'Archivo', Verdana, Arial, sans-serif; font-size: 26px; line-height: 31px; font-weight: bold; color: #000; padding: 15px; }
+.titre-seo span { color: #97c1de; }
+.container-seo li { padding: 10px; width:100%; }
 </style>
 <div class="container-seo">
-${html.trim()}
-</div>
-      `.trim();
+`;
 
-      document.getElementById("output2").innerText = result;
-    }
-  </script>
+        // Fonction pour générer le HTML pour la Partie 1
+        function generatePart1() {
+            const file = document.getElementById('uploadPart1').files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                mammoth.convertToHtml({ arrayBuffer: event.target.result }).then(function(result) {
+                    const htmlContent = result.value;
+                    const fullHtmlPart1 = templatePart1 + htmlContent + "</div></div>";
+                    document.getElementById("outputPart1").value = fullHtmlPart1;  // Affichage dans la textarea
+                    downloadHtml('part1.html', fullHtmlPart1);  // Générer le fichier .html pour la Partie 1
+                });
+            };
+
+            reader.readAsArrayBuffer(file);
+        }
+
+        // Fonction pour générer le HTML pour la Partie 2
+        function generatePart2() {
+            const file = document.getElementById('uploadPart2').files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                mammoth.convertToHtml({ arrayBuffer: event.target.result }).then(function(result) {
+                    const htmlContent = result.value;
+                    const fullHtmlPart2 = templatePart2 + htmlContent + "</div>";
+                    document.getElementById("outputPart2").value = fullHtmlPart2;  // Affichage dans la textarea
+                    downloadHtml('part2.html', fullHtmlPart2);  // Générer le fichier .html pour la Partie 2
+                });
+            };
+
+            reader.readAsArrayBuffer(file);
+        }
+
+        // Fonction pour télécharger le fichier HTML généré
+        function downloadHtml(filename, content) {
+            const blob = new Blob([content], { type: 'text/html' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            link.click();
+        }
+    </script>
 </body>
 </html>
