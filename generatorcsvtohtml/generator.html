@@ -93,62 +93,10 @@
                     
                     // Formater la partie 1
                     let htmlPart1 = parts[0].trim();
-                    
-                    // Extraire le contenu du H1
-                    let h1Content = "";
-                    const h1Match = htmlPart1.match(/<h1>(.*?)<\/h1>/);
-                    if (h1Match && h1Match[1]) {
-                        h1Content = h1Match[1].trim();
-                    }
-                    
                     const fullHtmlPart1 = templatePart1 + htmlPart1 + closingPart1;
                     
                     // Formater la partie 2
                     let htmlPart2 = parts[1].trim();
-                    
-                    // Si un H1 a été trouvé, rechercher et modifier les H2 contenant le même texte
-                    if (h1Content) {
-                        // Convertir le contenu du H1 en minuscules pour la comparaison
-                        const h1ContentLower = h1Content.toLowerCase();
-                        
-                        // Rechercher toutes les balises H2 dans htmlPart2
-                        const h2Regex = /<h2[^>]*>(.*?)<\/h2>/gi;
-                        let h2Match;
-                        let modifiedHtmlPart2 = htmlPart2;
-                        
-                        // Pour chaque balise H2 trouvée
-                        while ((h2Match = h2Regex.exec(htmlPart2)) !== null) {
-                            const fullH2Tag = h2Match[0]; // Le tag H2 complet
-                            const h2Content = h2Match[1]; // Le contenu du H2
-                            
-                            // Convertir le contenu du H2 en minuscules pour la comparaison
-                            const h2ContentLower = h2Content.toLowerCase();
-                            
-                            // Vérifier si le contenu du H1 est présent dans le H2 (insensible à la casse)
-                            if (h2ContentLower.indexOf(h1ContentLower) !== -1) {
-                                // Trouver la position du h1Content dans h2Content (préservant la casse)
-                                const index = h2ContentLower.indexOf(h1ContentLower);
-                                const length = h1ContentLower.length;
-                                
-                                // Récupérer le texte exact tel qu'il apparaît dans le H2
-                                const matchedText = h2Content.substring(index, index + length);
-                                
-                                // Créer un nouveau contenu H2 avec le texte correspondant entouré de span
-                                const newH2Content = h2Content.substring(0, index) + 
-                                                     '<span>' + matchedText + '</span>' + 
-                                                     h2Content.substring(index + length);
-                                
-                                // Créer le nouveau tag H2 complet
-                                const newH2Tag = fullH2Tag.replace(h2Content, newH2Content);
-                                
-                                // Remplacer l'ancien tag H2 par le nouveau dans htmlPart2
-                                modifiedHtmlPart2 = modifiedHtmlPart2.replace(fullH2Tag, newH2Tag);
-                            }
-                        }
-                        
-                        // Mettre à jour htmlPart2 avec les modifications
-                        htmlPart2 = modifiedHtmlPart2;
-                    }
                     
                     // Ajouter la classe 'titre-seo' aux balises <h2>
                     htmlPart2 = htmlPart2.replace(/<h2/g, '<h2 class="titre-seo"');
