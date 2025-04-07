@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Générateur HTML depuis DOCX</title>
     <style>
-        body { background: #000;font-family: Arial, sans-serif; padding: 20px; max-width: 1000px; margin: 0 auto; }
+        body { background: #000; font-family: Arial, sans-serif; padding: 20px; max-width: 1000px; margin: 0 auto; }
         h1, h2 { color: #A9D1E8; }
         .input-section { background: #000; padding: 20px; border-radius: 5px; margin-bottom: 20px; }
         textarea { width: 100%; height: 200px; margin: 15px 0; padding: 10px; font-size: 14px; border-radius: 4px; border: 1px solid #ddd; }
@@ -18,15 +18,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
 </head>
 <body>
-    <h1>Générateur HTML depuis DOCX avec séparation de modèles</h1>
+    <h1>Générateur HTML depuis DOCX (coupure avant premier H2)</h1>
     
     <div class="input-section">
         <h2>Importer votre fichier DOCX</h2>
-        <p class="info-text">Utilisez <strong>{changeTemplate}</strong> dans votre document pour séparer la partie introduction et la partie détails SEO.</p>
         <input type="file" id="uploadDoc" accept=".docx" />
-        <button id="generateBtn" onclick="generateHTML()">Générer HTML</button>
+        <button onclick="generateHTML()">Générer HTML</button>
     </div>
-    
+
     <div class="output-section">
         <div class="output-area">
             <div class="output-header">Partie 1 (Introduction)</div>
@@ -43,9 +42,8 @@
         </div>
     </div>
 
-    <script>
-        // Templates CSS pour chaque partie
-        const templatePart1 = `
+<script>
+const templatePart1 = `
 <style>
 .container-introduction-sitemap-page{ color:black; max-width: 1094px; padding: 25px; margin: auto; display: flex; justify-content: space-around; flex-wrap: wrap; flex-direction: row; }
 .container-introduction-sitemap-page p { font-size:1.2em; width:100%; text-align:justify; padding:15px; }
@@ -53,9 +51,9 @@
 @media only screen and (max-width: 750px) { .container-introduction-sitemap-page { max-width: 990px; padding: 20px; margin: auto; display: flex; flex-direction: column; flex-wrap: wrap; } .container-introduction-sitemap-page .intro-seo{ padding:5px; } }
 </style>
 <div class="container-introduction-sitemap-page">
-    <div class="intro-seo">`;
+<div class="intro-seo">`;
 
-        const templatePart2 = `
+const templatePart2 = `
 <style>
 .container-seo { color: black; }
 @media only screen and (max-width: 990px) { .container-seo { width: 90%; margin: auto; padding: 5px; } .text-seo { text-align: left!important; padding: 10px!important; } .titre-seo { text-align: left!important; padding: 10px!important; } }
@@ -66,68 +64,60 @@
 </style>
 <div class="container-seo">`;
 
-        const closingPart1 = `</div></div>`;
-        const closingPart2 = `</div>`;
+const closingPart1 = `</div></div>`;
+const closingPart2 = `</div>`;
 
-        // Fonction pour générer le HTML
-        function generateHTML() {
-            const file = document.getElementById('uploadDoc').files[0];
-            if (!file) {
-                alert("Veuillez sélectionner un fichier DOCX");
+function generateHTML() {
+    const file = document.getElementById('uploadDoc').files[0];
+    if (!file) {
+        alert("Veuillez sélectionner un fichier DOCX");
+        return;
+    }
+    
+    const reader = new FileReader();
+
+    reader.onload = function(event) {
+        mammoth.convertToHtml({ arrayBuffer: event.target.result }).then(function(result) {
+            let htmlContent = result.value;
+
+            // Supprimer le premier <h1> et premier <p>
+            htmlContent = htmlContent.replace(/<h1[^>]*>.*?<\/h1>/i, '');
+            htmlContent = htmlContent.replace(/<p[^>]*>.*?<\/p>/i, '');
+
+            const indexH2 = htmlContent.indexOf('<h2');
+            if (indexH2 === -1) {
+                alert("Aucun <h2> trouvé dans le document.");
                 return;
             }
-            
-            const reader = new FileReader();
 
-            reader.onload = function(event) {
-                mammoth.convertToHtml({ arrayBuffer: event.target.result }).then(function(result) {
-                    const htmlContent = result.value;
-                    
-                    // Chercher le marqueur {changeTemplate}
-                    const parts = htmlContent.split('{changeTemplate}');
-                    
-                    if (parts.length < 2) {
-                        alert("Le marqueur {changeTemplate} n'a pas été trouvé dans le document. Assurez-vous de l'inclure pour séparer les deux parties.");
-                        return;
-                    }
-                    
-                    // Formater la partie 1
-                    let htmlPart1 = parts[0].trim();
-                    const fullHtmlPart1 = templatePart1 + htmlPart1 + closingPart1;
-                    
-                    // Formater la partie 2
-                    let htmlPart2 = parts[1].trim();
-                    
-                    // Ajouter la classe 'titre-seo' aux balises <h2>
-                    htmlPart2 = htmlPart2.replace(/<h2/g, '<h2 class="titre-seo"');
-                    
-                    const fullHtmlPart2 = templatePart2 + htmlPart2 + closingPart2;
-                    
-                    // Afficher dans les textareas
-                    document.getElementById("outputPart1").value = fullHtmlPart1;
-                    document.getElementById("outputPart2").value = fullHtmlPart2;
-                });
-            };
+            const part1 = htmlContent.substring(0, indexH2).trim();
+            let part2 = htmlContent.substring(indexH2).trim();
 
-            reader.readAsArrayBuffer(file);
-        }
+            // Ajouter class="titre-seo" sur les <h2>
+            part2 = part2.replace(/<h2/g, '<h2 class="titre-seo"');
 
-        // Fonction pour télécharger le fichier HTML généré
-        function downloadHtml(filename, content) {
-            const blob = new Blob([content], { type: 'text/html' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = filename;
-            link.click();
-        }
-        
-        // Fonction pour copier le contenu dans le presse-papier
-        function copyToClipboard(elementId) {
-            const textarea = document.getElementById(elementId);
-            textarea.select();
-            document.execCommand('copy');
-            alert('Contenu copié dans le presse-papier !');
-        }
-    </script>
+            document.getElementById('outputPart1').value = templatePart1 + part1 + closingPart1;
+            document.getElementById('outputPart2').value = templatePart2 + part2 + closingPart2;
+        });
+    };
+
+    reader.readAsArrayBuffer(file);
+}
+
+function downloadHtml(filename, content) {
+    const blob = new Blob([content], { type: 'text/html' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = filename;
+    link.click();
+}
+
+function copyToClipboard(elementId) {
+    const textarea = document.getElementById(elementId);
+    textarea.select();
+    document.execCommand('copy');
+    alert('Contenu copié dans le presse-papier !');
+}
+</script>
 </body>
 </html>
