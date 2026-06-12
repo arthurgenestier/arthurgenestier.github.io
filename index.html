@@ -7,7 +7,8 @@
 </head>
 <body>
    
-<h2 class="sr-only">Simulateur Coupe du Monde 2026 avec forces de base et sauvegarde locale</h2>
+
+<h2 class="sr-only">Simulateur Coupe du Monde 2026 - scores en direct via football-data.org</h2>
 <style>
 *{box-sizing:border-box}
 .tabs{display:flex;gap:4px;border-bottom:0.5px solid var(--color-border-tertiary);margin-bottom:1.5rem;flex-wrap:wrap}
@@ -21,6 +22,11 @@
 .tn.r{text-align:right}
 .si{width:30px;height:26px;text-align:center;font-size:13px;font-weight:500;padding:0;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-secondary);color:var(--color-text-primary)}
 .sep{color:var(--color-text-tertiary);font-size:11px}
+.status-dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:4px}
+.live-dot{background:#e53935;animation:pulse 1s infinite}
+.done-dot{background:#43a047}
+.upcoming-dot{background:var(--color-text-tertiary)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 .stt{width:100%;font-size:12px;border-collapse:collapse;margin-top:6px}
 .stt th{color:var(--color-text-secondary);font-weight:500;padding:3px 4px;text-align:center}
 .stt th:first-child{text-align:left}
@@ -35,27 +41,50 @@
 .br{display:flex;align-items:center;gap:8px;margin-bottom:5px}
 .bt{flex:1;background:var(--color-background-secondary);border-radius:4px;height:20px;overflow:hidden}
 .bf{height:100%;border-radius:4px;background:#3266ad;display:flex;align-items:center;padding-left:6px;font-size:11px;color:#fff;font-weight:500}
-.saved{font-size:11px;color:var(--color-text-success);opacity:0;transition:opacity .3s}
+.badge{font-size:10px;padding:2px 6px;border-radius:10px;font-weight:500}
+.badge-live{background:#fde8e8;color:#e53935}
+.badge-done{background:var(--color-background-success);color:var(--color-text-success)}
+.badge-soon{background:var(--color-background-secondary);color:var(--color-text-tertiary)}
+.api-bar{display:flex;align-items:center;gap:8px;margin-bottom:1.5rem;padding:8px 12px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);flex-wrap:wrap}
 </style>
 
 <div id="app" style="padding:1rem 0"></div>
 
 <script>
-const KEY='wc2026v4';
+const API_TOKEN = '701b3cfe654240f087fe8907e4948015';
+const API_BASE = 'https://api.football-data.org/v4';
+const KEY = 'wc2026live_v1';
 
 const BASE={
-  "France":92,"Espagne":90,"Argentine":88,"Brésil":87,
-  "Angleterre":86,"Portugal":84,"Allemagne":83,"Pays-Bas":82,
-  "Belgique":80,"Uruguay":78,"Suisse":78,"Maroc":76,
-  "Norvège":76,"Colombie":77,"Corée du Sud":72,"Côte d'Ivoire":72,
-  "Autriche":72,"Mexique":74,"Turquie":74,"Japon":76,
-  "Suède":74,"Sénégal":75,"États-Unis":76,"Croatie":74,
-  "Équateur":70,"Tchéquie":70,"Algérie":68,"Égypte":68,
-  "Paraguay":68,"Écosse":68,"Ghana":66,"Australie":66,
-  "Arabie Saoudite":66,"Iran":64,"Canada":64,"Bosnie":65,
-  "Tunisie":62,"Afrique du Sud":58,"Cap-Vert":58,"Ouzbékistan":58,
-  "Congo RD":56,"Nouvelle-Zélande":56,"Haïti":54,"Irak":54,
-  "Jordanie":54,"Panama":52,"Qatar":52,"Curaçao":44
+  "France":92,"Spain":90,"Argentina":88,"Brazil":87,
+  "England":86,"Portugal":84,"Germany":83,"Netherlands":82,
+  "Belgium":80,"Uruguay":78,"Switzerland":78,"Morocco":76,
+  "Norway":76,"Colombia":77,"South Korea":72,"Ivory Coast":72,
+  "Austria":72,"Mexico":74,"Turkey":74,"Japan":76,
+  "Sweden":74,"Senegal":75,"USA":76,"Croatia":74,
+  "Ecuador":70,"Czech Republic":70,"Algeria":68,"Egypt":68,
+  "Paraguay":68,"Scotland":68,"Ghana":66,"Australia":66,
+  "Saudi Arabia":66,"Iran":64,"Canada":64,"Bosnia-Herzegovina":65,
+  "Tunisia":62,"South Africa":58,"Cape Verde":58,"Uzbekistan":58,
+  "DR Congo":56,"New Zealand":56,"Haiti":54,"Iraq":54,
+  "Jordan":54,"Panama":52,"Qatar":52,"Curaçao":44
+};
+
+// Name mapping API -> français
+const NAME_FR = {
+  "France":"France","Spain":"Espagne","Argentina":"Argentine","Brazil":"Brésil",
+  "England":"Angleterre","Portugal":"Portugal","Germany":"Allemagne","Netherlands":"Pays-Bas",
+  "Belgium":"Belgique","Uruguay":"Uruguay","Switzerland":"Suisse","Morocco":"Maroc",
+  "Norway":"Norvège","Colombia":"Colombie","South Korea":"Corée du Sud","Ivory Coast":"Côte d'Ivoire",
+  "Austria":"Autriche","Mexico":"Mexique","Turkey":"Turquie","Japan":"Japon",
+  "Sweden":"Suède","Senegal":"Sénégal","USA":"États-Unis","Croatia":"Croatie",
+  "Ecuador":"Équateur","Czech Republic":"Tchéquie","Algeria":"Algérie","Egypt":"Égypte",
+  "Paraguay":"Paraguay","Scotland":"Écosse","Ghana":"Ghana","Australia":"Australie",
+  "Saudi Arabia":"Arabie Saoudite","Iran":"Iran","Canada":"Canada",
+  "Bosnia-Herzegovina":"Bosnie","Tunisia":"Tunisie","South Africa":"Afrique du Sud",
+  "Cape Verde":"Cap-Vert","Uzbekistan":"Ouzbékistan","DR Congo":"Congo RD",
+  "New Zealand":"Nouvelle-Zélande","Haiti":"Haïti","Iraq":"Irak",
+  "Jordan":"Jordanie","Panama":"Panama","Qatar":"Qatar","Curaçao":"Curaçao"
 };
 
 const GROUPS={
@@ -88,36 +117,112 @@ const GM={
   L:[["Angleterre","Croatie"],["Ghana","Panama"],["Angleterre","Ghana"],["Croatie","Panama"],["Angleterre","Panama"],["Croatie","Ghana"]]
 };
 
-function defaultScores(){
-  const s={};
-  Object.keys(GM).forEach(g=>GM[g].forEach((_,i)=>{s[g+'_'+i]={h:'',a:''}}));
-  return s;
-}
+// State
+let scores = loadScores();
+let apiMatches = [];
+let apiStatus = 'idle'; // idle | loading | ok | error
+let lastSync = null;
+let tab = 'groups';
+let simR = null;
 
-function load(){
+function loadScores(){
   try{
-    const raw=localStorage.getItem(KEY);
-    if(raw){const p=JSON.parse(raw);const d=defaultScores();Object.keys(d).forEach(k=>{if(p[k])d[k]=p[k];});return d;}
+    const raw = localStorage.getItem(KEY);
+    if(raw) {
+      const p = JSON.parse(raw);
+      const d = defaultScores();
+      Object.keys(d).forEach(k=>{ if(p[k]) d[k]=p[k]; });
+      return d;
+    }
   }catch(e){}
   return defaultScores();
 }
 
-function save(){
-  try{localStorage.setItem(KEY,JSON.stringify(scores));}catch(e){}
-  const el=document.getElementById('sv');
-  if(el){el.style.opacity='1';clearTimeout(window._st);window._st=setTimeout(()=>{el.style.opacity='0';},1500);}
+function defaultScores(){
+  const s={};
+  Object.keys(GM).forEach(g=>GM[g].forEach((_,i)=>{ s[g+'_'+i]={h:'',a:'',fromApi:false}; }));
+  return s;
 }
 
-let scores=load();
-let tab='groups';
-let simR=null;
+function saveScores(){
+  try{ localStorage.setItem(KEY, JSON.stringify(scores)); }catch(e){}
+}
+
+function frName(apiName){
+  return NAME_FR[apiName] || apiName;
+}
+
+function findMatchKey(homeFr, awayFr){
+  for(const g of Object.keys(GM)){
+    for(let i=0;i<GM[g].length;i++){
+      const m=GM[g][i];
+      if(m[0]===homeFr && m[1]===awayFr) return g+'_'+i;
+      if(m[0]===awayFr && m[1]===homeFr) return {key:g+'_'+i, reversed:true};
+    }
+  }
+  return null;
+}
+
+async function fetchFromAPI(){
+  apiStatus='loading';
+  render();
+  try{
+    const res = await fetch(`${API_BASE}/competitions/WC/matches?season=2026`, {
+      headers:{'X-Auth-Token': API_TOKEN}
+    });
+
+    // Check rate limit headers
+    const remaining = res.headers.get('X-Requests-Available-Minute');
+    if(remaining !== null && parseInt(remaining) < 2){
+      await new Promise(r=>setTimeout(r,60000));
+    }
+
+    if(!res.ok) throw new Error(`API error ${res.status}`);
+    const data = await res.json();
+    apiMatches = data.matches || [];
+
+    // Sync finished matches
+    let updated = 0;
+    for(const m of apiMatches){
+      if(m.status !== 'FINISHED') continue;
+      const homeFr = frName(m.homeTeam.name);
+      const awayFr = frName(m.awayTeam.name);
+      const hg = m.score.fullTime.home;
+      const ag = m.score.fullTime.away;
+      if(hg === null || ag === null) continue;
+
+      const found = findMatchKey(homeFr, awayFr);
+      if(!found) continue;
+
+      const key = typeof found === 'string' ? found : found.key;
+      const rev = typeof found === 'object' && found.reversed;
+
+      scores[key] = {
+        h: rev ? String(ag) : String(hg),
+        a: rev ? String(hg) : String(ag),
+        fromApi: true
+      };
+      updated++;
+    }
+
+    saveScores();
+    apiStatus='ok';
+    lastSync = new Date();
+  }catch(e){
+    console.error(e);
+    apiStatus='error';
+  }
+  render();
+}
 
 function getStr(name){
-  let s=BASE[name]||60;
+  // Find English name for BASE lookup
+  const engName = Object.keys(NAME_FR).find(k=>NAME_FR[k]===name) || name;
+  let s = BASE[engName] || 60;
   Object.keys(GM).forEach(g=>GM[g].forEach((m,i)=>{
     if(m[0]===name||m[1]===name){
       const sc=scores[g+'_'+i];
-      if(sc.h!==''&&sc.a!==''){
+      if(sc&&sc.h!==''&&sc.a!==''){
         const h=parseInt(sc.h),a=parseInt(sc.a);
         if(!isNaN(h)&&!isNaN(a)){
           const mine=m[0]===name?h:a,opp=m[0]===name?a:h;
@@ -129,11 +234,23 @@ function getStr(name){
   return s;
 }
 
+function getMatchStatus(grp, i){
+  const m = GM[grp][i];
+  const homeFr = m[0], awayFr = m[1];
+  for(const am of apiMatches){
+    const h=frName(am.homeTeam.name), a=frName(am.awayTeam.name);
+    if((h===homeFr&&a===awayFr)||(h===awayFr&&a===homeFr)){
+      return am.status; // FINISHED, IN_PLAY, SCHEDULED, etc.
+    }
+  }
+  return null;
+}
+
 function standings(grp){
   const tm={};GROUPS[grp].forEach(n=>{tm[n]={name:n,pts:0,gf:0,ga:0,gd:0,played:0,form:[]};});
   GM[grp].forEach((m,i)=>{
     const s=scores[grp+'_'+i];
-    if(s.h!==''&&s.a!==''){
+    if(s&&s.h!==''&&s.a!==''){
       const h=parseInt(s.h),a=parseInt(s.a);
       if(!isNaN(h)&&!isNaN(a)){
         tm[m[0]].gf+=h;tm[m[0]].ga+=a;tm[m[0]].gd+=h-a;tm[m[0]].played++;
@@ -153,16 +270,18 @@ function simOne(){
     const st={};GROUPS[grp].forEach(n=>{st[n]={pts:0,gf:0,ga:0,gd:0};});
     GM[grp].forEach((m,i)=>{
       const s=scores[grp+'_'+i];
-      if(s.h!==''&&s.a!==''){
+      if(s&&s.h!==''&&s.a!==''){
         const h=parseInt(s.h),a=parseInt(s.a);
         if(!isNaN(h)&&!isNaN(a)){
           st[m[0]].gf+=h;st[m[0]].ga+=a;st[m[0]].gd+=h-a;
           st[m[1]].gf+=a;st[m[1]].ga+=h;st[m[1]].gd+=a-h;
-          if(h>a)st[m[0]].pts+=3;else if(h<a)st[m[1]].pts+=3;else{st[m[0]].pts+=1;st[m[1]].pts+=1;}
+          if(h>a)st[m[0]].pts+=3;else if(h<a)st[m[1]].pts+=3;
+          else{st[m[0]].pts+=1;st[m[1]].pts+=1;}
         }
       }else{
         const sa=getStr(m[0])+Math.random()*30,sb=getStr(m[1])+Math.random()*30;
-        if(sa>sb)st[m[0]].pts+=3;else if(sa<sb)st[m[1]].pts+=3;else{st[m[0]].pts+=1;st[m[1]].pts+=1;}
+        if(sa>sb)st[m[0]].pts+=3;else if(sa<sb)st[m[1]].pts+=3;
+        else{st[m[0]].pts+=1;st[m[1]].pts+=1;}
         const g1=Math.floor(Math.random()*3),g2=Math.floor(Math.random()*2);
         st[m[0]].gf+=sa>sb?g1+1:g2;st[m[0]].ga+=sa>sb?g2:g1+1;
         st[m[1]].gf+=sa>sb?g2:g1+1;st[m[1]].ga+=sa>sb?g1+1:g2;
@@ -189,15 +308,19 @@ function simOne(){
 
 function runSim(){
   const N=1000,wins={};
-  Object.keys(BASE).forEach(t=>wins[t]=0);
+  Object.values(GROUPS).flat().forEach(t=>wins[t]=0);
   for(let i=0;i<N;i++){const w=simOne();wins[w]=(wins[w]||0)+1;}
   simR=Object.entries(wins).filter(([,w])=>w>0)
-    .map(([name,w])=>({name,wins:w,pct:Math.round(w/N*100),base:BASE[name]||60,dyn:getStr(name)}))
+    .map(([name,w])=>({name,wins:w,pct:Math.round(w/N*100),str:getStr(name)}))
     .sort((a,b)=>b.wins-a.wins);
   tab='sim';render();
 }
 
-function set(k,side,v){scores[k][side]=v;save();}
+function setScore(k,side,v){
+  scores[k][side]=v;
+  scores[k].fromApi=false;
+  saveScores();
+}
 
 function fbadge(f){
   if(f==='W')return`<span class="fb fw">V</span>`;
@@ -205,31 +328,53 @@ function fbadge(f){
   return`<span class="fb fd">N</span>`;
 }
 
+function statusBadge(status){
+  if(!status) return '';
+  if(status==='IN_PLAY'||status==='PAUSED') return`<span class="badge badge-live">● Live</span>`;
+  if(status==='FINISHED') return`<span class="badge badge-done">✓ Fini</span>`;
+  return '';
+}
+
 function render(){
   const tabDefs=[{id:'groups',label:'Scores'},{id:'standings',label:'Classements'},{id:'forces',label:'Forces'},{id:'sim',label:'Simulation'}];
   let h=`<div style="display:flex;justify-content:space-between;align-items:flex-end">
     <div class="tabs" style="margin-bottom:0;border-bottom:none;flex:1">`;
   tabDefs.forEach(t=>{h+=`<button class="tab${tab===t.id?' on':''}" onclick="tab='${t.id}';render()">${t.label}</button>`;});
-  h+=`</div><span id="sv" class="saved"><i class="ti ti-check" style="font-size:12px"></i> Sauvegardé</span></div>
-  <div style="height:0.5px;background:var(--color-border-tertiary);margin-bottom:1.5rem"></div>`;
+  h+=`</div></div><div style="height:0.5px;background:var(--color-border-tertiary);margin-bottom:1rem"></div>`;
+
+  // API sync bar
+  const syncLabel = apiStatus==='loading'?'⏳ Synchronisation...'
+    :apiStatus==='ok'?`✓ Synchro ${lastSync?lastSync.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'}):''}`
+    :apiStatus==='error'?'⚠️ Erreur API'
+    :'Pas encore synchronisé';
+  h+=`<div class="api-bar">
+    <span style="font-size:12px;color:var(--color-text-secondary);flex:1">${syncLabel}</span>
+    <button onclick="fetchFromAPI()" style="padding:5px 12px;font-size:12px" ${apiStatus==='loading'?'disabled':''}>
+      ${apiStatus==='loading'?'...' :'↻ Sync scores réels'}
+    </button>
+  </div>`;
 
   if(tab==='groups'){
     h+=`<div class="gg">`;
     Object.keys(GM).forEach(grp=>{
       h+=`<div class="gc"><div class="gt">GROUPE ${grp}</div>`;
       GM[grp].forEach((m,i)=>{
-        const k=grp+'_'+i,s=scores[k];
+        const k=grp+'_'+i,s=scores[k]||{h:'',a:''};
+        const mStatus=getMatchStatus(grp,i);
+        const fromApi=s.fromApi;
+        const inputStyle=fromApi?'background:var(--color-background-info);':'';
         h+=`<div class="mr">
           <span class="tn">${m[0]}</span>
-          <input class="si" type="number" min="0" max="20" value="${s.h}" placeholder="-" onchange="set('${k}','h',this.value)">
+          <input class="si" type="number" min="0" max="20" value="${s.h}" placeholder="-" style="${inputStyle}" onchange="setScore('${k}','h',this.value)">
           <span class="sep">:</span>
-          <input class="si" type="number" min="0" max="20" value="${s.a}" placeholder="-" onchange="set('${k}','a',this.value)">
+          <input class="si" type="number" min="0" max="20" value="${s.a}" placeholder="-" style="${inputStyle}" onchange="setScore('${k}','a',this.value)">
           <span class="tn r">${m[1]}</span>
+          ${statusBadge(mStatus)}
         </div>`;
       });
       h+=`</div>`;
     });
-    h+=`</div>`;
+    h+=`</div><div style="font-size:11px;color:var(--color-text-tertiary);margin-top:12px">🔵 Score chargé depuis l'API &nbsp;|&nbsp; Tu peux corriger manuellement n'importe quel score</div>`;
   }
 
   if(tab==='standings'){
@@ -253,12 +398,13 @@ function render(){
 
   if(tab==='forces'){
     h+=`<div style="font-size:12px;color:var(--color-text-secondary);margin-bottom:1rem;padding:8px 12px;background:var(--color-background-secondary);border-radius:var(--border-radius-md)">
-      Force de départ basée sur le classement FIFA. Évolue avec les résultats : <span style="color:var(--color-text-success);font-weight:500">+6 victoire</span> &nbsp;<span style="color:var(--color-text-warning);font-weight:500">0 nul</span> &nbsp;<span style="color:var(--color-text-danger);font-weight:500">−5 défaite</span>
+      Force de base FIFA. Évolue : <span style="color:var(--color-text-success);font-weight:500">+6 victoire</span> &nbsp;<span style="color:var(--color-text-warning);font-weight:500">0 nul</span> &nbsp;<span style="color:var(--color-text-danger);font-weight:500">−5 défaite</span>
     </div><div class="gg">`;
     Object.keys(GROUPS).forEach(grp=>{
       h+=`<div class="gc"><div class="gt">GROUPE ${grp}</div>`;
       standings(grp).forEach(t=>{
-        const base=BASE[t.name]||60,dyn=getStr(t.name),diff=dyn-base;
+        const engName=Object.keys(NAME_FR).find(k=>NAME_FR[k]===t.name)||t.name;
+        const base=BASE[engName]||60,dyn=getStr(t.name),diff=dyn-base;
         const diffH=diff>0?`<span style="color:var(--color-text-success);font-size:11px">+${diff}</span>`:diff<0?`<span style="color:var(--color-text-danger);font-size:11px">${diff}</span>`:`<span style="color:var(--color-text-tertiary);font-size:11px">=</span>`;
         h+=`<div style="margin-bottom:10px">
           <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">
@@ -280,8 +426,8 @@ function render(){
 
   if(tab==='sim'){
     h+=`<div style="display:flex;align-items:center;gap:12px;margin-bottom:1.5rem;flex-wrap:wrap">
-      <button onclick="runSim()" style="padding:8px 20px;font-size:14px"><i class="ti ti-refresh" aria-hidden="true"></i> Simuler 1000 tournois ↗</button>
-      <span style="font-size:12px;color:var(--color-text-secondary)">Force FIFA + résultats en cours</span>
+      <button onclick="runSim()" style="padding:8px 20px;font-size:14px">↗ Simuler 1000 tournois</button>
+      <span style="font-size:12px;color:var(--color-text-secondary)">Force FIFA + résultats réels</span>
     </div>`;
     if(simR){
       const medals=["🥇","🥈","🥉","4e"],bgs=["#FAC775","#D3D1C7","#B4B2A9","#E6F1FB"],txts=["#633806","#444441","#5F5E5A","#0C447C"];
@@ -291,7 +437,7 @@ function render(){
           <div style="font-size:11px;font-weight:500;color:${txts[i]};margin-bottom:3px">${medals[i]}</div>
           <div style="font-size:13px;font-weight:500;color:${txts[i]}">${t.name}</div>
           <div style="font-size:22px;font-weight:500;color:${txts[i]};margin-top:3px">${t.pct}%</div>
-          <div style="font-size:10px;color:${txts[i]};opacity:.7">force ${t.dyn}</div>
+          <div style="font-size:10px;color:${txts[i]};opacity:.7">force ${t.str}</div>
         </div>`;
       });
       h+=`</div><div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:8px;font-weight:500">Toutes les équipes</div><div style="display:flex;flex-direction:column;gap:5px">`;
@@ -314,6 +460,7 @@ function render(){
 
 render();
 </script>
+
 
 </body>
 </html>
