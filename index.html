@@ -6,7 +6,314 @@
     <title>Arthur GENESTIER</title>
 </head>
 <body>
-    <h1>Arthur GENESTIER</h1>
-    <a href="https://arthurgenestier.vercel.app/">C'est maintenant Par ICI</a>
+   
+<h2 class="sr-only">Simulateur Coupe du Monde 2026 avec forces de base et sauvegarde locale</h2>
+<style>
+*{box-sizing:border-box}
+.tabs{display:flex;gap:4px;border-bottom:0.5px solid var(--color-border-tertiary);margin-bottom:1.5rem;flex-wrap:wrap}
+.tab{padding:8px 14px;font-size:13px;cursor:pointer;border:none;background:none;color:var(--color-text-secondary);border-bottom:2px solid transparent;margin-bottom:-1px}
+.tab.on{color:var(--color-text-primary);border-bottom:2px solid var(--color-text-primary);font-weight:500}
+.gg{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
+.gc{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem}
+.gt{font-size:11px;font-weight:500;color:var(--color-text-secondary);margin-bottom:10px;letter-spacing:.06em}
+.mr{display:flex;align-items:center;gap:5px;margin-bottom:7px}
+.tn{flex:1;font-size:11px;color:var(--color-text-primary);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tn.r{text-align:right}
+.si{width:30px;height:26px;text-align:center;font-size:13px;font-weight:500;padding:0;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-md);background:var(--color-background-secondary);color:var(--color-text-primary)}
+.sep{color:var(--color-text-tertiary);font-size:11px}
+.stt{width:100%;font-size:12px;border-collapse:collapse;margin-top:6px}
+.stt th{color:var(--color-text-secondary);font-weight:500;padding:3px 4px;text-align:center}
+.stt th:first-child{text-align:left}
+.stt td{padding:3px 4px;text-align:center;border-top:0.5px solid var(--color-border-tertiary)}
+.stt td:first-child{text-align:left;font-weight:500;font-size:11px}
+.q{background:var(--color-background-info)}
+.maybe{background:var(--color-background-warning)}
+.fb{font-size:10px;font-weight:500;padding:1px 4px;border-radius:3px;display:inline-block}
+.fw{background:var(--color-background-success);color:var(--color-text-success)}
+.fl{background:var(--color-background-danger);color:var(--color-text-danger)}
+.fd{background:var(--color-background-warning);color:var(--color-text-warning)}
+.br{display:flex;align-items:center;gap:8px;margin-bottom:5px}
+.bt{flex:1;background:var(--color-background-secondary);border-radius:4px;height:20px;overflow:hidden}
+.bf{height:100%;border-radius:4px;background:#3266ad;display:flex;align-items:center;padding-left:6px;font-size:11px;color:#fff;font-weight:500}
+.saved{font-size:11px;color:var(--color-text-success);opacity:0;transition:opacity .3s}
+</style>
+
+<div id="app" style="padding:1rem 0"></div>
+
+<script>
+const KEY='wc2026v4';
+
+const BASE={
+  "France":92,"Espagne":90,"Argentine":88,"Brésil":87,
+  "Angleterre":86,"Portugal":84,"Allemagne":83,"Pays-Bas":82,
+  "Belgique":80,"Uruguay":78,"Suisse":78,"Maroc":76,
+  "Norvège":76,"Colombie":77,"Corée du Sud":72,"Côte d'Ivoire":72,
+  "Autriche":72,"Mexique":74,"Turquie":74,"Japon":76,
+  "Suède":74,"Sénégal":75,"États-Unis":76,"Croatie":74,
+  "Équateur":70,"Tchéquie":70,"Algérie":68,"Égypte":68,
+  "Paraguay":68,"Écosse":68,"Ghana":66,"Australie":66,
+  "Arabie Saoudite":66,"Iran":64,"Canada":64,"Bosnie":65,
+  "Tunisie":62,"Afrique du Sud":58,"Cap-Vert":58,"Ouzbékistan":58,
+  "Congo RD":56,"Nouvelle-Zélande":56,"Haïti":54,"Irak":54,
+  "Jordanie":54,"Panama":52,"Qatar":52,"Curaçao":44
+};
+
+const GROUPS={
+  A:["Mexique","Afrique du Sud","Corée du Sud","Tchéquie"],
+  B:["Canada","Suisse","Qatar","Bosnie"],
+  C:["Brésil","Maroc","Haïti","Écosse"],
+  D:["États-Unis","Paraguay","Australie","Turquie"],
+  E:["Allemagne","Curaçao","Côte d'Ivoire","Équateur"],
+  F:["Pays-Bas","Japon","Suède","Tunisie"],
+  G:["Belgique","Égypte","Iran","Nouvelle-Zélande"],
+  H:["Espagne","Cap-Vert","Arabie Saoudite","Uruguay"],
+  I:["France","Sénégal","Norvège","Irak"],
+  J:["Argentine","Algérie","Autriche","Jordanie"],
+  K:["Portugal","Ouzbékistan","Colombie","Congo RD"],
+  L:["Angleterre","Croatie","Ghana","Panama"]
+};
+
+const GM={
+  A:[["Mexique","Afrique du Sud"],["Corée du Sud","Tchéquie"],["Mexique","Corée du Sud"],["Afrique du Sud","Tchéquie"],["Mexique","Tchéquie"],["Afrique du Sud","Corée du Sud"]],
+  B:[["Canada","Bosnie"],["Qatar","Suisse"],["Canada","Qatar"],["Suisse","Bosnie"],["Canada","Suisse"],["Qatar","Bosnie"]],
+  C:[["Brésil","Maroc"],["Haïti","Écosse"],["Brésil","Haïti"],["Maroc","Écosse"],["Brésil","Écosse"],["Haïti","Maroc"]],
+  D:[["États-Unis","Paraguay"],["Australie","Turquie"],["États-Unis","Australie"],["Paraguay","Turquie"],["États-Unis","Turquie"],["Paraguay","Australie"]],
+  E:[["Allemagne","Curaçao"],["Côte d'Ivoire","Équateur"],["Allemagne","Côte d'Ivoire"],["Curaçao","Équateur"],["Allemagne","Équateur"],["Curaçao","Côte d'Ivoire"]],
+  F:[["Pays-Bas","Japon"],["Suède","Tunisie"],["Pays-Bas","Suède"],["Japon","Tunisie"],["Pays-Bas","Tunisie"],["Japon","Suède"]],
+  G:[["Belgique","Égypte"],["Iran","Nouvelle-Zélande"],["Belgique","Iran"],["Égypte","Nouvelle-Zélande"],["Belgique","Nouvelle-Zélande"],["Iran","Égypte"]],
+  H:[["Espagne","Cap-Vert"],["Arabie Saoudite","Uruguay"],["Espagne","Arabie Saoudite"],["Cap-Vert","Uruguay"],["Espagne","Uruguay"],["Cap-Vert","Arabie Saoudite"]],
+  I:[["France","Sénégal"],["Irak","Norvège"],["France","Irak"],["Norvège","Sénégal"],["France","Norvège"],["Irak","Sénégal"]],
+  J:[["Argentine","Algérie"],["Autriche","Jordanie"],["Argentine","Autriche"],["Algérie","Jordanie"],["Argentine","Jordanie"],["Algérie","Autriche"]],
+  K:[["Portugal","Congo RD"],["Ouzbékistan","Colombie"],["Portugal","Ouzbékistan"],["Congo RD","Colombie"],["Portugal","Colombie"],["Congo RD","Ouzbékistan"]],
+  L:[["Angleterre","Croatie"],["Ghana","Panama"],["Angleterre","Ghana"],["Croatie","Panama"],["Angleterre","Panama"],["Croatie","Ghana"]]
+};
+
+function defaultScores(){
+  const s={};
+  Object.keys(GM).forEach(g=>GM[g].forEach((_,i)=>{s[g+'_'+i]={h:'',a:''}}));
+  return s;
+}
+
+function load(){
+  try{
+    const raw=localStorage.getItem(KEY);
+    if(raw){const p=JSON.parse(raw);const d=defaultScores();Object.keys(d).forEach(k=>{if(p[k])d[k]=p[k];});return d;}
+  }catch(e){}
+  return defaultScores();
+}
+
+function save(){
+  try{localStorage.setItem(KEY,JSON.stringify(scores));}catch(e){}
+  const el=document.getElementById('sv');
+  if(el){el.style.opacity='1';clearTimeout(window._st);window._st=setTimeout(()=>{el.style.opacity='0';},1500);}
+}
+
+let scores=load();
+let tab='groups';
+let simR=null;
+
+function getStr(name){
+  let s=BASE[name]||60;
+  Object.keys(GM).forEach(g=>GM[g].forEach((m,i)=>{
+    if(m[0]===name||m[1]===name){
+      const sc=scores[g+'_'+i];
+      if(sc.h!==''&&sc.a!==''){
+        const h=parseInt(sc.h),a=parseInt(sc.a);
+        if(!isNaN(h)&&!isNaN(a)){
+          const mine=m[0]===name?h:a,opp=m[0]===name?a:h;
+          if(mine>opp)s+=6;else if(mine<opp)s-=5;
+        }
+      }
+    }
+  }));
+  return s;
+}
+
+function standings(grp){
+  const tm={};GROUPS[grp].forEach(n=>{tm[n]={name:n,pts:0,gf:0,ga:0,gd:0,played:0,form:[]};});
+  GM[grp].forEach((m,i)=>{
+    const s=scores[grp+'_'+i];
+    if(s.h!==''&&s.a!==''){
+      const h=parseInt(s.h),a=parseInt(s.a);
+      if(!isNaN(h)&&!isNaN(a)){
+        tm[m[0]].gf+=h;tm[m[0]].ga+=a;tm[m[0]].gd+=h-a;tm[m[0]].played++;
+        tm[m[1]].gf+=a;tm[m[1]].ga+=h;tm[m[1]].gd+=a-h;tm[m[1]].played++;
+        if(h>a){tm[m[0]].pts+=3;tm[m[0]].form.push('W');tm[m[1]].form.push('L');}
+        else if(h<a){tm[m[1]].pts+=3;tm[m[1]].form.push('W');tm[m[0]].form.push('L');}
+        else{tm[m[0]].pts+=1;tm[m[1]].pts+=1;tm[m[0]].form.push('D');tm[m[1]].form.push('D');}
+      }
+    }
+  });
+  return Object.values(tm).sort((a,b)=>b.pts-a.pts||b.gd-a.gd||b.gf-a.gf);
+}
+
+function simOne(){
+  const gw={},gs={},thirds=[];
+  Object.keys(GROUPS).forEach(grp=>{
+    const st={};GROUPS[grp].forEach(n=>{st[n]={pts:0,gf:0,ga:0,gd:0};});
+    GM[grp].forEach((m,i)=>{
+      const s=scores[grp+'_'+i];
+      if(s.h!==''&&s.a!==''){
+        const h=parseInt(s.h),a=parseInt(s.a);
+        if(!isNaN(h)&&!isNaN(a)){
+          st[m[0]].gf+=h;st[m[0]].ga+=a;st[m[0]].gd+=h-a;
+          st[m[1]].gf+=a;st[m[1]].ga+=h;st[m[1]].gd+=a-h;
+          if(h>a)st[m[0]].pts+=3;else if(h<a)st[m[1]].pts+=3;else{st[m[0]].pts+=1;st[m[1]].pts+=1;}
+        }
+      }else{
+        const sa=getStr(m[0])+Math.random()*30,sb=getStr(m[1])+Math.random()*30;
+        if(sa>sb)st[m[0]].pts+=3;else if(sa<sb)st[m[1]].pts+=3;else{st[m[0]].pts+=1;st[m[1]].pts+=1;}
+        const g1=Math.floor(Math.random()*3),g2=Math.floor(Math.random()*2);
+        st[m[0]].gf+=sa>sb?g1+1:g2;st[m[0]].ga+=sa>sb?g2:g1+1;
+        st[m[1]].gf+=sa>sb?g2:g1+1;st[m[1]].ga+=sa>sb?g1+1:g2;
+      }
+    });
+    const sorted=Object.entries(st).map(([name,v])=>({name,...v})).sort((a,b)=>b.pts-a.pts||b.gd-a.gd||b.gf-a.gf);
+    gw[grp]=sorted[0].name;gs[grp]=sorted[1].name;
+    thirds.push({name:sorted[2].name,pts:sorted[2].pts,gd:sorted[2].gd,gf:sorted[2].gf});
+  });
+  const best8=thirds.sort((a,b)=>b.pts-a.pts||b.gd-a.gd||b.gf-a.gf).slice(0,8).map(t=>t.name);
+  let pool=[...Object.values(gw),...Object.values(gs),...best8];
+  while(pool.length>1){
+    const next=[];
+    for(let i=0;i<pool.length;i+=2){
+      if(i+1<pool.length){
+        const sa=getStr(pool[i])+Math.random()*30,sb=getStr(pool[i+1])+Math.random()*30;
+        next.push(sa>sb?pool[i]:pool[i+1]);
+      }else next.push(pool[i]);
+    }
+    pool=next;
+  }
+  return pool[0];
+}
+
+function runSim(){
+  const N=1000,wins={};
+  Object.keys(BASE).forEach(t=>wins[t]=0);
+  for(let i=0;i<N;i++){const w=simOne();wins[w]=(wins[w]||0)+1;}
+  simR=Object.entries(wins).filter(([,w])=>w>0)
+    .map(([name,w])=>({name,wins:w,pct:Math.round(w/N*100),base:BASE[name]||60,dyn:getStr(name)}))
+    .sort((a,b)=>b.wins-a.wins);
+  tab='sim';render();
+}
+
+function set(k,side,v){scores[k][side]=v;save();}
+
+function fbadge(f){
+  if(f==='W')return`<span class="fb fw">V</span>`;
+  if(f==='L')return`<span class="fb fl">D</span>`;
+  return`<span class="fb fd">N</span>`;
+}
+
+function render(){
+  const tabDefs=[{id:'groups',label:'Scores'},{id:'standings',label:'Classements'},{id:'forces',label:'Forces'},{id:'sim',label:'Simulation'}];
+  let h=`<div style="display:flex;justify-content:space-between;align-items:flex-end">
+    <div class="tabs" style="margin-bottom:0;border-bottom:none;flex:1">`;
+  tabDefs.forEach(t=>{h+=`<button class="tab${tab===t.id?' on':''}" onclick="tab='${t.id}';render()">${t.label}</button>`;});
+  h+=`</div><span id="sv" class="saved"><i class="ti ti-check" style="font-size:12px"></i> Sauvegardé</span></div>
+  <div style="height:0.5px;background:var(--color-border-tertiary);margin-bottom:1.5rem"></div>`;
+
+  if(tab==='groups'){
+    h+=`<div class="gg">`;
+    Object.keys(GM).forEach(grp=>{
+      h+=`<div class="gc"><div class="gt">GROUPE ${grp}</div>`;
+      GM[grp].forEach((m,i)=>{
+        const k=grp+'_'+i,s=scores[k];
+        h+=`<div class="mr">
+          <span class="tn">${m[0]}</span>
+          <input class="si" type="number" min="0" max="20" value="${s.h}" placeholder="-" onchange="set('${k}','h',this.value)">
+          <span class="sep">:</span>
+          <input class="si" type="number" min="0" max="20" value="${s.a}" placeholder="-" onchange="set('${k}','a',this.value)">
+          <span class="tn r">${m[1]}</span>
+        </div>`;
+      });
+      h+=`</div>`;
+    });
+    h+=`</div>`;
+  }
+
+  if(tab==='standings'){
+    h+=`<div class="gg">`;
+    Object.keys(GROUPS).forEach(grp=>{
+      const st=standings(grp);
+      h+=`<div class="gc"><div class="gt">GROUPE ${grp}</div><table class="stt">
+        <tr><th>Équipe</th><th>J</th><th>Pts</th><th>+/-</th><th>Forme</th></tr>`;
+      st.forEach((t,i)=>{
+        h+=`<tr class="${i<2?'q':i===2?'maybe':''}">
+          <td>${t.name}</td><td>${t.played}</td>
+          <td style="font-weight:500">${t.pts}</td>
+          <td>${t.gd>0?'+':''}${t.gd}</td>
+          <td><div style="display:flex;gap:2px">${t.form.map(f=>fbadge(f)).join('')}</div></td>
+        </tr>`;
+      });
+      h+=`</table><div style="font-size:10px;color:var(--color-text-tertiary);margin-top:5px">🔵 qualifié &nbsp;🟡 possible</div></div>`;
+    });
+    h+=`</div>`;
+  }
+
+  if(tab==='forces'){
+    h+=`<div style="font-size:12px;color:var(--color-text-secondary);margin-bottom:1rem;padding:8px 12px;background:var(--color-background-secondary);border-radius:var(--border-radius-md)">
+      Force de départ basée sur le classement FIFA. Évolue avec les résultats : <span style="color:var(--color-text-success);font-weight:500">+6 victoire</span> &nbsp;<span style="color:var(--color-text-warning);font-weight:500">0 nul</span> &nbsp;<span style="color:var(--color-text-danger);font-weight:500">−5 défaite</span>
+    </div><div class="gg">`;
+    Object.keys(GROUPS).forEach(grp=>{
+      h+=`<div class="gc"><div class="gt">GROUPE ${grp}</div>`;
+      standings(grp).forEach(t=>{
+        const base=BASE[t.name]||60,dyn=getStr(t.name),diff=dyn-base;
+        const diffH=diff>0?`<span style="color:var(--color-text-success);font-size:11px">+${diff}</span>`:diff<0?`<span style="color:var(--color-text-danger);font-size:11px">${diff}</span>`:`<span style="color:var(--color-text-tertiary);font-size:11px">=</span>`;
+        h+=`<div style="margin-bottom:10px">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px">
+            <span style="font-size:12px;font-weight:500;flex:1">${t.name}</span>
+            <span style="font-size:11px;color:var(--color-text-secondary)">${base}</span>
+            <span style="font-size:11px;color:var(--color-text-tertiary)">→</span>
+            <span style="font-size:12px;font-weight:500">${dyn}</span>${diffH}
+          </div>
+          <div style="background:var(--color-background-secondary);border-radius:3px;height:5px;overflow:hidden">
+            <div style="height:100%;width:${Math.round(Math.min(dyn,99)/99*100)}%;background:#3266ad;border-radius:3px"></div>
+          </div>
+          <div style="display:flex;gap:2px;margin-top:3px">${t.form.map(f=>fbadge(f)).join('')}</div>
+        </div>`;
+      });
+      h+=`</div>`;
+    });
+    h+=`</div>`;
+  }
+
+  if(tab==='sim'){
+    h+=`<div style="display:flex;align-items:center;gap:12px;margin-bottom:1.5rem;flex-wrap:wrap">
+      <button onclick="runSim()" style="padding:8px 20px;font-size:14px"><i class="ti ti-refresh" aria-hidden="true"></i> Simuler 1000 tournois ↗</button>
+      <span style="font-size:12px;color:var(--color-text-secondary)">Force FIFA + résultats en cours</span>
+    </div>`;
+    if(simR){
+      const medals=["🥇","🥈","🥉","4e"],bgs=["#FAC775","#D3D1C7","#B4B2A9","#E6F1FB"],txts=["#633806","#444441","#5F5E5A","#0C447C"];
+      h+=`<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-bottom:1.5rem">`;
+      simR.slice(0,4).forEach((t,i)=>{
+        h+=`<div style="background:${bgs[i]};border-radius:var(--border-radius-lg);padding:1rem;text-align:center">
+          <div style="font-size:11px;font-weight:500;color:${txts[i]};margin-bottom:3px">${medals[i]}</div>
+          <div style="font-size:13px;font-weight:500;color:${txts[i]}">${t.name}</div>
+          <div style="font-size:22px;font-weight:500;color:${txts[i]};margin-top:3px">${t.pct}%</div>
+          <div style="font-size:10px;color:${txts[i]};opacity:.7">force ${t.dyn}</div>
+        </div>`;
+      });
+      h+=`</div><div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:8px;font-weight:500">Toutes les équipes</div><div style="display:flex;flex-direction:column;gap:5px">`;
+      const mx=simR[0].pct||1;
+      simR.forEach(t=>{
+        h+=`<div class="br">
+          <span style="font-size:11px;color:var(--color-text-secondary);width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${t.name}</span>
+          <div class="bt"><div class="bf" style="width:${Math.round(t.pct/mx*100)}%">${t.pct>3?t.pct+'%':''}</div></div>
+          <span style="font-size:11px;font-weight:500;min-width:26px;text-align:right">${t.pct}%</span>
+        </div>`;
+      });
+      h+=`</div>`;
+    }else{
+      h+=`<div style="text-align:center;padding:3rem;color:var(--color-text-secondary);font-size:14px">Lance une simulation pour voir les probabilités !</div>`;
+    }
+  }
+
+  document.getElementById('app').innerHTML=h;
+}
+
+render();
+</script>
+
 </body>
 </html>
